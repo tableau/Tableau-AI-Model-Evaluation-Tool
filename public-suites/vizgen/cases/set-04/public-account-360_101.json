@@ -1,0 +1,63 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-account-360",
+  "info": {
+    "requirement-id": "D-248-f00aa2d7c4e352d3",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "average headcount in midwest",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Number of Employees",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "encoding": "y"
+            }
+          ],
+          "categoricalFilters": [
+            {
+              "type": "categorical",
+              "field": "Primary Store Region",
+              "values": [
+                "Midwest"
+              ],
+              "_tb_wildcards": [
+                "field"
+              ]
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench",
+        "infer-other-field",
+        "semantic-inference"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement",
+          "Intent: Geographic Analysis"
+        ],
+        "op": [
+          "Op: Aggregation (Non-Default)",
+          "Op: Filter - Categorical",
+          "Op: Field Inference - Measure / Dimension",
+          "Op: Disambiguation"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    }
+  ],
+  "id": "964ff89aaeb4674588b19aadec49bc4b"
+}

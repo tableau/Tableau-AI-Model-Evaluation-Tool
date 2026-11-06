@@ -1,0 +1,170 @@
+{
+ "similarity": [
+  {
+   "text": "{\"llmIsSimilarScore\":7,\"llmIsSimilarReasoning\":\" partial \"}",
+   "result": [
+    0.7,
+    "partial"
+   ]
+  },
+  {
+   "text": "```json\n{\"llmIsSimilarScore\":10}\n```",
+   "result": [
+    1.0,
+    null
+   ]
+  },
+  {
+   "text": "Answer: {\"llmIsSimilar\":true}",
+   "result": [
+    1.0,
+    null
+   ]
+  },
+  {
+   "text": "{\"llmIsSimilar\":false,\"llmIsSimilarReasoning\":\"Different\"}",
+   "result": [
+    0.0,
+    "Different"
+   ]
+  },
+  {
+   "text": "{\"llmIsSimilarScore\":30}",
+   "result": [
+    1.0,
+    null
+   ]
+  },
+  {
+   "text": "{\"llmIsSimilarScore\":-2}",
+   "result": [
+    0.0,
+    null
+   ]
+  },
+  {
+   "text": "{\"llmIsSimilarScore\":\"bad\"}",
+   "result": [
+    null,
+    null
+   ]
+  },
+  {
+   "text": "not JSON",
+   "result": [
+    null,
+    null
+   ]
+  },
+  {
+   "text": "{}",
+   "result": [
+    null,
+    null
+   ]
+  }
+ ],
+ "factuality": [
+  {
+   "text": "{\"total_truths\":5,\"semantically_accurate_truths\":2,\"misrepresented_narratives\":[\"wrong\"]}",
+   "result": [
+    5,
+    2,
+    [
+     "wrong"
+    ]
+   ]
+  },
+  {
+   "text": "{\"total_truths\":\"3\",\"semantically_accurate_truths\":\"2\",\"misrepresented_narratives\":[]}",
+   "result": [
+    3,
+    2,
+    []
+   ]
+  },
+  {
+   "text": "{}",
+   "result": null
+  },
+  {
+   "text": "not JSON",
+   "result": null
+  }
+ ],
+ "scores": [
+  {
+   "total": 5,
+   "accurate": 2,
+   "misrepresented": [
+    "wrong"
+   ],
+   "result": [
+    0.6667,
+    0.5,
+    "Total truths: 5\nTotal Semantically Accurate Truths: 2\nMisrepresented narratives: 1\nMisrepresented Narratives:\n1. wrong\n",
+    "2 of the 5 detected outliers and insights are described, and described the right way round; 1 described the wrong way round."
+   ]
+  },
+  {
+   "total": 5,
+   "accurate": 0,
+   "misrepresented": [],
+   "result": [
+    1.0,
+    0.0,
+    "The summary describes none of the 5 detected outliers and insights, so there is nothing described wrongly.\nTotal truths: 5\nTotal Semantically Accurate Truths: 0\nMisrepresented narratives: 0\n",
+    "The summary describes none of the 5 detected outliers and insights."
+   ]
+  },
+  {
+   "total": 0,
+   "accurate": 0,
+   "misrepresented": [],
+   "result": [
+    1.0,
+    1.0,
+    "There are no outliers or pulse insights in the dashboard.",
+    "There are no outliers or pulse insights in the dashboard."
+   ]
+  },
+  {
+   "total": 3,
+   "accurate": 2,
+   "misrepresented": [
+    "A",
+    "B"
+   ],
+   "result": [
+    0.5,
+    1.0,
+    "Total truths: 3\nTotal Semantically Accurate Truths: 2\nMisrepresented narratives: 2\nMisrepresented Narratives:\n1. A\n2. B\n",
+    "2 of the 3 detected outliers and insights are described, and described the right way round; 2 described the wrong way round."
+   ]
+  },
+  {
+   "total": 2,
+   "accurate": 4,
+   "misrepresented": [],
+   "result": [
+    1.0,
+    1.0,
+    "Total truths: 2\nTotal Semantically Accurate Truths: 4\nMisrepresented narratives: 0\n",
+    "4 of the 2 detected outliers and insights are described, and described the right way round."
+   ]
+  },
+  {
+   "total": 1,
+   "accurate": 0,
+   "misrepresented": [
+    "wrong"
+   ],
+   "result": [
+    0.0,
+    0.0,
+    "Total truths: 1\nTotal Semantically Accurate Truths: 0\nMisrepresented narratives: 1\nMisrepresented Narratives:\n1. wrong\n",
+    "0 of the 1 detected outliers and insights are described, and described the right way round; 1 described the wrong way round."
+   ]
+  }
+ ]
+}

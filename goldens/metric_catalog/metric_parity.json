@@ -1,0 +1,677 @@
+{
+  "_comment": "Shared scoring fixture: tests/test_metric_catalog.py (Python) and frontend/src/nlqMetricBuckets.test.ts (TypeScript) both compute these rows and compare against 'expected'. Regenerate with the snippet in the test module's docstring after a deliberate scoring change.",
+  "rows": {
+    "viz_full": {
+      "intent": [
+        {
+          "metric_name": "equals",
+          "score": 1.0,
+          "explanation": null,
+          "metric_id": null
+        }
+      ],
+      "notionalSpec": [
+        {
+          "metric_name": "precision",
+          "score": 0.5,
+          "explanation": null,
+          "metric_id": null
+        },
+        {
+          "metric_name": "fieldValidity",
+          "score": 1.0,
+          "explanation": null,
+          "metric_id": null
+        }
+      ],
+      "vizQuality": [
+        {
+          "metric_name": "fieldSimilarity",
+          "score": 0.8,
+          "explanation": null,
+          "metric_id": null
+        },
+        {
+          "metric_name": "chartSimilarity",
+          "score": 1.0,
+          "explanation": null,
+          "metric_id": null
+        },
+        {
+          "metric_name": "filterAccuracy",
+          "score": 0.5,
+          "explanation": null,
+          "metric_id": null
+        },
+        {
+          "metric_name": "sortAccuracy",
+          "score": null,
+          "explanation": null,
+          "metric_id": null
+        },
+        {
+          "metric_name": "axisAccuracy",
+          "score": 1.0,
+          "explanation": null,
+          "metric_id": null
+        },
+        {
+          "metric_name": "aestheticAccuracy",
+          "score": 0.25,
+          "explanation": null,
+          "metric_id": null
+        },
+        {
+          "metric_name": "tooltipAccuracy",
+          "score": 0.75,
+          "explanation": null,
+          "metric_id": null
+        },
+        {
+          "metric_name": "informationSimilarity",
+          "score": 0.4,
+          "explanation": null,
+          "metric_id": null
+        }
+      ],
+      "llmJudge": [
+        {
+          "metric_name": "factualGrounding",
+          "score": 0.9,
+          "explanation": "grounded",
+          "metric_id": null
+        },
+        {
+          "metric_name": "insightfulness",
+          "score": null,
+          "explanation": "Unavailable: judge 503",
+          "metric_id": null
+        },
+        {
+          "metric_name": "coherence",
+          "score": 0.7,
+          "explanation": null,
+          "metric_id": null
+        },
+        {
+          "metric_name": "followUpRelevance",
+          "score": 0.6,
+          "explanation": null,
+          "metric_id": null
+        }
+      ]
+    },
+    "calc_alias": {
+      "calculatedFieldFormula": [
+        {
+          "metric_name": "calcValidity",
+          "score": 1.0,
+          "explanation": null,
+          "metric_id": null
+        },
+        {
+          "metric_name": "fieldPrecision",
+          "score": 0.5,
+          "explanation": null,
+          "metric_id": null
+        },
+        {
+          "metric_name": "fieldRecall",
+          "score": 1.0,
+          "explanation": null,
+          "metric_id": null
+        }
+      ],
+      "intent": [
+        {
+          "metric_name": "equals",
+          "score": 0.0,
+          "explanation": null,
+          "metric_id": null
+        }
+      ]
+    },
+    "calc_direct": {
+      "calculatedFieldFormula": [
+        {
+          "metric_name": "calcValidity",
+          "score": 0.0,
+          "explanation": null,
+          "metric_id": null
+        },
+        {
+          "metric_name": "equals",
+          "score": 1.0,
+          "explanation": null,
+          "metric_id": null
+        },
+        {
+          "metric_name": "fieldPrecision",
+          "score": 1.0,
+          "explanation": null,
+          "metric_id": null
+        },
+        {
+          "metric_name": "fieldRecall",
+          "score": 0.0,
+          "explanation": null,
+          "metric_id": null
+        },
+        {
+          "metric_name": "valuePrecision",
+          "score": 1.0,
+          "explanation": null,
+          "metric_id": null
+        },
+        {
+          "metric_name": "valueRecall",
+          "score": 1.0,
+          "explanation": null,
+          "metric_id": null
+        }
+      ]
+    },
+    "judge_only": {
+      "llmJudge": [
+        {
+          "metric_name": "factualGrounding",
+          "score": 0.2,
+          "explanation": null,
+          "metric_id": null
+        },
+        {
+          "metric_name": "coherence",
+          "score": 0.3,
+          "explanation": null,
+          "metric_id": null
+        }
+      ]
+    },
+    "judge_failed": {
+      "llmJudge": [
+        {
+          "metric_name": "factualGrounding",
+          "score": null,
+          "explanation": "Unavailable",
+          "metric_id": null
+        },
+        {
+          "metric_name": "coherence",
+          "score": null,
+          "explanation": "Unavailable",
+          "metric_id": null
+        }
+      ]
+    },
+    "palette": {
+      "llmJudge": [
+        {
+          "metric_name": "valid",
+          "score": 1.0,
+          "explanation": null,
+          "metric_id": null
+        },
+        {
+          "metric_name": "relevance",
+          "score": 0.5,
+          "explanation": null,
+          "metric_id": null
+        },
+        {
+          "metric_name": "design",
+          "score": 0.75,
+          "explanation": null,
+          "metric_id": null
+        }
+      ],
+      "colorPalette": [
+        {
+          "metric_name": "distinguishability",
+          "score": 1.0,
+          "explanation": null,
+          "metric_id": null
+        },
+        {
+          "metric_name": "gradientSmoothness",
+          "score": 0.5,
+          "explanation": null,
+          "metric_id": null
+        }
+      ]
+    },
+    "unknown": {
+      "somethingElse": [
+        {
+          "metric_name": "mystery",
+          "score": 0.9,
+          "explanation": null,
+          "metric_id": null
+        }
+      ]
+    },
+    "empty": {},
+    "calc_with_field_validity": {
+      "intent": [
+        {
+          "metric_name": "equals",
+          "score": 1.0,
+          "explanation": null,
+          "metric_id": null
+        }
+      ],
+      "calculatedFieldFormula": [
+        {
+          "metric_name": "calcValidity",
+          "score": 1.0,
+          "explanation": null,
+          "metric_id": null
+        },
+        {
+          "metric_name": "calcFieldValidity",
+          "score": 0.5,
+          "explanation": null,
+          "metric_id": null
+        },
+        {
+          "metric_name": "fieldPrecision",
+          "score": 1.0,
+          "explanation": null,
+          "metric_id": null
+        },
+        {
+          "metric_name": "fieldRecall",
+          "score": 0.5,
+          "explanation": null,
+          "metric_id": null
+        }
+      ]
+    },
+    "viz_with_field_validity": {
+      "intent": [
+        {
+          "metric_name": "equals",
+          "score": 1.0,
+          "explanation": null,
+          "metric_id": null
+        }
+      ],
+      "notionalSpec": [
+        {
+          "metric_name": "equals",
+          "score": 0.0,
+          "explanation": null,
+          "metric_id": null
+        },
+        {
+          "metric_name": "precision",
+          "score": 0.5,
+          "explanation": null,
+          "metric_id": null
+        },
+        {
+          "metric_name": "recall",
+          "score": 0.5,
+          "explanation": null,
+          "metric_id": null
+        },
+        {
+          "metric_name": "fieldValidity",
+          "score": 1.0,
+          "explanation": null,
+          "metric_id": null
+        }
+      ],
+      "vizQuality": [
+        {
+          "metric_name": "fieldSimilarity",
+          "score": 0.6,
+          "explanation": null,
+          "metric_id": null
+        },
+        {
+          "metric_name": "chartSimilarity",
+          "score": 1.0,
+          "explanation": null,
+          "metric_id": null
+        }
+      ]
+    },
+    "prep_calc": {
+      "calculatedFieldFormula": [
+        {
+          "metric_name": "calcValidity",
+          "score": 1.0,
+          "explanation": null,
+          "metric_id": null
+        },
+        {
+          "metric_name": "levenshteinSimilarity",
+          "score": 0.8,
+          "explanation": null,
+          "metric_id": null
+        }
+      ]
+    },
+    "prep_flow_plan": {
+      "flowPlan": [
+        {
+          "metric_name": "planSimilarity",
+          "score": 0.4,
+          "explanation": null,
+          "metric_id": null
+        }
+      ]
+    },
+    "dashboard_qa": {
+      "dashboardQA": [
+        {
+          "metric_name": "outputTypeMatch",
+          "score": 1.0,
+          "explanation": null,
+          "metric_id": null
+        }
+      ],
+      "llmJudge": [
+        {
+          "metric_name": "answerCorrectness",
+          "score": 0.7,
+          "explanation": null,
+          "metric_id": null
+        },
+        {
+          "metric_name": "factualConsistency",
+          "score": null,
+          "explanation": "Unavailable: no data",
+          "metric_id": null
+        },
+        {
+          "metric_name": "coherence",
+          "score": 1.0,
+          "explanation": null,
+          "metric_id": null
+        },
+        {
+          "metric_name": "insightfulness",
+          "score": 0.1,
+          "explanation": null,
+          "metric_id": null
+        }
+      ]
+    }
+  },
+  "expected": {
+    "per_row": {
+      "viz_full": {
+        "buckets": {
+          "match": 0.8333333333333334,
+          "data": 0.8,
+          "semantics": 1.0,
+          "design": 0.5,
+          "functionality": 0.75,
+          "nlFactual": 0.65,
+          "nlAnalytical": null,
+          "nlConversation": 0.6499999999999999
+        },
+        "unweighted": 0.7404761904761905,
+        "overall": 0.8013513513513514,
+        "verdict": "pass",
+        "cards": {
+          "viz": 0.7625,
+          "nl": 0.6499999999999999
+        }
+      },
+      "calc_alias": {
+        "buckets": {
+          "match": 0.0,
+          "calc": 0.8333333333333334
+        },
+        "unweighted": 0.4166666666666667,
+        "overall": 0.5701754385964912,
+        "verdict": "partial",
+        "cards": {
+          "viz": null,
+          "nl": null
+        }
+      },
+      "calc_direct": {
+        "buckets": {
+          "calc": 0.6
+        },
+        "unweighted": 0.6,
+        "overall": 0.6,
+        "verdict": "partial",
+        "cards": {
+          "viz": null,
+          "nl": null
+        }
+      },
+      "judge_only": {
+        "buckets": {
+          "nlFactual": 0.2,
+          "nlConversation": 0.3
+        },
+        "unweighted": 0.25,
+        "overall": null,
+        "verdict": "na",
+        "cards": {
+          "viz": null,
+          "nl": 0.25
+        }
+      },
+      "judge_failed": {
+        "buckets": {
+          "nlFactual": null,
+          "nlConversation": null
+        },
+        "unweighted": null,
+        "overall": null,
+        "verdict": "na",
+        "cards": {
+          "viz": null,
+          "nl": null
+        }
+      },
+      "palette": {
+        "buckets": {
+          "palette": 0.75
+        },
+        "unweighted": 0.75,
+        "overall": 0.75,
+        "verdict": "pass",
+        "cards": {
+          "viz": null,
+          "nl": null
+        }
+      },
+      "unknown": {
+        "buckets": {},
+        "unweighted": null,
+        "overall": null,
+        "verdict": "na",
+        "cards": {
+          "viz": null,
+          "nl": null
+        }
+      },
+      "empty": {
+        "buckets": {},
+        "unweighted": null,
+        "overall": null,
+        "verdict": "na",
+        "cards": {
+          "viz": null,
+          "nl": null
+        }
+      },
+      "calc_with_field_validity": {
+        "buckets": {
+          "match": 1.0,
+          "calc": 0.75
+        },
+        "unweighted": 0.875,
+        "overall": 0.8289473684210527,
+        "verdict": "pass",
+        "cards": {
+          "viz": null,
+          "nl": null
+        }
+      },
+      "viz_with_field_validity": {
+        "buckets": {
+          "match": 0.75,
+          "data": 0.6,
+          "semantics": 1.0
+        },
+        "unweighted": 0.7833333333333333,
+        "overall": 0.7423076923076923,
+        "verdict": "pass",
+        "cards": {
+          "viz": 0.8,
+          "nl": null
+        }
+      },
+      "prep_calc": {
+        "buckets": {
+          "calc": 0.9
+        },
+        "unweighted": 0.9,
+        "overall": 0.9,
+        "verdict": "pass",
+        "cards": {
+          "viz": null,
+          "nl": null
+        }
+      },
+      "prep_flow_plan": {
+        "buckets": {
+          "flowPlan": 0.4
+        },
+        "unweighted": 0.4,
+        "overall": 0.4,
+        "verdict": "partial",
+        "cards": {
+          "viz": null,
+          "nl": null
+        }
+      },
+      "dashboard_qa": {
+        "buckets": {
+          "nlAnalytical": 0.1,
+          "nlConversation": 1.0,
+          "dashboardQA": 0.7
+        },
+        "unweighted": 0.6,
+        "overall": 0.7,
+        "verdict": "pass",
+        "cards": {
+          "viz": null,
+          "nl": 0.55
+        }
+      }
+    },
+    "aggregates": {
+      "all": {
+        "rows": [
+          "viz_full",
+          "calc_alias",
+          "calc_direct",
+          "judge_only",
+          "judge_failed",
+          "palette",
+          "unknown",
+          "empty"
+        ],
+        "buckets": {
+          "match": 0.6666666666666666,
+          "data": 0.8,
+          "semantics": 1.0,
+          "design": 0.5,
+          "functionality": 0.75,
+          "calc": 0.75,
+          "nlFactual": 0.47500000000000003,
+          "nlAnalytical": null,
+          "nlConversation": 0.55,
+          "palette": 0.75
+        },
+        "unweighted": 0.6935185185185184,
+        "overall": 0.7642857142857143,
+        "cards": {
+          "viz": 0.7625,
+          "nl": 0.5125000000000001
+        }
+      },
+      "viz_and_calc": {
+        "rows": [
+          "viz_full",
+          "calc_alias",
+          "calc_direct"
+        ],
+        "buckets": {
+          "match": 0.6666666666666666,
+          "data": 0.8,
+          "semantics": 1.0,
+          "design": 0.5,
+          "functionality": 0.75,
+          "calc": 0.75,
+          "nlFactual": 0.65,
+          "nlAnalytical": null,
+          "nlConversation": 0.6499999999999999
+        },
+        "unweighted": 0.7208333333333334,
+        "overall": 0.768,
+        "cards": {
+          "viz": 0.7625,
+          "nl": 0.6499999999999999
+        }
+      },
+      "judges": {
+        "rows": [
+          "judge_only",
+          "judge_failed",
+          "viz_full"
+        ],
+        "buckets": {
+          "match": 0.8333333333333334,
+          "data": 0.8,
+          "semantics": 1.0,
+          "design": 0.5,
+          "functionality": 0.75,
+          "nlFactual": 0.47500000000000003,
+          "nlAnalytical": null,
+          "nlConversation": 0.55
+        },
+        "unweighted": 0.7011904761904761,
+        "overall": 0.8013513513513514,
+        "cards": {
+          "viz": 0.7625,
+          "nl": 0.5125000000000001
+        }
+      },
+      "newly_catalogued": {
+        "rows": [
+          "calc_with_field_validity",
+          "viz_with_field_validity",
+          "prep_calc",
+          "prep_flow_plan",
+          "dashboard_qa"
+        ],
+        "buckets": {
+          "match": 0.75,
+          "data": 0.6,
+          "semantics": 1.0,
+          "calc": 0.76,
+          "nlAnalytical": 0.1,
+          "nlConversation": 1.0,
+          "flowPlan": 0.4,
+          "dashboardQA": 0.7
+        },
+        "unweighted": 0.6637500000000002,
+        "overall": 0.6689230769230771,
+        "cards": {
+          "viz": 0.8,
+          "nl": 0.55
+        }
+      }
+    }
+  }
+}

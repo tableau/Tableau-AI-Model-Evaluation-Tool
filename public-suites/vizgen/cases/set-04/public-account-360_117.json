@@ -1,0 +1,63 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-account-360",
+  "info": {
+    "requirement-id": "D-248-aeb26ffe7e0545dc",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "pipe last quarter",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Open Pipeline Amount",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "aggregation": "sum",
+              "encoding": "y"
+            }
+          ],
+          "relativeDateFilters": [
+            {
+              "type": "relative-date",
+              "field": "Account Acquired Date",
+              "amount": 1,
+              "period": "quarters",
+              "direction": "previous",
+              "_tb_wildcards": [
+                "field"
+              ]
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "infer-date-time-field",
+        "original-test-bench",
+        "encode-relative-date-time"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement",
+          "Intent: Trend over Time"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Filter - Date Range / Relative",
+          "Op: Field Inference - Date Field"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    }
+  ],
+  "id": "6e555f241d8700ff0c639b35cfecde70"
+}

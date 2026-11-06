@@ -1,0 +1,58 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-account-360",
+  "info": {
+    "requirement-id": "D-248-aeb26ffe7e0545dc",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "How many accounts have the project bid add-on?",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Filter - Categorical"
+        ],
+        "out": [
+          "Out: Unspecified Viz"
+        ]
+      }
+    },
+    {
+      "utterance": "how many accounts have the project bid add-on?",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Filter - Categorical",
+          "Op: Context Carryover / Follow-up"
+        ],
+        "out": [
+          "Out: Unspecified Viz"
+        ]
+      }
+    }
+  ],
+  "id": "90b8bff23dc7821e864552868785fdb9"
+}

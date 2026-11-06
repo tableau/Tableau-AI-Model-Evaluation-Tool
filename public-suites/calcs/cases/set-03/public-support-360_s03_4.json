@@ -1,0 +1,39 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-support-360",
+  "info": {
+    "originalValid": true,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "create a lod calc to find the earliest order date by employee count",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "{ FIXED [Number of Employees] : MIN([Order Date]) }",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-lod",
+        "add-explicit-calc-wordage"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Lookup / Retrieval"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Level of Detail",
+          "Op: Aggregation (Non-Default)"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "1a3da9f4fc7ea64a27660cc9c86b5a67"
+}

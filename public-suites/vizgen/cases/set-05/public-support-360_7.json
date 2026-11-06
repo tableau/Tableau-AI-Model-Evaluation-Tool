@@ -1,0 +1,33 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-support-360",
+  "info": {
+    "requirement-id": "D-248-0cdd23fb9d14c959",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "list all Account Names in the Mid-Market Account Type",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Lookup / Retrieval"
+        ],
+        "op": [
+          "Op: Filter - Categorical"
+        ],
+        "out": [
+          "Out: Unspecified Viz"
+        ]
+      }
+    }
+  ],
+  "id": "c8eb75e120b3049dad5aaa4a9cb5225b"
+}

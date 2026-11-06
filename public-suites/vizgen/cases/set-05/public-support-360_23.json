@@ -1,0 +1,60 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-support-360",
+  "info": {
+    "requirement-id": "D-248-aeb26ffe7e0545dc",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "Calculate the total value of Annual Revenue for the year 2022.",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Annual Revenue",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "aggregation": "sum",
+              "encoding": "x"
+            }
+          ],
+          "dateRangeFilters": [
+            {
+              "type": "date-range",
+              "field": "Order Date",
+              "start": "2022‐01‐01",
+              "end": "2022‐12‐31",
+              "_tb_wildcards": [
+                "field"
+              ]
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "infer-date-time-field",
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Filter - Date Range / Relative",
+          "Op: Field Inference - Date Field"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    }
+  ],
+  "id": "549371b3805a99b435e502f74d3d1b04"
+}

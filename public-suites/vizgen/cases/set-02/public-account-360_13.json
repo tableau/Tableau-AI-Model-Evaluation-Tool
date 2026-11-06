@@ -1,0 +1,58 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-account-360",
+  "info": {
+    "requirement-id": "D-248-aeb26ffe7e0545dc",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "what is the max number of orders between April and June 2023",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Aggregation (Non-Default)",
+          "Op: Filter - Date Range / Relative"
+        ],
+        "out": [
+          "Out: Unspecified Viz"
+        ]
+      }
+    },
+    {
+      "utterance": "what max number of orders excluding Support",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Aggregation (Non-Default)",
+          "Op: Filter - Categorical",
+          "Op: Context Carryover / Follow-up"
+        ],
+        "out": [
+          "Out: Unspecified Viz"
+        ]
+      }
+    }
+  ],
+  "id": "24abed46e28430b6a4b76ef9013d57f4"
+}

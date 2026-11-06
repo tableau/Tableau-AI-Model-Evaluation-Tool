@@ -1,0 +1,114 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-edx-courses",
+  "info": {
+    "requirement-id": "D-248-aeb26ffe7e0545dc",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "median learners in 2013_07 to 2013_09",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Learners",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "aggregation": "median",
+              "encoding": "y"
+            }
+          ],
+          "dateRangeFilters": [
+            {
+              "type": "date-range",
+              "field": "First Registration Date",
+              "start": "2023-07",
+              "end": "2023-09",
+              "_tb_wildcards": [
+                "field"
+              ]
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "infer-date-time-field",
+        "original-test-bench",
+        "encode-relative-date-time"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Aggregation (Non-Default)",
+          "Op: Filter - Date Range / Relative",
+          "Op: Field Inference - Date Field"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    },
+    {
+      "utterance": "change quarter to start in august",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Learners",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "aggregation": "median",
+              "encoding": "y"
+            }
+          ],
+          "dateRangeFilters": [
+            {
+              "type": "date-range",
+              "field": "First Registration Date",
+              "start": "2023-08",
+              "end": "2023-10",
+              "_tb_wildcards": [
+                "field"
+              ]
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "infer-date-time-field",
+        "original-test-bench",
+        "infer-other-field",
+        "encode-relative-date-time"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Filter - Date Range / Relative",
+          "Op: Aggregation (Non-Default)",
+          "Op: Field Inference - Date Field",
+          "Op: Field Inference - Measure / Dimension",
+          "Op: Context Carryover / Follow-up"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    }
+  ],
+  "id": "4a3dfb24c3c29dbbc084f894768d5379"
+}

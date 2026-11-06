@@ -1,0 +1,55 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-support-360",
+  "info": {
+    "requirement-id": "D-248-4a9d07c69539a638",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "correlation between the total count of open accounts and the average days to close",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "scatterplot",
+          "fields": [
+            {
+              "caption": "Days to Close",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "encoding": "x",
+              "aggregation": "avg"
+            },
+            {
+              "caption": "Account Open Cases",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "encoding": "y",
+              "aggregation": "sum"
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Correlation / Relationship"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Aggregation (Non-Default)"
+        ],
+        "out": [
+          "Out: Scatter Plot"
+        ]
+      }
+    }
+  ],
+  "id": "f09b294b62bc5deb5cfc05540b2b5ee7"
+}

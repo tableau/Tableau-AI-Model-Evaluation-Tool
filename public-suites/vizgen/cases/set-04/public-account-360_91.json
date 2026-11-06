@@ -1,0 +1,76 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-account-360",
+  "info": {
+    "requirement-id": "D-248-1e28e0f95a2a2476",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "new biz vs existing biz pipe over time",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "line",
+          "fields": [
+            {
+              "caption": "New Business Pipeline Amount",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "aggregation": "sum",
+              "encoding": "y",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            },
+            {
+              "caption": "Existing Business Pipeline Amount",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "aggregation": "sum",
+              "encoding": "y",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            },
+            {
+              "caption": "Account Acquired Date",
+              "data": "date",
+              "type": "discrete",
+              "role": "dimension",
+              "aggregation": "year",
+              "encoding": "x",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Trend over Time",
+          "Intent: Comparison",
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Group By Dimension",
+          "Op: Date Truncation / Granularity",
+          "Op: Field Inference - Date Field"
+        ],
+        "out": [
+          "Out: Line Chart"
+        ]
+      }
+    }
+  ],
+  "id": "98539516ccf770656b52099c5e1be6d0"
+}

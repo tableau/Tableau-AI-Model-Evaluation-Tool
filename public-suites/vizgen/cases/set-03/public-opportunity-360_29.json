@@ -1,0 +1,35 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-opportunity-360",
+  "info": {
+    "requirement-id": "F-250-6423a2a14cbb7e5c",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "create a stacked bar chart representing amount and contract count categorized by stage",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Composition / Share"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Group By Dimension",
+          "Op: Encoding Assignment"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    }
+  ],
+  "id": "8a473a51bc290c4a1366cbbc58a3c4cd"
+}

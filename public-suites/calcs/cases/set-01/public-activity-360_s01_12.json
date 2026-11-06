@@ -1,0 +1,37 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-activity-360",
+  "info": {
+    "originalValid": true,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "create a calc that condenses the activity date to beginning of week",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "DATETRUNC('week', [Activity Date], 'Sunday')",
+          "caption": null
+        }
+      },
+      "tags": [
+        "add-explicit-calc-wordage"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Data Preparation"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Date Truncation / Granularity"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "94698ec311d6875d879fc7ac9408ad7b"
+}

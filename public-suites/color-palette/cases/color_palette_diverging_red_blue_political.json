@@ -1,0 +1,23 @@
+{
+    "runner": "color-palettes-server",
+    "info": {
+        "version": "1.0.0"
+    },
+    "inputs": [
+        {
+            "utterance": "A red-blue diverging palette for political visualization",
+            "source": "user",
+            "arguments": {
+                "palette_type": "diverging"
+            },
+            "expected": {
+                "colorPalette": []
+            },
+            "tags": [
+                "color-palette-diverging"
+            ]
+        }
+    ],
+    "id": "e7f8a9b0-c1d2-3456-efab-789012345678"
+}
+

@@ -1,0 +1,35 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-ipeds-institutions",
+  "info": {
+    "requirement-id": "D-248-dbc878074eb702d0",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "display a histogram representing degrees offered count categorized by identity provider",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Distribution"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Group By Dimension",
+          "Op: Binning"
+        ],
+        "out": [
+          "Out: Histogram"
+        ]
+      }
+    }
+  ],
+  "id": "de7b2af3e2b89e9c18bfd232de2a3aaa"
+}

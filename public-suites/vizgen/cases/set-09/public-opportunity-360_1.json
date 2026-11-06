@@ -1,0 +1,77 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-opportunity-360",
+  "info": {
+    "requirement-id": "D-248-aeb26ffe7e0545dc",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "average line item value between november 2002 and march 2015",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "fields": [
+            {
+              "caption": "Close Date",
+              "data": "date",
+              "type": "continuous",
+              "role": "measure",
+              "encoding": "x",
+              "aggregation": "month",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            },
+            {
+              "caption": "Line Item Value",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "encoding": "y",
+              "aggregation": "avg",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            }
+          ],
+          "chart": "line",
+          "dateRangeFilters": [
+            {
+              "type": "date-range",
+              "field": "Close Date",
+              "includeNull": false,
+              "start": "2002-11",
+              "end": "2015-03"
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "infer-date-time-field",
+        "original-test-bench",
+        "infer-other-field"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement",
+          "Intent: Breakdown by Category"
+        ],
+        "op": [
+          "Op: Aggregation (Non-Default)",
+          "Op: Filter - Date Range / Relative",
+          "Op: Group By Dimension",
+          "Op: Date Truncation / Granularity",
+          "Op: Field Inference - Date Field",
+          "Op: Field Inference - Measure / Dimension"
+        ],
+        "out": [
+          "Out: Line Chart"
+        ]
+      }
+    }
+  ],
+  "id": "9bda54b200e1cbea65e8e765b1502d67"
+}

@@ -1,0 +1,134 @@
+- id: intent-1
+  utterances:
+  - canonical: Help me find profits by region
+    expected-intent: calc
+    plausible-intents: [flow-plan]
+- id: intent-2
+  utterances:
+  - canonical: Calculate the difference between two dates
+    expected-intent: calc
+- id: intent-3
+  utterances:
+  - canonical: can you concatenate first name and last name
+    expected-intent: calc
+- id: intent-4
+  utterances:
+  - canonical: extract the first letter of the Last Name field
+    expected-intent: calc
+- id: intent-5
+  utterances:
+  - canonical: remove excess whitespace from the first name field
+    expected-intent: calc
+    plausible-intents: [flow-plan]
+- id: intent-6
+  utterances:
+  - canonical: extract domain from the email address column
+    expected-intent: calc
+    plausible-intents: [flow-plan]
+- id: intent-7
+  utterances:
+  - canonical: multiply the time column by 60
+    expected-intent: calc
+- id: intent-8
+  utterances:
+  - canonical: What calculation can I use to sum sales by region?
+    expected-intent: calc
+    plausible-intents: [flow-plan]
+- id: intent-9
+  utterances:
+  - canonical: How can I create a field to find the number of days since each customer's last purchase?
+    expected-intent: calc
+    plausible-intents: [flow-plan]
+- id: intent-10
+  utterances:
+  - canonical: Can you create a profit margin calculation for me?
+    expected-intent: calc
+- id: intent-11
+  utterances:
+  - canonical: How can I create a new field that categorizes sales into 'High', 'Medium', and 'Low' based on specific thresholds?
+    expected-intent: calc
+- id: intent-12
+  utterances:
+  - canonical: Can you create a calculated field that extracts the year from my Order Date field?
+    expected-intent: calc
+- id: intent-13
+  utterances:
+  - canonical: Can you generate a field that converts product names to uppercase?
+    expected-intent: calc
+    plausible-intents: [flow-plan]
+- id: intent-14
+  utterances:
+  - canonical: Can you create a calculated field to find the average order value?
+    expected-intent: calc
+    plausible-intents: [flow-plan]
+- id: intent-15
+  utterances:
+  - canonical: What's the best way to extract the month name from a date field?
+    expected-intent: calc
+- id: intent-16
+  utterances:
+  - canonical: create a column 'Profit or loss' based on the profit margin
+    expected-intent: calc
+- id: intent-17
+  utterances:
+  - canonical: Can you create a clean step to start transformations since the previous step is an Input Step?
+    expected-intent: flow-plan
+- id: intent-18
+  utterances:
+  - canonical: I want to join my two inputs then aggregate based on region
+    expected-intent: flow-plan
+- id: intent-19
+  utterances:
+  - canonical: Can you create a plan to clean up this dataset? It has a lot of null values and inconsistent text formats
+    expected-intent: flow-plan
+- id: intent-20
+  utterances:
+  - canonical: How should I start if I want to standardize date formats and remove duplicates from my data?
+    expected-intent: flow-plan
+- id: intent-21
+  utterances:
+  - canonical: Can you help me create a flow to replace nulls with the median value for each group?
+    expected-intent: flow-plan
+    plausible-intents: [calc]
+- id: intent-22
+  utterances:
+  - canonical: I need to pivot my data to have categories as columns. What steps should I take?
+    expected-intent: flow-plan
+- id: intent-23
+  utterances:
+  - canonical: How can I create a flow to blend data from multiple sources and remove any duplicate records?
+    expected-intent: flow-plan
+- id: intent-24
+  utterances:
+  - canonical: I need to create a flow that reshapes and normalizes my data
+    expected-intent: flow-plan
+- id: intent-25
+  utterances:
+  - canonical: How can I create a flow to segment customers based on multiple criteria, like age, purchase history, and location?
+    expected-intent: flow-plan
+    plausible-intents: [calc]
+- id: intent-26
+  utterances:
+  - canonical: create two calcs. One for average sales by state and the other for average sales by region. Lastly, create a third calc that filters region to the South
+    expected-intent: flow-plan
+- id: intent-27
+  utterances:
+  - canonical: Write a calculation to filter sales to low-selling regions
+    expected-intent: calc
+    plausible-intents: [flow-plan]
+- id: intent-28
+  utterances:
+  - canonical: Aggregate sales by region and then write a calculation to filter to the West region.
+    expected-intent: flow-plan
+- id: intent-29
+  utterances:
+  - canonical: Reshape the data so we have 5 rows for each customer, with responses for the Mobile App and Online Interface being in separate fields on the same row
+    expected-intent: flow-plan
+- id: intent-30
+  utterances:
+  - canonical: Extract the bank code into a new field, then sum the transactions per bank per month
+    expected-intent: flow-plan
+- id: intent-31
+  utterances:
+  - canonical: Extract all the flight information into separate fields and then correct the field types
+    expected-intent: flow-plan

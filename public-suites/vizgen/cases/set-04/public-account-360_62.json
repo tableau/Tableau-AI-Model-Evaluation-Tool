@@ -1,0 +1,40 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-account-360",
+  "info": {
+    "requirement-id": "D-248-cd5ed1d580cd4c3f",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "change in number of passengers over time",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "infer-date-time-field",
+        "original-test-bench",
+        "semantic-inference"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Trend over Time"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Group By Dimension",
+          "Op: Filter - Date Range / Relative",
+          "Op: Date Truncation / Granularity",
+          "Op: Field Inference - Date Field",
+          "Op: Disambiguation"
+        ],
+        "out": [
+          "Out: Unspecified Viz"
+        ]
+      }
+    }
+  ],
+  "id": "4650a8fda75b4e85e8c2bf21facb699c"
+}

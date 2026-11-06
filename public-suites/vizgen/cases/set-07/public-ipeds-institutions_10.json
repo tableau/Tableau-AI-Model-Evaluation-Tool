@@ -1,0 +1,35 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-ipeds-institutions",
+  "info": {
+    "requirement-id": "D-248-0cdd23fb9d14c959",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "quantity of users provisioned within the Far West",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement",
+          "Intent: Geographic Analysis"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Filter - Categorical"
+        ],
+        "out": [
+          "Out: Unspecified Viz"
+        ]
+      }
+    }
+  ],
+  "id": "cbaf3c753d71d6b3ff471772ce20d3cd"
+}

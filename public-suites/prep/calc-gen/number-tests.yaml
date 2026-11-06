@@ -1,0 +1,30 @@
+- description: 'Example of basic rounding'
+  id: number-function-1
+  utterances:
+  - canonical: >-
+      Round my profits to the nearest thousand.
+    expected-calc: 'ROUND([Profit], -3)'
+  flow-name: 'SuperstoreOneOutput.tflx'
+  field-metadata: >-
+    'Profit' (int)
+- description: 'Replace null with 0'
+  id: number-function-2
+  utterances:
+  - canonical: >-
+      If Sales are null, return 0. Otherwise just return sales.
+    expected-calc: 'ZN([Sales])'
+    acceptable-calcs:
+    - 'IFNULL([Sales], 0)'
+    - 'IF ISNULL([Sales]) THEN 0 ELSE [Sales] END'
+  flow-name: 'SuperstoreOneOutput.tflx'
+  field-metadata: >-
+    'Sales' (int)
+- description: 'Exponential growth function'
+  id: number-function-3
+  utterances:
+  - canonical: >-
+      Assuming there is continuous compound interest and Rate holds the annual rate as a decimal fraction (0.05 for 5%), what's the end amount these accounts get after 5 years?
+    expected-calc: '[Principal] * EXP([Rate] * 5)'
+  flow-name: 'ContinousCompoundInterest.tflx'
+  field-metadata: >-
+    'Rate' (real), 'Account' (string), 'Principal' (int)

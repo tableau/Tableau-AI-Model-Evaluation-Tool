@@ -1,0 +1,823 @@
+{
+  "_comment": "Curated chart-scoring inputs covering exact matches, Show-Me plausibility, field/axis swaps, filters, sorts, aesthetic/tooltip channels, missing actual/expected charts, information similarity, wildcard fields, relative dates, date/number ranges, and single-axis charts. Independent reference outputs are retained in expected.json.",
+  "cases": [
+    {
+      "name": "exact_match_bar",
+      "expected": {
+        "notionalSpec": {
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Year",
+              "encoding": "x",
+              "role": "dimension",
+              "data": "date"
+            },
+            {
+              "caption": "Sales",
+              "encoding": "y",
+              "role": "measure",
+              "data": "number",
+              "aggregation": "sum"
+            }
+          ]
+        }
+      },
+      "actual": {
+        "notionalSpec": {
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Year",
+              "encoding": "x",
+              "role": "dimension",
+              "data": "date"
+            },
+            {
+              "caption": "Sales",
+              "encoding": "y",
+              "role": "measure",
+              "data": "number",
+              "aggregation": "sum"
+            }
+          ]
+        }
+      },
+      "expected_reply": "Sales rose steadily over the years.",
+      "actual_reply": "Sales increased year over year."
+    },
+    {
+      "name": "chart_showme_plausible",
+      "expected": {
+        "notionalSpec": {
+          "chart": "line",
+          "fields": [
+            {
+              "caption": "Order Date",
+              "encoding": "x",
+              "role": "dimension",
+              "data": "date"
+            },
+            {
+              "caption": "Profit",
+              "encoding": "y",
+              "role": "measure",
+              "data": "number",
+              "aggregation": "sum"
+            }
+          ]
+        }
+      },
+      "actual": {
+        "notionalSpec": {
+          "chart": "area",
+          "fields": [
+            {
+              "caption": "Order Date",
+              "encoding": "x",
+              "role": "dimension",
+              "data": "date"
+            },
+            {
+              "caption": "Profit",
+              "encoding": "y",
+              "role": "measure",
+              "data": "number",
+              "aggregation": "sum"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "axis_swapped",
+      "expected": {
+        "notionalSpec": {
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Category",
+              "encoding": "x",
+              "role": "dimension",
+              "data": "string"
+            },
+            {
+              "caption": "Revenue",
+              "encoding": "y",
+              "role": "measure",
+              "data": "number",
+              "aggregation": "sum"
+            }
+          ]
+        }
+      },
+      "actual": {
+        "notionalSpec": {
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Revenue",
+              "encoding": "x",
+              "role": "measure",
+              "data": "number",
+              "aggregation": "sum"
+            },
+            {
+              "caption": "Category",
+              "encoding": "y",
+              "role": "dimension",
+              "data": "string"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "field_typo_and_filters",
+      "expected": {
+        "notionalSpec": {
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Region",
+              "encoding": "x",
+              "role": "dimension",
+              "data": "string"
+            },
+            {
+              "caption": "Sales",
+              "encoding": "y",
+              "role": "measure",
+              "data": "number"
+            }
+          ],
+          "categoricalFilters": [
+            {
+              "field": "Region",
+              "values": [
+                "East",
+                "West"
+              ]
+            }
+          ]
+        }
+      },
+      "actual": {
+        "notionalSpec": {
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Regionn",
+              "encoding": "x",
+              "role": "dimension",
+              "data": "string"
+            },
+            {
+              "caption": "Sale",
+              "encoding": "y",
+              "role": "measure",
+              "data": "number"
+            }
+          ],
+          "categoricalFilters": [
+            {
+              "field": "Region",
+              "values": [
+                "West",
+                "East"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "sort_added_by_model",
+      "expected": {
+        "notionalSpec": {
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Category",
+              "encoding": "x",
+              "role": "dimension",
+              "data": "string"
+            },
+            {
+              "caption": "Sales",
+              "encoding": "y",
+              "role": "measure",
+              "data": "number"
+            }
+          ]
+        }
+      },
+      "actual": {
+        "notionalSpec": {
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Category",
+              "encoding": "x",
+              "role": "dimension",
+              "data": "string"
+            },
+            {
+              "caption": "Sales",
+              "encoding": "y",
+              "role": "measure",
+              "data": "number"
+            }
+          ],
+          "sort": {
+            "field": "Sales",
+            "direction": "desc"
+          }
+        }
+      }
+    },
+    {
+      "name": "sort_missing_expected",
+      "expected": {
+        "notionalSpec": {
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Category",
+              "encoding": "x",
+              "role": "dimension",
+              "data": "string"
+            },
+            {
+              "caption": "Sales",
+              "encoding": "y",
+              "role": "measure",
+              "data": "number",
+              "sort": "descending"
+            }
+          ]
+        }
+      },
+      "actual": {
+        "notionalSpec": {
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Category",
+              "encoding": "x",
+              "role": "dimension",
+              "data": "string"
+            },
+            {
+              "caption": "Sales",
+              "encoding": "y",
+              "role": "measure",
+              "data": "number"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "aesthetic_and_tooltip",
+      "expected": {
+        "notionalSpec": {
+          "chart": "scatterplot",
+          "fields": [
+            {
+              "caption": "Sales",
+              "encoding": "x",
+              "role": "measure",
+              "data": "number"
+            },
+            {
+              "caption": "Profit",
+              "encoding": "y",
+              "role": "measure",
+              "data": "number"
+            },
+            {
+              "caption": "Segment",
+              "encoding": "color",
+              "role": "dimension",
+              "data": "string"
+            },
+            {
+              "caption": "Order ID",
+              "encoding": "tooltip",
+              "role": "dimension",
+              "data": "string"
+            }
+          ]
+        }
+      },
+      "actual": {
+        "notionalSpec": {
+          "chart": "scatterplot",
+          "fields": [
+            {
+              "caption": "Sales",
+              "encoding": "x",
+              "role": "measure",
+              "data": "number"
+            },
+            {
+              "caption": "Profit",
+              "encoding": "y",
+              "role": "measure",
+              "data": "number"
+            },
+            {
+              "caption": "Category",
+              "encoding": "color",
+              "role": "dimension",
+              "data": "string"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "no_actual_spec_force_zero",
+      "expected": {
+        "notionalSpec": {
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Year",
+              "encoding": "x",
+              "role": "dimension",
+              "data": "date"
+            },
+            {
+              "caption": "Sales",
+              "encoding": "y",
+              "role": "measure",
+              "data": "number"
+            }
+          ]
+        }
+      },
+      "actual": {},
+      "expected_reply": "Sales grew over time.",
+      "actual_reply": "The model could not produce a spec."
+    },
+    {
+      "name": "inferred_axes_no_encoding",
+      "expected": {
+        "notionalSpec": {
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Product",
+              "role": "dimension",
+              "data": "string"
+            },
+            {
+              "caption": "Quantity",
+              "role": "measure",
+              "data": "number",
+              "aggregation": "sum"
+            }
+          ]
+        }
+      },
+      "actual": {
+        "notionalSpec": {
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Quantity",
+              "role": "measure",
+              "data": "number",
+              "aggregation": "sum"
+            },
+            {
+              "caption": "Product",
+              "role": "dimension",
+              "data": "string"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "info_similarity_only",
+      "expected": {
+        "notionalSpec": {
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Quarter",
+              "encoding": "x",
+              "role": "dimension",
+              "data": "string"
+            },
+            {
+              "caption": "Revenue",
+              "encoding": "y",
+              "role": "measure",
+              "data": "number",
+              "aggregation": "sum"
+            }
+          ]
+        }
+      },
+      "actual": {
+        "notionalSpec": {
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Quarter",
+              "encoding": "x",
+              "role": "dimension",
+              "data": "string"
+            },
+            {
+              "caption": "Revenue",
+              "encoding": "y",
+              "role": "measure",
+              "data": "number",
+              "aggregation": "sum"
+            }
+          ]
+        }
+      },
+      "expected_reply": "Total revenue was 1.2 million dollars in the third quarter.",
+      "actual_reply": "Revenue reached about 1.2 million dollars during Q3."
+    },
+    {
+      "name": "every_filter_kind_dates_normalized",
+      "expected": {
+        "notionalSpec": {
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Region",
+              "encoding": "x",
+              "role": "dimension",
+              "data": "string"
+            },
+            {
+              "caption": "Sales",
+              "encoding": "y",
+              "role": "measure",
+              "data": "number",
+              "aggregation": "sum"
+            }
+          ],
+          "categoricalFilters": [
+            {
+              "type": "categorical",
+              "field": "Region",
+              "values": [
+                "West",
+                "East"
+              ]
+            }
+          ],
+          "dateRangeFilters": [
+            {
+              "type": "date-range",
+              "field": "Order Date",
+              "start": "2023‑03",
+              "end": "2023",
+              "limit": null
+            }
+          ],
+          "rangeFilters": [
+            {
+              "type": "range",
+              "field": "Sales",
+              "aggregation": "sum",
+              "end": 450000000
+            }
+          ],
+          "relativeDateFilters": [
+            {
+              "type": "relative-date",
+              "field": "Close Date",
+              "direction": "previous",
+              "amount": 1,
+              "period": "quarters"
+            }
+          ]
+        }
+      },
+      "actual": {
+        "notionalSpec": {
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Region",
+              "encoding": "x",
+              "role": "dimension",
+              "data": "string"
+            },
+            {
+              "caption": "Sales",
+              "encoding": "y",
+              "role": "measure",
+              "data": "number",
+              "aggregation": "sum"
+            }
+          ],
+          "categoricalFilters": [
+            {
+              "type": "categorical",
+              "field": "region",
+              "values": [
+                "east",
+                "west"
+              ],
+              "includeNull": false
+            }
+          ],
+          "dateRangeFilters": [
+            {
+              "type": "date-range",
+              "field": "Order Date",
+              "start": "2023-03-01T00:00:00",
+              "end": "2023-12-31"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "wildcard_field_and_filter",
+      "expected": {
+        "notionalSpec": {
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "ANY",
+              "encoding": "x",
+              "role": "dimension",
+              "data": "string",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            },
+            {
+              "caption": "Profit",
+              "encoding": "y",
+              "role": "measure",
+              "data": "number"
+            }
+          ],
+          "categoricalFilters": [
+            {
+              "type": "categorical",
+              "values": [
+                "Furniture"
+              ],
+              "_tb_wildcards": [
+                "field"
+              ]
+            }
+          ]
+        }
+      },
+      "actual": {
+        "notionalSpec": {
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Profit",
+              "encoding": "y",
+              "role": "measure",
+              "data": "number"
+            },
+            {
+              "caption": "Sub-Category",
+              "encoding": "x",
+              "role": "dimension",
+              "data": "string"
+            },
+            {
+              "caption": "Segment",
+              "encoding": "color",
+              "role": "dimension",
+              "data": "string"
+            }
+          ],
+          "categoricalFilters": [
+            {
+              "type": "categorical",
+              "field": "Category",
+              "values": [
+                "furniture"
+              ]
+            }
+          ]
+        }
+      },
+      "actual_reply": "Furniture profit by sub-category."
+    },
+    {
+      "name": "actual_no_fields_filter_still_compared",
+      "expected": {
+        "notionalSpec": {
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Region",
+              "encoding": "x",
+              "role": "dimension",
+              "data": "string"
+            }
+          ],
+          "categoricalFilters": [
+            {
+              "type": "categorical",
+              "field": "Region",
+              "values": [
+                "East"
+              ]
+            }
+          ]
+        }
+      },
+      "actual": {
+        "notionalSpec": {
+          "chart": "bar",
+          "fields": [],
+          "categoricalFilters": [
+            {
+              "type": "categorical",
+              "field": "Region",
+              "values": [
+                "East"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "single_axis_kpi",
+      "expected": {
+        "notionalSpec": {
+          "chart": "text",
+          "fields": [
+            {
+              "caption": "Sales",
+              "encoding": "y",
+              "role": "measure",
+              "data": "number",
+              "aggregation": "sum"
+            }
+          ]
+        }
+      },
+      "actual": {
+        "notionalSpec": {
+          "chart": "text",
+          "fields": [
+            {
+              "caption": "Sales",
+              "encoding": "y",
+              "role": "measure",
+              "data": "number",
+              "aggregation": "sum"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "one_axis_matches",
+      "expected": {
+        "notionalSpec": {
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Region",
+              "encoding": "x",
+              "role": "dimension",
+              "data": "string"
+            },
+            {
+              "caption": "Sales",
+              "encoding": "y",
+              "role": "measure",
+              "data": "number",
+              "aggregation": "sum"
+            }
+          ],
+          "sort": {
+            "by": "Sales",
+            "direction": "descending"
+          }
+        }
+      },
+      "actual": {
+        "notionalSpec": {
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "State",
+              "encoding": "x",
+              "role": "dimension",
+              "data": "string"
+            },
+            {
+              "caption": "Sales",
+              "encoding": "y",
+              "role": "measure",
+              "data": "number",
+              "aggregation": "sum"
+            },
+            {
+              "caption": "Profit",
+              "encoding": "tooltip",
+              "role": "measure",
+              "data": "number"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "no_expected_chart",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "actual": {
+        "notionalSpec": {
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Region",
+              "encoding": "x",
+              "role": "dimension",
+              "data": "string"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "describe_spec_both_sides",
+      "expected": {
+        "notionalSpec": {
+          "chart": "line",
+          "fields": [
+            {
+              "caption": "Order Date",
+              "encoding": "x",
+              "role": "dimension",
+              "data": "date"
+            },
+            {
+              "caption": "Sales",
+              "encoding": "y",
+              "role": "measure",
+              "data": "number",
+              "aggregation": "sum"
+            },
+            {
+              "caption": "Segment",
+              "encoding": "color",
+              "role": "dimension",
+              "data": "string"
+            }
+          ],
+          "sort": {
+            "by": "Sales",
+            "direction": "desc"
+          },
+          "dateRangeFilters": [
+            {
+              "type": "date-range",
+              "field": "Order Date",
+              "start": "2024"
+            }
+          ]
+        }
+      },
+      "actual": {
+        "notionalSpec": {
+          "chart": "line",
+          "fields": [
+            {
+              "caption": "Order Date",
+              "encoding": "x",
+              "role": "dimension",
+              "data": "date"
+            },
+            {
+              "caption": "Sales",
+              "encoding": "y",
+              "role": "measure",
+              "data": "number",
+              "aggregation": "sum"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-support-360",
+  "info": {
+    "requirement-id": "D-248-cd5d4666b729f6fa",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "what is the average time to resolution by region of the case",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench",
+        "infer-non-default-aggregation"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement",
+          "Intent: Breakdown by Category"
+        ],
+        "op": [
+          "Op: Aggregation (Non-Default)",
+          "Op: Group By Dimension"
+        ],
+        "out": [
+          "Out: Unspecified Viz"
+        ]
+      }
+    },
+    {
+      "utterance": "filter to last quarter based on created date",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "infer-date-time-field",
+        "original-test-bench",
+        "infer-non-default-aggregation",
+        "encode-relative-date-time"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Filter - Date Range / Relative",
+          "Op: Field Inference - Date Field",
+          "Op: Aggregation (Non-Default)",
+          "Op: Context Carryover / Follow-up"
+        ],
+        "out": [
+          "Out: Unspecified Viz"
+        ]
+      }
+    }
+  ],
+  "id": "e4535dbdfbd30a87e4117d18f53b6305"
+}

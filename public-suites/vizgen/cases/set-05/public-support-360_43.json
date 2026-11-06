@@ -1,0 +1,64 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-support-360",
+  "info": {
+    "requirement-id": "D-248-cd5ed1d580cd4c3f",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "Analyze the changes in pipeline on a year-over-year basis.",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Order Date",
+              "data": "date",
+              "type": "discrete",
+              "role": "dimension",
+              "aggregation": "year",
+              "encoding": "x",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            },
+            {
+              "caption": "Order Amount",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "aggregation": "sum",
+              "encoding": "y"
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "infer-date-time-field",
+        "infer-time-series",
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Trend over Time",
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Date Truncation / Granularity",
+          "Op: Filter - Date Range / Relative",
+          "Op: Group By Dimension",
+          "Op: Field Inference - Date Field"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    }
+  ],
+  "id": "e49124ff7088f2fe28e4a30b8cf3c57f"
+}

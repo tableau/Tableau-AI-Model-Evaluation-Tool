@@ -1,0 +1,25 @@
+{
+    "runner": "ect-server",
+    "datasource": "retail-nto",
+    "info": {
+        "originalValid": true
+    },
+    "inputs": [
+        {
+            "utterance": "create a new field that adds order transit time to placed date",
+            "source": "user",
+            "expected": {
+                "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+                "calculatedFieldFormula": {
+                    "formula": "DATEADD('day', INT([Order Transit Time]), DATETIME([Order Placed Date]))",
+                    "caption": null
+                }
+            },
+            "tags": [
+                "add-explicit-calc-wordage",
+                "calc-category-date"
+            ]
+        }
+    ],
+    "id": "23d74372-03f3-4a46-ab98-910e047647c5"
+}

@@ -1,0 +1,19 @@
+- description: 'new rows with two column generator'
+  id: preppin-data-2024-11-5
+  utterances:
+  - canonical: >-
+      Create a calculated field that is one week after the date field. Then create a new row between the original date and the new calculated field.
+    expected-flow-plan:
+    - CreateCalculatedField
+    - CreateNewRowsStep
+  data-location: 'test/test-data/flow-plan-gen/step-data/preppin-data-2024-11.txt'
+- description: 'new rows with integer generator'
+  id: preppin-data-2023-13-10
+  utterances:
+  - canonical: >-
+      Fill in missing order numbers using values from the previous row 
+    expected-flow-plan:
+    - CreateNewRowsStep
+    acceptable-flow-plans:
+    - [CreateCalculatedField]
+  data-location: 'test/test-data/flow-plan-gen/step-data/preppin-data-2023-13.txt'

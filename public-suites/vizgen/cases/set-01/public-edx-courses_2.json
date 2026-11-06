@@ -1,0 +1,58 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-edx-courses",
+  "info": {
+    "requirement-id": "D-248-55b4ca4117240925",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "show number of categories by level of education",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Subject Area",
+              "data": "string",
+              "type": "continuous",
+              "role": "measure",
+              "aggregation": "countd",
+              "encoding": "x"
+            },
+            {
+              "caption": "Level of Education",
+              "data": "string",
+              "type": "discrete",
+              "role": "measure",
+              "aggregation": "count",
+              "encoding": "y"
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench",
+        "infer-non-default-aggregation"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Breakdown by Category",
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Aggregation (Non-Default)",
+          "Op: Group By Dimension",
+          "Op: Aggregation (Default)"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    }
+  ],
+  "id": "e6a7ff7f4a9f70711520c304745bf1cc"
+}

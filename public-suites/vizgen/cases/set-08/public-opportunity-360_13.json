@@ -1,0 +1,75 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-opportunity-360",
+  "info": {
+    "requirement-id": "D-248-aeb26ffe7e0545dc",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "What did the median deal amount look like the last 2 quarters?",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Close Date",
+              "data": "date",
+              "type": "discrete",
+              "role": "dimension",
+              "aggregation": "qtr",
+              "encoding": "x",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            },
+            {
+              "caption": "Amount",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "aggregation": "median",
+              "encoding": "y"
+            }
+          ],
+          "relativeDateFilters": [
+            {
+              "type": "relative-date",
+              "field": "Close Date",
+              "amount": 2,
+              "period": "quarters",
+              "direction": "previous",
+              "_tb_wildcards": [
+                "field"
+              ]
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "infer-date-time-field",
+        "original-test-bench",
+        "encode-relative-date-time"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement",
+          "Intent: Trend over Time"
+        ],
+        "op": [
+          "Op: Aggregation (Non-Default)",
+          "Op: Filter - Date Range / Relative",
+          "Op: Group By Dimension",
+          "Op: Field Inference - Date Field"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    }
+  ],
+  "id": "0aff7f36e7c780aa2913c5dba930036d"
+}

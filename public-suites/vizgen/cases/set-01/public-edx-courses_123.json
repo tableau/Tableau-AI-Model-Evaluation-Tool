@@ -1,0 +1,73 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-edx-courses",
+  "info": {
+    "requirement-id": "D-248-b8df43152911f2f3",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "filter to 2013_Spring and Circuits subject areas",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Course Id",
+              "data": "string",
+              "type": "discrete",
+              "role": "measure",
+              "aggregation": "count",
+              "encoding": "y",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            }
+          ],
+          "categoricalFilters": [
+            {
+              "type": "categorical",
+              "field": "Term",
+              "values": [
+                "2013_Spring"
+              ],
+              "_tb_wildcards": [
+                "field"
+              ]
+            },
+            {
+              "type": "categorical",
+              "field": "Subject Area",
+              "values": [
+                "Circuits"
+              ]
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench",
+        "infer-other-field",
+        "infer-non-default-aggregation"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Filter - Categorical",
+          "Op: Aggregation (Default)",
+          "Op: Field Inference - Measure / Dimension",
+          "Op: Aggregation (Non-Default)"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    }
+  ],
+  "id": "dabc9ba2c1c53bb242a71f217e6d2658"
+}

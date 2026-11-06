@@ -1,0 +1,76 @@
+{
+  "flow": "HospitalAdmissions.tflx",
+  "name": "HospitalAdmissions",
+  "inputs": [
+    {
+      "name": "Data",
+      "source": "Data.csv",
+      "fields": [
+        {
+          "name": "Patient Admitted",
+          "datatype": "string",
+          "values": [
+            "Not Admitted",
+            "Admitted"
+          ]
+        },
+        {
+          "name": "Tbl_ECAttendance.EmergencyCareDepartureDateTime",
+          "datatype": "datetime",
+          "values": [
+            "2/20/2024 7:56:03",
+            "2/20/2024 13:17:16",
+            "2/21/2024 17:39:16",
+            "2/20/2024 10:50:59",
+            "2/17/2024 22:36:25",
+            "2/18/2024 0:43:11",
+            "2/18/2024 2:34:19",
+            "2/18/2024 8:24:49"
+          ]
+        },
+        {
+          "name": "Tbl_ECAttendance.EmergencyCareArrivalDateTime",
+          "datatype": "datetime",
+          "values": [
+            "2/16/2024 15:56:02",
+            "2/16/2024 17:49:02",
+            "2/16/2024 4:38:41",
+            "2/16/2024 9:46:02",
+            "2/16/2024 17:12:14",
+            "2/16/2024 11:42:51",
+            "2/16/2024 9:31:40",
+            "2/16/2024 14:25:24"
+          ]
+        },
+        {
+          "name": "Tbl_ECAdmissions.DischargeDateTime_HospitalProviderSpell",
+          "datatype": "datetime",
+          "values": [
+            "2/18/2024 15:56:02",
+            "2/18/2024 17:49:02",
+            "2/22/2024 4:38:41",
+            "2/26/2024 9:46:02",
+            "2/19/2024 17:12:14",
+            "2/17/2024 11:42:51",
+            "2/26/2024 9:31:40",
+            "2/20/2024 14:25:24"
+          ]
+        },
+        {
+          "name": "Tbl_ECAttendance.EmergencyCareArrivalDateTime",
+          "datatype": "datetime",
+          "values": [
+            "2/16/2024 15:56:02",
+            "2/16/2024 17:49:02",
+            "2/16/2024 4:38:41",
+            "2/16/2024 9:46:02",
+            "2/16/2024 17:12:14",
+            "2/16/2024 11:42:51",
+            "2/16/2024 9:31:40",
+            "2/16/2024 14:25:24"
+          ]
+        }
+      ]
+    }
+  ]
+}

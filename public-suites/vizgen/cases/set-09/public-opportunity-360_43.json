@@ -1,0 +1,116 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-opportunity-360",
+  "info": {
+    "requirement-id": "D-248-aeb26ffe7e0545dc",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "show the median",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "fields": [
+            {
+              "caption": "Amount",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "encoding": "x",
+              "aggregation": "median"
+            },
+            {
+              "caption": "Primary Product Family",
+              "data": "string",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "y"
+            }
+          ],
+          "chart": "bar"
+        }
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench",
+        "infer-other-field"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Aggregation (Non-Default)",
+          "Op: Group By Dimension",
+          "Op: Field Inference - Measure / Dimension"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    },
+    {
+      "utterance": "show only deals in march through june",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "fields": [
+            {
+              "caption": "Amount",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "encoding": "y",
+              "aggregation": "median"
+            },
+            {
+              "caption": "Primary Product Family",
+              "data": "string",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "color"
+            }
+          ],
+          "chart": "bar",
+          "dateRangeFilters": [
+            {
+              "type": "date-range",
+              "field": "Created Date",
+              "includeNull": false,
+              "start": "2023-03",
+              "end": "2023-06",
+              "_tb_wildcards": [
+                "field"
+              ]
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "infer-date-time-field",
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Aggregation (Non-Default)",
+          "Op: Filter - Date Range / Relative",
+          "Op: Group By Dimension",
+          "Op: Encoding Assignment",
+          "Op: Field Inference - Date Field",
+          "Op: Context Carryover / Follow-up"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    }
+  ],
+  "id": "2640830ca1c28a806f158af2c83402d4"
+}

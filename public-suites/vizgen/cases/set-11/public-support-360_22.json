@@ -1,0 +1,58 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-support-360",
+  "info": {
+    "requirement-id": "D-248-aeb26ffe7e0545dc",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "min number of people first seen in the last quarter",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Number of Employees",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "aggregation": "min",
+              "encoding": "y"
+            }
+          ],
+          "relativeDateFilters": [
+            {
+              "type": "relative-date",
+              "field": "Created Date",
+              "amount": 1,
+              "period": "quarters",
+              "direction": "previous"
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench",
+        "infer-boundaries-or-limit"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Aggregation (Non-Default)",
+          "Op: Filter - Date Range / Relative",
+          "Op: Limit / Top-N"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    }
+  ],
+  "id": "34af56ef5f9119aee043991eddc6b4c8"
+}

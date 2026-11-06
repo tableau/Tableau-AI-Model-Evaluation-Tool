@@ -1,0 +1,60 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-opportunity-360",
+  "info": {
+    "requirement-id": "D-248-d1fd47f2de0f33af",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "median deal size over deal date",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "fields": [
+            {
+              "caption": "Created Date",
+              "data": "date",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "x",
+              "aggregation": "year",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            },
+            {
+              "caption": "Amount",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "encoding": "y",
+              "aggregation": "median"
+            }
+          ],
+          "chart": "line"
+        }
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement",
+          "Intent: Trend over Time"
+        ],
+        "op": [
+          "Op: Aggregation (Non-Default)",
+          "Op: Date Truncation / Granularity",
+          "Op: Group By Dimension"
+        ],
+        "out": [
+          "Out: Line Chart"
+        ]
+      }
+    }
+  ],
+  "id": "d63aa80dbec8c2d608ce16e854fa4b9f"
+}

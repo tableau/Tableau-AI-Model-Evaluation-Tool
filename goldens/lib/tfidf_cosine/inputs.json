@@ -1,0 +1,54 @@
+{
+  "description": "scikit-learn TF-IDF and cosine similarity reference inputs using default TfidfVectorizer parameters. Sentence lists are already split; outputs are complete NxN cosine matrices.",
+  "cases": [
+    {
+      "name": "single_sentence",
+      "note": "One sentence -> 1x1 matrix, self-similarity is 1.0.",
+      "sentences": ["Revenue increased sharply in the last quarter"]
+    },
+    {
+      "name": "identical_sentences",
+      "note": "Two identical sentences -> off-diagonal similarity should be 1.0.",
+      "sentences": [
+        "Sales grew across every region",
+        "Sales grew across every region"
+      ]
+    },
+    {
+      "name": "zero_token_overlap",
+      "note": "No shared vocabulary between the two sentences -> off-diagonal 0.0.",
+      "sentences": [
+        "apple banana cherry",
+        "xylophone yacht zebra"
+      ]
+    },
+    {
+      "name": "partial_overlap_three",
+      "note": "Three sentences with graded overlap.",
+      "sentences": [
+        "the product margin improved this year",
+        "the product margin declined last year",
+        "customer satisfaction remained flat"
+      ]
+    },
+    {
+      "name": "unicode_text",
+      "note": "Non-ASCII text (accents, CJK, currency symbols) to check tokenizer/analyzer behavior.",
+      "sentences": [
+        "café revenue rose 20\u00a0%",
+        "café revenue rose 20\u00a0%",
+        "\u58f2\u4e0a\u9ad8\u304c\u5897\u52a0\u3057\u307e\u3057\u305f"
+      ]
+    },
+    {
+      "name": "realistic_narrative",
+      "note": "A realistic multi-sentence dashboard narrative (already split into sentences).",
+      "sentences": [
+        "Total revenue reached 4.2 million dollars in Q3",
+        "The North region led all others in growth",
+        "Total revenue reached a new high in Q3",
+        "Customer churn declined slightly compared to Q2"
+      ]
+    }
+  ]
+}

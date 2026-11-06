@@ -1,0 +1,34 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-account-360",
+  "info": {
+    "requirement-id": "D-248-de49330ff1bbbc83",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "which customers have the lowest sales?",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Ranking / Top-N"
+        ],
+        "op": [
+          "Op: Sort / Order",
+          "Op: Limit / Top-N"
+        ],
+        "out": [
+          "Out: Unspecified Viz"
+        ]
+      }
+    }
+  ],
+  "id": "5e6d823dfb8ba722d013d465164d112f"
+}

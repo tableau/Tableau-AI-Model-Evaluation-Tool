@@ -1,0 +1,39 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-retail-360",
+  "info": {
+    "originalValid": true,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "compute the ratio of average unit price to average unit price",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "AVG([Unit Price]) / AVG([Unit Price])",
+          "caption": null
+        }
+      },
+      "tags": [
+        "add-explicit-calc-wordage",
+        "calc-category-normal"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Arithmetic / Ratio",
+          "Op: Aggregation (Non-Default)"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "18b9182a40b73f4425c03214511038ca"
+}

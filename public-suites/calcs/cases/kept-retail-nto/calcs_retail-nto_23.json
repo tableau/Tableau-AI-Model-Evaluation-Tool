@@ -1,0 +1,25 @@
+{
+    "runner": "ect-server",
+    "datasource": "retail-nto",
+    "info": {
+        "originalValid": true
+    },
+    "inputs": [
+        {
+            "utterance": "compute the average of the sum of units including the state",
+            "source": "user",
+            "expected": {
+                "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+                "calculatedFieldFormula": {
+                    "formula": "AVG({ INCLUDE [State] : SUM([Units]) })",
+                    "caption": null
+                }
+            },
+            "tags": [
+                "add-explicit-calc-wordage",
+                "calc-category-lod"
+            ]
+        }
+    ],
+    "id": "608fe6f0-ac6a-45be-b59d-1e5fdb49e5bb"
+}

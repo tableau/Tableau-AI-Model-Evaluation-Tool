@@ -1,0 +1,23 @@
+{
+    "runner": "color-palettes-server",
+    "info": {
+        "version": "1.0.0"
+    },
+    "inputs": [
+        {
+            "utterance": "Cold to hot",
+            "source": "user",
+            "arguments": {
+                "palette_type": "sequential"
+            },
+            "expected": {
+                "colorPalette": []
+            },
+            "tags": [
+                "color-palette-sequential"
+            ]
+        }
+    ],
+    "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+}
+

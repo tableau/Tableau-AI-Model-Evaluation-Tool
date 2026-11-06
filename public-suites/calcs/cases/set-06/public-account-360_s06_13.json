@@ -1,0 +1,40 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-account-360",
+  "info": {
+    "originalValid": true,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "create a calc that condenses the latest date to beginning of the quarter",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "{ DATE(DATETRUNC('quarter',[Latest Opportunity Created])) }",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-date",
+        "add-explicit-calc-wordage"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Date Truncation / Granularity",
+          "Op: Type Conversion",
+          "Op: Date Part Extraction"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "8d5fb1bb588f6029da6efcefc49b3220"
+}

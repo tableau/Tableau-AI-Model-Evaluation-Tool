@@ -1,0 +1,73 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-opportunity-360",
+  "info": {
+    "requirement-id": "D-248-bb9b5ac1affd195a",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "how are closed deals trending?",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Close Date",
+              "data": "date",
+              "type": "discrete",
+              "role": "dimension",
+              "aggregation": "year",
+              "encoding": "x",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            },
+            {
+              "caption": "Is Won",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "aggregation": "count",
+              "encoding": "y"
+            }
+          ],
+          "categoricalFilters": [
+            {
+              "type": "categorical",
+              "field": "Is Won",
+              "values": [
+                "true"
+              ]
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "infer-date-time-field",
+        "original-test-bench",
+        "infer-other-field"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Trend over Time",
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Group By Dimension",
+          "Op: Date Truncation / Granularity",
+          "Op: Field Inference - Date Field",
+          "Op: Field Inference - Measure / Dimension"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    }
+  ],
+  "id": "e44d7de53965644bf6a1a28a66302117"
+}

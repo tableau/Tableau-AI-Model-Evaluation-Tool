@@ -1,0 +1,22 @@
+{
+    "runner": "color-palettes-server",
+    "info": {
+        "version": "1.0.0"
+    },
+    "inputs": [
+        {
+            "utterance": "Black and white palette, 2 colors",
+            "source": "user",
+            "arguments": {
+                "palette_type": "regular"
+            },
+            "expected": {
+                "colorPalette": ["#000000", "#FFFFFF"]
+            },
+            "tags": [
+                "color-palette-regular"
+            ]
+        }
+    ],
+    "id": "93509185-f1ce-414b-a0da-e4c870ee85eb"
+}

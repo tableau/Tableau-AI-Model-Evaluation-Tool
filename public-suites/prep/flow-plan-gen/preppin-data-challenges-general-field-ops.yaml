@@ -1,0 +1,64 @@
+- description: 'remove field with basic terminology'
+  id: preppin-data-challenge-2023-13-4
+  utterances:
+  - canonical: >-
+      remove the sector field please
+    expected-flow-plan:
+    - RemoveOneOrMoreFields
+  data-location: 'test/test-data/flow-plan-gen/step-data/preppin-data-2023-13.txt'
+- description: 'remove multiple field with basic terminology'
+  id: preppin-data-challenge-2023-13-5
+  utterances:
+  - canonical: >-
+      remove the sector and purchase price field please
+    expected-flow-plan:
+    - RemoveOneOrMoreFields
+  data-location: 'test/test-data/flow-plan-gen/step-data/preppin-data-2023-13.txt'
+- description: 'rename field with basic terminology'
+  id: preppin-data-challenge-2023-13-6
+  utterances:
+  - canonical: >-
+      rename the sector field to Industry
+    expected-flow-plan:
+    - RenameOneOrMoreFields
+  data-location: 'test/test-data/flow-plan-gen/step-data/preppin-data-2023-13.txt'
+- description: 'rename multiple fields with basic terminology'
+  id: preppin-data-challenge-2023-13-7
+  utterances:
+  - canonical: >-
+      rename the sector field to Industry and the purchase price field to Price please
+    expected-flow-plan:
+    - RenameOneOrMoreFields
+  data-location: 'test/test-data/flow-plan-gen/step-data/preppin-data-2023-13.txt'
+- description: 'change data type with basic terminology'
+  id: preppin-data-challenge-2023-13-7
+  utterances:
+  - canonical: >-
+      change the purchase price to an int
+    expected-flow-plan:
+    - ChangeOneOrMoreDataTypes
+  data-location: 'test/test-data/flow-plan-gen/step-data/preppin-data-2023-13.txt'
+- description: 'change data type on multiple fields with basic terminology'
+  id: preppin-data-challenge-2023-13-8
+  utterances:
+  - canonical: >-
+      change the purchase price to an int and Trade Order (true) to a boolean
+    expected-flow-plan:
+    - ChangeOneOrMoreDataTypes
+  data-location: 'test/test-data/flow-plan-gen/step-data/preppin-data-2023-13.txt'
+- description: 'keep only fields with basic terminology'
+  id: preppin-data-challenge-2023-13-9
+  utterances:
+  - canonical: >-
+      remove all fields except for the sector and purchase price field
+    expected-flow-plan:
+    - KeepOnlyFields
+  data-location: 'test/test-data/flow-plan-gen/step-data/preppin-data-2023-13.txt'
+- description: 'keep only fields with basic terminology'
+  id: preppin-data-challenge-2023-2-1
+  utterances:
+  - canonical: >-
+      Group the HSBC and Barclays row values as HSBC
+    expected-flow-plan:
+    - GroupValuesManually
+  data-location: 'test/test-data/flow-plan-gen/step-data/preppin-data-2023-2.txt'

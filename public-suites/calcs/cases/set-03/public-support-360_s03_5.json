@@ -1,0 +1,39 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-support-360",
+  "info": {
+    "originalValid": true,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "create a calc that counts people",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "COUNTD([Number of Employees])",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-arithmetic",
+        "add-explicit-calc-wordage"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Aggregation (Default)",
+          "Op: Aggregation (Non-Default)"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "69df5f9a419fffffadc1f19c4c7d576a"
+}

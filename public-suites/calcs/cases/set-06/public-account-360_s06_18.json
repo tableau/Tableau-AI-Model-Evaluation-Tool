@@ -1,0 +1,40 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-account-360",
+  "info": {
+    "originalValid": true,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "Create a calc to show activities that are YTD",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "{ [Most Recent Order Date] <= TODAY() AND DATETRUNC( 'year', [Most Recent Order Date]) = DATETRUNC('year', TODAY() ) }",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-date",
+        "add-explicit-calc-wordage"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Date Part Extraction",
+          "Op: Date Truncation / Granularity",
+          "Op: Date Arithmetic"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "828e7c59962b04d94bda4aa995b433d8"
+}

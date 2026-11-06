@@ -1,0 +1,26 @@
+{
+    "runner": "ect-server",
+    "datasource": "streaming_key_metrics",
+    "info": {
+        "originalValid": true
+    },
+    "inputs": [
+        {
+            "utterance": "Calculate percent change in content hours month over month",
+            "source": "user",
+            "expected": {
+                "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+                "calculatedFieldFormula": {
+                    "formula": "(SUM([Content Hours]) - LOOKUP(SUM([Content Hours]), -1)) / ABS(LOOKUP(SUM([Content Hours]), -1)) * 100",
+                    "caption": null
+                }
+            },
+            "tags": [
+                "add-explicit-calc-wordage",
+                "multi-step",
+                "calc-category-table"
+            ]
+        }
+    ],
+    "id": "396079715e7c412485e0d83704515e92"
+}

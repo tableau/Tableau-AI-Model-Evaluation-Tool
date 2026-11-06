@@ -1,0 +1,25 @@
+{
+    "runner": "ect-server",
+    "datasource": "retail-nto",
+    "info": {
+        "originalValid": true
+    },
+    "inputs": [
+        {
+            "utterance": "compute month over month % change in sales",
+            "source": "user",
+            "expected": {
+                "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+                "calculatedFieldFormula": {
+                    "formula": "(SUM([Sales]) - LOOKUP(SUM([Sales]), -1)) / ABS(LOOKUP(SUM([Sales]), -1)) * 100",
+                    "caption": null
+                }
+            },
+            "tags": [
+                "add-explicit-calc-wordage",
+                "calc-category-table"
+            ]
+        }
+    ],
+    "id": "a07cad67-b06a-44eb-b716-e5939975960a"
+}

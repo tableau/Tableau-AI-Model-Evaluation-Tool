@@ -1,0 +1,59 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-support-360",
+  "info": {
+    "requirement-id": "D-248-aeb26ffe7e0545dc",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "Count of cases due in the last 2 weeks",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Case Owner Title",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "aggregation": "count",
+              "encoding": "y"
+            }
+          ],
+          "relativeDateFilters": [
+            {
+              "type": "relative-date",
+              "field": "Created Date",
+              "period": "weeks",
+              "amount": 2,
+              "direction": "previous"
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "infer-date-time-field",
+        "original-test-bench",
+        "encode-relative-date-time"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Filter - Date Range / Relative",
+          "Op: Field Inference - Date Field"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    }
+  ],
+  "id": "41f594e010a7e1b525c8654d0d9c800c"
+}

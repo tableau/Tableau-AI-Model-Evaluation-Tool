@@ -1,0 +1,58 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-support-360",
+  "info": {
+    "requirement-id": "D-248-55b4ca4117240925",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "how many cases by case type",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement",
+          "Intent: Breakdown by Category"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Group By Dimension"
+        ],
+        "out": [
+          "Out: Unspecified Viz"
+        ]
+      }
+    },
+    {
+      "utterance": "filter to delivery damage",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Filter - Categorical",
+          "Op: Context Carryover / Follow-up"
+        ],
+        "out": [
+          "Out: Unspecified Viz"
+        ]
+      }
+    }
+  ],
+  "id": "b8f74f3f95db2caff90c08c4b69c1cdb"
+}

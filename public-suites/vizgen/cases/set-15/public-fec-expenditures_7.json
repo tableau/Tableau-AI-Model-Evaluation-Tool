@@ -1,0 +1,57 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-fec-expenditures",
+  "info": {
+    "requirement-id": "D-248-aeb26ffe7e0545dc",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "how many candidate disbursements did we deliver last year?",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Aggregation (Default)"
+        ],
+        "out": [
+          "Out: Unspecified Viz"
+        ]
+      }
+    },
+    {
+      "utterance": "how many candidate disbursements did we deliver between January and July of last year?",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Filter - Date Range / Relative",
+          "Op: Context Carryover / Follow-up"
+        ],
+        "out": [
+          "Out: Unspecified Viz"
+        ]
+      }
+    }
+  ],
+  "id": "ec881d8dd97b1ff8121a2cebdbcb6ebd"
+}

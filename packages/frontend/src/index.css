@@ -1,0 +1,348 @@
+/* Tableau Design System look with public pieces — see src/tdsTheme.ts.
+   Libre Franklin is loaded from @fontsource in index.tsx. */
+body {
+  margin: 0;
+  font-family: 'Libre Franklin', 'Benton Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+  color: #333333;
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* TDS type scale. */
+h1, .tds-h1 { font-size: 24px; line-height: 32px; font-weight: 600; margin: 0; }
+h2, .tds-h2 { font-size: 18px; line-height: 32px; font-weight: 600; margin: 0; }
+h3, .tds-h3 { font-size: 16px; line-height: 24px; font-weight: 600; margin: 0; }
+.tds-body-1, small { font-size: 12px; line-height: 16px; }
+
+code {
+  font-family: Menlo, Consolas, 'Courier New', monospace;
+  font-size: 12px;
+}
+
+/* Quick-start step cards (home page). The grid gives every card the same
+   five rows (title, description, details, progress, footer) through a
+   subgrid, so the same zone sits on the same line in all three cards. */
+/* Cards start on the header title's left edge and stop the same distance
+   from the right border (the kit's body padding is 12px inside the library's
+   own indent). */
+/* The Evaluation Setup panel reads a size smaller than the feature cards
+   below it (UX review, 2026-10-21): heading 16px, step titles 14px, body
+   12px, and a tighter header. It is set-up, not the page's subject. */
+.quick-start-panel .tds-h2 { font-size: 16px; line-height: 24px; }
+.quick-start-panel .tds-h3 { font-size: 14px; line-height: 20px; }
+.quick-start-panel .tui-text { font-size: 12px; line-height: 16px; }
+.quick-start-panel .quick-start-description, .quick-start-panel .quick-start-details { font-size: 12px; line-height: 16px; }
+.quick-start-panel .tui-collapse-bordered > .tui-collapse-item > div:first-child > button { padding: 12px; }
+.quick-start-steps { margin-left: -12px; padding: 2px 10px 6px 0; }
+.quick-start-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+.quick-start-card {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 5;
+  row-gap: 0;
+  padding: 16px 18px;
+}
+.quick-start-card.quick-start-done { border-color: var(--color-feedback-default-success, #22683e); }
+.quick-start-title { display: flex; align-items: baseline; gap: 8px; }
+.quick-start-description { display: block; margin-top: 4px; font-size: 14px; line-height: 20px; }
+.quick-start-details { margin-top: 16px; font-size: 14px; line-height: 20px; }
+.quick-start-detail { display: flex; justify-content: space-between; gap: 12px; }
+.quick-start-detail + .quick-start-detail { margin-top: 4px; }
+.quick-start-progress { margin-top: 16px; }
+.quick-start-footer { display: flex; align-items: center; justify-content: flex-end; gap: 8px; margin-top: 12px; min-height: 24px; }
+
+/* Capability chips on a feature card: a capability's name, opening its latest results. */
+.capability-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border: 1px solid var(--color-feedback-default-notification-light, #d8e6fe);
+  border-radius: 4px;
+  background: var(--color-feedback-default-notification-light, #d8e6fe);
+  color: var(--color-feedback-default-notification, #0b5cab);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+/* In a collapse summary row the chips sit on the line with the counts, at its text size. */
+.tui-collapse-summary .capability-chip { padding: 1px 8px; font-size: 12px; line-height: 18px; }
+.capability-chip:hover:not(:disabled) { border-color: var(--color-feedback-default-notification, #0b5cab); }
+.capability-chip:disabled {
+  background: var(--color-elevation-surface-default-subtle, #f3f3f3);
+  border-color: var(--color-elevation-border-default-subtle, #e5e5e5);
+  color: var(--color-font-default-subtle, #939393);
+  cursor: default;
+}
+
+/* History entries are whole-row links: no underline, the row itself reads
+   as the target. */
+.history-entry, .history-entry * { text-decoration: none; }
+.history-entry:hover .tui-text-strong, .history-entry:hover strong { text-decoration: underline; }
+
+/* A status cell: a 16px state icon centred on one word of body text. */
+.status-cell { display: inline-flex; align-items: flex-start; gap: 6px; font-size: 14px; line-height: 22px; cursor: default; max-width: 100%; }
+.status-cell svg { font-size: 16px; vertical-align: middle; margin-top: 3px; flex: none; }
+/* State on the first line, detail on a second: never wider than its column. */
+.status-cell-text { display: flex; flex-direction: column; min-width: 0; overflow-wrap: anywhere; }
+.status-cell-detail { font-size: 12px; line-height: 16px; color: var(--color-font-default-secondary, #5c5c5c); }
+
+/* A settled suite's numbers inside its card on the results summary:
+   small tiles in the same order as the full-size tiles and cards below. */
+.mini-tiles { display: grid; grid-template-columns: repeat(3, minmax(110px, 1fr)); gap: 8px; margin-top: 10px; }
+.mini-tile {
+  display: flex; flex-direction: column; gap: 2px; padding: 8px 10px;
+  border: 1px solid var(--color-elevation-border-default-subtle, #e5e5e5); border-radius: 4px;
+  background: var(--color-elevation-surface-default-default, #fff);
+}
+/* A row with nothing in it yet keeps its height, so the rows below it line
+   up from card to card. */
+.mini-tile-empty { grid-column: 1 / -1; box-sizing: border-box; height: 100%; min-height: 56px; justify-content: center; border-style: dashed; }
+.capability-cards .mini-tile { box-sizing: border-box; min-height: 56px; }
+/* The capability cards of a results summary: two equal columns, every card
+   as tall as its neighbour, the link and controls pinned to the bottom. */
+.capability-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 24px; margin-top: 8px; }
+@media (max-width: 860px) { .capability-cards { grid-template-columns: minmax(0, 1fr); } }
+.capability-cards .flex-card-fill { display: flex; flex-direction: column; min-width: 0; height: 100%; }
+.capability-cards .flex-card-fill > .tui-card-body { flex: 1; display: flex; flex-direction: column; }
+.capability-cards .mini-tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.capability-cards .card-footer { margin-top: auto; padding-top: 12px; align-self: flex-start; }
+.mini-tile-label { font-size: 12px; line-height: 16px; color: var(--color-font-default-secondary, #5c5c5c); }
+.mini-tile-value { font-size: 16px; line-height: 20px; font-weight: 600; }
+
+/* Evaluation rows: a labelled link plus plain icons in fixed slots, aligned
+   from row to row; colour only on hover (Tableau settings-page idiom). */
+.row-actions { display: inline-flex; align-items: center; gap: 2px; white-space: nowrap; }
+.row-link { font-weight: 600; text-decoration: none; margin-right: 6px; color: var(--color-feedback-default-info, #05628a); }
+.row-link:hover { text-decoration: underline; }
+/* The same link drawn as a button (it switches a tab instead of navigating):
+   identical weight, size and colour, none of the button chrome. */
+button.row-link { background: none; border: 0; padding: 0; cursor: pointer; font: inherit; font-weight: 600; line-height: inherit; }
+.row-action-slot { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 28px; }
+.row-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 24px; height: 26px; padding: 0; border: 0; border-radius: 4px;
+  background: none; color: var(--color-font-default-secondary, #5c5c5c);
+  font-size: 16px; line-height: 1; cursor: pointer; text-decoration: none;
+}
+.row-icon:hover { background: var(--color-elevation-surface-default-subtle, #f3f3f3); color: var(--color-feedback-default-info, #05628a); }
+.row-icon-primary { color: var(--color-feedback-default-info, #05628a); }
+.row-icon-danger:hover { color: var(--color-feedback-default-error, #ba0517); }
+
+/* The per-feature evaluation table: tighter cell padding so its six columns
+   fit beside the open history panel without clipping the actions. */
+.evaluations-table .tui-table th, .evaluations-table .tui-table td,
+.evaluations-table th, .evaluations-table td { padding-left: 8px; padding-right: 8px; }
+/* Suites under an Evaluate all row (Evaluation History): the expanded cell
+   loses its padding and each suite line is a grid whose last three tracks
+   are the table's Status, Results and action columns, so the pieces sit
+   under their headings. The first track is indented past the expand
+   column to the Evaluation column. */
+.evaluations-table .tui-table-expanded > td { padding: 0; }
+/* The suite lines repeat the history table's columns (expander, Evaluation,
+   Tested model, Test start, Test end, Status, Results, actions; widths in
+   Dashboard.tsx), with the cells' own padding and top alignment. */
+.history-suite { display: grid; grid-template-columns: 32px 232px 179px 98px 98px 120px 236px 205px; align-items: start; }
+.history-suite + .history-suite { border-top: 1px solid var(--color-border-default, #e0e0e0); }
+.history-suite > * { padding: 8px; min-width: 0; }
+/* Every cell's first line is 22px tall, so names, dates, statuses, scores
+   and links share one line across a row. */
+.evaluations-table .row-actions { min-height: 22px; }
+.evaluations-table .row-action-slot, .evaluations-table .row-icon { height: 22px; }
+/* A run's headline averages. In a table cell: a fixed label column and a
+   pill column, so the pills line up down the whole table. In a header
+   line: side by side. */
+.headline-scores { display: inline-grid; grid-template-columns: 148px auto; grid-auto-rows: minmax(22px, auto); gap: 4px 8px; align-items: center; justify-items: start; vertical-align: top; white-space: nowrap; }
+/* A label longer than its column wraps onto a second line rather than
+   running under the pill beside it ("Calculated fields in flows"). */
+.headline-scores:not(.headline-scores-inline) .headline-score > :first-child { white-space: normal; max-width: 148px; line-height: 16px; overflow-wrap: anywhere; }
+.headline-score { display: contents; }
+.headline-pill { display: inline-block; min-width: 56px; padding: 0 8px; border-radius: 4px; font-weight: 600; font-size: 14px; line-height: 20px; text-align: center; font-variant-numeric: tabular-nums; cursor: default; }
+.headline-scores-inline { display: inline-flex; flex-wrap: wrap; gap: 4px 14px; vertical-align: middle; }
+.headline-scores-inline .headline-score { display: inline-flex; align-items: center; gap: 6px; }
+/* A score listed for reference under a headline (Intent and Spec under
+   Visualization Quality): same row shape, an outlined pill instead of a
+   filled one, so it reads as context rather than as part of the average. */
+.headline-score-context .headline-pill-context {
+  background: transparent; border: 1px dashed var(--color-border-default, #c1c1c1);
+  color: var(--color-font-default-secondary, #5c5c5c); font-weight: 500; line-height: 18px;
+}
+.headline-scores:not(.headline-scores-inline) .headline-score-context > :first-child { padding-left: 10px; }
+/* What the pill colours mean, beside a table of scores. */
+.baseline-legend { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; font-size: 12px; line-height: 16px; color: var(--color-font-default-secondary, #5c5c5c); }
+.baseline-legend > span { display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; }
+.baseline-legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; border: 1px solid; }
+.baseline-legend-judge svg { flex: none; }
+/* A heading with the legend at the other end of its line. */
+.heading-with-legend { display: flex; align-items: center; justify-content: space-between; gap: 8px 16px; flex-wrap: wrap; }
+/* The Columns button's list: a checkbox per column, up and down beside it. */
+.column-picker { display: flex; flex-direction: column; gap: 2px; min-width: 240px; font-size: 13px; }
+.column-picker-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.column-picker-moves { display: inline-flex; gap: 4px; }
+.column-picker-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--color-border-default, #e5e7eb); }
+/* A suite tab on the results page: its name, then its status icon. */
+.tab-status { display: inline-flex; align-items: center; gap: 6px; }
+.tab-status-icon { display: inline-flex; align-items: center; line-height: 1; }
+.tab-status-icon svg, .tab-status-icon .anticon, .tab-status-icon > * { font-size: 16px; width: 16px; height: 16px; }
+/* The pause/resume button of a running or paused suite's tab: a small round
+   button, so it reads as something to press rather than as a status mark. */
+.tab-control {
+  display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box;
+  width: 22px; height: 22px; border-radius: 50%; font-size: 11px; line-height: 1; cursor: pointer;
+  border: 1px solid var(--color-elevation-border-default-default, #c9c9c9);
+  background: var(--color-elevation-surface-default-default, #fff);
+  color: var(--color-font-default-secondary, #5c5c5c);
+}
+.tab-control:hover { background: var(--color-elevation-surface-default-subtle, #f3f3f3); border-color: var(--color-feedback-default-info, #05628a); color: var(--color-feedback-default-info, #05628a); }
+.tab-control:focus-visible { outline: 2px solid var(--color-feedback-default-info, #05628a); outline-offset: 2px; }
+.tab-control-resume { border-color: var(--color-feedback-default-info, #05628a); color: var(--color-feedback-default-info, #05628a); }
+.tab-control[aria-disabled="true"] { cursor: default; }
+.tab-control svg rect { fill: currentColor; }
+.tab-control-wrap { display: inline-flex; align-items: center; }
+
+/* Summary cards on a results tab: a title that explains itself on hover,
+   the headline number on its own line under it, then the breakdown. */
+.card-title-help { cursor: help; border-bottom: 1px dotted currentColor; }
+.card-title-help:focus-visible { outline: 2px solid var(--color-feedback-default-info, #05628a); outline-offset: 2px; border-radius: 2px; }
+.card-headline { font-size: 32px; font-weight: 700; line-height: 1.2; margin-top: 4px; font-variant-numeric: tabular-nums; }
+/* The card's headline score and a Result Summary tile's score are pills
+   coloured against the suite's baseline, like the home page's. */
+.card-headline .headline-pill { font-size: 28px; line-height: 40px; font-weight: 700; padding: 0 12px; border-radius: 8px; min-width: 0; }
+.mini-tile-value .headline-pill { font-size: 16px; line-height: 22px; }
+/* Score breakdowns: every pill the same width, numbers right-aligned, so
+   the scores read down a column. */
+.score-breakdown { border-collapse: collapse; }
+.score-breakdown td { vertical-align: middle; }
+.score-breakdown .score-pill { box-sizing: border-box; min-width: 68px; text-align: right; font-variant-numeric: tabular-nums; }
+.score-breakdown .score-pill-na { text-align: center; }
+/* Inside a results-table cell the breakdown fits its column: the pill column
+   keeps its width, the label column takes the rest and wraps. An auto-sized
+   breakdown was wider than a 176px column and ran under the next column, or
+   under the pinned Latency column (2026-10-07). */
+.metrics-table .score-breakdown { width: 100%; table-layout: fixed; font-size: 12px; }
+/* Labels wrap between words, and hyphenate rather than split a word at an
+   arbitrary letter ("Insightfulnes / s"); the judge's sparkle stays on the
+   label's first line. */
+.metrics-table .score-breakdown td:first-child { overflow-wrap: break-word; word-break: normal; hyphens: auto; }
+.metrics-table .score-breakdown td:last-child { width: 62px; }
+.metrics-table .score-breakdown .score-pill { min-width: 60px; }
+.score-breakdown .metric-label { display: inline-flex; align-items: flex-start; gap: 3px; max-width: 100%; }
+/* The label is a flex item: without this it keeps its longest word's width
+   and runs under the pill instead of wrapping ("Conversatio|n"). */
+.score-breakdown .metric-label > span { min-width: 0; }
+.score-breakdown .metric-label > svg, .score-breakdown .metric-label > span > svg { flex: none; margin-top: 2px; }
+/* Rows listed for reference in a breakdown (Intent and Spec under
+   Visualization Quality): a divider that says so, muted text, outlined pills. */
+.score-breakdown tr.score-context-divider td {
+  padding: 8px 0 2px; font-size: 11px; line-height: 14px; border-top: 1px solid var(--color-border-default, #e5e7eb);
+  color: var(--color-font-default-secondary, #5c5c5c);
+}
+.score-breakdown tr.score-context td { color: var(--color-font-default-secondary, #5c5c5c); }
+.score-breakdown tr.score-context .score-pill {
+  background: transparent !important; border: 1px dashed var(--color-border-default, #c1c1c1);
+  color: var(--color-font-default-secondary, #5c5c5c) !important; font-weight: 500;
+}
+
+/* A progress bar from the kit: a block as wide as its container. */
+.tui-progress { min-width: 0; }
+.tui-progress > * { display: flex; width: 100%; }
+/* The library gives its bar a fixed width; here it fills the block. */
+.tui-progress [role="progressbar"] { width: 100%; }
+
+/* A running or queued suite in its summary card: the progress fills the
+   space the score and count tiles take once the suite has settled. */
+.suite-progress {
+  flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 10px;
+  box-sizing: border-box; min-height: 120px; margin-top: 10px; padding: 12px 14px;
+  border: 1px solid var(--color-elevation-border-default-subtle, #e5e5e5); border-radius: 4px;
+}
+
+/* A column header that carries a button for the whole column (expand or
+   collapse every score breakdown, show the formula diff). */
+/* A header with an action: the title may wrap in a narrow column (the score
+   columns shrink so the table fits the window), the icon keeps its place. */
+.th-with-action { display: inline-flex; align-items: flex-start; gap: 8px; white-space: normal; vertical-align: middle; }
+.th-with-action > span:first-child { min-width: 0; }
+/* Icon only; its name and what it does are in the tooltip. */
+.th-action {
+  display: inline-flex; align-items: center; justify-content: center; flex: none; width: 22px; height: 22px; padding: 0; cursor: pointer;
+  font: inherit; font-size: 13px; line-height: 1;
+  border: 1px solid var(--color-elevation-border-default-default, #c9c9c9); border-radius: 4px;
+  background: var(--color-elevation-surface-default-default, #fff);
+  color: var(--color-font-default-secondary, #5c5c5c);
+}
+.th-action:hover:not(:disabled) { border-color: var(--color-feedback-default-info, #05628a); color: var(--color-feedback-default-info, #05628a); }
+.th-action:focus-visible { outline: 2px solid var(--color-feedback-default-info, #05628a); outline-offset: 1px; }
+.th-action:disabled { cursor: default; opacity: 0.55; }
+.th-action-on { background: var(--color-feedback-default-info, #05628a); border-color: var(--color-feedback-default-info, #05628a); color: #fff; }
+.th-action-on:hover:not(:disabled) { color: #fff; }
+
+/* The count tiles and the score cards of a results tab: the same three
+   columns in both rows, so a card keeps its place whatever the cards beside
+   it show and however wide the window is. */
+.summary-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 760px) { .summary-cards { grid-template-columns: minmax(0, 1fr); } }
+
+/* A table cell's text that opens something (a datasource's fields): a link
+   at the cell's own weight, wrapping like the text it replaces. */
+.cell-link {
+  background: none; border: 0; padding: 0; cursor: pointer; font: inherit; text-align: left;
+  overflow-wrap: anywhere; color: var(--color-feedback-default-info, #05628a);
+}
+.cell-link:hover { text-decoration: underline; }
+.cell-link:focus-visible { outline: 2px solid var(--color-feedback-default-info, #05628a); outline-offset: 2px; border-radius: 2px; }
+/* A score's explanation inside its popover: long ones scroll in place. */
+/* A score with an explanation behind it: dotted, as a definition on hover is
+   marked, never solid (a solid underline reads as a link). */
+.score-explained .score-pill {
+  text-decoration: underline dotted;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.score-explanation-text {
+  max-height: 260px; overflow-y: auto; overscroll-behavior: contain;
+  white-space: pre-wrap; overflow-wrap: anywhere; padding-right: 4px;
+}
+/* The line above the case table, on the same three columns as the cards:
+   search and datasource filter | sort | page controls. One text size (12px,
+   the controls' own) and one height for everything on the line. */
+.table-toolbar { align-items: center; margin-bottom: 12px; font-size: 12px; line-height: 24px; }
+.table-toolbar > * { min-width: 0; }
+.table-toolbar-group { display: flex; align-items: center; gap: 8px; }
+.table-toolbar select { height: 24px; }
+.table-toolbar-label { flex: none; white-space: nowrap; color: var(--color-font-default-secondary, #5c5c5c); }
+.table-toolbar .tui-pagination { padding: 0; flex-wrap: nowrap; }
+@media (max-width: 760px) { .table-toolbar .tui-pagination { justify-content: flex-start; } }
+
+/* In a card's breakdown: for how many test cases a metric is scored, when
+   that is fewer than the cases the card covers. */
+.score-breakdown .score-coverage { padding: 2px 0 2px 10px; font-size: 12px; white-space: nowrap; color: var(--color-font-default-secondary, #5c5c5c); }
+.score-breakdown .score-coverage span { cursor: help; }
+
+/* A chart preview in a table cell never draws outside its own box. */
+.chart-preview { overflow: hidden; }
+.chart-preview .vega-embed { display: block; max-width: 100%; }
+/* The filters and the sort of a previewed chart definition, which its sample rows cannot show. */
+.chart-preview-settings { margin-top: 2px; font-size: 11px; line-height: 1.3; color: var(--color-font-default-secondary, #5c5c5c); }
+
+/* A multi-turn conversation in the case table: its turns are consecutive
+   rows, tied by a bar down the left edge, with a darker line before the
+   first turn and after the last. */
+.turn-label { margin-top: 4px; font-size: 12px; line-height: 16px; color: var(--color-font-default-secondary, #5c5c5c); }
+.metrics-table .tui-table tr.conv-turn > td:first-child { box-shadow: inset 3px 0 0 var(--color-feedback-default-info, #05628a); }
+.metrics-table .tui-table tr.conv-first > td { border-top: 2px solid #8c8c8c; }
+.metrics-table .tui-table tr.conv-last > td { border-bottom: 2px solid #8c8c8c; }
+
+/* The first rows of a Q&A extract, in the data source panel. */
+.dataset-rows { overflow-x: auto; max-height: 420px; overflow-y: auto; border: 1px solid #e5e5ea; border-radius: 6px; }
+.dataset-rows table { border-collapse: collapse; font-size: 12px; white-space: nowrap; }
+.dataset-rows th, .dataset-rows td { padding: 4px 10px; border-bottom: 1px solid #eef0f3; text-align: left; }
+.dataset-rows th { position: sticky; top: 0; background: #f7f8fa; font-weight: 600; }

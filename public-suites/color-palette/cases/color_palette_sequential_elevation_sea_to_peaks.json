@@ -1,0 +1,23 @@
+{
+    "runner": "color-palettes-server",
+    "info": {
+        "version": "1.0.0"
+    },
+    "inputs": [
+        {
+            "utterance": "Colors showing elevation from sea level to mountain peaks",
+            "source": "user",
+            "arguments": {
+                "palette_type": "sequential"
+            },
+            "expected": {
+                "colorPalette": []
+            },
+            "tags": [
+                "color-palette-sequential"
+            ]
+        }
+    ],
+    "id": "b8c9d0e1-f2a3-4567-bcde-890123456789"
+}
+

@@ -1,0 +1,38 @@
+{
+  "flow": "RaceRank.tflx",
+  "name": "RaceRank",
+  "inputs": [
+    {
+      "name": "Data",
+      "source": "Data.csv",
+      "fields": [
+        {
+          "name": "Team",
+          "datatype": "string",
+          "values": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G",
+            "H"
+          ]
+        },
+        {
+          "name": "Finishing Time",
+          "datatype": "real",
+          "values": [
+            "10.1",
+            "11",
+            "12",
+            "13",
+            "13.5",
+            "14"
+          ]
+        }
+      ]
+    }
+  ]
+}

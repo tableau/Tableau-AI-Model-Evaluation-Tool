@@ -1,0 +1,59 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-opportunity-360",
+  "info": {
+    "requirement-id": "D-248-cd5d4666b729f6fa",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "Avg deal value per billing country",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "fields": [
+            {
+              "caption": "Line Item Value",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "encoding": "x",
+              "aggregation": "avg"
+            },
+            {
+              "caption": "Billing Country",
+              "data": "string",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "y"
+            }
+          ],
+          "chart": "bar"
+        }
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench",
+        "infer-other-field",
+        "semantic-inference"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement",
+          "Intent: Breakdown by Category"
+        ],
+        "op": [
+          "Op: Aggregation (Non-Default)",
+          "Op: Group By Dimension",
+          "Op: Field Inference - Measure / Dimension",
+          "Op: Disambiguation"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    }
+  ],
+  "id": "91ba9988bfb29dd82e1fc0a5ce10f0d8"
+}

@@ -1,0 +1,55 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-support-360",
+  "info": {
+    "requirement-id": "D-248-cd5d4666b729f6fa",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "Examine the number of high priority items flagged within each specific store region.",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Store Region",
+              "data": "string",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "x"
+            },
+            {
+              "caption": "Is High Priority",
+              "data": "boolean",
+              "type": "continuous",
+              "role": "measure",
+              "aggregation": "count",
+              "encoding": "y"
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Breakdown by Category",
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Group By Dimension"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    }
+  ],
+  "id": "7993d1fbcd7fbb6d1d181b6da0f3d841"
+}

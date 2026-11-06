@@ -1,0 +1,40 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-account-360",
+  "info": {
+    "originalValid": true,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "Create a calc to show activities that are QTD",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "{ [Most Recent Order Date] <= TODAY() AND DATETRUNC( 'quarter', [Most Recent Order Date]) = DATETRUNC('quarter', TODAY() ) }",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-date",
+        "add-explicit-calc-wordage"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Date Part Extraction",
+          "Op: Date Truncation / Granularity",
+          "Op: Date Arithmetic"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "b9db4340a915f43e0d9223917e632ff3"
+}

@@ -1,0 +1,34 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-ipeds-institutions",
+  "info": {
+    "requirement-id": "D-250-7d112d3df1cd4e69",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "creator licensed quantity, not including the pod in Westminster College",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Filter - Categorical"
+        ],
+        "out": [
+          "Out: Unspecified Viz"
+        ]
+      }
+    }
+  ],
+  "id": "e8d1b03a1082e6b11f096e300c25daaf"
+}

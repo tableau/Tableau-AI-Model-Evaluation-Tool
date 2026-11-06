@@ -1,0 +1,25 @@
+{
+    "runner": "ect-server",
+    "datasource": "retail-nto",
+    "info": {
+        "originalValid": true
+    },
+    "inputs": [
+        {
+            "utterance": "create a field that returns true if sales are above 100 and false otherwise, unless sale price is over 100, in which case return true if sales are above 500",
+            "source": "user",
+            "expected": {
+                "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+                "calculatedFieldFormula": {
+                    "formula": "IF [Sale Price] > 100 THEN IF [Sales] > 500 THEN TRUE ELSE FALSE END ELSE IF [Sales] > 100 THEN TRUE ELSE FALSE END END",
+                    "caption": null
+                }
+            },
+            "tags": [
+                "add-explicit-calc-wordage",
+                "calc-category-logical"
+            ]
+        }
+    ],
+    "id": "87ce22a2-1e92-4004-9d20-bb9eff259b13"
+}

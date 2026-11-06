@@ -1,0 +1,23 @@
+{
+    "runner": "color-palettes-server",
+    "info": {
+        "version": "1.0.0"
+    },
+    "inputs": [
+        {
+            "utterance": "Stock price changes with 30 colors",
+            "source": "user",
+            "arguments": {
+                "palette_type": "diverging"
+            },
+            "expected": {
+                "colorPalette": []
+            },
+            "tags": [
+                "color-palette-diverging"
+            ]
+        }
+    ],
+    "id": "c5d6e7f8-a9b0-1234-cdef-567890123456"
+}
+

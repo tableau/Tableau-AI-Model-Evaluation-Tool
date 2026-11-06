@@ -1,0 +1,40 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-activity-360",
+  "info": {
+    "originalValid": true,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "Create a calc to determine month and year based on Activity Date",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "STR(MONTH([Activity Date]))+ '/' + DATENAME('year', [Activity Date])",
+          "caption": null
+        }
+      },
+      "tags": [
+        "add-explicit-calc-wordage"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Data Preparation"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Field Inference - Date Field",
+          "Op: Date Part Extraction",
+          "Op: Type Conversion",
+          "Op: Arithmetic / Ratio"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "cf49b7ccc8e4084c5ed867bd04893f5d"
+}

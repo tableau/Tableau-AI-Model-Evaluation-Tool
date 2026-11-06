@@ -1,0 +1,70 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-opportunity-360",
+  "info": {
+    "requirement-id": "D-248-aeb26ffe7e0545dc",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "average <Forecasted Contract term> last year based on when the deals were closed",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Days to Close",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "aggregation": "avg",
+              "encoding": "x"
+            },
+            {
+              "caption": "Close Date",
+              "data": "date",
+              "type": "discrete",
+              "role": "dimension",
+              "aggregation": "year",
+              "encoding": "y"
+            }
+          ],
+          "relativeDateFilters": [
+            {
+              "type": "relative-date",
+              "field": "Close Date",
+              "amount": 1,
+              "period": "years",
+              "direction": "previous"
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "infer-date-time-field",
+        "original-test-bench",
+        "encode-relative-date-time"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement",
+          "Intent: Trend over Time"
+        ],
+        "op": [
+          "Op: Aggregation (Non-Default)",
+          "Op: Filter - Date Range / Relative",
+          "Op: Date Truncation / Granularity",
+          "Op: Group By Dimension",
+          "Op: Field Inference - Date Field"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    }
+  ],
+  "id": "e82a15090ebc74f7c794279f49ee8bc6"
+}

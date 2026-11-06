@@ -1,0 +1,40 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-activity-360",
+  "info": {
+    "originalValid": true,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "Create a calc to determine the month over month percent diff in avg task duration??",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "{(ZN(AVG([Duration (minutes)])) - LOOKUP(ZN(AVG([Duration (minutes)])), -1)) / ABS(LOOKUP(ZN(AVG([Duration (minutes)])), -1)) }",
+          "caption": null
+        }
+      },
+      "tags": [
+        "add-explicit-calc-wordage"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Trend over Time"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Table Calculation / Window",
+          "Op: Aggregation (Non-Default)",
+          "Op: Null Handling",
+          "Op: Arithmetic / Ratio"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "b4cddbe9064b6fdf53df001847e56a16"
+}

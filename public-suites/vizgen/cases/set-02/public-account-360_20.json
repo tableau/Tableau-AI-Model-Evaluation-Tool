@@ -1,0 +1,33 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-account-360",
+  "info": {
+    "requirement-id": "D-248-985d6d41172604db",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "show only industries with median contract value over 8000",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Threshold Qualification"
+        ],
+        "op": [
+          "Op: Filter - Numeric Threshold"
+        ],
+        "out": [
+          "Out: Unspecified Viz"
+        ]
+      }
+    }
+  ],
+  "id": "b0d57b91e5aa0f3d89d92d8fcd2b17ab"
+}

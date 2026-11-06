@@ -1,0 +1,33 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-account-360",
+  "info": {
+    "requirement-id": "D-248-a1faa3528ae1308a",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "show only industries with contract value less than 10K",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Threshold Qualification"
+        ],
+        "op": [
+          "Op: Filter - Numeric Threshold"
+        ],
+        "out": [
+          "Out: Unspecified Viz"
+        ]
+      }
+    }
+  ],
+  "id": "4d4c866656b448f8c2e2541b961efdfe"
+}

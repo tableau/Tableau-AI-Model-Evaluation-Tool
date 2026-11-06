@@ -1,0 +1,33 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-ipeds-institutions",
+  "info": {
+    "requirement-id": "D-248-0ed0a715f691396d",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "display admissions total in place of applicants total",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Lookup / Retrieval"
+        ],
+        "op": [
+          "Op: Rename Fields"
+        ],
+        "out": [
+          "Out: Unspecified Viz"
+        ]
+      }
+    }
+  ],
+  "id": "084a19121891e9832935f56873206dee"
+}

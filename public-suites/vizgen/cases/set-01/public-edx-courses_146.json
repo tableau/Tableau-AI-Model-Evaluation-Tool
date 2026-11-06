@@ -1,0 +1,34 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-edx-courses",
+  "info": {
+    "requirement-id": "D-248-bcdf04eaf1947ea7",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "creator role counts 2013_Summer",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Filter - Date Range / Relative"
+        ],
+        "out": [
+          "Out: Unspecified Viz"
+        ]
+      }
+    }
+  ],
+  "id": "86fc976e91efe9c6f8b0294a90aea967"
+}

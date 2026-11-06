@@ -1,0 +1,24 @@
+{
+    "runner": "ect-server",
+    "datasource": "retail-nto",
+    "info": {
+        "originalValid": true
+    },
+    "inputs": [
+        {
+            "utterance": "Categorize customers based into groups of (0–12 months, 1–2 years, 2–3 years, 3–4 years, and 4–5 years) based on how long ago they made their first order  ",
+            "source": "user",
+            "expected": {
+                "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+                "calculatedFieldFormula": {
+                    "formula": "IF DATEDIFF('month', { FIXED [CustomerID] : MIN([Order Placed Date]) }, TODAY()) <= 12 THEN '0–12 months' ELSEIF DATEDIFF('month', { FIXED [CustomerID] : MIN([Order Placed Date]) }, TODAY()) <= 24 THEN '1–2 years' ELSEIF DATEDIFF('month', { FIXED [CustomerID] : MIN([Order Placed Date]) }, TODAY()) <= 36 THEN '2–3 years' ELSEIF DATEDIFF('month', { FIXED [CustomerID] : MIN([Order Placed Date]) }, TODAY()) <= 48 THEN '3–4 years' ELSEIF DATEDIFF('month', { FIXED [CustomerID] : MIN([Order Placed Date]) }, TODAY()) <= 60 THEN '4–5 years' END",
+                    "caption": null
+                }
+            },
+            "tags": [
+                "calc-conditional-if-case"
+            ]
+        }
+    ],
+    "id": "05925642-2b12-4856-b18d-51419482743f"
+}

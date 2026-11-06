@@ -1,0 +1,57 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-edx-courses",
+  "info": {
+    "requirement-id": "D-248-7eab01b5903737a2",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "HOW MANY REGISTRATIONS DO WE HAVE SINCE BEGINNING OF THE YEAR?",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Aggregation (Default)"
+        ],
+        "out": [
+          "Out: Unspecified Viz"
+        ]
+      }
+    },
+    {
+      "utterance": "HOW MANY REGISTRATIONS DO WE HAVE UP TO THIS MONTH?",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Filter - Date Range / Relative",
+          "Op: Context Carryover / Follow-up"
+        ],
+        "out": [
+          "Out: Unspecified Viz"
+        ]
+      }
+    }
+  ],
+  "id": "a5c21b47490883535a40913048e5875e"
+}

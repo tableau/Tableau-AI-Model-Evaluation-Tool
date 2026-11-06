@@ -1,0 +1,39 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-retail-360",
+  "info": {
+    "originalValid": true,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "create a calculated field showing the average cost excluding item name",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "{ EXCLUDE [Item Name] : AVG([Line Total]) }",
+          "caption": null
+        }
+      },
+      "tags": [
+        "add-explicit-calc-wordage",
+        "calc-category-lod"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Level of Detail",
+          "Op: Aggregation (Non-Default)"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "65220fbf4958e0f44f9504d164b6675e"
+}

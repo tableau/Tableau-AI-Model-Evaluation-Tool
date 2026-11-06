@@ -1,0 +1,45 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-fec-expenditures",
+  "info": {
+    "originalValid": false,
+    "reasonInvalid": "no server response",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "Create a calc that shows difference in costs from previous year partitioned by disbursement purpose",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "SUM([Disbursement Amount]) - LOOKUP(SUM([Disbursement Amount]), -1)",
+          "caption": "This calculation shows the difference in costs from the previous value, partitioned by 'Source' and 'Year'. To use this calculation, add 'Source' and 'Date' (set to Year) to the Viz. Then, set the 'Compute Using' setting to 'Table (Across)' or 'Table (Down)' depending on your Viz layout."
+        }
+      },
+      "tags": [
+        "calc-category-table",
+        "add-explicit-calc-wordage"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement",
+          "Intent: Breakdown by Category",
+          "Intent: Trend over Time"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Table Calculation / Window",
+          "Op: Date Truncation / Granularity",
+          "Op: Group By Dimension",
+          "Op: Aggregation (Default)",
+          "Op: Arithmetic / Ratio"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "a560c03a2ea3330f92fb38831d882c11"
+}

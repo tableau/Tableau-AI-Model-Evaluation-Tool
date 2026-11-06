@@ -1,0 +1,983 @@
+{
+  "_source": "nlq_eval_export (real Python, a5f0e65a)",
+  "exports": {
+    "beefcafe00000000000000000000beef": {
+      "json": {
+        "schema_version": 3,
+        "run": {
+          "schema_version": 3,
+          "run_id": "beefcafe00000000000000000000beef",
+          "tool_version": "",
+          "run_status": "Completed",
+          "run_started_at": "2026-09-30T10:00:00Z",
+          "run_finished_at": "2026-09-30T10:30:05Z",
+          "run_duration_s": 1805.0,
+          "exported_at": "2026-09-30T12:34:56Z",
+          "tableau_server_url": "",
+          "tableau_site": "",
+          "tableau_site_luid": "",
+          "tableau_server_version": "",
+          "capability": "calc",
+          "capability_label": "Calculated fields",
+          "suite_case_count": 2,
+          "model_under_test": "gpt-4o-mini",
+          "model_provider": "",
+          "answered_by": "https://localhost:5001",
+          "judge_provider": "anthropic",
+          "judge_model": "claude-sonnet-4-5",
+          "suite_id": "",
+          "suite_label": "",
+          "models": {
+            "create": "gpt-4o-mini"
+          },
+          "declared_site_model": "",
+          "resolved_site_model": "",
+          "batch_id": "",
+          "local": {
+            "test_path": "/tests/sample-calcs",
+            "runner": "calc-prompt"
+          }
+        },
+        "summary": {
+          "viz_quality_score": null,
+          "nl_quality_score": 0.9,
+          "headline_scores": [
+            {
+              "key": "calc",
+              "label": "Calculated fields",
+              "average": 0.75,
+              "total_scores": 1,
+              "judge_scores": 0
+            },
+            {
+              "key": "nl",
+              "label": "Natural language quality",
+              "average": 0.9,
+              "total_scores": 1,
+              "judge_scores": 1
+            }
+          ],
+          "categories": [
+            {
+              "key": "calc",
+              "label": "Calculated fields",
+              "weight": 13,
+              "average": 0.75,
+              "metrics": [
+                {
+                  "label": "Calculation Validity",
+                  "average": 0.75,
+                  "judge_derived": false
+                }
+              ]
+            },
+            {
+              "key": "nlConversation",
+              "label": "Conversation quality",
+              "weight": 0,
+              "average": 0.9,
+              "metrics": [
+                {
+                  "label": "Coherence",
+                  "average": 0.9,
+                  "judge_derived": true
+                }
+              ]
+            }
+          ],
+          "verdicts": {
+            "pass": 1,
+            "partial": 1,
+            "fail": 0,
+            "na": 0
+          },
+          "verdict_thresholds": {
+            "pass": 0.66,
+            "partial": 0.33,
+            "provisional": true
+          },
+          "cases_total": 2,
+          "cases_completed": 2,
+          "cases_scored": 2,
+          "cases_with_errors": 1,
+          "avg_latency_s": 9.75,
+          "metrics": [
+            {
+              "metric": "calculatedFieldFormula.calcValidity",
+              "label": "Calculation Validity",
+              "category": "Calculated fields",
+              "average": 0.75,
+              "scored_cases": 2,
+              "unavailable_cases": 0,
+              "judge_derived": false
+            },
+            {
+              "metric": "llmJudge.coherence",
+              "label": "Coherence",
+              "category": "Conversation quality",
+              "average": 0.9,
+              "scored_cases": 1,
+              "unavailable_cases": 1,
+              "judge_derived": true
+            }
+          ]
+        },
+        "cases": [
+          {
+            "case_number": 1,
+            "test_case_id": "tc-1",
+            "datasource": "Superstore",
+            "utterance": "total sales",
+            "expected_kind": "formula",
+            "expected": {
+              "calculatedFieldFormula": "SUM([Sales])"
+            },
+            "actual": {
+              "calculatedFieldFormula": "SUM([Sales])"
+            },
+            "latency_s": 9.4,
+            "case_status": "scored",
+            "case_score": 1.0,
+            "case_verdict": "pass",
+            "error_count": 0,
+            "warning_count": 0,
+            "errors_text": "",
+            "case_tags": "",
+            "metrics": [
+              {
+                "metric_stage": "calculatedFieldFormula",
+                "metric_name": "calcValidity",
+                "metric_id": "calc-validity-v1",
+                "metric_label": "Calculation Validity",
+                "metric_category": "Calculated fields",
+                "metric_category_weight": 13,
+                "score": 1.0,
+                "judge_derived": false,
+                "unavailable": false,
+                "explanation": ""
+              },
+              {
+                "metric_stage": "llmJudge",
+                "metric_name": "coherence",
+                "metric_id": "",
+                "metric_label": "Coherence",
+                "metric_category": "Conversation quality",
+                "metric_category_weight": 0,
+                "score": 0.9,
+                "judge_derived": true,
+                "unavailable": false,
+                "explanation": "clear"
+              }
+            ]
+          },
+          {
+            "case_number": 2,
+            "test_case_id": "tc-2",
+            "datasource": "Superstore",
+            "utterance": "profit ratio",
+            "expected_kind": "formula",
+            "expected": {
+              "calculatedFieldFormula": "SUM([Profit])/SUM([Sales])"
+            },
+            "actual": {
+              "calculatedFieldFormula": "SUM([Profit])"
+            },
+            "latency_s": 10.1,
+            "case_status": "scored",
+            "case_score": 0.5,
+            "case_verdict": "partial",
+            "error_count": 1,
+            "warning_count": 0,
+            "errors_text": "slow gateway",
+            "case_tags": "",
+            "metrics": [
+              {
+                "metric_stage": "calculatedFieldFormula",
+                "metric_name": "calcValidity",
+                "metric_id": "",
+                "metric_label": "Calculation Validity",
+                "metric_category": "Calculated fields",
+                "metric_category_weight": 13,
+                "score": 0.5,
+                "judge_derived": false,
+                "unavailable": false,
+                "explanation": ""
+              },
+              {
+                "metric_stage": "llmJudge",
+                "metric_name": "coherence",
+                "metric_id": "",
+                "metric_label": "Coherence",
+                "metric_category": "Conversation quality",
+                "metric_category_weight": 0,
+                "score": null,
+                "judge_derived": true,
+                "unavailable": true,
+                "explanation": "Unavailable: judge 503"
+              }
+            ]
+          }
+        ],
+        "metric_dictionary": {
+          "calculatedFieldFormula.calcValidity": {
+            "label": "Calculation Validity",
+            "category": "Calculated fields",
+            "category_weight": 13,
+            "judge_derived": false,
+            "meaning": "Whether the generated formula is valid Tableau: correct syntax, known functions, and fields that exist in the data the model was given. The Calculated fields suite also checks that types are consistent."
+          },
+          "llmJudge.coherence": {
+            "label": "Coherence",
+            "category": "Conversation quality",
+            "category_weight": 0,
+            "judge_derived": true,
+            "meaning": "Logical flow and readability of the reply."
+          }
+        },
+        "column_dictionary": {
+          "schema_version": "Version of this column set. Rows with different versions are not in the same table.",
+          "run_id": "The run's identifier. Every row of one run carries the same value; filter on it to see one run.",
+          "tool_version": "Version of the evaluation tool that produced the run.",
+          "run_status": "How the run ended: Completed, Paused, Canceled, or Failed; In progress or Queued for a run exported before it ended.",
+          "run_started_at": "When the run was launched (UTC).",
+          "run_finished_at": "When the run ended (UTC); empty while it is still going or paused.",
+          "run_duration_s": "Seconds from launch to end; empty until the run has ended.",
+          "exported_at": "When this file or publish was produced (UTC).",
+          "tableau_server_url": "The Tableau Server whose AI settings were under test.",
+          "tableau_site": "The site under test (its name in the URL; Default for the default site).",
+          "tableau_site_luid": "The site's identifier on the server.",
+          "tableau_server_version": "The server's product version and build at the time of the run, as the server reports them: 2026.1.0 (20261.26.0415.1010).",
+          "capability": "The AI capability the suite exercises (calc, viz-authoring, palettes, ...).",
+          "capability_label": "The capability as the site settings name it (Calculated fields, Build a visualization, ...).",
+          "suite_case_count": "How many cases the suite has. A run with fewer rows than this (count the distinct test_case_id values) is partial.",
+          "model_under_test": "The model that answered: the model the site had configured, read from Site Settings when the run started.",
+          "model_provider": "The provider configured for the model, when the site settings say.",
+          "answered_by": "The address the tool sent the questions to: the Tableau Server endpoint that passes them to the site's model.",
+          "judge_provider": "Provider of the LLM judge that scored the natural-language metrics; empty when no judge ran.",
+          "judge_model": "The judge model; empty when no judge ran.",
+          "case_number": "Position of the case in the run.",
+          "test_case_id": "The case's identifier in the suite; stable across runs of the suite.",
+          "datasource": "The data source the case asks about.",
+          "utterance": "The question or request sent to the AI feature.",
+          "expected_kind": "What the case expects back: formula, viz_spec, plan, palette, narrative, reply or intent.",
+          "expected": "The known-good answer, as JSON.",
+          "actual": "What the model produced, as JSON; empty when the case errored.",
+          "latency_s": "Seconds the server took to answer this case.",
+          "case_status": "scored (has a score), error (no score, hit an error), unavailable (only judge scores, all failed), or unscored (nothing to score, or the suite gives no expected answer for the case).",
+          "case_score": "The case's overall score, 0 to 1: its category averages weighted by the category weights (metric_category_weight).",
+          "case_verdict": "pass, partial or fail on case_score (provisional bands: pass at 0.66 and above, partial at 0.33 and above); na without a score.",
+          "error_count": "Errors this case hit.",
+          "warning_count": "Warnings this case raised (not errors).",
+          "errors_text": "The error messages, separated by ' | '.",
+          "case_tags": "Reserved for case labels (intent, operation, output type); empty for now."
+        }
+      },
+      "csv": "schema_version,run_id,tool_version,run_status,run_started_at,run_finished_at,run_duration_s,exported_at,tableau_server_url,tableau_site,tableau_site_luid,tableau_server_version,capability,capability_label,suite_case_count,model_under_test,model_provider,answered_by,judge_provider,judge_model,case_number,test_case_id,datasource,utterance,expected_kind,expected,actual,latency_s,case_status,case_score,case_verdict,error_count,warning_count,errors_text,case_tags,calculatedFieldFormula.calcValidity,llmJudge.coherence\r\n3,beefcafe00000000000000000000beef,,Completed,2026-09-30T10:00:00Z,2026-09-30T10:30:05Z,1805.0,2026-09-30T12:34:56Z,,,,,calc,Calculated fields,2,gpt-4o-mini,,https://localhost:5001,anthropic,claude-sonnet-4-5,1,tc-1,Superstore,total sales,formula,\"{\"\"calculatedFieldFormula\"\":\"\"SUM([Sales])\"\"}\",\"{\"\"calculatedFieldFormula\"\":\"\"SUM([Sales])\"\"}\",9.4,scored,1.0,pass,0,0,,,1.0,0.9\r\n3,beefcafe00000000000000000000beef,,Completed,2026-09-30T10:00:00Z,2026-09-30T10:30:05Z,1805.0,2026-09-30T12:34:56Z,,,,,calc,Calculated fields,2,gpt-4o-mini,,https://localhost:5001,anthropic,claude-sonnet-4-5,2,tc-2,Superstore,profit ratio,formula,\"{\"\"calculatedFieldFormula\"\":\"\"SUM([Profit])/SUM([Sales])\"\"}\",\"{\"\"calculatedFieldFormula\"\":\"\"SUM([Profit])\"\"}\",10.1,scored,0.5,partial,1,0,slow gateway,,0.5,Unavailable\r\n",
+      "filename_stem": "ai-model-eval_calc_gpt-4o-mini_2026-09-30_beefcafe"
+    },
+    "cafe0000000000000000000000000001": {
+      "json": {
+        "schema_version": 3,
+        "run": {
+          "schema_version": 3,
+          "run_id": "cafe0000000000000000000000000001",
+          "tool_version": "1.2.0",
+          "run_status": "Paused",
+          "run_started_at": "2026-09-29T08:15:00Z",
+          "run_finished_at": null,
+          "run_duration_s": null,
+          "exported_at": "2026-09-30T12:34:56Z",
+          "tableau_server_url": "https://tableau.example.com",
+          "tableau_site": "Sales",
+          "tableau_site_luid": "site-luid-9",
+          "tableau_server_version": "2026.4.0",
+          "capability": "calc",
+          "capability_label": "Calculated fields",
+          "suite_case_count": 166,
+          "model_under_test": "claude-sonnet-4-6",
+          "model_provider": "anthropic",
+          "answered_by": "https://tableau.example.com/content-exploration",
+          "judge_provider": "",
+          "judge_model": "",
+          "suite_id": "calcs-public",
+          "suite_label": "Calculated fields",
+          "models": {},
+          "declared_site_model": "gpt-5",
+          "resolved_site_model": "claude-sonnet-4-6",
+          "batch_id": "",
+          "local": {
+            "test_path": "",
+            "runner": "ect-server"
+          }
+        },
+        "summary": {
+          "viz_quality_score": null,
+          "nl_quality_score": null,
+          "headline_scores": [],
+          "categories": [],
+          "verdicts": {
+            "pass": 0,
+            "partial": 0,
+            "fail": 0,
+            "na": 1
+          },
+          "verdict_thresholds": {
+            "pass": 0.66,
+            "partial": 0.33,
+            "provisional": true
+          },
+          "cases_total": 166,
+          "cases_completed": 1,
+          "cases_scored": 0,
+          "cases_with_errors": 1,
+          "avg_latency_s": null,
+          "metrics": []
+        },
+        "cases": [
+          {
+            "case_number": 1,
+            "test_case_id": "tc-1",
+            "datasource": "Superstore",
+            "utterance": "total sales",
+            "expected_kind": "formula",
+            "expected": {
+              "calculatedFieldFormula": "SUM([Sales])"
+            },
+            "actual": null,
+            "latency_s": null,
+            "case_status": "error",
+            "case_score": null,
+            "case_verdict": "na",
+            "error_count": 1,
+            "warning_count": 1,
+            "errors_text": "HTTP 500 from the gateway",
+            "case_tags": "",
+            "metrics": []
+          }
+        ],
+        "metric_dictionary": {},
+        "column_dictionary": {
+          "schema_version": "Version of this column set. Rows with different versions are not in the same table.",
+          "run_id": "The run's identifier. Every row of one run carries the same value; filter on it to see one run.",
+          "tool_version": "Version of the evaluation tool that produced the run.",
+          "run_status": "How the run ended: Completed, Paused, Canceled, or Failed; In progress or Queued for a run exported before it ended.",
+          "run_started_at": "When the run was launched (UTC).",
+          "run_finished_at": "When the run ended (UTC); empty while it is still going or paused.",
+          "run_duration_s": "Seconds from launch to end; empty until the run has ended.",
+          "exported_at": "When this file or publish was produced (UTC).",
+          "tableau_server_url": "The Tableau Server whose AI settings were under test.",
+          "tableau_site": "The site under test (its name in the URL; Default for the default site).",
+          "tableau_site_luid": "The site's identifier on the server.",
+          "tableau_server_version": "The server's product version and build at the time of the run, as the server reports them: 2026.1.0 (20261.26.0415.1010).",
+          "capability": "The AI capability the suite exercises (calc, viz-authoring, palettes, ...).",
+          "capability_label": "The capability as the site settings name it (Calculated fields, Build a visualization, ...).",
+          "suite_case_count": "How many cases the suite has. A run with fewer rows than this (count the distinct test_case_id values) is partial.",
+          "model_under_test": "The model that answered: the model the site had configured, read from Site Settings when the run started.",
+          "model_provider": "The provider configured for the model, when the site settings say.",
+          "answered_by": "The address the tool sent the questions to: the Tableau Server endpoint that passes them to the site's model.",
+          "judge_provider": "Provider of the LLM judge that scored the natural-language metrics; empty when no judge ran.",
+          "judge_model": "The judge model; empty when no judge ran.",
+          "case_number": "Position of the case in the run.",
+          "test_case_id": "The case's identifier in the suite; stable across runs of the suite.",
+          "datasource": "The data source the case asks about.",
+          "utterance": "The question or request sent to the AI feature.",
+          "expected_kind": "What the case expects back: formula, viz_spec, plan, palette, narrative, reply or intent.",
+          "expected": "The known-good answer, as JSON.",
+          "actual": "What the model produced, as JSON; empty when the case errored.",
+          "latency_s": "Seconds the server took to answer this case.",
+          "case_status": "scored (has a score), error (no score, hit an error), unavailable (only judge scores, all failed), or unscored (nothing to score, or the suite gives no expected answer for the case).",
+          "case_score": "The case's overall score, 0 to 1: its category averages weighted by the category weights (metric_category_weight).",
+          "case_verdict": "pass, partial or fail on case_score (provisional bands: pass at 0.66 and above, partial at 0.33 and above); na without a score.",
+          "error_count": "Errors this case hit.",
+          "warning_count": "Warnings this case raised (not errors).",
+          "errors_text": "The error messages, separated by ' | '.",
+          "case_tags": "Reserved for case labels (intent, operation, output type); empty for now."
+        }
+      },
+      "csv": "schema_version,run_id,tool_version,run_status,run_started_at,run_finished_at,run_duration_s,exported_at,tableau_server_url,tableau_site,tableau_site_luid,tableau_server_version,capability,capability_label,suite_case_count,model_under_test,model_provider,answered_by,judge_provider,judge_model,case_number,test_case_id,datasource,utterance,expected_kind,expected,actual,latency_s,case_status,case_score,case_verdict,error_count,warning_count,errors_text,case_tags\r\n3,cafe0000000000000000000000000001,1.2.0,Paused,2026-09-29T08:15:00Z,,,2026-09-30T12:34:56Z,https://tableau.example.com,Sales,site-luid-9,2026.4.0,calc,Calculated fields,166,claude-sonnet-4-6,anthropic,https://tableau.example.com/content-exploration,,,1,tc-1,Superstore,total sales,formula,\"{\"\"calculatedFieldFormula\"\":\"\"SUM([Sales])\"\"}\",,,error,,na,1,1,HTTP 500 from the gateway,\r\n",
+      "filename_stem": "ai-model-eval_calcs-public_claude-sonnet-4-6_2026-09-29_cafe0000"
+    },
+    "d00d0000000000000000000000000002": {
+      "json": {
+        "schema_version": 3,
+        "run": {
+          "schema_version": 3,
+          "run_id": "d00d0000000000000000000000000002",
+          "tool_version": "0.1.0",
+          "run_status": "Completed",
+          "run_started_at": "2026-09-28T23:59:59Z",
+          "run_finished_at": "2026-09-29T00:01:00Z",
+          "run_duration_s": 61.0,
+          "exported_at": "2026-09-30T12:34:56Z",
+          "tableau_server_url": "https://tab.example.com",
+          "tableau_site": "Default",
+          "tableau_site_luid": "",
+          "tableau_server_version": "",
+          "capability": "viz-authoring",
+          "capability_label": "Build a visualization",
+          "suite_case_count": 4,
+          "model_under_test": "gpt-4o",
+          "model_provider": "",
+          "answered_by": "https://tab.example.com/content-exploration",
+          "judge_provider": "openai",
+          "judge_model": "gpt-4.1",
+          "suite_id": "viz authoring/public",
+          "suite_label": "Viz Authoring",
+          "models": {},
+          "declared_site_model": "gpt-4o",
+          "resolved_site_model": "",
+          "batch_id": "",
+          "local": {
+            "test_path": "",
+            "runner": "ect-server"
+          }
+        },
+        "summary": {
+          "viz_quality_score": 0.6833333333333332,
+          "nl_quality_score": 0.7,
+          "headline_scores": [
+            {
+              "key": "viz",
+              "label": "Visualization quality",
+              "average": 0.6833333333333332,
+              "total_scores": 3,
+              "judge_scores": 0,
+              "context": [
+                {
+                  "key": "match",
+                  "label": "Intent and spec",
+                  "average": 1.0,
+                  "total_scores": 1,
+                  "judge_scores": 0
+                }
+              ]
+            },
+            {
+              "key": "nl",
+              "label": "Natural language quality",
+              "average": 0.7,
+              "total_scores": 1,
+              "judge_scores": 1
+            }
+          ],
+          "categories": [
+            {
+              "key": "match",
+              "label": "Intent and spec",
+              "weight": 6,
+              "average": 1.0,
+              "metrics": [
+                {
+                  "label": "Intent Match",
+                  "average": 1.0,
+                  "judge_derived": false
+                }
+              ]
+            },
+            {
+              "key": "data",
+              "label": "Data",
+              "weight": 13,
+              "average": 0.8,
+              "metrics": [
+                {
+                  "label": "Field Similarity",
+                  "average": 0.8,
+                  "judge_derived": false
+                }
+              ]
+            },
+            {
+              "key": "semantics",
+              "label": "Semantics",
+              "weight": 7,
+              "average": 1.0,
+              "metrics": [
+                {
+                  "label": "Chart Similarity",
+                  "average": 1.0,
+                  "judge_derived": false
+                }
+              ]
+            },
+            {
+              "key": "design",
+              "label": "Design",
+              "weight": 4,
+              "average": 0.25,
+              "metrics": [
+                {
+                  "label": "Aesthetic",
+                  "average": 0.25,
+                  "judge_derived": false
+                }
+              ]
+            },
+            {
+              "key": "functionality",
+              "label": "Functionality",
+              "weight": 7,
+              "average": null,
+              "metrics": [
+                {
+                  "label": "Filter",
+                  "average": null,
+                  "judge_derived": false
+                }
+              ]
+            },
+            {
+              "key": "nlFactual",
+              "label": "Factual grounding",
+              "weight": 0,
+              "average": 0.7,
+              "metrics": [
+                {
+                  "label": "Factual Grounding",
+                  "average": 0.7,
+                  "judge_derived": true
+                }
+              ]
+            },
+            {
+              "key": "nlConversation",
+              "label": "Conversation quality",
+              "weight": 0,
+              "average": null,
+              "metrics": [
+                {
+                  "label": "Coherence",
+                  "average": null,
+                  "judge_derived": true
+                }
+              ]
+            }
+          ],
+          "verdicts": {
+            "pass": 1,
+            "partial": 0,
+            "fail": 0,
+            "na": 3
+          },
+          "verdict_thresholds": {
+            "pass": 0.66,
+            "partial": 0.33,
+            "provisional": true
+          },
+          "cases_total": 4,
+          "cases_completed": 4,
+          "cases_scored": 1,
+          "cases_with_errors": 0,
+          "avg_latency_s": 5.75,
+          "metrics": [
+            {
+              "metric": "intent.equals",
+              "label": "Intent Match",
+              "category": "Intent and spec",
+              "average": 1.0,
+              "scored_cases": 1,
+              "unavailable_cases": 0,
+              "judge_derived": false
+            },
+            {
+              "metric": "llmJudge.coherence",
+              "label": "Coherence",
+              "category": "Conversation quality",
+              "average": null,
+              "scored_cases": 0,
+              "unavailable_cases": 1,
+              "judge_derived": true
+            },
+            {
+              "metric": "llmJudge.factualGrounding",
+              "label": "Factual Grounding",
+              "category": "Factual grounding",
+              "average": 0.7,
+              "scored_cases": 1,
+              "unavailable_cases": 0,
+              "judge_derived": true
+            },
+            {
+              "metric": "llmJudge.novelJudgeMetric",
+              "label": "novelJudgeMetric",
+              "category": "Other",
+              "average": 0.3,
+              "scored_cases": 1,
+              "unavailable_cases": 0,
+              "judge_derived": true
+            },
+            {
+              "metric": "somethingElse.mystery",
+              "label": "mystery",
+              "category": "Other",
+              "average": 0.9,
+              "scored_cases": 1,
+              "unavailable_cases": 0,
+              "judge_derived": false
+            },
+            {
+              "metric": "vizQuality.aestheticAccuracy",
+              "label": "Aesthetic",
+              "category": "Design",
+              "average": 0.25,
+              "scored_cases": 1,
+              "unavailable_cases": 0,
+              "judge_derived": false
+            },
+            {
+              "metric": "vizQuality.chartSimilarity",
+              "label": "Chart Similarity",
+              "category": "Semantics",
+              "average": 1.0,
+              "scored_cases": 1,
+              "unavailable_cases": 0,
+              "judge_derived": false
+            },
+            {
+              "metric": "vizQuality.fieldSimilarity",
+              "label": "Field Similarity",
+              "category": "Data",
+              "average": 0.8,
+              "scored_cases": 1,
+              "unavailable_cases": 0,
+              "judge_derived": false
+            },
+            {
+              "metric": "vizQuality.filterAccuracy",
+              "label": "Filter",
+              "category": "Functionality",
+              "average": null,
+              "scored_cases": 0,
+              "unavailable_cases": 1,
+              "judge_derived": false
+            }
+          ]
+        },
+        "cases": [
+          {
+            "case_number": 1,
+            "test_case_id": "v-1",
+            "datasource": "Superstore",
+            "utterance": "sales by région — 2024",
+            "expected_kind": "viz_spec",
+            "expected": {
+              "notionalSpec": {
+                "columns": [
+                  "Region"
+                ],
+                "rows": [
+                  "SUM(Sales)"
+                ]
+              }
+            },
+            "actual": {
+              "notionalSpec": {
+                "columns": [
+                  "Region"
+                ],
+                "rows": [
+                  "SUM(Sales)"
+                ]
+              },
+              "user_friendly_reply": "Here is \"sales\", by region"
+            },
+            "latency_s": 3.25,
+            "case_status": "scored",
+            "case_score": 0.7666666666666667,
+            "case_verdict": "pass",
+            "error_count": 0,
+            "warning_count": 1,
+            "errors_text": "",
+            "case_tags": "",
+            "metrics": [
+              {
+                "metric_stage": "vizQuality",
+                "metric_name": "fieldSimilarity",
+                "metric_id": "",
+                "metric_label": "Field Similarity",
+                "metric_category": "Data",
+                "metric_category_weight": 13,
+                "score": 0.8,
+                "judge_derived": false,
+                "unavailable": false,
+                "explanation": ""
+              },
+              {
+                "metric_stage": "vizQuality",
+                "metric_name": "chartSimilarity",
+                "metric_id": "",
+                "metric_label": "Chart Similarity",
+                "metric_category": "Semantics",
+                "metric_category_weight": 7,
+                "score": 1.0,
+                "judge_derived": false,
+                "unavailable": false,
+                "explanation": ""
+              },
+              {
+                "metric_stage": "vizQuality",
+                "metric_name": "aestheticAccuracy",
+                "metric_id": "",
+                "metric_label": "Aesthetic",
+                "metric_category": "Design",
+                "metric_category_weight": 4,
+                "score": 0.25,
+                "judge_derived": false,
+                "unavailable": false,
+                "explanation": ""
+              },
+              {
+                "metric_stage": "vizQuality",
+                "metric_name": "filterAccuracy",
+                "metric_id": "",
+                "metric_label": "Filter",
+                "metric_category": "Functionality",
+                "metric_category_weight": 7,
+                "score": null,
+                "judge_derived": false,
+                "unavailable": true,
+                "explanation": ""
+              },
+              {
+                "metric_stage": "llmJudge",
+                "metric_name": "factualGrounding",
+                "metric_id": "",
+                "metric_label": "Factual Grounding",
+                "metric_category": "Factual grounding",
+                "metric_category_weight": 0,
+                "score": 0.7,
+                "judge_derived": true,
+                "unavailable": false,
+                "explanation": "mostly grounded"
+              },
+              {
+                "metric_stage": "llmJudge",
+                "metric_name": "novelJudgeMetric",
+                "metric_id": "",
+                "metric_label": "novelJudgeMetric",
+                "metric_category": "Other",
+                "metric_category_weight": 0,
+                "score": 0.3,
+                "judge_derived": true,
+                "unavailable": false,
+                "explanation": ""
+              },
+              {
+                "metric_stage": "somethingElse",
+                "metric_name": "mystery",
+                "metric_id": "",
+                "metric_label": "mystery",
+                "metric_category": "Other",
+                "metric_category_weight": 0,
+                "score": 0.9,
+                "judge_derived": false,
+                "unavailable": false,
+                "explanation": ""
+              }
+            ]
+          },
+          {
+            "case_number": 2,
+            "test_case_id": "v-2",
+            "datasource": "Superstore",
+            "utterance": "profit trend",
+            "expected_kind": "plan",
+            "expected": {
+              "steps": [
+                {
+                  "op": "filter"
+                }
+              ]
+            },
+            "actual": {
+              "steps": []
+            },
+            "latency_s": 12.0,
+            "case_status": "unavailable",
+            "case_score": null,
+            "case_verdict": "na",
+            "error_count": 0,
+            "warning_count": 0,
+            "errors_text": "",
+            "case_tags": "",
+            "metrics": [
+              {
+                "metric_stage": "llmJudge",
+                "metric_name": "coherence",
+                "metric_id": "",
+                "metric_label": "Coherence",
+                "metric_category": "Conversation quality",
+                "metric_category_weight": 0,
+                "score": null,
+                "judge_derived": true,
+                "unavailable": true,
+                "explanation": "Unavailable"
+              }
+            ]
+          },
+          {
+            "case_number": 3,
+            "test_case_id": "v-3",
+            "datasource": "Superstore",
+            "utterance": "no metrics",
+            "expected_kind": "reply",
+            "expected": "just a reply",
+            "actual": null,
+            "latency_s": null,
+            "case_status": "unscored",
+            "case_score": null,
+            "case_verdict": "na",
+            "error_count": 0,
+            "warning_count": 0,
+            "errors_text": "",
+            "case_tags": "",
+            "metrics": []
+          },
+          {
+            "case_number": 4,
+            "test_case_id": "v-4",
+            "datasource": "Superstore",
+            "utterance": "hide nulls",
+            "expected_kind": "viz_spec",
+            "expected": {
+              "intent": "NLQ_TO_NOTIONAL_SPEC",
+              "notionalSpec": null
+            },
+            "actual": {
+              "intent": "NLQ_TO_NOTIONAL_SPEC",
+              "notionalSpec": {
+                "chart": "bar"
+              }
+            },
+            "latency_s": 2.0,
+            "case_status": "unscored",
+            "case_score": null,
+            "case_verdict": "na",
+            "error_count": 0,
+            "warning_count": 1,
+            "errors_text": "",
+            "case_tags": "",
+            "metrics": [
+              {
+                "metric_stage": "intent",
+                "metric_name": "equals",
+                "metric_id": "",
+                "metric_label": "Intent Match",
+                "metric_category": "Intent and spec",
+                "metric_category_weight": 6,
+                "score": 1.0,
+                "judge_derived": false,
+                "unavailable": false,
+                "explanation": ""
+              }
+            ]
+          }
+        ],
+        "metric_dictionary": {
+          "intent.equals": {
+            "label": "Intent Match",
+            "category": "Intent and spec",
+            "category_weight": 6,
+            "judge_derived": false,
+            "meaning": "Whether the detected intent is the expected one. Letter case, quotes and punctuation around the word do not count."
+          },
+          "llmJudge.coherence": {
+            "label": "Coherence",
+            "category": "Conversation quality",
+            "category_weight": 0,
+            "judge_derived": true,
+            "meaning": "Logical flow and readability of the reply."
+          },
+          "llmJudge.factualGrounding": {
+            "label": "Factual Grounding",
+            "category": "Factual grounding",
+            "category_weight": 0,
+            "judge_derived": true,
+            "meaning": "Whether the reply's claims match the question and the reference answer: the expected chart for a visualization, or the formulas for a calculated field (does the explanation describe what the formula does, and does the formula answer the request)."
+          },
+          "llmJudge.novelJudgeMetric": {
+            "label": "novelJudgeMetric",
+            "category": "Other",
+            "category_weight": 0,
+            "judge_derived": true,
+            "meaning": ""
+          },
+          "somethingElse.mystery": {
+            "label": "mystery",
+            "category": "Other",
+            "category_weight": 0,
+            "judge_derived": false,
+            "meaning": ""
+          },
+          "vizQuality.aestheticAccuracy": {
+            "label": "Aesthetic",
+            "category": "Design",
+            "category_weight": 4,
+            "judge_derived": false,
+            "meaning": "Color, size, and styling encodings compared with the expected chart."
+          },
+          "vizQuality.chartSimilarity": {
+            "label": "Chart Similarity",
+            "category": "Semantics",
+            "category_weight": 7,
+            "judge_derived": false,
+            "meaning": "Whether the generated chart type matches the expected one."
+          },
+          "vizQuality.fieldSimilarity": {
+            "label": "Field Similarity",
+            "category": "Data",
+            "category_weight": 13,
+            "judge_derived": false,
+            "meaning": "Share of the fields the chart and the expected chart have in common, by exact name, on every channel (axes, color, size, tooltip). Swapped axes count as a match; a similar name does not."
+          },
+          "vizQuality.filterAccuracy": {
+            "label": "Filter",
+            "category": "Functionality",
+            "category_weight": 7,
+            "judge_derived": false,
+            "meaning": "Share of the expected filters the chart applies, over every kind of filter: categorical values, date ranges, number ranges and relative dates. Extra filters lower it."
+          }
+        },
+        "column_dictionary": {
+          "schema_version": "Version of this column set. Rows with different versions are not in the same table.",
+          "run_id": "The run's identifier. Every row of one run carries the same value; filter on it to see one run.",
+          "tool_version": "Version of the evaluation tool that produced the run.",
+          "run_status": "How the run ended: Completed, Paused, Canceled, or Failed; In progress or Queued for a run exported before it ended.",
+          "run_started_at": "When the run was launched (UTC).",
+          "run_finished_at": "When the run ended (UTC); empty while it is still going or paused.",
+          "run_duration_s": "Seconds from launch to end; empty until the run has ended.",
+          "exported_at": "When this file or publish was produced (UTC).",
+          "tableau_server_url": "The Tableau Server whose AI settings were under test.",
+          "tableau_site": "The site under test (its name in the URL; Default for the default site).",
+          "tableau_site_luid": "The site's identifier on the server.",
+          "tableau_server_version": "The server's product version and build at the time of the run, as the server reports them: 2026.1.0 (20261.26.0415.1010).",
+          "capability": "The AI capability the suite exercises (calc, viz-authoring, palettes, ...).",
+          "capability_label": "The capability as the site settings name it (Calculated fields, Build a visualization, ...).",
+          "suite_case_count": "How many cases the suite has. A run with fewer rows than this (count the distinct test_case_id values) is partial.",
+          "model_under_test": "The model that answered: the model the site had configured, read from Site Settings when the run started.",
+          "model_provider": "The provider configured for the model, when the site settings say.",
+          "answered_by": "The address the tool sent the questions to: the Tableau Server endpoint that passes them to the site's model.",
+          "judge_provider": "Provider of the LLM judge that scored the natural-language metrics; empty when no judge ran.",
+          "judge_model": "The judge model; empty when no judge ran.",
+          "case_number": "Position of the case in the run.",
+          "test_case_id": "The case's identifier in the suite; stable across runs of the suite.",
+          "datasource": "The data source the case asks about.",
+          "utterance": "The question or request sent to the AI feature.",
+          "expected_kind": "What the case expects back: formula, viz_spec, plan, palette, narrative, reply or intent.",
+          "expected": "The known-good answer, as JSON.",
+          "actual": "What the model produced, as JSON; empty when the case errored.",
+          "latency_s": "Seconds the server took to answer this case.",
+          "case_status": "scored (has a score), error (no score, hit an error), unavailable (only judge scores, all failed), or unscored (nothing to score, or the suite gives no expected answer for the case).",
+          "case_score": "The case's overall score, 0 to 1: its category averages weighted by the category weights (metric_category_weight).",
+          "case_verdict": "pass, partial or fail on case_score (provisional bands: pass at 0.66 and above, partial at 0.33 and above); na without a score.",
+          "error_count": "Errors this case hit.",
+          "warning_count": "Warnings this case raised (not errors).",
+          "errors_text": "The error messages, separated by ' | '.",
+          "case_tags": "Reserved for case labels (intent, operation, output type); empty for now."
+        }
+      },
+      "csv": "schema_version,run_id,tool_version,run_status,run_started_at,run_finished_at,run_duration_s,exported_at,tableau_server_url,tableau_site,tableau_site_luid,tableau_server_version,capability,capability_label,suite_case_count,model_under_test,model_provider,answered_by,judge_provider,judge_model,case_number,test_case_id,datasource,utterance,expected_kind,expected,actual,latency_s,case_status,case_score,case_verdict,error_count,warning_count,errors_text,case_tags,intent.equals,llmJudge.coherence,llmJudge.factualGrounding,llmJudge.novelJudgeMetric,somethingElse.mystery,vizQuality.aestheticAccuracy,vizQuality.chartSimilarity,vizQuality.fieldSimilarity,vizQuality.filterAccuracy\r\n3,d00d0000000000000000000000000002,0.1.0,Completed,2026-09-28T23:59:59Z,2026-09-29T00:01:00Z,61.0,2026-09-30T12:34:56Z,https://tab.example.com,Default,,,viz-authoring,Build a visualization,4,gpt-4o,,https://tab.example.com/content-exploration,openai,gpt-4.1,1,v-1,Superstore,sales by région — 2024,viz_spec,\"{\"\"notionalSpec\"\":{\"\"columns\"\":[\"\"Region\"\"],\"\"rows\"\":[\"\"SUM(Sales)\"\"]}}\",\"{\"\"notionalSpec\"\":{\"\"columns\"\":[\"\"Region\"\"],\"\"rows\"\":[\"\"SUM(Sales)\"\"]},\"\"user_friendly_reply\"\":\"\"Here is \\\"\"sales\\\"\", by region\"\"}\",3.25,scored,0.7666666666666667,pass,0,1,,,,,0.7,0.3,0.9,0.25,1.0,0.8,Unavailable\r\n3,d00d0000000000000000000000000002,0.1.0,Completed,2026-09-28T23:59:59Z,2026-09-29T00:01:00Z,61.0,2026-09-30T12:34:56Z,https://tab.example.com,Default,,,viz-authoring,Build a visualization,4,gpt-4o,,https://tab.example.com/content-exploration,openai,gpt-4.1,2,v-2,Superstore,profit trend,plan,\"{\"\"steps\"\":[{\"\"op\"\":\"\"filter\"\"}]}\",\"{\"\"steps\"\":[]}\",12.0,unavailable,,na,0,0,,,,Unavailable,,,,,,,\r\n3,d00d0000000000000000000000000002,0.1.0,Completed,2026-09-28T23:59:59Z,2026-09-29T00:01:00Z,61.0,2026-09-30T12:34:56Z,https://tab.example.com,Default,,,viz-authoring,Build a visualization,4,gpt-4o,,https://tab.example.com/content-exploration,openai,gpt-4.1,3,v-3,Superstore,no metrics,reply,\"\"\"just a reply\"\"\",,,unscored,,na,0,0,,,,,,,,,,,\r\n3,d00d0000000000000000000000000002,0.1.0,Completed,2026-09-28T23:59:59Z,2026-09-29T00:01:00Z,61.0,2026-09-30T12:34:56Z,https://tab.example.com,Default,,,viz-authoring,Build a visualization,4,gpt-4o,,https://tab.example.com/content-exploration,openai,gpt-4.1,4,v-4,Superstore,hide nulls,viz_spec,\"{\"\"intent\"\":\"\"NLQ_TO_NOTIONAL_SPEC\"\",\"\"notionalSpec\"\":null}\",\"{\"\"intent\"\":\"\"NLQ_TO_NOTIONAL_SPEC\"\",\"\"notionalSpec\"\":{\"\"chart\"\":\"\"bar\"\"}}\",2.0,unscored,,na,0,1,,,1.0,,,,,,,,\r\n",
+      "filename_stem": "ai-model-eval_viz-authoring-public_gpt-4o_2026-09-28_d00d0000"
+    }
+  }
+}

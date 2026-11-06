@@ -1,0 +1,57 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-support-360",
+  "info": {
+    "requirement-id": "D-248-aeb26ffe7e0545dc",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "I want to see the lowest value of order amount within the Residential Construction industry.",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Order Amount",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "aggregation": "min",
+              "encoding": "x"
+            }
+          ],
+          "categoricalFilters": [
+            {
+              "type": "categorical",
+              "field": "Industry",
+              "values": [
+                "Residential Construction"
+              ]
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement",
+          "Intent: Breakdown by Category"
+        ],
+        "op": [
+          "Op: Aggregation (Non-Default)",
+          "Op: Filter - Categorical"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    }
+  ],
+  "id": "966b34082148b3fe83eaa2d9d491777b"
+}

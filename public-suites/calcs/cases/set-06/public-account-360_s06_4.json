@@ -1,0 +1,39 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-account-360",
+  "info": {
+    "originalValid": true,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "Create a calc to extract day of month from [Most Recent Order Date]",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "DAY(MAX([Most Recent Order Date]))",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-date",
+        "add-explicit-calc-wordage"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Lookup / Retrieval"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Date Part Extraction",
+          "Op: Aggregation (Non-Default)"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "7d51d467cc8c168593c23669d521d9f5"
+}

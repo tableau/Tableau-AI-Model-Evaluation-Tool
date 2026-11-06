@@ -1,0 +1,34 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-activity-360",
+  "info": {
+    "requirement-id": "D-248-bcdf04eaf1947ea7",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "duration for Jan 2023",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Filter - Date Range / Relative"
+        ],
+        "out": [
+          "Out: Unspecified Viz"
+        ]
+      }
+    }
+  ],
+  "id": "2ab536688a2bd57e3d2bfad49cb15707"
+}

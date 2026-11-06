@@ -1,0 +1,38 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-support-360",
+  "info": {
+    "requirement-id": "D-248-cd5ed1d580cd4c3f",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "what is the average days to close week over week",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "infer-date-time-field",
+        "original-test-bench",
+        "infer-non-default-aggregation"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Trend over Time",
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Aggregation (Non-Default)",
+          "Op: Date Truncation / Granularity",
+          "Op: Field Inference - Date Field"
+        ],
+        "out": [
+          "Out: Unspecified Viz"
+        ]
+      }
+    }
+  ],
+  "id": "c9adb0eceec6a1efc52b99f1e5c021d1"
+}

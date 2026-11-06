@@ -1,0 +1,87 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-opportunity-360",
+  "info": {
+    "requirement-id": "D-248-de49330ff1bbbc83",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "list the contractors by year of amount",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Created Date",
+              "data": "date",
+              "type": "discrete",
+              "role": "dimension",
+              "aggregation": "year",
+              "encoding": "x",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            },
+            {
+              "caption": "Account Name",
+              "data": "string",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "x",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            },
+            {
+              "caption": "Amount",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "aggregation": "sum",
+              "encoding": "y",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            }
+          ],
+          "sort": {
+            "field": "Account Name",
+            "by": "Amount",
+            "aggregation": "sum",
+            "direction": "desc",
+            "_tb_wildcards": [
+              "field",
+              "by"
+            ]
+          }
+        }
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench",
+        "infer-other-field",
+        "infer-non-default-aggregation"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Lookup / Retrieval"
+        ],
+        "op": [
+          "Op: Aggregation (Non-Default)",
+          "Op: Group By Dimension",
+          "Op: Aggregation (Default)",
+          "Op: Date Truncation / Granularity",
+          "Op: Sort / Order",
+          "Op: Field Inference - Measure / Dimension"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    }
+  ],
+  "id": "550655c1b5cf42fc6e11c1a06b6c800b"
+}

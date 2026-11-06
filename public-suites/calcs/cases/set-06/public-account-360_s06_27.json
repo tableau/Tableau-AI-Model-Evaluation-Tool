@@ -1,0 +1,42 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-account-360",
+  "info": {
+    "originalValid": true,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "create calc to determine the difference in # of entries across quarters",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "{ LOOKUP(SUM([Number of Contacts]), -1) - SUM([Number of Contacts]) }",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-table",
+        "add-explicit-calc-wordage"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement",
+          "Intent: Trend over Time"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Date Truncation / Granularity",
+          "Op: Arithmetic / Ratio",
+          "Op: Table Calculation / Window",
+          "Op: Aggregation (Default)"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "498fc516190244d3371692106cab9642"
+}

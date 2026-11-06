@@ -1,0 +1,75 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-opportunity-360",
+  "info": {
+    "requirement-id": "D-248-aeb26ffe7e0545dc",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "What would be the median deal size in 2024?",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Close Date",
+              "data": "date",
+              "type": "discrete",
+              "role": "dimension",
+              "aggregation": "year",
+              "encoding": "x",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            },
+            {
+              "caption": "Amount",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "aggregation": "median",
+              "encoding": "y"
+            }
+          ],
+          "dateRangeFilters": [
+            {
+              "type": "date-range",
+              "field": "Close Date",
+              "start": "2024-01-01",
+              "end": "2024-12-31",
+              "_tb_wildcards": [
+                "field"
+              ]
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "infer-date-time-field",
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement",
+          "Intent: Trend over Time"
+        ],
+        "op": [
+          "Op: Aggregation (Non-Default)",
+          "Op: Filter - Numeric Threshold",
+          "Op: Filter - Date Range / Relative",
+          "Op: Group By Dimension",
+          "Op: Date Truncation / Granularity",
+          "Op: Field Inference - Date Field"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    }
+  ],
+  "id": "e0a8cfa67fc9cb233920535714a86b95"
+}

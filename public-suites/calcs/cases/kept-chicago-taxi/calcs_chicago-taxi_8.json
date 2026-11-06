@@ -1,0 +1,25 @@
+{
+  "runner": "ect-server",
+  "datasource": "chicago-taxi-trips-2024-calcs",
+  "info": {
+    "originalValid": true
+  },
+  "inputs": [
+    {
+      "utterance": "create a calc to flag companies that have string chicago in them",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "IF CONTAINS(LOWER([Company]), 'chicago') THEN 1 ELSE 0 END",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-logical",
+        "calc-category-string"
+      ]
+    }
+  ],
+  "id": "6ef7f2cd-1ff4-478d-934d-9ea4cddbbab2"
+}

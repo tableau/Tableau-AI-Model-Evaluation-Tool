@@ -1,0 +1,36 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-activity-360",
+  "info": {
+    "requirement-id": "D-250-fe4c8bda2b93a7de",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "who are the most contacted titles?",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Ranking / Top-N"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Group By Dimension",
+          "Op: Sort / Order",
+          "Op: Limit / Top-N"
+        ],
+        "out": [
+          "Out: Unspecified Viz"
+        ]
+      }
+    }
+  ],
+  "id": "770fbd27279d9191aad923cf67740dd8"
+}

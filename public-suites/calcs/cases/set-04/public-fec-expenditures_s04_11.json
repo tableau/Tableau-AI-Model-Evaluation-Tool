@@ -1,0 +1,39 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-fec-expenditures",
+  "info": {
+    "originalValid": true,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "create a calculation that labels the file number as green if it is greater than or equal to 1056882 else red",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "IF [File Number] >= 0.05 THEN 'Green' ELSE 'Red' END",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-string",
+        "add-explicit-calc-wordage"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Threshold Qualification"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Conditional Logic",
+          "Op: String Manipulation"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "be0cb0e4c4f7b5fa12e60a3f70311264"
+}

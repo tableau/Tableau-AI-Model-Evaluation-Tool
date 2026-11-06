@@ -1,0 +1,34 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-account-360",
+  "info": {
+    "requirement-id": "D-248-55b4ca4117240925",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "show me distribution of accounts by primary store region",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Distribution"
+        ],
+        "op": [
+          "Op: Group By Dimension",
+          "Op: Aggregation (Default)"
+        ],
+        "out": [
+          "Out: Unspecified Viz"
+        ]
+      }
+    }
+  ],
+  "id": "d756b3040fe3b8fdfa09cbf96fc92d40"
+}

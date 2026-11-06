@@ -1,0 +1,24 @@
+{
+    "runner": "ect-server",
+    "datasource": "retail-nto",
+    "info": {
+        "originalValid": true
+    },
+    "inputs": [
+        {
+            "utterance": "create a calc to group sales amount into revenue brackets: <= 10,000, 10,001–20,000, 20,001–30,000, and over 30,000.",
+            "source": "user",
+            "expected": {
+                "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+                "calculatedFieldFormula": {
+                    "formula": "IF [Sales] <= 10000 THEN '<= 10,000' ELSEIF [Sales] > 10000 AND [Sales] <= 20000 THEN '10,001–20,000' ELSEIF [Sales] > 20000 AND [Sales] <= 30000 THEN '20,001–30,000' ELSE 'Over 30,000' END",
+                    "caption": null
+                }
+            },
+            "tags": [
+                "calc-conditional-if-case"
+            ]
+        }
+    ],
+    "id": "c851f0cd-f78b-4d8e-b484-742821fdb93d"
+}

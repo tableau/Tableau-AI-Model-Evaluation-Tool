@@ -1,0 +1,68 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-opportunity-360",
+  "info": {
+    "requirement-id": "D-248-1e28e0f95a2a2476",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "Pro Services vs Kitchen & Bath over time",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "fields": [
+            {
+              "caption": "Close Date",
+              "data": "date",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "x",
+              "aggregation": "year",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            },
+            {
+              "caption": "Line Item Value",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "encoding": "x",
+              "aggregation": "sum"
+            },
+            {
+              "caption": "Expected Revenue",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "encoding": "y",
+              "aggregation": "sum"
+            }
+          ],
+          "chart": "scatterplot"
+        }
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Correlation / Relationship",
+          "Intent: Trend over Time"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Date Truncation / Granularity",
+          "Op: Group By Dimension"
+        ],
+        "out": [
+          "Out: Scatter Plot"
+        ]
+      }
+    }
+  ],
+  "id": "ca67fac4d68aef8753501871f6e6a1d6"
+}

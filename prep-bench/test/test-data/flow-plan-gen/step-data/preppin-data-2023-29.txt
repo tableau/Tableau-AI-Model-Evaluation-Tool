@@ -1,0 +1,55 @@
+<UserStepData>
+<Step name="AllChains Bike Sales" id="9C9E8174-E42F-4D77-88CE-3AA99B3E314F" type="Clean Step">
+Date (date),Store (string),Bike Type (string),Sales,Profit (real)
+03/01/2020,Brixton,Gravel,16.448,5.5512
+04/01/2020,Westminster,Mountain,3.54,-5.487
+04/01/2020,Whitechapel,Mountain,11.784,4.2717
+04/01/2020,Peckham,Mountain,272.736,-64.7748
+05/01/2020,Chelsea,Gravel,19.536,4.884
+06/01/2020,Chelsea,Road,12.78,5.2398
+06/01/2020,Chelsea,Mountain,5.48,1.4796
+06/01/2020,Westminster,Mountain,609.98,274.491
+06/01/2020,Notting Hill,Mountain,2573.82,746.4078
+06/01/2020,Mayfair,Mountain,31.12,0.3112
+06/01/2020,Brixton,Gravel,19.44,9.3312
+06/01/2020,Brixton,Mountain,6.54,3.0084
+06/01/2020,Richmond,Mountain,1147.94,317.7834
+07/01/2020,Westminster,Gravel,10.43,-18.2525
+07/01/2020,Fulham,Gravel,76.728,-53.7096
+09/01/2020,Wimbledon,Gravel,31.2,9.75
+09/01/2020,Chelsea,Gravel,9.344,1.168
+10/01/2020,Fulham,Road,51.94,21.2954
+10/01/2020,Whitechapel,Road,2.89,1.3583
+11/01/2020,Fulham,Gravel,9.94,3.0814
+13/01/2020,Wimbledon,Road,646.74,258.696
+13/01/2020,Chelsea,Gravel,19.9,6.567
+13/01/2020,Westminster,Gravel,3.438,-2.5212
+13/01/2020,Westminster,Road,5.64,2.7072
+13/01/2020,Shoreditch,Gravel,333.999,3.9294
+13/01/2020,Notting Hill,Gravel,545.94,87.3504
+13/01/2020,Soho,Road,62.3,30.8092
+13/01/2020,Brixton,Gravel,37.408,13.0928
+13/01/2020,Peckham,Gravel,1325.85,238.653
+13/01/2020,Peckham,Road,572.58,34.3548
+14/01/2020,Shoreditch,Road,61.96,-53.2856
+15/01/2020,Wimbledon,Gravel,149.95,65.978
+16/01/2020,Westminster,Gravel,18.588,-13.6312
+16/01/2020,Fulham,Gravel,127.104,28.5984
+16/01/2020,Whitechapel,Gravel,30.072,10.1493
+16/01/2020,Richmond,Gravel,124.2,-31.05
+18/01/2020,Dulwich,Road,64.864,6.4864
+19/01/2020,Westminster,Gravel,32.34,-23.716
+19/01/2020,Shoreditch,Gravel,181.47,-320.597
+19/01/2020,Soho,Gravel,108.72,36.693
+19/01/2020,Brixton,Gravel,56.064,19.6224
+20/01/2020,Dulwich,Gravel,247.716,93.5816
+20/01/2020,Chelsea,Gravel,73.51,21.1853
+20/01/2020,Westminster,Gravel,48.75,22.3185
+20/01/2020,Westminster,Road,67.194,-51.5154
+20/01/2020,Notting Hill,Gravel,1067.94,224.2674
+20/01/2020,Soho,Gravel,23.34,10.9698
+20/01/2020,Fulham,Gravel,345.57,52.2543
+20/01/2020,Brixton,Gravel,19.36,9.2928
+20/01/2020,Richmond,Gravel,699.93,181.9818
+</Step>
+</UserStepData>

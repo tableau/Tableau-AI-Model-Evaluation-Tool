@@ -1,0 +1,38 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-account-360",
+  "info": {
+    "requirement-id": "D-248-cd5ed1d580cd4c3f",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "monthly active revenue",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "infer-date-time-field",
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Trend over Time"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Group By Dimension",
+          "Op: Filter - Date Range / Relative",
+          "Op: Date Truncation / Granularity",
+          "Op: Field Inference - Date Field"
+        ],
+        "out": [
+          "Out: Unspecified Viz"
+        ]
+      }
+    }
+  ],
+  "id": "cb90ce987ccdda8e26932c2e3985c064"
+}

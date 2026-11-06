@@ -1,0 +1,39 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-activity-360",
+  "info": {
+    "originalValid": true,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "Create a calc to compute days diff betwen the last knwn activity per contact",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "DATEDIFF('day', MAX([Activity Date]), TODAY())",
+          "caption": null
+        }
+      },
+      "tags": [
+        "add-explicit-calc-wordage"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Data Preparation"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Date Arithmetic",
+          "Op: Date Part Extraction",
+          "Op: Aggregation (Non-Default)"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "17494ea08458508c739ef35b1d36c61e"
+}

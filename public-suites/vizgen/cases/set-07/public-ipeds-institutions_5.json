@@ -1,0 +1,37 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-ipeds-institutions",
+  "info": {
+    "requirement-id": "D-248-bb9b5ac1affd195a",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "per month, calculate the number of unique ID number with their respective latest suspension date",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement",
+          "Intent: Trend over Time"
+        ],
+        "op": [
+          "Op: Aggregation (Non-Default)",
+          "Op: Group By Dimension",
+          "Op: Date Part Extraction",
+          "Op: Filter - Date Range / Relative"
+        ],
+        "out": [
+          "Out: Unspecified Viz"
+        ]
+      }
+    }
+  ],
+  "id": "6bd5b6834abf8f34afa1c04d4b58e2f6"
+}

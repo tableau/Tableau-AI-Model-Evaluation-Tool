@@ -1,0 +1,66 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-opportunity-360",
+  "info": {
+    "requirement-id": "D-248-f594f417771e1ca2",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "what is the relationship between kitchen & bath line item value to expected revenue",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "fields": [
+            {
+              "caption": "Line Item Value",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "encoding": "x",
+              "aggregation": "sum"
+            },
+            {
+              "caption": "Expected Revenue",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "encoding": "y",
+              "aggregation": "sum",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            }
+          ],
+          "chart": "scatterplot",
+          "categoricalFilters": [
+            {
+              "type": "categorical",
+              "field": "Primary Product Family",
+              "values": [
+                "Kitchen & Bath"
+              ]
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Correlation / Relationship"
+        ],
+        "op": [
+          "Op: Aggregation (Default)"
+        ],
+        "out": [
+          "Out: Scatter Plot"
+        ]
+      }
+    }
+  ],
+  "id": "278ba43fb1d83820b5f37e81482ff6bf"
+}

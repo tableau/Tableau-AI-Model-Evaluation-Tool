@@ -1,0 +1,170 @@
+{
+    "datasourceIdentifier": "streaming_key_metrics",
+    "name": "streaming_key_metrics",
+    "fields": [
+        {
+            "name": "age_group",
+            "caption": "Age Group",
+            "description": "Age Group",
+            "role": "dimension",
+            "type": "discrete",
+            "datatype": "string",
+            "defaultAggregation": "count",
+            "count": 4,
+            "distinctCount": 4,
+            "values": [
+                "Gen X",
+                "Boomer",
+                "Millenial",
+                "Gen Z"
+            ]
+        },
+        {
+            "name": "content_hours",
+            "caption": "Content Hours",
+            "description": "Content Hours",
+            "role": "measure",
+            "type": "continuous",
+            "datatype": "number",
+            "defaultAggregation": "sum"
+        },
+        {
+            "name": "country",
+            "caption": "Country",
+            "description": "Country",
+            "role": "dimension",
+            "type": "discrete",
+            "datatype": "geographic",
+            "defaultAggregation": "count",
+            "count": 15,
+            "distinctCount": 15,
+            "values": [
+                "Mexico",
+                "Australia",
+                "Spain",
+                "Sweden",
+                "Canada",
+                "France",
+                "UK",
+                "Netherlands",
+                "Japan",
+                "Germany",
+                "USA",
+                "India",
+                "Italy",
+                "South Korea",
+                "Brazil"
+            ]
+        },
+        {
+            "name": "date",
+            "caption": "Date",
+            "description": "Date",
+            "role": "dimension",
+            "type": "discrete",
+            "datatype": "date",
+            "defaultAggregation": "year",
+            "startDate": "2023-07-01T00:00:00.000Z",
+            "endDate": "2024-12-31T00:00:00.000Z"
+        },
+        {
+            "name": "dau",
+            "caption": "Dau",
+            "description": "Dau",
+            "role": "measure",
+            "type": "continuous",
+            "datatype": "number",
+            "defaultAggregation": "sum"
+        },
+        {
+            "name": "mau",
+            "caption": "Mau",
+            "description": "Mau",
+            "role": "measure",
+            "type": "continuous",
+            "datatype": "number",
+            "defaultAggregation": "sum"
+        },
+        {
+            "name": "platform",
+            "caption": "Platform",
+            "description": "Platform",
+            "role": "dimension",
+            "type": "discrete",
+            "datatype": "string",
+            "defaultAggregation": "count",
+            "count": 4,
+            "distinctCount": 4,
+            "values": [
+                "Desktop",
+                "Tablet",
+                "Car",
+                "Mobile"
+            ]
+        },
+        {
+            "name": "product_plan_name",
+            "caption": "Product Plan Name",
+            "description": "Product Plan Name",
+            "role": "dimension",
+            "type": "discrete",
+            "datatype": "string",
+            "defaultAggregation": "count",
+            "count": 8,
+            "distinctCount": 8,
+            "values": [
+                "Premium Plus: Enterprise",
+                "Premium: Individual",
+                "Premium: Family",
+                "Premium: Student",
+                "Free: Trial",
+                "Free: Basic",
+                "Premium Plus: VIP",
+                "Premium: Business"
+            ]
+        },
+        {
+            "name": "product_type",
+            "caption": "Product Type",
+            "description": "Product Type",
+            "role": "dimension",
+            "type": "discrete",
+            "datatype": "string",
+            "defaultAggregation": "count",
+            "count": 3,
+            "distinctCount": 3,
+            "values": [
+                "Free",
+                "Premium Plus",
+                "Premium"
+            ]
+        },
+        {
+            "name": "registrations",
+            "caption": "Registrations",
+            "description": "Registrations",
+            "role": "measure",
+            "type": "continuous",
+            "datatype": "number",
+            "defaultAggregation": "sum"
+        },
+        {
+            "name": "subscribers",
+            "caption": "Subscribers",
+            "description": "Subscribers",
+            "role": "measure",
+            "type": "continuous",
+            "datatype": "number",
+            "defaultAggregation": "sum"
+        },
+        {
+            "name": "wau",
+            "caption": "Wau",
+            "description": "Wau",
+            "role": "measure",
+            "type": "continuous",
+            "datatype": "number",
+            "defaultAggregation": "sum"
+        }
+    ]
+}

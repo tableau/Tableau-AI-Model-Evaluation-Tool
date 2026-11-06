@@ -1,0 +1,69 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-activity-360",
+  "info": {
+    "requirement-id": "D-248-a7b86582fd4280f7",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "show me top accounts by duration",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Account Name",
+              "data": "string",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "x",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            },
+            {
+              "caption": "Duration (minutes)",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "encoding": "y"
+            }
+          ],
+          "sort": {
+            "field": "Account Name",
+            "by": "Duration (minutes)",
+            "aggregation": "sum",
+            "direction": "desc",
+            "_tb_wildcards": [
+              "field"
+            ]
+          }
+        }
+      },
+      "source": "user",
+      "tags": [
+        "infer-boundaries-or-limit",
+        "original-test-bench",
+        "infer-sort"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Ranking / Top-N"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Sort / Order",
+          "Op: Limit / Top-N",
+          "Op: Group By Dimension"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    }
+  ],
+  "id": "ef20095476ddb370c5b11f1f0466dafc"
+}

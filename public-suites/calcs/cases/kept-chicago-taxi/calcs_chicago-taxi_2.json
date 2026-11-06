@@ -1,0 +1,25 @@
+{
+  "runner": "ect-server",
+  "datasource": "chicago-taxi-trips-2024-calcs",
+  "info": {
+    "originalValid": true
+  },
+  "inputs": [
+    {
+      "utterance": "create a calc to flag weekdays only",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "IF DATENAME('weekday', [Trip Start Timestamp]) <> 'Saturday' AND DATENAME('weekday', [Trip Start Timestamp]) <> 'Sunday' THEN 'Weekday' ELSE 'Weekend' END",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-date",
+        "add-explicit-calc-wordage"
+      ]
+    }
+  ],
+  "id": "36b88c07-da80-4b6c-9fb7-1e9804c26375"
+}

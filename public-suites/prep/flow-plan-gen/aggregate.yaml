@@ -1,0 +1,14 @@
+- description: Aggregate fields without referencing the same field more than once
+  id: aggregate-function-4-public
+  utterances:
+  - canonical: 'Help me create a flow to do the following: 1. I want to know the count of each task subject per
+      opportunity ID. 2. Determine both the average and median number of ''Review contract'' tasks per opportunity.'
+    expected-flow-plan:
+    - CreateCleanStep
+    - CreateAggregateStep
+    - FilterValuesByCalculation
+    - CreateAggregateStep
+    - CreateAggregateStep
+  data-location: test/test-data/flow-plan-gen/step-data/data-depot-task-log.txt
+  provenance: public
+  derived_from: aggregate-function-4

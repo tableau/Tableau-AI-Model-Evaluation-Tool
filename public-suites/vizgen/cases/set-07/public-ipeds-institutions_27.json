@@ -1,0 +1,33 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-ipeds-institutions",
+  "info": {
+    "requirement-id": "D-248-f1f11402d9818a69",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "do not show null values",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Filter - Numeric Threshold"
+        ],
+        "out": [
+          "Out: Unspecified Viz"
+        ]
+      }
+    }
+  ],
+  "id": "b1fa6dbc742cbbae3ad68a7b268eb1fb"
+}

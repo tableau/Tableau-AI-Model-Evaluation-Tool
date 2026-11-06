@@ -1,0 +1,111 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-edx-courses",
+  "info": {
+    "requirement-id": "D-248-bcdf04eaf1947ea7",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "Count of explorers by subject area",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Subject Area",
+              "data": "string",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "x"
+            },
+            {
+              "caption": "Explorers",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "aggregation": "sum",
+              "encoding": "y"
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Breakdown by Category"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Group By Dimension"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    },
+    {
+      "utterance": "filter to first registration date month",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Subject Area",
+              "data": "string",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "x"
+            },
+            {
+              "caption": "Explorers",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "aggregation": "sum",
+              "encoding": "y"
+            }
+          ],
+          "dateRangeFilters": [
+            {
+              "type": "date-range",
+              "field": "First Registration Date",
+              "end": "2023-10-31"
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "infer-date-time-field",
+        "original-test-bench",
+        "infer-other-field",
+        "encode-relative-date-time"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Threshold Qualification"
+        ],
+        "op": [
+          "Op: Filter - Date Range / Relative",
+          "Op: Group By Dimension",
+          "Op: Aggregation (Default)",
+          "Op: Field Inference - Date Field",
+          "Op: Field Inference - Measure / Dimension",
+          "Op: Context Carryover / Follow-up"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    }
+  ],
+  "id": "70bf67c09c56fd488cdc73c114e196a3"
+}

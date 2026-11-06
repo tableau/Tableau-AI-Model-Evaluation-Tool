@@ -1,0 +1,41 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-fec-expenditures",
+  "info": {
+    "originalValid": true,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "create a calculation that shows the sources that has the word 'travel' in it",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "IF CONTAINS([Disbursement Purpose], 'engagement') THEN [Disbursement Purpose] END",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-string",
+        "add-explicit-calc-wordage"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Lookup / Retrieval",
+          "Intent: Breakdown by Category"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: String Manipulation",
+          "Op: Filter - Categorical",
+          "Op: Conditional Logic"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "dec934de628322455412cd4ef7667468"
+}

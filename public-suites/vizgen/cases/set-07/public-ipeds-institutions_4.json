@@ -1,0 +1,36 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-ipeds-institutions",
+  "info": {
+    "requirement-id": "D-248-cd5ed1d580cd4c3f",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "yearly comparison of the unique count of ID number utilizing Site Creation Datetime",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Comparison",
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Aggregation (Non-Default)",
+          "Op: Group By Dimension",
+          "Op: Date Part Extraction"
+        ],
+        "out": [
+          "Out: Unspecified Viz"
+        ]
+      }
+    }
+  ],
+  "id": "4bee9dbe5141004295fdf32d473b7f6c"
+}

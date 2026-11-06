@@ -1,0 +1,37 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-account-360",
+  "info": {
+    "originalValid": true,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "Can you create an exclude LOD calculation to get the value of Open Pipeline Amount excluding Account Type?",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "{ EXCLUDE [Account Type] : [Open Pipeline Amount] }",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-non-aggregated-lod"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Level of Detail"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "23896d61d87739aa2d1babda756de6bb"
+}

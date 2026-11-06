@@ -1,0 +1,83 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-account-360",
+  "info": {
+    "requirement-id": "D-250-fe4c8bda2b93a7de",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "sort by the top reps, limit to the top 5",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Sales Representative",
+              "data": "string",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "y"
+            },
+            {
+              "caption": "Open Pipeline Amount",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "aggregation": "sum",
+              "encoding": "x",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            }
+          ],
+          "categoricalFilters": [
+            {
+              "type": "categorical",
+              "field": "Sales Representative",
+              "limit": {
+                "type": "top",
+                "limit": 5,
+                "field": "Open Pipeline Amount",
+                "aggregation": "sum",
+                "_tb_wildcards": [
+                  "field"
+                ]
+              }
+            }
+          ],
+          "sort": {
+            "field": "Sales Representative",
+            "by": "Open Pipeline Amount",
+            "aggregation": "sum",
+            "direction": "desc",
+            "_tb_wildcards": [
+              "by"
+            ]
+          }
+        }
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Ranking / Top-N"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Group By Dimension",
+          "Op: Sort / Order",
+          "Op: Limit / Top-N"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    }
+  ],
+  "id": "6da12861483664bf08450131cb637a48"
+}

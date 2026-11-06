@@ -1,0 +1,76 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-opportunity-360",
+  "info": {
+    "requirement-id": "D-248-aeb26ffe7e0545dc",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "average of last quarter of Kitchen & Bath using Close Date",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "fields": [
+            {
+              "caption": "Billing Country",
+              "data": "string",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "x",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            },
+            {
+              "caption": "Line Item Value",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "encoding": "y",
+              "aggregation": "avg"
+            }
+          ],
+          "chart": "bar",
+          "relativeDateFilters": [
+            {
+              "type": "relative-date",
+              "field": "Close Date",
+              "includeNull": false,
+              "amount": 1,
+              "period": "quarters",
+              "direction": "previous",
+              "_tb_wildcards": [
+                "field"
+              ]
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "infer-date-time-field",
+        "original-test-bench",
+        "infer-other-field",
+        "encode-relative-date-time"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Aggregation (Non-Default)",
+          "Op: Filter - Date Range / Relative",
+          "Op: Field Inference - Date Field",
+          "Op: Group By Dimension",
+          "Op: Field Inference - Measure / Dimension"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    }
+  ],
+  "id": "48be09dd4aa8507b7748e9ac290035b9"
+}

@@ -1,0 +1,23 @@
+{
+    "runner": "color-palettes-server",
+    "info": {
+        "version": "1.0.0"
+    },
+    "inputs": [
+        {
+            "utterance": "I need 20 distinct colors for a complex visualization",
+            "source": "user",
+            "arguments": {
+                "palette_type": "regular"
+            },
+            "expected": {
+                "colorPalette": []
+            },
+            "tags": [
+                "color-palette-regular"
+            ]
+        }
+    ],
+    "id": "c5d1f2a4-7b8c-9d0e-1f2a-3b4c5d6e7f8a"
+}
+

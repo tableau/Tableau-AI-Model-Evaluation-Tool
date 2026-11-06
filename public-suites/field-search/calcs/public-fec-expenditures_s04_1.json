@@ -1,0 +1,257 @@
+{
+ "test_id": "82e55eb6aedebd75862b7f42ade51379",
+ "datasource": "public-fec-expenditures",
+ "matched_fields": [
+  {
+   "name": "Committee Id",
+   "datatype": "string",
+   "sampleValues": [
+    "C00575795",
+    "C00579458",
+    "C00577130",
+    "C00458844",
+    "C00573519",
+    "C00574624",
+    "C00580100",
+    "C00577981",
+    "C00581876",
+    "C00575449"
+   ]
+  },
+  {
+   "name": "Candidate Id",
+   "datatype": "string",
+   "sampleValues": [
+    "P00003392",
+    "P60008059",
+    "P60007168",
+    "P60006723",
+    "P60005915",
+    "P60006111",
+    "P80001571",
+    "P80003478",
+    "P60003670",
+    "P40003576"
+   ]
+  },
+  {
+   "name": "Candidate",
+   "datatype": "string",
+   "sampleValues": [
+    "Clinton, Hillary Rodham",
+    "Bush, Jeb",
+    "Sanders, Bernard",
+    "Rubio, Marco",
+    "Carson, Benjamin S.",
+    "Cruz, Rafael Edward 'Ted'",
+    "Trump, Donald J.",
+    "Huckabee, Mike",
+    "Kasich, John R.",
+    "Paul, Rand"
+   ]
+  },
+  {
+   "name": "Party",
+   "datatype": "string",
+   "sampleValues": [
+    "#REF!"
+   ]
+  },
+  {
+   "name": "Recipient",
+   "datatype": "string",
+   "sampleValues": [
+    "AMERICAN AIRLINES",
+    "AMERICAN EXPRESS",
+    "UBER",
+    "FEDEX",
+    "UNITED AIRLINES",
+    "SOUTHWEST AIRLINES",
+    "DELTA AIRLINES",
+    "US AIRWAYS",
+    "AVIS RENT A CAR",
+    "STRIPE"
+   ]
+  },
+  {
+   "name": "Disbursement Amount",
+   "datatype": "number"
+  },
+  {
+   "name": "Disbursement Date",
+   "datatype": "date"
+  },
+  {
+   "name": "Recipient City",
+   "datatype": "geographic",
+   "sampleValues": [
+    "NEW YORK",
+    "SAN FRANCISCO",
+    "WASHINGTON",
+    "DALLAS",
+    "ATLANTA",
+    "MIAMI",
+    "NEWARK",
+    "CHICAGO",
+    "FORT WORTH",
+    "HOUSTON"
+   ]
+  },
+  {
+   "name": "Recipient State",
+   "datatype": "geographic",
+   "sampleValues": [
+    "NY",
+    "TX",
+    "CA",
+    "VA",
+    "NJ",
+    "FL",
+    "IA",
+    "DC",
+    "GA",
+    "IL"
+   ]
+  },
+  {
+   "name": "Recipient Zip",
+   "datatype": "geographic",
+   "sampleValues": [
+    "101855256",
+    "33144",
+    "71011270",
+    "76155",
+    "94103",
+    "30354",
+    "22314",
+    "60606",
+    "761552605",
+    "75261"
+   ]
+  },
+  {
+   "name": "Disbursement Purpose",
+   "datatype": "string",
+   "sampleValues": [
+    "TRAVEL",
+    "PAYROLL",
+    "PHONE",
+    "LODGING",
+    "AIRFARE",
+    "OFFICE SUPPLIES",
+    "PER DIEM",
+    "SALARY",
+    "SHIPPING",
+    "TRANSPORTATION"
+   ]
+  },
+  {
+   "name": "Memo Code",
+   "datatype": "string",
+   "sampleValues": [
+    "X"
+   ]
+  },
+  {
+   "name": "Memo Text",
+   "datatype": "string",
+   "sampleValues": [
+    "*",
+    "* IN-KIND RECEIVED",
+    "TRAVEL",
+    "LODGING",
+    "DETAILS BELOW IF ITEMIZED",
+    "NO ITEMIZATION NECESSARY",
+    "FOOD/BEVERAGE",
+    "CREDIT CARD ATTRIBUTION",
+    "OFFICE SUPPLIES",
+    "VENDOR SERVICES"
+   ]
+  },
+  {
+   "name": "Form Type",
+   "datatype": "string",
+   "sampleValues": [
+    "SB23"
+   ]
+  },
+  {
+   "name": "File Number",
+   "datatype": "number"
+  },
+  {
+   "name": "Transaction Id",
+   "datatype": "string",
+   "sampleValues": [
+    "BBBBBB1",
+    "SB23.1280",
+    "SB23.1270",
+    "SB23.1284",
+    "SB23.1005",
+    "SB23.1011",
+    "SB23.1275",
+    "SB23.1236",
+    "SB23.1271",
+    "SB23.1276"
+   ]
+  },
+  {
+   "name": "Election Type",
+   "datatype": "string",
+   "sampleValues": [
+    "P2016",
+    "P2012",
+    "G2016"
+   ]
+  },
+  {
+   "name": "Disbursement Month",
+   "datatype": "string",
+   "sampleValues": [
+    "2016-02",
+    "2016-01",
+    "2015-10",
+    "2016-03",
+    "2015-11",
+    "2015-12",
+    "2015-08",
+    "2015-07",
+    "2015-09",
+    "2015-06"
+   ]
+  },
+  {
+   "name": "Election Year",
+   "datatype": "string",
+   "sampleValues": [
+    "2016",
+    "2012"
+   ]
+  },
+  {
+   "name": "Spend Category",
+   "datatype": "string",
+   "sampleValues": [
+    "OTHER",
+    "TRAVEL",
+    "PAYROLL",
+    "PHONE",
+    "LODGING",
+    "AIRFARE",
+    "RENT",
+    "CONSULTING",
+    "EVENT",
+    "CATERING"
+   ]
+  },
+  {
+   "name": "Candidate Disbursements",
+   "datatype": "number"
+  },
+  {
+   "name": "Recipient Total",
+   "datatype": "number"
+  }
+ ],
+ "calc_fields": []
+}

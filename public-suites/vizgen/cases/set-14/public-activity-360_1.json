@@ -1,0 +1,145 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-activity-360",
+  "info": {
+    "requirement-id": "D-248-f3ae333f017d7b95",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "what accounts completed over the past quarter",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "text",
+          "fields": [
+            {
+              "caption": "Task Status",
+              "data": "string",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "y",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            },
+            {
+              "caption": "Account Name",
+              "data": "string",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "x",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            }
+          ],
+          "relativeDateFilters": [
+            {
+              "type": "relative-date",
+              "field": "Activity Date",
+              "amount": 1,
+              "period": "quarters",
+              "direction": "previous",
+              "_tb_wildcards": [
+                "field"
+              ]
+            }
+          ],
+          "categoricalFilters": [
+            {
+              "type": "categorical",
+              "field": "Task Status",
+              "values": [
+                "Completed"
+              ]
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench",
+        "encode-relative-date-time"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Lookup / Retrieval"
+        ],
+        "op": [
+          "Op: Filter - Date Range / Relative"
+        ],
+        "out": [
+          "Out: Text Table"
+        ]
+      }
+    },
+    {
+      "utterance": "only show attendees who completed a Product demo last year",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "text",
+          "fields": [
+            {
+              "caption": "Subject",
+              "data": "string",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "x"
+            },
+            {
+              "caption": "Contact Name",
+              "data": "string",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "y"
+            }
+          ],
+          "relativeDateFilters": [
+            {
+              "type": "relative-date",
+              "field": "Activity Date",
+              "amount": 1,
+              "period": "years",
+              "direction": "previous",
+              "_tb_wildcards": [
+                "field"
+              ]
+            }
+          ],
+          "categoricalFilters": [
+            {
+              "type": "categorical",
+              "field": "Subject",
+              "values": [
+                "Product demo"
+              ]
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench",
+        "encode-relative-date-time"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Lookup / Retrieval"
+        ],
+        "op": [
+          "Op: Filter - Date Range / Relative",
+          "Op: Filter - Categorical",
+          "Op: Context Carryover / Follow-up"
+        ],
+        "out": [
+          "Out: Text Table"
+        ]
+      }
+    }
+  ],
+  "id": "b594c196e173fe8fbc2fdda33f0c5f3d"
+}

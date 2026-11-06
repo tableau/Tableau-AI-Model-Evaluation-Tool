@@ -1,0 +1,23 @@
+{
+    "runner": "color-palettes-server",
+    "info": {
+        "version": "1.0.0"
+    },
+    "inputs": [
+        {
+            "utterance": "Create a monocromatic palette in shades of orange",
+            "source": "user",
+            "arguments": {
+                "palette_type": "sequential"
+            },
+            "expected": {
+                "colorPalette": []
+            },
+            "tags": [
+                "color-palette-sequential"
+            ]
+        }
+    ],
+    "id": "d0e1f2a3-b4c5-6789-defa-012345678901"
+}
+

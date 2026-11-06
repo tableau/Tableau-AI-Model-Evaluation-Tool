@@ -1,0 +1,72 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-opportunity-360",
+  "info": {
+    "requirement-id": "D-248-d1fd47f2de0f33af",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "median amount over created date by primary product family",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "fields": [
+            {
+              "caption": "Created Date",
+              "data": "date",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "x",
+              "aggregation": "year",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            },
+            {
+              "caption": "Amount",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "encoding": "y",
+              "aggregation": "median"
+            },
+            {
+              "caption": "Primary Product Family",
+              "data": "string",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "color"
+            }
+          ],
+          "chart": "line"
+        }
+      },
+      "source": "user",
+      "tags": [
+        "infer-date-time-field",
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement",
+          "Intent: Trend over Time",
+          "Intent: Breakdown by Category"
+        ],
+        "op": [
+          "Op: Aggregation (Non-Default)",
+          "Op: Group By Dimension",
+          "Op: Date Truncation / Granularity",
+          "Op: Field Inference - Date Field",
+          "Op: Sort / Order",
+          "Op: Encoding Assignment"
+        ],
+        "out": [
+          "Out: Line Chart"
+        ]
+      }
+    }
+  ],
+  "id": "9ad0caf4748c62a0e5c106e0db7d2716"
+}

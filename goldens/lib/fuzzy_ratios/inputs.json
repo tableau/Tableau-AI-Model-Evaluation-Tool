@@ -1,0 +1,45 @@
+{
+  "description": "RapidFuzz reference pairs for token_set_ratio and partial_ratio. Lowercase both inputs and strip the first input; preserve internal whitespace.",
+  "pairs": [
+    {
+      "name": "exact_match",
+      "a": "total revenue",
+      "b": "total revenue"
+    },
+    {
+      "name": "reordered_tokens",
+      "a": "revenue total",
+      "b": "total revenue"
+    },
+    {
+      "name": "substring",
+      "a": "revenue",
+      "b": "total revenue grew this quarter"
+    },
+    {
+      "name": "case_diff",
+      "a": "Total Revenue",
+      "b": "total revenue"
+    },
+    {
+      "name": "whitespace_diff",
+      "a": "  total   revenue  ",
+      "b": "total revenue"
+    },
+    {
+      "name": "disjoint",
+      "a": "profit margin",
+      "b": "customer churn rate"
+    },
+    {
+      "name": "extra_tokens_superset",
+      "a": "revenue",
+      "b": "quarterly revenue growth summary"
+    },
+    {
+      "name": "partial_typo",
+      "a": "revenu",
+      "b": "revenue increased"
+    }
+  ]
+}

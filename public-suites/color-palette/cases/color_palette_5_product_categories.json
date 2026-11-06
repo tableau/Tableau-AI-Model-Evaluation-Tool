@@ -1,0 +1,22 @@
+{
+    "runner": "color-palettes-server",
+    "info": {
+        "version": "1.0.0"
+    },
+    "inputs": [
+        {
+            "utterance": "5 product categories",
+            "source": "user",
+            "arguments": {
+                "palette_type": "regular"
+            },
+            "expected": {
+                "colorPalette": []
+            },
+            "tags": [
+                "color-palette-regular"
+            ]
+        }
+    ],
+    "id": "c3d9f0a2-5b6c-7d8e-9f0a-1b2c3d4e5f6a"
+}

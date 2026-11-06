@@ -1,0 +1,23 @@
+{
+    "runner": "color-palettes-server",
+    "info": {
+        "version": "1.0.0"
+    },
+    "inputs": [
+        {
+            "utterance": "Forest greens",
+            "source": "user",
+            "arguments": {
+                "palette_type": "sequential"
+            },
+            "expected": {
+                "colorPalette": []
+            },
+            "tags": [
+                "color-palette-sequential"
+            ]
+        }
+    ],
+    "id": "a7b8c9d0-e1f2-3456-abcd-789012345678"
+}
+

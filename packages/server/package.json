@@ -1,0 +1,16 @@
+{
+  "name": "@tableau-ai-eval/server",
+  "version": "0.1.0",
+  "description": "HTTP API, CLI, job orchestrator, suites, publishing, bridges, and embedded frontend.",
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "@tableau-ai-eval/core": "workspace:*",
+    "@tableau-ai-eval/evals": "workspace:*",
+    "hyperdb-api-node": "^0.7.3",
+    "js-yaml": "4.1.0"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9"
+  }
+}

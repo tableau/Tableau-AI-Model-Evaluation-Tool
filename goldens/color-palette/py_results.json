@@ -1,0 +1,56 @@
+[
+  {
+    "id": "0e7a69b1-67fa-4e03-84e4-5115c6b57d8a",
+    "paletteType": "regular",
+    "colors_len": 3,
+    "metrics": {
+      "distinguishability": 1.0,
+      "groundTruthValidity": 0.5171850713
+    }
+  },
+  {
+    "id": "f6a2c3d5-8e9f-0a1b-2c3d-4e5f6a7b8c9d",
+    "paletteType": "regular",
+    "colors_len": 3,
+    "metrics": {
+      "distinguishability": 1.0,
+      "groundTruthValidity": 0.3726973288
+    }
+  },
+  {
+    "id": "f1a075d2-378a-47c2-8773-c4b6e83f8a63",
+    "paletteType": "sequential",
+    "colors_len": 3,
+    "metrics": {
+      "gradientSmoothness": 0.803392066,
+      "groundTruthValidity": 0.9926414863
+    }
+  },
+  {
+    "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "paletteType": "sequential",
+    "colors_len": 63,
+    "metrics": {
+      "gradientSmoothness": 0.7555758081
+    }
+  },
+  {
+    "id": "a50bc729-e385-4951-8337-f4f883f9fa57",
+    "paletteType": "diverging",
+    "colors_len": 3,
+    "metrics": {
+      "gradientSmoothness": 0.8804098109,
+      "divergingStructure": 1.0,
+      "groundTruthValidity": 0.4479673444
+    }
+  },
+  {
+    "id": "e7f8a9b0-c1d2-3456-efab-789012345678",
+    "paletteType": "diverging",
+    "colors_len": 9,
+    "metrics": {
+      "gradientSmoothness": 0.83658781,
+      "divergingStructure": 1.0
+    }
+  }
+]

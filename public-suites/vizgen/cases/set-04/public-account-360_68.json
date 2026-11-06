@@ -1,0 +1,36 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-account-360",
+  "info": {
+    "requirement-id": "D-248-cd5ed1d580cd4c3f",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "infer-date-time-field",
+        "original-test-bench",
+        "semantic-inference"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Trend over Time"
+        ],
+        "op": [
+          "Op: Field Inference - Date Field",
+          "Op: Disambiguation"
+        ],
+        "out": [
+          "Out: Unspecified Viz"
+        ]
+      }
+    }
+  ],
+  "id": "2fb958bd0ee5ca4d445174511f18844a"
+}

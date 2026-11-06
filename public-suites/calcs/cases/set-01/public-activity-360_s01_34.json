@@ -1,0 +1,39 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-activity-360",
+  "info": {
+    "originalValid": true,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "create a calc that flags if pipe contains 'Project Bid'",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "CONTAINS([Opportunity Type], 'enterprise')",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-logical",
+        "add-explicit-calc-wordage"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Threshold Qualification"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: String Manipulation",
+          "Op: Conditional Logic"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "253eb4aa35ca430051000dc1aaaf8158"
+}

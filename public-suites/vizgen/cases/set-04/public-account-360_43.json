@@ -1,0 +1,70 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-account-360",
+  "info": {
+    "requirement-id": "D-248-a7b86582fd4280f7",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "which are the top performing reps?",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Sales Representative",
+              "data": "string",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "y"
+            },
+            {
+              "caption": "Open Pipeline Amount",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "aggregation": "sum",
+              "encoding": "x",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            }
+          ],
+          "sort": {
+            "field": "Sales Representative",
+            "by": "Open Pipeline Amount",
+            "aggregation": "sum",
+            "direction": "desc",
+            "_tb_wildcards": [
+              "by"
+            ]
+          }
+        }
+      },
+      "source": "user",
+      "tags": [
+        "infer-boundaries-or-limit",
+        "original-test-bench",
+        "infer-sort"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Ranking / Top-N"
+        ],
+        "op": [
+          "Op: Sort / Order",
+          "Op: Group By Dimension",
+          "Op: Aggregation (Default)",
+          "Op: Limit / Top-N"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    }
+  ],
+  "id": "34866446130e0781a2e54ca322b052a0"
+}

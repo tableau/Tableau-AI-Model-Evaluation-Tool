@@ -1,0 +1,35 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-fec-expenditures",
+  "info": {
+    "requirement-id": "D-248-55b4ca4117240925",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "count of mediums by disbursement purpose",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Breakdown by Category",
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Group By Dimension"
+        ],
+        "out": [
+          "Out: Unspecified Viz"
+        ]
+      }
+    }
+  ],
+  "id": "11a656e2ea678d4b5c71aaf9767e81ef"
+}

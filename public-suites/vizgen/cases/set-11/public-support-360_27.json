@@ -1,0 +1,61 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-support-360",
+  "info": {
+    "requirement-id": "D-248-cd5ed1d580cd4c3f",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "Number of employees month over month",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "line",
+          "fields": [
+            {
+              "caption": "Number of Employees",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "aggregation": "sum",
+              "encoding": "y"
+            },
+            {
+              "caption": "Created Date",
+              "data": "date",
+              "type": "discrete",
+              "role": "dimension",
+              "aggregation": "month",
+              "encoding": "x",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "infer-time-series",
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Trend over Time"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Group By Dimension",
+          "Op: Date Truncation / Granularity",
+          "Op: Filter - Date Range / Relative"
+        ],
+        "out": [
+          "Out: Line Chart"
+        ]
+      }
+    }
+  ],
+  "id": "a2ecb15b0aa19068de9ed1ddfaeff6ac"
+}

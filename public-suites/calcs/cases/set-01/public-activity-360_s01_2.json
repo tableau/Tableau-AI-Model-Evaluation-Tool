@@ -1,0 +1,37 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-activity-360",
+  "info": {
+    "originalValid": true,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "Create a calc to show the lag between created and close date",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "DATEDIFF('day', [Opportunity Created Date], [Opportunity Close Date])",
+          "caption": null
+        }
+      },
+      "tags": [
+        "add-explicit-calc-wordage"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Data Preparation"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Date Arithmetic"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "2baa75f066ed95919cc78131dddc1600"
+}

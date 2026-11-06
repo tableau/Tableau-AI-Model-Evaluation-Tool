@@ -1,0 +1,53 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "vcs": { "enabled": true, "clientKind": "git", "useIgnoreFile": true },
+  "files": {
+    "ignoreUnknown": true,
+    "include": ["packages/**/*.ts", "scripts/**/*.ts"],
+    "ignore": [
+      "**/node_modules/**",
+      "dist/**",
+      "packages/frontend/**",
+      "goldens/**",
+      "data/**",
+      "public-suites/**",
+      "**/native_binding.generated.ts",
+      "packages/evals/src/validator/generated/**",
+      "packages/evals/src/prep/generated/**"
+    ]
+  },
+  "organizeImports": { "enabled": false },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "suspicious": {
+        "noExplicitAny": "warn",
+        "noAssignInExpressions": "warn",
+        "noImplicitAnyLet": "warn"
+      },
+      "style": {
+        "noNonNullAssertion": "off",
+        "useTemplate": "off",
+        "noUnusedTemplateLiteral": "off",
+        "useExponentiationOperator": "off",
+        "useNumberNamespace": "off",
+        "useImportType": "off",
+        "noParameterAssign": "off",
+        "useConst": "warn"
+      },
+      "complexity": {
+        "useOptionalChain": "off",
+        "noForEach": "off",
+        "useLiteralKeys": "off",
+        "noUselessSwitchCase": "warn"
+      },
+      "performance": {
+        "noDelete": "off"
+      }
+    }
+  },
+  "formatter": {
+    "enabled": false
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-support-360",
+  "info": {
+    "requirement-id": "D-248-bcc5066b4dd57a3f",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "how many escalations near Midwest",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Lookup / Retrieval",
+          "Intent: Geographic Analysis"
+        ],
+        "op": [
+          "Op: Aggregation (Default)"
+        ],
+        "out": [
+          "Out: Unspecified Viz"
+        ]
+      }
+    }
+  ],
+  "id": "521dca8fe1825471dcca6be874084c9a"
+}

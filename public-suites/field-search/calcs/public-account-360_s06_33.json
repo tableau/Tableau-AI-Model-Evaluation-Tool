@@ -1,0 +1,478 @@
+{
+ "test_id": "17afead18ea5c4a08ffdceec781af5e8",
+ "datasource": "public-account-360",
+ "matched_fields": [
+  {
+   "name": "Account Name",
+   "datatype": "string",
+   "sampleValues": [
+    "Apex Development Group",
+    "Premier Construction Partners",
+    "Granite Real Estate Group Partners",
+    "Clearwater Services Associates",
+    "Stonegate Maintenance Group & Sons",
+    "Highpoint Builders",
+    "Meridian Electrical Services East",
+    "Cascade Developments West",
+    "Horizon Real Estate Group North",
+    "Patriot Landscaping South"
+   ]
+  },
+  {
+   "name": "Industry",
+   "datatype": "string",
+   "sampleValues": [
+    "Residential Construction",
+    "Home Services",
+    "Commercial Construction",
+    "Property Management",
+    "Real Estate Development",
+    "Landscaping & Grounds",
+    "Facility Management",
+    "Government / Municipal"
+   ]
+  },
+  {
+   "name": "Account Type",
+   "datatype": "string",
+   "sampleValues": [
+    "Enterprise",
+    "Mid-Market",
+    "SMB"
+   ]
+  },
+  {
+   "name": "Phone",
+   "datatype": "string",
+   "sampleValues": [
+    "321.581.9600",
+    "001-513-825-3269x49684",
+    "962.953.6667",
+    "001-265-543-6271x87496",
+    "(749)926-9326",
+    "915-753-2341x59597",
+    "+1-974-431-2710x2676",
+    "(312)729-4621x354",
+    "265.204.7158x029",
+    "(348)237-4417x158"
+   ]
+  },
+  {
+   "name": "Number of Employees",
+   "datatype": "number"
+  },
+  {
+   "name": "Billing Street",
+   "datatype": "string",
+   "sampleValues": [
+    "908 Jennifer Squares",
+    "3804 Webster Circles Apt. 175",
+    "5556 Jennifer Ford Apt. 339",
+    "8268 White Mills",
+    "275 Erica Turnpike",
+    "4182 Frank Crest",
+    "579 Seth Brooks",
+    "99625 Lee Harbors Apt. 752",
+    "3766 Heather Groves Suite 558",
+    "31251 Ashley Freeway"
+   ]
+  },
+  {
+   "name": "Billing City",
+   "datatype": "geographic",
+   "sampleValues": [
+    "Port Robertberg",
+    "South Susan",
+    "Port Michael",
+    "Mooremouth",
+    "East Craig",
+    "Zacharychester",
+    "Karenview",
+    "South Ashley",
+    "New Charles",
+    "Parkerfort"
+   ]
+  },
+  {
+   "name": "Billing State",
+   "datatype": "geographic",
+   "sampleValues": [
+    "NY",
+    "AZ",
+    "WA",
+    "NC",
+    "FL",
+    "GA",
+    "CA",
+    "OH",
+    "TX",
+    "IL"
+   ]
+  },
+  {
+   "name": "Billing Postal Code",
+   "datatype": "number"
+  },
+  {
+   "name": "Billing Country",
+   "datatype": "geographic",
+   "sampleValues": [
+    "United States"
+   ]
+  },
+  {
+   "name": "Annual Revenue",
+   "datatype": "number"
+  },
+  {
+   "name": "Sales Representative",
+   "datatype": "string",
+   "sampleValues": [
+    "Delfina Latchford",
+    "Hunter Lopez",
+    "Cynthia Delaney",
+    "Michael Moore",
+    "Ed Jacobs",
+    "Jack O'Briant",
+    "Chris Selesnick",
+    "Jasper Cacioppo",
+    "Shirley Daniels",
+    "Brendan Sweed"
+   ]
+  },
+  {
+   "name": "Sales Manager",
+   "datatype": "string",
+   "sampleValues": [
+    "Chris Selesnick",
+    "David Wieder",
+    "Jasper Cacioppo",
+    "Melanie Seite",
+    "Ionia McGrath",
+    "Phillina Ober",
+    "Darren Powers",
+    "Muhammed Madeneni"
+   ]
+  },
+  {
+   "name": "Sales Rep Title",
+   "datatype": "string",
+   "sampleValues": [
+    "Sales Representative Enterprise",
+    "Sales Representative Mid-Market",
+    "Sales Representative SMB",
+    "VP Sales Southeast",
+    "VP Sales Midwest",
+    "VP Sales Southwest",
+    "VP Sales Northeast",
+    "VP Sales West",
+    "VP Sales North",
+    "VP Sales Northwest"
+   ]
+  },
+  {
+   "name": "Sales Rep Department",
+   "datatype": "string",
+   "sampleValues": [
+    "Sales"
+   ]
+  },
+  {
+   "name": "Sales Rep Division",
+   "datatype": "string",
+   "sampleValues": [
+    "Sales - Southeast",
+    "Sales - Southwest",
+    "Sales - Midwest",
+    "Sales - Northwest",
+    "Sales - West",
+    "Sales - Northeast",
+    "Sales - North",
+    "Sales - Global"
+   ]
+  },
+  {
+   "name": "Sales Rep City",
+   "datatype": "geographic",
+   "sampleValues": [
+    "Marietta",
+    "Albuquerque",
+    "Cincinnati",
+    "San Francisco",
+    "Vancouver",
+    "Philadelphia",
+    "Chicago",
+    "Atlanta",
+    "Aurora",
+    "Wilmington"
+   ]
+  },
+  {
+   "name": "Sales Rep State",
+   "datatype": "geographic",
+   "sampleValues": [
+    "Georgia",
+    "New Mexico",
+    "Ohio",
+    "California",
+    "British Columbia",
+    "Pennsylvania",
+    "Illinois",
+    "Oregon",
+    "Texas",
+    "Colorado"
+   ]
+  },
+  {
+   "name": "Sales Rep Country",
+   "datatype": "geographic",
+   "sampleValues": [
+    "US",
+    "CAN"
+   ]
+  },
+  {
+   "name": "Number of Opportunities",
+   "datatype": "number"
+  },
+  {
+   "name": "Open Opportunities",
+   "datatype": "number"
+  },
+  {
+   "name": "Won Opportunities",
+   "datatype": "number"
+  },
+  {
+   "name": "Lost Opportunities",
+   "datatype": "number"
+  },
+  {
+   "name": "Open Pipeline Amount",
+   "datatype": "number"
+  },
+  {
+   "name": "Won Amount",
+   "datatype": "number"
+  },
+  {
+   "name": "Lost Amount",
+   "datatype": "number"
+  },
+  {
+   "name": "Commit Pipeline Amount",
+   "datatype": "number"
+  },
+  {
+   "name": "Best Case Pipeline Amount",
+   "datatype": "number"
+  },
+  {
+   "name": "New Business Pipeline Amount",
+   "datatype": "number"
+  },
+  {
+   "name": "Existing Business Pipeline Amount",
+   "datatype": "number"
+  },
+  {
+   "name": "Average Opportunity Amount",
+   "datatype": "number"
+  },
+  {
+   "name": "Largest Opportunity Amount",
+   "datatype": "number"
+  },
+  {
+   "name": "Average Win Probability",
+   "datatype": "number"
+  },
+  {
+   "name": "First Opportunity Created",
+   "datatype": "date"
+  },
+  {
+   "name": "Latest Opportunity Created",
+   "datatype": "date"
+  },
+  {
+   "name": "Next Close Date",
+   "datatype": "date"
+  },
+  {
+   "name": "Last Won Date",
+   "datatype": "date"
+  },
+  {
+   "name": "Primary Lead Source",
+   "datatype": "string",
+   "sampleValues": [
+    "Partner",
+    "External Referral",
+    "Employee Referral",
+    "Advertisement",
+    "Web",
+    "Trade Show",
+    "Word of mouth",
+    "Other",
+    "Public Relations",
+    "Seminar - Partner"
+   ]
+  },
+  {
+   "name": "Primary Opportunity Type",
+   "datatype": "string",
+   "sampleValues": [
+    "Bulk Material Order",
+    "Project Bid",
+    "New Pro Account",
+    "Installation Services"
+   ]
+  },
+  {
+   "name": "Number of Cases",
+   "datatype": "number"
+  },
+  {
+   "name": "Open Cases",
+   "datatype": "number"
+  },
+  {
+   "name": "Closed Cases",
+   "datatype": "number"
+  },
+  {
+   "name": "High Priority Cases",
+   "datatype": "number"
+  },
+  {
+   "name": "Average Days to Close Case",
+   "datatype": "number"
+  },
+  {
+   "name": "First Case Created",
+   "datatype": "date"
+  },
+  {
+   "name": "Latest Case Created",
+   "datatype": "date"
+  },
+  {
+   "name": "Most Common Case Type",
+   "datatype": "string",
+   "sampleValues": [
+    "Billing Question",
+    "Onboarding Assistance",
+    "Technical Issue"
+   ]
+  },
+  {
+   "name": "Most Common Case Origin",
+   "datatype": "string",
+   "sampleValues": [
+    "Phone"
+   ]
+  },
+  {
+   "name": "Number of Orders",
+   "datatype": "number"
+  },
+  {
+   "name": "Total Order Amount",
+   "datatype": "number"
+  },
+  {
+   "name": "Average Order Amount",
+   "datatype": "number"
+  },
+  {
+   "name": "First Order Date",
+   "datatype": "date"
+  },
+  {
+   "name": "Most Recent Order Date",
+   "datatype": "date"
+  },
+  {
+   "name": "Most Common Order Type",
+   "datatype": "string",
+   "sampleValues": [
+    "In-Store",
+    "Pro Desk",
+    "Online",
+    "Phone"
+   ]
+  },
+  {
+   "name": "Primary Store Region",
+   "datatype": "string",
+   "sampleValues": [
+    "Midwest",
+    "Northeast",
+    "South",
+    "West"
+   ]
+  },
+  {
+   "name": "Primary Store",
+   "datatype": "string",
+   "sampleValues": [
+    "Data Depot - Atlanta North",
+    "Data Depot - Austin North",
+    "Data Depot - Baltimore North",
+    "Data Depot - Chicago North",
+    "Data Depot - Columbus North",
+    "Data Depot - Boston North",
+    "Data Depot - Dallas North",
+    "Data Depot - Chicago South",
+    "Data Depot - Los Angeles South",
+    "Data Depot - Kansas City North"
+   ]
+  },
+  {
+   "name": "Number of Contacts",
+   "datatype": "number"
+  },
+  {
+   "name": "Number of Assets",
+   "datatype": "number"
+  },
+  {
+   "name": "Latest Asset Install Date",
+   "datatype": "date"
+  },
+  {
+   "name": "Number of Refunds",
+   "datatype": "number"
+  },
+  {
+   "name": "Refund Amount",
+   "datatype": "number"
+  },
+  {
+   "name": "Number of Reviews",
+   "datatype": "number"
+  },
+  {
+   "name": "Average Review Rating",
+   "datatype": "number"
+  },
+  {
+   "name": "Account Acquired Date",
+   "datatype": "date"
+  },
+  {
+   "name": "Days Since Last Order",
+   "datatype": "number"
+  },
+  {
+   "name": "Win Rate",
+   "datatype": "number"
+  },
+  {
+   "name": "Revenue per Employee",
+   "datatype": "number"
+  }
+ ],
+ "calc_fields": []
+}

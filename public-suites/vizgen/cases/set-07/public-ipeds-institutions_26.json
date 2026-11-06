@@ -1,0 +1,36 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-ipeds-institutions",
+  "info": {
+    "requirement-id": "D-248-985d6d41172604db",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "list name where the median applicants total is higher than 10.",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Threshold Qualification",
+          "Intent: Breakdown by Category"
+        ],
+        "op": [
+          "Op: Filter - Numeric Threshold",
+          "Op: Aggregation (Non-Default)",
+          "Op: Group By Dimension"
+        ],
+        "out": [
+          "Out: Unspecified Viz"
+        ]
+      }
+    }
+  ],
+  "id": "af0bc9d918c80c8c6942214bd760daad"
+}

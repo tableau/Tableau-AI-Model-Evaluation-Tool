@@ -1,0 +1,37 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-support-360",
+  "info": {
+    "requirement-id": "D-250-fe4c8bda2b93a7de",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "top 20 customer support teams by number of escalations",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench",
+        "infer-sort"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Ranking / Top-N",
+          "Intent: Breakdown by Category"
+        ],
+        "op": [
+          "Op: Limit / Top-N",
+          "Op: Sort / Order",
+          "Op: Group By Dimension"
+        ],
+        "out": [
+          "Out: Unspecified Viz"
+        ]
+      }
+    }
+  ],
+  "id": "0311413c929f1d02959ac46094c38722"
+}

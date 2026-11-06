@@ -1,0 +1,25 @@
+{
+    "runner": "ect-server",
+    "datasource": "retail-nto",
+    "info": {
+        "originalValid": true
+    },
+    "inputs": [
+        {
+            "utterance": "compute if State matches New York, New Jersey, or New Mexico",
+            "source": "user",
+            "expected": {
+                "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+                "calculatedFieldFormula": {
+                    "formula": "IF [State] IN ('New York', 'New Jersey', 'New Mexico') THEN TRUE ELSE FALSE END",
+                    "caption": null
+                }
+            },
+            "tags": [
+                "add-explicit-calc-wordage",
+                "calc-category-string"
+            ]
+        }
+    ],
+    "id": "e1312fdb-bbb4-4713-8e7b-c183d84a5ae4"
+}

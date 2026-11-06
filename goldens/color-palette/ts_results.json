@@ -1,0 +1,270 @@
+[
+  {
+    "id": "0e7a69b1-67fa-4e03-84e4-5115c6b57d8a",
+    "utterance": "Red, blue, yellow",
+    "paletteType": "regular",
+    "expected": {
+      "colorPalette": [
+        "#FF0000",
+        "#0000FF",
+        "#FFFF00"
+      ]
+    },
+    "actual": {
+      "colorPalette": [
+        "#E82020",
+        "#1A4FD6",
+        "#F5D800"
+      ]
+    },
+    "metrics": {
+      "colorPalette": [
+        {
+          "metric_id": "Metric:distinguishability",
+          "metric_name": "distinguishability",
+          "score": 1,
+          "explanation": null
+        },
+        {
+          "metric_id": "Metric:groundTruthValidity",
+          "metric_name": "groundTruthValidity",
+          "score": 0.5171850712779206,
+          "explanation": null
+        }
+      ]
+    }
+  },
+  {
+    "id": "f6a2c3d5-8e9f-0a1b-2c3d-4e5f6a7b8c9d",
+    "utterance": "Palette for traffic lights (red, yellow, green)",
+    "paletteType": "regular",
+    "expected": {
+      "colorPalette": [
+        "#FF0000",
+        "#FFFF00",
+        "#00FF00"
+      ]
+    },
+    "actual": {
+      "colorPalette": [
+        "#C0392B",
+        "#F1C40F",
+        "#27AE60"
+      ]
+    },
+    "metrics": {
+      "colorPalette": [
+        {
+          "metric_id": "Metric:distinguishability",
+          "metric_name": "distinguishability",
+          "score": 1,
+          "explanation": null
+        },
+        {
+          "metric_id": "Metric:groundTruthValidity",
+          "metric_name": "groundTruthValidity",
+          "score": 0.37269732877468115,
+          "explanation": null
+        }
+      ]
+    }
+  },
+  {
+    "id": "f1a075d2-378a-47c2-8773-c4b6e83f8a63",
+    "utterance": "Red to white, 3 colors",
+    "paletteType": "sequential",
+    "expected": {
+      "colorPalette": [
+        "#FF0000",
+        "#FF7F7F",
+        "#FFFFFF"
+      ]
+    },
+    "actual": {
+      "colorPalette": [
+        "#FF0000",
+        "#FF8080",
+        "#FFFFFF"
+      ]
+    },
+    "metrics": {
+      "colorPalette": [
+        {
+          "metric_id": "Metric:gradientSmoothness",
+          "metric_name": "gradientSmoothness",
+          "score": 0.8033920660353464,
+          "explanation": null
+        },
+        {
+          "metric_id": "Metric:groundTruthValidity",
+          "metric_name": "groundTruthValidity",
+          "score": 0.9926414862683375,
+          "explanation": null
+        }
+      ]
+    }
+  },
+  {
+    "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "utterance": "Cold to hot",
+    "paletteType": "sequential",
+    "expected": {
+      "colorPalette": []
+    },
+    "actual": {
+      "colorPalette": [
+        "#A0C4FF",
+        "#74B3F0",
+        "#4EA8E0",
+        "#2E9BD0",
+        "#1A8ABF",
+        "#1279A8",
+        "#0D6890",
+        "#0A5878",
+        "#084860",
+        "#073848",
+        "#082E40",
+        "#0A2838",
+        "#0D1E30",
+        "#122040",
+        "#1A2F5A",
+        "#223F72",
+        "#2A5090",
+        "#3060A8",
+        "#3A72BE",
+        "#4A85C8",
+        "#5A98D0",
+        "#70ABDA",
+        "#88BEE4",
+        "#A0D0EC",
+        "#B8E0F0",
+        "#C8ECF4",
+        "#D0F0F8",
+        "#C8EEE0",
+        "#B8E8C8",
+        "#A0E0A8",
+        "#85D888",
+        "#6ACE68",
+        "#50C448",
+        "#3CB830",
+        "#30A820",
+        "#289418",
+        "#228010",
+        "#1E6C10",
+        "#1C5810",
+        "#1C4810",
+        "#203A10",
+        "#282E10",
+        "#302210",
+        "#3C1810",
+        "#4A1010",
+        "#600C0C",
+        "#7C0A0A",
+        "#981008",
+        "#B41A08",
+        "#CC2808",
+        "#E03808",
+        "#F04C0A",
+        "#F8600C",
+        "#FF7410",
+        "#FF8818",
+        "#FF9C20",
+        "#FFB030",
+        "#FFC440",
+        "#FFD450",
+        "#FFE460",
+        "#FFEE70",
+        "#FFF680",
+        "#FFFC90"
+      ]
+    },
+    "metrics": {
+      "colorPalette": [
+        {
+          "metric_id": "Metric:gradientSmoothness",
+          "metric_name": "gradientSmoothness",
+          "score": 0.7555758081418544,
+          "explanation": null
+        }
+      ]
+    }
+  },
+  {
+    "id": "a50bc729-e385-4951-8337-f4f883f9fa57",
+    "utterance": "Blue to white to orange diverging palette, 3 colors",
+    "paletteType": "diverging",
+    "expected": {
+      "colorPalette": [
+        "#0000FF",
+        "#FFFFFF",
+        "#FFA500"
+      ]
+    },
+    "actual": {
+      "colorPalette": [
+        "#2166AC",
+        "#FFFFFF",
+        "#F97A0B"
+      ]
+    },
+    "metrics": {
+      "colorPalette": [
+        {
+          "metric_id": "Metric:gradientSmoothness",
+          "metric_name": "gradientSmoothness",
+          "score": 0.8804098109194274,
+          "explanation": null
+        },
+        {
+          "metric_id": "Metric:divergingStructure",
+          "metric_name": "divergingStructure",
+          "score": 1,
+          "explanation": null
+        },
+        {
+          "metric_id": "Metric:groundTruthValidity",
+          "metric_name": "groundTruthValidity",
+          "score": 0.44796734441310654,
+          "explanation": null
+        }
+      ]
+    }
+  },
+  {
+    "id": "e7f8a9b0-c1d2-3456-efab-789012345678",
+    "utterance": "A red-blue diverging palette for political visualization",
+    "paletteType": "diverging",
+    "expected": {
+      "colorPalette": []
+    },
+    "actual": {
+      "colorPalette": [
+        "#B2182B",
+        "#D6604D",
+        "#F4A582",
+        "#FDDBC7",
+        "#F7F7F7",
+        "#D1E5F0",
+        "#92C5DE",
+        "#4393C3",
+        "#2166AC"
+      ]
+    },
+    "metrics": {
+      "colorPalette": [
+        {
+          "metric_id": "Metric:gradientSmoothness",
+          "metric_name": "gradientSmoothness",
+          "score": 0.8365878100449958,
+          "explanation": null
+        },
+        {
+          "metric_id": "Metric:divergingStructure",
+          "metric_name": "divergingStructure",
+          "score": 1,
+          "explanation": null
+        }
+      ]
+    }
+  }
+]

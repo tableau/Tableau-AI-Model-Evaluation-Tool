@@ -1,0 +1,81 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-opportunity-360",
+  "info": {
+    "requirement-id": "D-248-d1fd47f2de0f33af",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "graph won deals over time broken out by country",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Billing Country",
+              "data": "string",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "x"
+            },
+            {
+              "caption": "Close Date",
+              "data": "date",
+              "type": "discrete",
+              "role": "dimension",
+              "aggregation": "year",
+              "encoding": "x",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            },
+            {
+              "caption": "Is Won",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "aggregation": "count",
+              "encoding": "y"
+            }
+          ],
+          "categoricalFilters": [
+            {
+              "type": "categorical",
+              "field": "Is Won",
+              "values": [
+                "true"
+              ]
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "infer-date-time-field",
+        "original-test-bench",
+        "infer-other-field"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Breakdown by Category",
+          "Intent: Trend over Time"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Date Truncation / Granularity",
+          "Op: Group By Dimension",
+          "Op: Filter - Categorical",
+          "Op: Field Inference - Date Field",
+          "Op: Field Inference - Measure / Dimension"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    }
+  ],
+  "id": "1c50993ae3cc001c1c364f6dd17941a3"
+}

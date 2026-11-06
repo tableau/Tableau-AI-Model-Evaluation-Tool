@@ -1,0 +1,26 @@
+{
+    "runner": "ect-server",
+    "datasource": "streaming_key_metrics",
+    "info": {
+        "originalValid": true
+    },
+    "inputs": [
+        {
+            "utterance": "Create a calculated field named '7-Day Rolling DAU' to calculate the 7-day rolling average of the 'Dau' field",
+            "source": "user",
+            "expected": {
+                "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+                "calculatedFieldFormula": {
+                    "formula": "WINDOW_AVG(SUM([Dau]), -6, 0)",
+                    "caption": null
+                }
+            },
+            "tags": [
+                "add-explicit-calc-wordage",
+                "multi-step",
+                "calc-category-table"
+            ]
+        }
+    ],
+    "id": "24fca4a72c764c63b90b6418d7518a91"
+}

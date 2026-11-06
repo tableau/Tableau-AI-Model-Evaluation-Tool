@@ -1,0 +1,24 @@
+- description: 'Join two tables without prompting and create a calculated field.'
+  id: preppin-data-challenge-2023-2-1
+  utterances:
+  - canonical: >-
+      Construct International Bank Account Numbers (IBANs) for each transaction. IBANs are structured like "<Country Code><Check Digits><Sort Code><Account Number>"
+    expected-flow-plan:
+    - CreateJoinStep
+    - CreateCleanStep
+    - CreateCalculatedField
+  data-location: 'test/test-data/flow-plan-gen/step-data/preppin-data-2023-2.txt'
+- description: 'Pivot survey data and do a calc'
+  id: preppin-data-challenge-2023-6-1
+  utterances:
+  - canonical: >-
+      I want create customer segments with this survey data. The segments will be based on the average ratings for each platform (mobile and online). 1. Mobile App Superfans: if the difference between the average is greater than or equal to 2 in the Mobile App's favor 2. Mobile App Fans: if difference >= 1 in mobile's favor 3. Online Interface Fan: difference >= 1 in the Online's favour 4. Online Interface Superfan: greater than or equal to 2 in the Online's favour 5. Neutral if difference is <1
+    expected-flow-plan:
+    - PivotFieldsToRows
+    - CreateCleanStep
+    - CreateCalculatedField
+    - CreateAggregateStep
+    - PivotRowsToFields
+    - CreateCalculatedField
+    - CreateCalculatedField
+  data-location: 'test/test-data/flow-plan-gen/step-data/preppin-data-2023-6.txt'

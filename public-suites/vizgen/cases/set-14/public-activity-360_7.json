@@ -1,0 +1,167 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-activity-360",
+  "info": {
+    "requirement-id": "D-248-a1faa3528ae1308a",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "breakdown attendees by region",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Billing Country",
+              "data": "string",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "x",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            },
+            {
+              "caption": "Number of Employees",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "aggregation": "sum",
+              "encoding": "y",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench",
+        "infer-other-field"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Breakdown by Category"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Group By Dimension",
+          "Op: Field Inference - Measure / Dimension"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    },
+    {
+      "utterance": "only show billing countries with counts less than 250",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Billing Country",
+              "data": "string",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "x",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            }
+          ],
+          "rangeFilters": [
+            {
+              "type": "numeric-range",
+              "field": "Number of Employees",
+              "aggregation": "sum",
+              "end": 250,
+              "includeNull": false,
+              "_tb_wildcards": [
+                "field"
+              ]
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Threshold Qualification"
+        ],
+        "op": [
+          "Op: Filter - Numeric Threshold",
+          "Op: Aggregation (Default)",
+          "Op: Group By Dimension",
+          "Op: Context Carryover / Follow-up"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    },
+    {
+      "utterance": "only show billing countries with counts between 100 and 400",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Billing Country",
+              "data": "string",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "x",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            }
+          ],
+          "rangeFilters": [
+            {
+              "type": "numeric-range",
+              "field": "Number of Employees",
+              "aggregation": "sum",
+              "start": 100,
+              "end": 400,
+              "includeNull": false,
+              "_tb_wildcards": [
+                "field"
+              ]
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Threshold Qualification"
+        ],
+        "op": [
+          "Op: Filter - Numeric Threshold",
+          "Op: Aggregation (Default)",
+          "Op: Group By Dimension",
+          "Op: Context Carryover / Follow-up"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    }
+  ],
+  "id": "ac7ee046826cf12737688dbfdfa56337"
+}

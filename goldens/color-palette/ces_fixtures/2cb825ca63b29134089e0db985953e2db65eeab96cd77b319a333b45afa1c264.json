@@ -1,0 +1,12 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "https://tableau.example.com/content-exploration/analytics-assistant/color-palettes/generate",
+    "normalizedBody": "{\"paletteType\":\"regular\",\"utterance\":{\"content\":\"Palette for traffic lights (red, yellow, green)\"}}"
+  },
+  "response": {
+    "status": 200,
+    "statusText": "",
+    "body": "{\"colors\":[\"#C0392B\",\"#F1C40F\",\"#27AE60\"],\"generationId\":\"chatcmpl-fdd6ec4e-11f3-4105-b85a-c7467ca01c6e\"}"
+  }
+}

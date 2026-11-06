@@ -1,0 +1,387 @@
+{
+  "_note": "Python-golden scores for the ect-server context metrics. Compared by src/metrics/context_metrics.test.ts. FieldRankScorer tie cases capture ranx's real tie-break; divergence vs TS ir.ts is reported, not fudged.",
+  "cases": [
+    {
+      "name": "clean_full_hit_flat",
+      "metric_class": "SemanticSearchAccuracy",
+      "metrics": [
+        {
+          "metric_name": "semanticSearchAccuracy",
+          "score": 1.0,
+          "explanation": null
+        }
+      ]
+    },
+    {
+      "name": "clean_full_hit_chunk",
+      "metric_class": "SemanticSearchAccuracy",
+      "metrics": [
+        {
+          "metric_name": "semanticSearchAccuracy",
+          "score": 1.0,
+          "explanation": null
+        }
+      ]
+    },
+    {
+      "name": "partial_hit",
+      "metric_class": "SemanticSearchAccuracy",
+      "metrics": [
+        {
+          "metric_name": "semanticSearchAccuracy",
+          "score": 0.6666666666666666,
+          "explanation": null
+        }
+      ]
+    },
+    {
+      "name": "complete_miss",
+      "metric_class": "SemanticSearchAccuracy",
+      "metrics": [
+        {
+          "metric_name": "semanticSearchAccuracy",
+          "score": 0.0,
+          "explanation": null
+        }
+      ]
+    },
+    {
+      "name": "empty_matched_list",
+      "metric_class": "SemanticSearchAccuracy",
+      "metrics": [
+        {
+          "metric_name": "semanticSearchAccuracy",
+          "score": 0.0,
+          "explanation": null
+        }
+      ]
+    },
+    {
+      "name": "null_matched",
+      "metric_class": "SemanticSearchAccuracy",
+      "metrics": [
+        {
+          "metric_name": "semanticSearchAccuracy",
+          "score": 0.0,
+          "explanation": null
+        }
+      ]
+    },
+    {
+      "name": "empty_expected_fields",
+      "metric_class": "SemanticSearchAccuracy",
+      "metrics": [
+        {
+          "metric_name": "semanticSearchAccuracy",
+          "score": 1.0,
+          "explanation": null
+        }
+      ]
+    },
+    {
+      "name": "filtered_match_excluded",
+      "metric_class": "SemanticSearchAccuracy",
+      "metrics": [
+        {
+          "metric_name": "semanticSearchAccuracy",
+          "score": 0.5,
+          "explanation": null
+        }
+      ]
+    },
+    {
+      "name": "spec_clean_full_hit",
+      "metric_class": "SpecSemanticSearchAccuracy",
+      "metrics": [
+        {
+          "metric_name": "semanticSearchAccuracy",
+          "score": 1.0,
+          "explanation": null
+        }
+      ]
+    },
+    {
+      "name": "spec_partial_hit",
+      "metric_class": "SpecSemanticSearchAccuracy",
+      "metrics": [
+        {
+          "metric_name": "semanticSearchAccuracy",
+          "score": 0.3333333333333333,
+          "explanation": null
+        }
+      ]
+    },
+    {
+      "name": "spec_complete_miss",
+      "metric_class": "SpecSemanticSearchAccuracy",
+      "metrics": [
+        {
+          "metric_name": "semanticSearchAccuracy",
+          "score": 0.0,
+          "explanation": null
+        }
+      ]
+    },
+    {
+      "name": "spec_empty_matched_list",
+      "metric_class": "SpecSemanticSearchAccuracy",
+      "metrics": [
+        {
+          "metric_name": "semanticSearchAccuracy",
+          "score": 0.0,
+          "explanation": null
+        }
+      ]
+    },
+    {
+      "name": "spec_empty_expected_fields",
+      "metric_class": "SpecSemanticSearchAccuracy",
+      "metrics": [
+        {
+          "metric_name": "semanticSearchAccuracy",
+          "score": 1.0,
+          "explanation": null
+        }
+      ]
+    },
+    {
+      "name": "spec_caption_key",
+      "metric_class": "SpecSemanticSearchAccuracy",
+      "metrics": [
+        {
+          "metric_name": "semanticSearchAccuracy",
+          "score": 1.0,
+          "explanation": null
+        }
+      ]
+    },
+    {
+      "name": "rank_full_hit_top1",
+      "metric_class": "FieldRankScorer",
+      "metrics": [
+        {
+          "metric_name": "fRank_hit_rate@1",
+          "score": 1.0,
+          "explanation": null
+        },
+        {
+          "metric_name": "fRank_hit_rate@5",
+          "score": 1.0,
+          "explanation": null
+        },
+        {
+          "metric_name": "fRank_hit_rate@10",
+          "score": 1.0,
+          "explanation": null
+        },
+        {
+          "metric_name": "fRank_map",
+          "score": 1.0,
+          "explanation": null
+        },
+        {
+          "metric_name": "fRank_mrr",
+          "score": 1.0,
+          "explanation": null
+        }
+      ]
+    },
+    {
+      "name": "rank_relevant_at_rank2",
+      "metric_class": "FieldRankScorer",
+      "metrics": [
+        {
+          "metric_name": "fRank_hit_rate@1",
+          "score": 0.0,
+          "explanation": null
+        },
+        {
+          "metric_name": "fRank_hit_rate@5",
+          "score": 1.0,
+          "explanation": null
+        },
+        {
+          "metric_name": "fRank_hit_rate@10",
+          "score": 1.0,
+          "explanation": null
+        },
+        {
+          "metric_name": "fRank_map",
+          "score": 0.5,
+          "explanation": null
+        },
+        {
+          "metric_name": "fRank_mrr",
+          "score": 0.5,
+          "explanation": null
+        }
+      ]
+    },
+    {
+      "name": "rank_relevant_at_rank6",
+      "metric_class": "FieldRankScorer",
+      "metrics": [
+        {
+          "metric_name": "fRank_hit_rate@1",
+          "score": 0.0,
+          "explanation": null
+        },
+        {
+          "metric_name": "fRank_hit_rate@5",
+          "score": 0.0,
+          "explanation": null
+        },
+        {
+          "metric_name": "fRank_hit_rate@10",
+          "score": 1.0,
+          "explanation": null
+        },
+        {
+          "metric_name": "fRank_map",
+          "score": 0.16666666666666666,
+          "explanation": null
+        },
+        {
+          "metric_name": "fRank_mrr",
+          "score": 0.16666666666666666,
+          "explanation": null
+        }
+      ]
+    },
+    {
+      "name": "rank_complete_miss",
+      "metric_class": "FieldRankScorer",
+      "metrics": [
+        {
+          "metric_name": "fRank_hit_rate@1",
+          "score": 0.0,
+          "explanation": null
+        },
+        {
+          "metric_name": "fRank_hit_rate@5",
+          "score": 0.0,
+          "explanation": null
+        },
+        {
+          "metric_name": "fRank_hit_rate@10",
+          "score": 0.0,
+          "explanation": null
+        },
+        {
+          "metric_name": "fRank_map",
+          "score": 0.0,
+          "explanation": null
+        },
+        {
+          "metric_name": "fRank_mrr",
+          "score": 0.0,
+          "explanation": null
+        }
+      ]
+    },
+    {
+      "name": "rank_tie_relevant_and_nonrelevant_equal",
+      "metric_class": "FieldRankScorer",
+      "metrics": [
+        {
+          "metric_name": "fRank_hit_rate@1",
+          "score": 0.0,
+          "explanation": null
+        },
+        {
+          "metric_name": "fRank_hit_rate@5",
+          "score": 1.0,
+          "explanation": null
+        },
+        {
+          "metric_name": "fRank_hit_rate@10",
+          "score": 1.0,
+          "explanation": null
+        },
+        {
+          "metric_name": "fRank_map",
+          "score": 0.5,
+          "explanation": null
+        },
+        {
+          "metric_name": "fRank_mrr",
+          "score": 0.5,
+          "explanation": null
+        }
+      ]
+    },
+    {
+      "name": "rank_tie_all_equal",
+      "metric_class": "FieldRankScorer",
+      "metrics": [
+        {
+          "metric_name": "fRank_hit_rate@1",
+          "score": 0.0,
+          "explanation": null
+        },
+        {
+          "metric_name": "fRank_hit_rate@5",
+          "score": 1.0,
+          "explanation": null
+        },
+        {
+          "metric_name": "fRank_hit_rate@10",
+          "score": 1.0,
+          "explanation": null
+        },
+        {
+          "metric_name": "fRank_map",
+          "score": 0.3333333333333333,
+          "explanation": null
+        },
+        {
+          "metric_name": "fRank_mrr",
+          "score": 0.3333333333333333,
+          "explanation": null
+        }
+      ]
+    },
+    {
+      "name": "rank_multi_chunk",
+      "metric_class": "FieldRankScorer",
+      "metrics": [
+        {
+          "metric_name": "fRank_hit_rate@1",
+          "score": 0.5,
+          "explanation": null
+        },
+        {
+          "metric_name": "fRank_hit_rate@5",
+          "score": 0.5,
+          "explanation": null
+        },
+        {
+          "metric_name": "fRank_hit_rate@10",
+          "score": 0.5,
+          "explanation": null
+        },
+        {
+          "metric_name": "fRank_map",
+          "score": 0.5,
+          "explanation": null
+        },
+        {
+          "metric_name": "fRank_mrr",
+          "score": 0.5,
+          "explanation": null
+        }
+      ]
+    },
+    {
+      "name": "rank_chunk_all_filtered_empty_run",
+      "metric_class": "FieldRankScorer",
+      "python_error": "ValueError: max() arg is an empty sequence",
+      "metrics": null
+    },
+    {
+      "name": "rank_no_chunks_flat_only",
+      "metric_class": "FieldRankScorer",
+      "metrics": []
+    }
+  ]
+}

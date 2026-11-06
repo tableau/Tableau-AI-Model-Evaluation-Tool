@@ -1,0 +1,57 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-opportunity-360",
+  "info": {
+    "requirement-id": "D-248-55b4ca4117240925",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "how many unique items are there in each type?",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Primary Product",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "aggregation": "countd",
+              "encoding": "x"
+            },
+            {
+              "caption": "Opportunity Type",
+              "data": "string",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "y"
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench",
+        "semantic-inference"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement",
+          "Intent: Breakdown by Category"
+        ],
+        "op": [
+          "Op: Aggregation (Non-Default)",
+          "Op: Group By Dimension",
+          "Op: Disambiguation"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    }
+  ],
+  "id": "f6b8e0fad847da29b082e60e4b02ca1c"
+}

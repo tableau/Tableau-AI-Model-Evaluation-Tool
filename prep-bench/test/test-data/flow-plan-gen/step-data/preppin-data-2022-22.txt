@@ -1,0 +1,58 @@
+<UserStepData>
+<Step name="Episode Details" id="EDF0E7FA-638D-4749-8D8E-D56B0551AE54" type="Clean Step">
+Episode (string),time_in_secs (integer)
+C1E001,11014
+C1E002,10811
+C1E003,9377
+C1E004,16962
+C1E005,11382
+C1E006,10620
+C1E007,14322
+C1E008,10885
+C1E009,11152
+C1E010,16715
+C1E011,19955
+C1E012,13021
+C1E013,12518
+C1E014,12075
+C1E015,14942
+C1E016,10659
+C1E017,14743
+C1E018,10920
+C1E019,16081
+C1E020,11685
+C1E021,17060
+C1E022,16828
+C1E023,13937
+C1E024,14163
+C1E025,13632
+</Step>
+<Step name="Dialogue" id="CAF319F4-D407-4AB9-B357-A23AA82496C1" type="Clean Step">
+youtube_timestamp (string),dialogue (string),section (string),Episode (string),name (string),time_in_secs (integer)
+https://youtu.be/i-p9lWIhcLQ?t=1839,Yes!,Gameplay,C1E001,ALL,1839
+https://youtu.be/i-p9lWIhcLQ?t=2380,Balgus.,Gameplay,C1E001,ALL,2380
+https://youtu.be/i-p9lWIhcLQ?t=3363,Balan.,Gameplay,C1E001,ALL,3363
+https://youtu.be/i-p9lWIhcLQ?t=5313,Huzzah!,Gameplay,C1E001,ALL,5313
+https://youtu.be/i-p9lWIhcLQ?t=8003,You can call him Percy!,Gameplay,C1E001,ALL,8003
+https://youtu.be/i-p9lWIhcLQ?t=9114,Yeah!,Gameplay,C1E001,ALL,9114
+https://youtu.be/i-p9lWIhcLQ?t=10391,Oh no!,Gameplay,C1E001,ALL,10391
+https://youtu.be/i-p9lWIhcLQ?t=10841,"""How do you want to do this?""",Gameplay,C1E001,ALL,10841
+https://youtu.be/i-p9lWIhcLQ?t=1202,Oh no.,Gameplay,C1E001,LAURA,1202
+https://youtu.be/i-p9lWIhcLQ?t=1258,"No, we had a way in.",Gameplay,C1E001,LAURA,1258
+https://youtu.be/i-p9lWIhcLQ?t=1263,"But, Ashley speaks Dwarvish. Pike speaks--",Gameplay,C1E001,LAURA,1263
+https://youtu.be/i-p9lWIhcLQ?t=1270,Oh good!,Gameplay,C1E001,LAURA,1270
+https://youtu.be/i-p9lWIhcLQ?t=1392,"Those are actually pig pits, isn't it?",Gameplay,C1E001,LAURA,1392
+https://youtu.be/i-p9lWIhcLQ?t=1427,"I bring out a piece of gold. Please, sir, we're looking for a place to stay that isn't covered in mud.",Gameplay,C1E001,LAURA,1427
+https://youtu.be/i-p9lWIhcLQ?t=1455,"Thank you, sir.",Gameplay,C1E001,LAURA,1455
+https://youtu.be/i-p9lWIhcLQ?t=1457,I like your armor by the way.,Gameplay,C1E001,LAURA,1457
+https://youtu.be/i-p9lWIhcLQ?t=1461,It was.,Gameplay,C1E001,LAURA,1461
+https://youtu.be/i-p9lWIhcLQ?t=1465,That's all I do is wink at people.,Gameplay,C1E001,LAURA,1465
+https://youtu.be/i-p9lWIhcLQ?t=1581,We grab a table next to the dwarves with Grog.,Gameplay,C1E001,LAURA,1581
+https://youtu.be/i-p9lWIhcLQ?t=1593,"A sack of gold, are you crazy?!",Gameplay,C1E001,LAURA,1593
+https://youtu.be/i-p9lWIhcLQ?t=1672,What was her name?,Gameplay,C1E001,LAURA,1672
+https://youtu.be/i-p9lWIhcLQ?t=1744,You want to share a room?,Gameplay,C1E001,LAURA,1744
+https://youtu.be/i-p9lWIhcLQ?t=1753,Probably like 15 gold then for just that amount.,Gameplay,C1E001,LAURA,1753
+https://youtu.be/i-p9lWIhcLQ?t=1779,What's the discount?,Gameplay,C1E001,LAURA,1779
+https://youtu.be/i-p9lWIhcLQ?t=1798,Yes. That works.,Gameplay,C1E001,LAURA,1798
+</Step>
+</UserStepData>

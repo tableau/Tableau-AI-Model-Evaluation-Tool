@@ -1,0 +1,40 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-activity-360",
+  "info": {
+    "originalValid": true,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "create a calc that condenses the activity date to first of month",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "MAKEDATE(YEAR([Activity Date]), MONTH([Activity Date]), 1)",
+          "caption": null
+        }
+      },
+      "tags": [
+        "add-explicit-calc-wordage"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Data Preparation"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Date Truncation / Granularity",
+          "Op: Date Part Extraction",
+          "Op: Date Arithmetic",
+          "Op: Type Conversion"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "2fd05b31a5f79bb16a94d53b83dedebe"
+}

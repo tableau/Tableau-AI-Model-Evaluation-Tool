@@ -1,0 +1,39 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-retail-360",
+  "info": {
+    "originalValid": true,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "create a calc for running sum of the amount by order date",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "RUNNING_SUM(SUM([Order Total]))",
+          "caption": null
+        }
+      },
+      "tags": [
+        "add-explicit-calc-wordage",
+        "calc-category-table"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Table Calculation / Window",
+          "Op: Aggregation (Default)"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "73baef9c89c6f3d1f98181f288ab653a"
+}

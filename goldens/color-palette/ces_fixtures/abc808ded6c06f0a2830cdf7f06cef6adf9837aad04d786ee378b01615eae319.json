@@ -1,0 +1,12 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "https://tableau.example.com/content-exploration/analytics-assistant/color-palettes/generate",
+    "normalizedBody": "{\"paletteType\":\"sequential\",\"utterance\":{\"content\":\"Red to white, 3 colors\"}}"
+  },
+  "response": {
+    "status": 200,
+    "statusText": "",
+    "body": "{\"colors\":[\"#FF0000\",\"#FF8080\",\"#FFFFFF\"],\"generationId\":\"chatcmpl-9a8d817f-167e-4899-a508-b6763a30fd88\"}"
+  }
+}

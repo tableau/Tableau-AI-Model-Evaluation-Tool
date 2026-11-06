@@ -1,0 +1,226 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-opportunity-360",
+  "info": {
+    "requirement-id": "F-250-1ac74ede0dd37968",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "Amount by Business line",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "fields": [
+            {
+              "caption": "Amount",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "encoding": "x",
+              "aggregation": "sum"
+            },
+            {
+              "caption": "Primary Product Family",
+              "data": "string",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "y"
+            }
+          ],
+          "chart": "bar"
+        }
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench",
+        "infer-other-field"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Breakdown by Category",
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Group By Dimension",
+          "Op: Field Inference - Measure / Dimension"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    },
+    {
+      "utterance": "show median instead",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "fields": [
+            {
+              "caption": "Amount",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "encoding": "x",
+              "aggregation": "median"
+            },
+            {
+              "caption": "Primary Product Family",
+              "data": "string",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "y"
+            }
+          ],
+          "chart": "bar"
+        }
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench",
+        "infer-other-field"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Aggregation (Non-Default)",
+          "Op: Context Carryover / Follow-up",
+          "Op: Group By Dimension",
+          "Op: Field Inference - Measure / Dimension"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    },
+    {
+      "utterance": "median from march to jun using created date",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "fields": [
+            {
+              "caption": "Amount",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "encoding": "x",
+              "aggregation": "median"
+            },
+            {
+              "caption": "Primary Product Family",
+              "data": "string",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "y"
+            }
+          ],
+          "chart": "bar",
+          "dateRangeFilters": [
+            {
+              "type": "date-range",
+              "field": "Created Date",
+              "includeNull": false,
+              "start": "2023-03",
+              "end": "2023-06",
+              "_tb_wildcards": [
+                "field"
+              ]
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "infer-date-time-field",
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Aggregation (Non-Default)",
+          "Op: Filter - Date Range / Relative",
+          "Op: Context Carryover / Follow-up",
+          "Op: Group By Dimension",
+          "Op: Field Inference - Date Field"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    },
+    {
+      "utterance": "color by Number of Employees",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "fields": [
+            {
+              "caption": "Amount",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "encoding": "x",
+              "aggregation": "median"
+            },
+            {
+              "caption": "Primary Product Family",
+              "data": "string",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "y"
+            },
+            {
+              "caption": "Number of Employees",
+              "data": "number",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "color"
+            }
+          ],
+          "chart": "bar",
+          "dateRangeFilters": [
+            {
+              "type": "date-range",
+              "field": "Created Date",
+              "includeNull": false,
+              "start": "2023-03",
+              "end": "2023-06",
+              "_tb_wildcards": [
+                "field"
+              ]
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Breakdown by Category"
+        ],
+        "op": [
+          "Op: Encoding Assignment",
+          "Op: Context Carryover / Follow-up",
+          "Op: Group By Dimension",
+          "Op: Aggregation (Non-Default)"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    }
+  ],
+  "id": "17d24f137169da014036692a8484e1e6"
+}

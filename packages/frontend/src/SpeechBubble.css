@@ -1,0 +1,97 @@
+ /* Base shared styling, no arrow by default */
+ .speech-bubble {
+    position: relative;
+    padding: 10px 16px;
+    border-radius: 8px;
+    margin: 8px 0;
+    max-width: 200px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #333;
+    /* A long field name like [Tbl_ECAttendance.EmergencyCareDepartureDateTime]
+       breaks rather than running out of the bubble. */
+    overflow-wrap: anywhere;
+  }
+  
+  /* Disable any default arrow on the base class */
+  .speech-bubble::after {
+    content: none;
+  }
+  
+  /* =========================
+     USER BUBBLE (arrow LEFT)
+     ========================= */
+  .speech-bubble-user {
+    background-color: #e6f7ff; /* Light blue */
+  }
+  
+  .speech-bubble-user::after {
+    content: '';
+    position: absolute;
+    left: -10px;      /* arrow juts out from the left edge */
+    top: 15px;        /* vertical offset from top */
+    border-style: solid;
+    border-width: 8px 10px 8px 0; /* top=8, right=10, bottom=8, left=0 */
+    border-color: transparent #e6f7ff transparent transparent;
+  }
+  
+  /* ===========================
+     EXPECTED BUBBLE (arrow RIGHT)
+     =========================== */
+  .speech-bubble-expected {
+    background-color: #e2f1ee;
+  }
+  
+  .speech-bubble-expected::after {
+    content: '';
+    position: absolute;
+    right: -10px;     /* arrow juts out from the right edge */
+    top: 15px;        
+    border-style: solid;
+    border-width: 8px 0 8px 10px; /* top=8, right=0, bottom=8, left=10 */
+    /* The arrow color is on the left border, so match the bubble color there */
+    border-color: transparent transparent transparent #e2f1ee;
+  }
+  
+  /* =========================
+     MODEL BUBBLE (arrow RIGHT)
+     ========================= */
+  .speech-bubble-model {
+    background-color: #F0F1F3; 
+  }
+  
+  .speech-bubble-model::after {
+    content: '';
+    position: absolute;
+    right: -10px;
+    top: 15px;
+    border-style: solid;
+    border-width: 8px 0 8px 10px; 
+    border-color: transparent transparent transparent #F0F1F3;
+  }
+  
+/* Markdown inside a reply bubble: keep the bubble's own rhythm rather than
+   the browser's default paragraph and list margins. */
+.reply-markdown > :first-child { margin-top: 0; }
+.reply-markdown > :last-child { margin-bottom: 0; }
+.reply-markdown p { margin: 0 0 6px; }
+.reply-markdown ol,
+.reply-markdown ul { margin: 0 0 6px; padding-left: 18px; }
+.reply-markdown code {
+  font-family: SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12px;
+  background: rgba(0, 0, 0, 0.06);
+  border-radius: 3px;
+  padding: 0 3px;
+}
+/* A fenced code block in a reply wraps inside the bubble instead of
+   running across the row. */
+.reply-markdown pre {
+  margin: 0 0 6px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.reply-markdown pre code {
+  padding: 0;
+  background: none;
+}

@@ -1,0 +1,55 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-support-360",
+  "info": {
+    "requirement-id": "D-248-55b4ca4117240925",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "Give me breakdown of priority by case status",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Case Status",
+              "data": "string",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "x"
+            },
+            {
+              "caption": "Priority",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "aggregation": "countd",
+              "encoding": "y"
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Breakdown by Category"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Group By Dimension",
+          "Op: Aggregation (Non-Default)"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    }
+  ],
+  "id": "1c4be97d1005d9647e56820741c3f30b"
+}

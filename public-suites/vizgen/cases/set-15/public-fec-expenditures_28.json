@@ -1,0 +1,33 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-fec-expenditures",
+  "info": {
+    "requirement-id": "D-248-4a9d07c69539a638",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "what is the correlation between disbursement amount and cost per engaged session",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Correlation / Relationship"
+        ],
+        "op": [
+          "Op: Aggregation (Default)"
+        ],
+        "out": [
+          "Out: Unspecified Viz"
+        ]
+      }
+    }
+  ],
+  "id": "b9599b664864430a19353c36eb3e6f24"
+}

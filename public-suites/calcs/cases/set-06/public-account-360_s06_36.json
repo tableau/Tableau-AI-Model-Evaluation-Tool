@@ -1,0 +1,37 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-account-360",
+  "info": {
+    "originalValid": true,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "Generate an include LOD calculation to get the value of Number of Employees including Sales Representative",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "{ INCLUDE [Sales Representative] : [Number of Employees] }",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-non-aggregated-lod"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Level of Detail"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "323bffcca79fd2ca8af63515d43f4459"
+}

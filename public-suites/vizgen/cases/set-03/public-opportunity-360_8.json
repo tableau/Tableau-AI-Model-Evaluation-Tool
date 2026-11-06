@@ -1,0 +1,60 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-opportunity-360",
+  "info": {
+    "requirement-id": "D-248-bb9b5ac1affd195a",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "COUNTD <Opportunity Name> signed per quarter",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Opportunity Name",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "aggregation": "countd",
+              "encoding": "y"
+            },
+            {
+              "caption": "Created Date",
+              "data": "date",
+              "type": "discrete",
+              "role": "dimension",
+              "aggregation": "qtr",
+              "encoding": "x"
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "infer-date-time-field",
+        "infer-time-series",
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement",
+          "Intent: Trend over Time"
+        ],
+        "op": [
+          "Op: Aggregation (Non-Default)",
+          "Op: Group By Dimension",
+          "Op: Date Truncation / Granularity",
+          "Op: Field Inference - Date Field"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    }
+  ],
+  "id": "e70a674cf81a8996a1c87e3323e89a29"
+}

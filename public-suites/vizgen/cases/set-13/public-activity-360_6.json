@@ -1,0 +1,111 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-activity-360",
+  "info": {
+    "requirement-id": "D-248-55b4ca4117240925",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "Duration (minutes) by Priority",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Duration (minutes)",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "aggregation": "sum",
+              "encoding": "x"
+            },
+            {
+              "caption": "Priority",
+              "data": "string",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "y"
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Breakdown by Category",
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Aggregation (Non-Default)",
+          "Op: Group By Dimension",
+          "Op: Aggregation (Default)"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    },
+    {
+      "utterance": "filter to the first month of 23",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "bar",
+          "dateRangeFilters": [
+            {
+              "type": "date-range",
+              "field": "Activity Date",
+              "start": "2023-01-01",
+              "end": "2023-01-31"
+            }
+          ],
+          "fields": [
+            {
+              "caption": "Duration (minutes)",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "aggregation": "sum",
+              "encoding": "x"
+            },
+            {
+              "caption": "Priority",
+              "data": "string",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "y"
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench",
+        "semantic-inference"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Breakdown by Category"
+        ],
+        "op": [
+          "Op: Filter - Date Range / Relative",
+          "Op: Group By Dimension",
+          "Op: Aggregation (Default)",
+          "Op: Disambiguation",
+          "Op: Context Carryover / Follow-up"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    }
+  ],
+  "id": "8a0fbad47ac6781730c28fc5d6256291"
+}

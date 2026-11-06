@@ -1,0 +1,40 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-support-360",
+  "info": {
+    "originalValid": false,
+    "reasonInvalid": "The data source does not contain a field that indicates whether a patient is in hospice.",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "compute number of people who are in Pro Desk",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "COUNTD(IF [Order Type] = 'HOSPICE' THEN [Number of Employees] END)",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-logical"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Conditional Logic",
+          "Op: Aggregation (Default)",
+          "Op: Aggregation (Non-Default)"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "8b63cdffc690c16aa6cfd60c83456545"
+}

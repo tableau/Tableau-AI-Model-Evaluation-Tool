@@ -1,0 +1,48 @@
+{
+  "flow": "QueueTimes.tflx",
+  "name": "QueueTimes",
+  "inputs": [
+    {
+      "name": "Data",
+      "source": "Data.csv",
+      "fields": [
+        {
+          "name": "Order Type",
+          "datatype": "string",
+          "values": [
+            "Food",
+            "Drink"
+          ]
+        },
+        {
+          "name": "Order",
+          "datatype": "string",
+          "values": [
+            "Hamburger",
+            "Fries",
+            "Burrito",
+            "Chicken Strips",
+            "Chicken Sandwich",
+            "Pepsi",
+            "Coke",
+            "Milkshake"
+          ]
+        },
+        {
+          "name": "Queue Time - Seconds",
+          "datatype": "integer",
+          "values": [
+            "400",
+            "20",
+            "80",
+            "10",
+            "500",
+            "120",
+            "180",
+            "110"
+          ]
+        }
+      ]
+    }
+  ]
+}

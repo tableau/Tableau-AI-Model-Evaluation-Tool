@@ -1,0 +1,48 @@
+{
+  "_generated_by": "gen_fuzzy_ratios.py",
+  "_rounding_decimals": 10,
+  "_library": "rapidfuzz (fuzz.token_set_ratio, fuzz.partial_ratio)",
+  "_preprocessing": "a -> a.strip().lower(); b -> b.lower() (matches reference code)",
+  "pairs": [
+    {
+      "name": "exact_match",
+      "token_set_ratio": 100.0,
+      "partial_ratio": 100.0
+    },
+    {
+      "name": "reordered_tokens",
+      "token_set_ratio": 100.0,
+      "partial_ratio": 70.0
+    },
+    {
+      "name": "substring",
+      "token_set_ratio": 100.0,
+      "partial_ratio": 100.0
+    },
+    {
+      "name": "case_diff",
+      "token_set_ratio": 100.0,
+      "partial_ratio": 100.0
+    },
+    {
+      "name": "whitespace_diff",
+      "token_set_ratio": 100.0,
+      "partial_ratio": 84.6153846154
+    },
+    {
+      "name": "disjoint",
+      "token_set_ratio": 31.25,
+      "partial_ratio": 32.0
+    },
+    {
+      "name": "extra_tokens_superset",
+      "token_set_ratio": 100.0,
+      "partial_ratio": 100.0
+    },
+    {
+      "name": "partial_typo",
+      "token_set_ratio": 52.1739130435,
+      "partial_ratio": 100.0
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+# Prefer last utterance tests
+# These don't work yet because of a technical issue with interpretting multiple utterances from our yaml files.
+- id: intent-32
+  utterances:
+    - canonical:
+        - I want to join my two inputs then aggregate based on region
+        - Can you generate a field that converts product names to uppercase?
+    - expected-intent: calc
+      plausible-intents: [flow-plan]
+- id: intent-33
+  utterances:
+    - canonical:
+        - Can you generate a field that converts product names to uppercase?
+        - How can I create a flow to blend data from multiple sources and remove any duplicate records?
+    - expected-intent: flow-plan
+- id: intent-34
+  utterances:
+    - canonical:
+        - create a column 'Profit or loss' based on the profit margin
+        - Can you create a plan to clean up this dataset? It has a lot of null values and inconsistent text formats
+    - expected-intent: flow-plan
+- id: intent-35
+  utterances:
+    - canonical:
+        - create a column 'Profit or loss' based on the profit margin
+        - I want to join my two inputs then aggregate based on region
+    - expected-intent: flow-plan
+- id: intent-36
+  utterances:
+    - canonical:
+        - create a column 'Profit or loss' based on the profit margin
+        - Calculate the difference between two dates
+    - expected-intent: calc

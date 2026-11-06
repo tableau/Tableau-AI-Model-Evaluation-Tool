@@ -1,0 +1,42 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-activity-360",
+  "info": {
+    "originalValid": true,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "Create a calc to compute % diff month over month for each product categ and rank these categ from largest to smallest %",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "{ RANK_UNIQUE((ZN(AVG([Days Since Opportunity Created])) - LOOKUP(ZN(AVG([Days Since Opportunity Created])), -1)) / ABS(LOOKUP(ZN(AVG([Days Since Opportunity Created])), -1)))}",
+          "caption": null
+        }
+      },
+      "tags": [
+        "add-explicit-calc-wordage"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Comparison",
+          "Intent: Ranking / Top-N",
+          "Intent: Breakdown by Category"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Table Calculation / Window",
+          "Op: Aggregation (Non-Default)",
+          "Op: Null Handling",
+          "Op: Arithmetic / Ratio"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "45ba9c8abde72171a00c84269da458a5"
+}

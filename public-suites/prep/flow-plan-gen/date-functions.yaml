@@ -1,0 +1,52 @@
+- description: 'Relative date filter'
+  id: relative-date-filter-1
+  utterances:
+  - canonical: >-
+      Can you filter to the last 90 days of data?
+    expected-flow-plan:
+    - FilterValuesByRelativeDateFilter
+  data-location: 'test/test-data/flow-plan-gen/step-data/website-traffic.txt'
+- description: 'Relative date filter + date part'
+  id: date-function-combo-1
+  utterances:
+  - canonical: >-
+      Can you calculate the average bounce rate per month for the last 3 months?
+    expected-flow-plan:
+    - FilterValuesByRelativeDateFilter
+    - ConvertDateToPart
+    - CreateAggregateStep
+  data-location: 'test/test-data/flow-plan-gen/step-data/website-traffic.txt'
+- description: 'Relative date filter + date part'
+  id: date-function-combo-2
+  utterances:
+  - canonical: >-
+      How many website conversions do I have this year?
+    expected-flow-plan:
+    - FilterValuesByRelativeDateFilter
+    - CreateAggregateStep
+  data-location: 'test/test-data/flow-plan-gen/step-data/website-traffic.txt'
+- description: 'Range date filter'
+  id: date-range-1
+  utterances:
+  - canonical: >-
+      Can you filter my data to between March 1st and April 1st, 2023?
+    expected-flow-plan:
+    - FilterValuesByDatetimeRange
+  data-location: 'test/test-data/flow-plan-gen/step-data/website-traffic.txt'
+- description: 'Range date filter'
+  id: date-range-2
+  utterances:
+  - canonical: >-
+      Can you filter my data to dates after March 1st?
+    expected-flow-plan:
+    - FilterValuesByDatetimeRange
+  data-location: 'test/test-data/flow-plan-gen/step-data/website-traffic.txt'
+- description: 'Relative date filter + date part'
+  id: date-function-combo-3
+  utterances:
+  - canonical: >-
+      What's my bounce rate for the month to date?
+    expected-flow-plan:
+    - FilterValuesByRelativeDateFilter
+    - CreateAggregateStep
+  data-location: 'test/test-data/flow-plan-gen/step-data/website-traffic.txt'

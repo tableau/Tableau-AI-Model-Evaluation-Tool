@@ -1,0 +1,29 @@
+{
+  "description": "spaCy en_core_web_trf DATE/TIME reference entity spans (text, character offsets, label). Sentences mix temporal expressions, money, and plain numbers to distinguish date/time entities from other numeric text.",
+  "sentences": [
+    {
+      "name": "month_year",
+      "text": "Revenue grew in January 2024 by a wide margin."
+    },
+    {
+      "name": "time_of_day",
+      "text": "The report was generated at 5pm on Tuesday."
+    },
+    {
+      "name": "plain_number",
+      "text": "The company reported 121.4M revenue this period."
+    },
+    {
+      "name": "mixed_date_and_number",
+      "text": "In Q3 2023 the total reached 4.2 million dollars."
+    },
+    {
+      "name": "relative_date",
+      "text": "Sales increased 15% over the last three months."
+    },
+    {
+      "name": "no_temporal",
+      "text": "The margin was 42 percent across all regions."
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-activity-360",
+  "info": {
+    "requirement-id": "F-250-6423a2a14cbb7e5c",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "show me duration and headcount per deal by state",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "stackedbar",
+          "fields": [
+            {
+              "caption": "Activity Owner State",
+              "data": "string",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "x"
+            },
+            {
+              "caption": "Duration (minutes)",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "aggregation": "sum",
+              "encoding": "y"
+            },
+            {
+              "caption": "Number of Employees",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "aggregation": "sum",
+              "encoding": "y"
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "questionable",
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Breakdown by Category"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Group By Dimension"
+        ],
+        "out": [
+          "Out: Stacked Bar Chart"
+        ]
+      }
+    }
+  ],
+  "id": "91b729c9b8da5e5377d712475b568a90"
+}

@@ -1,0 +1,168 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-edx-courses",
+  "info": {
+    "requirement-id": "D-248-b8df43152911f2f3",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "average headcount of Explorers by Subject Area",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Explorers",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "aggregation": "avg",
+              "encoding": "x"
+            },
+            {
+              "caption": "Subject Area",
+              "data": "string",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "y"
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement",
+          "Intent: Breakdown by Category"
+        ],
+        "op": [
+          "Op: Aggregation (Non-Default)",
+          "Op: Group By Dimension"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    },
+    {
+      "utterance": "filter subject area to CS",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Explorers",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "aggregation": "avg",
+              "encoding": "x"
+            },
+            {
+              "caption": "Subject Area",
+              "data": "string",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "y"
+            }
+          ],
+          "categoricalFilters": [
+            {
+              "type": "categorical",
+              "field": "Subject Area",
+              "values": [
+                "CS"
+              ]
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench",
+        "infer-other-field"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Breakdown by Category"
+        ],
+        "op": [
+          "Op: Filter - Categorical",
+          "Op: Group By Dimension",
+          "Op: Aggregation (Non-Default)",
+          "Op: Field Inference - Measure / Dimension",
+          "Op: Context Carryover / Follow-up"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    },
+    {
+      "utterance": "show only CS and Circuits",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Explorers",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "aggregation": "avg",
+              "encoding": "x"
+            },
+            {
+              "caption": "Subject Area",
+              "data": "string",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "y"
+            }
+          ],
+          "categoricalFilters": [
+            {
+              "type": "categorical",
+              "field": "Subject Area",
+              "values": [
+                "CS",
+                "Circuits"
+              ]
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench",
+        "infer-other-field"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Breakdown by Category"
+        ],
+        "op": [
+          "Op: Filter - Categorical",
+          "Op: Group By Dimension",
+          "Op: Aggregation (Non-Default)",
+          "Op: Field Inference - Measure / Dimension",
+          "Op: Context Carryover / Follow-up"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    }
+  ],
+  "id": "0a69c693b59bbdf3e9e870d663eb601c"
+}

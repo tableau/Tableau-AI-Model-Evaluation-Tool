@@ -1,0 +1,25 @@
+{
+  "runner": "ect-server",
+  "datasource": "chicago-taxi-trips-2024-calcs",
+  "info": {
+    "originalValid": true
+  },
+  "inputs": [
+    {
+      "utterance": "create calc to compute the average number of minutes per trip for each company",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "{ FIXED [Company] : AVG([Trip Seconds] / 60) }",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-date",
+        "add-explicit-calc-wordage"
+      ]
+    }
+  ],
+  "id": "dd21e3e9-e260-4629-8467-58a26d941830"
+}

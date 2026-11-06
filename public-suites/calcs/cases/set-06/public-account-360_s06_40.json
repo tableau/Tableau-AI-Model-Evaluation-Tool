@@ -1,0 +1,40 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-account-360",
+  "info": {
+    "originalValid": false,
+    "reasonInvalid": "Hallucinated values that are not present in segment field datasource",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "flag accounts from Enterprise, Mid-Market, and SMB",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "IF [Account Type] = 'Communications, Media, & Technology' THEN 'Flagged' ELSE 'Not Flagged' END",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-logical",
+        "calc-category-string"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Threshold Qualification"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Conditional Logic",
+          "Op: String Manipulation"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "5c133ec5b5ff4771a6a52c66b05827e2"
+}

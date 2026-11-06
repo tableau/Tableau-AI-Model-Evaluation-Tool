@@ -1,0 +1,40 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-support-360",
+  "info": {
+    "originalValid": true,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "create a LOD to compute percent of total amount by state",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "SUM([Order Amount]) / SUM({ FIXED : SUM([Order Amount]) })",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-lod",
+        "add-explicit-calc-wordage"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Composition / Share"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Level of Detail",
+          "Op: Arithmetic / Ratio",
+          "Op: Aggregation (Default)"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "f7da05c57e690014c812c98ad269d904"
+}

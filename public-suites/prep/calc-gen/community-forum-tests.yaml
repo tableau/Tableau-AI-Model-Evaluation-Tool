@@ -1,0 +1,98 @@
+- description: Combine several string fields together from one table into a single field
+  id: concat-2
+  utterances:
+  - canonical: 'one table has four columns of fields: A, B, C, and D, and each field has values and NULL as items. I would like to write the strings in the 4-column field together.'
+    expected-calc: 'IFNULL([A],"")+IFNULL([B],"")+IFNULL([C],"")+IFNULL([D],"")'
+  flow-name: 'ABCD.tflx'
+  field-metadata: >-
+    'A' (String), 'B' (String), 'C' (String), 'D' (String)
+- description: Only keep field if its ID isn't empty
+  id: if-then-logic-1
+  utterances:
+  - canonical: 'I want to create a new calculated column in Tableau prep builder. How may I create: If there is a value in "ID" and "Sponsor" fields, then in the new column called "Sponsor_Name", the value will be Sponsor. If there is no value, it will be blank.'
+    expected-calc: 'IF NOT ISNULL([Sponsor]) AND NOT ISNULL([ID]) THEN [Sponsor] END'
+    acceptable-calcs:
+    - 'IF NOT ISNULL([Sponsor]) AND NOT ISNULL([ID]) THEN [Sponsor] ELSE '''' END'
+    - 'IF NOT ISNULL([Sponsor]) AND [Sponsor] != '''' AND NOT ISNULL([ID]) AND [ID] != '''' THEN [Sponsor] END'
+  flow-name: 'Sponsor.tflx'
+  field-metadata: >-
+    'Sponsor' (String), 'ID' (String)
+- description: More complex example of if/then to calculate how long a patient is at the hospital
+  id: if-then-logic-2
+  utterances:
+  - canonical: 'How to calculate If Patient Admitted = "Not Admitted" then calculate the number of days from [Tbl_ECAttendance.EmergencyCareDepartureDateTime] to [Tbl_ECAttendance.EmergencyCareArrivalDateTime]. Otherwise, If Patient Admitted = "Admitted"; then calculate then number of days from [Tbl_ECAdmissions.DischargeDateTime_HospitalProviderSpell] to [Tbl_ECAttendance.EmergencyCareArrivalDateTime]?'
+    expected-calc: >-
+      IF [Patient Admitted] = 'Not Admitted' THEN DATEDIFF('day', [Tbl_ECAttendance.EmergencyCareDepartureDateTime], [Tbl_ECAttendance.EmergencyCareArrivalDateTime]) ELSEIF [Patient Admitted] = 'Admitted' THEN DATEDIFF('day', [Tbl_ECAdmissions.DischargeDateTime_HospitalProviderSpell], [Tbl_ECAttendance.EmergencyCareArrivalDateTime]) END
+    acceptable-calcs:
+    - 'IF [Patient Admitted] = ''Not Admitted'' THEN DATEDIFF(''day'', [Tbl_ECAttendance.EmergencyCareArrivalDateTime], [Tbl_ECAttendance.EmergencyCareDepartureDateTime]) ELSEIF [Patient Admitted] = ''Admitted'' THEN DATEDIFF(''day'', [Tbl_ECAttendance.EmergencyCareArrivalDateTime], [Tbl_ECAdmissions.DischargeDateTime_HospitalProviderSpell]) END'
+  flow-name: 'HospitalAdmissions.tflx'
+  field-metadata: >-
+    'Patient Admitted' (String), 'Tbl_ECAttendance.EmergencyCareDepartureDateTime' (datetime), 'Tbl_ECAttendance.EmergencyCareArrivalDateTime' (datetime), 'Tbl_ECAdmissions.DischargeDateTime_HospitalProviderSpell' (datetime)
+- description: Simple calc to categorize minutes
+  id: if-then-logic-3
+  utterances:
+  - canonical: 'Hi, Please can someone help me turn this (IF minutes >= 240 THEN "Breached 4hrs" ELSE "Not breached 4hrs". IFNULL THEN "No data") into a calculated field that works?'
+    expected-calc: 'IF ISNULL([minutes]) THEN "No data" ELSEIF [minutes] >= 240 THEN "Breached 4hrs" ELSE "Not breached 4hrs" END'
+  flow-name: 'Minutes.tflx'
+  field-metadata: >-
+    'minutes' (int)
+- description: Show a basic datetime manipulation function (truncation)
+  id: date-manipulation-1
+  utterances:
+  - canonical: 'How do I get the first date for each month in my dataset?'
+    expected-calc: 'DATETRUNC("month",[Order Date])'
+    acceptable-calcs:
+    - '{FIXED DATETRUNC(''month'', [Order Date]) : MIN([Order Date])}'
+  flow-name: 'SuperstoreOneOutput.tflx'
+  field-metadata: >-
+    'Order Date' (datetime)
+- description: Show a basic datetime manipulation function (date part)
+  id: date-manipulation-2
+  utterances:
+  - canonical: >-
+      I currently have a datetime timestampped field for time of arrival for example '20:17:00 10:46:32'. How can i use a calculated field that converts that into the hour of arrival, for example just '20:00'. Can anyone help with this please?
+    expected-calc: >-
+      STR(DATEPART('hour',[Tbl_ECAttendance.EmergencyCareDepartureDateTime]))+':'+STR(0)+STR(0)
+    acceptable-calcs:
+    - 'DATETRUNC(''hour'', [Tbl_ECAttendance.EmergencyCareDepartureDateTime])'
+    - 'STR(DATEPART(''hour'', [Tbl_ECAttendance.EmergencyCareDepartureDateTime])) + '':00'''
+    - 'RIGHT(''0'' + STR(DATEPART(''hour'', [Tbl_ECAttendance.EmergencyCareDepartureDateTime])), 2) + '':00'''
+  flow-name: 'HospitalAdmissions.tflx'
+  field-metadata: >-
+    'Tbl_ECAttendance.EmergencyCareDepartureDateTime' (datetime)
+- description: Show a usage of LOD calcs with dates
+  id: lod-3
+  utterances:
+  - canonical: 'How do i display latest date for each rego'
+    expected-calc: '{FIXED [Region]: MAX([Order Date])}'
+  flow-name: 'SuperstoreOneOutput.tflx'
+  field-metadata: >-
+    'Region' (string), 'Order Date' (datetime)
+- description: Filter out rows with null values for 2 fields
+  id: filter-nulls-1
+  utterances:
+  - canonical: 'How can I filter out common null values for column A and column B at the same time in Tableau Prep? How can I then exclude these common values from both columns?'
+    expected-calc: 'NOT (ISNULL([A]) AND ISNULL([B]))'
+  flow-name: 'ABCD.tflx'
+  field-metadata: >-
+    'A' (string), 'B' (string)
+- description: Identify duplicate rows as "Unique" and duplicate rows as "Duplicate"
+  id: duplicate-rows-1
+  utterances:
+  - canonical: 'How do I identify duplicate rows across all my fields?'
+    expected-calc: >-
+      IF ({PARTITION [A], [B], [C], [D]: { ORDERBY [A] DESC:  ROW_NUMBER() } } = 1) THEN 'Unique' ELSE 'Duplicate' END
+    acceptable-calcs:
+    - 'IF {FIXED [A], [B], [C], [D] : COUNT([A])} > 1 THEN ''Duplicate'' ELSE ''Unique'' END'
+    - '{FIXED [A], [B], [C], [D] : COUNT([A])} > 1'
+  flow-name: 'ABCD.tflx'
+  field-metadata: >-
+    'A' (string), 'B' (string), 'C' (string), 'D' (string)
+- description: Mimic excel functionality of iif / if then
+  id: if-then-logic-4
+  utterances:
+  - canonical: 'I am preparing a Tableau Prep workflow based on the manual work performed on MS EXCEL. I want to create a calculated field which is similar to the logic used in MS Excel. Below is the logic in MS EXCEL: =IF(ISBLANK(R_USER) = FALSE, "R_USER", IF(ISBLANK(RULF_USER) = FALSE, "RULF_USER", IF(ISBLANK(T_USER) = FALSE, "T_USER", IF(ISBLANK(N_USER) = FALSE, "N_USER","G_USER")))).'
+    expected-calc: 'IF NOT ISNULL([R_USER]) THEN "R_USER" ELSEIF NOT ISNULL([RULF_USER]) THEN "RULF_USER" ELSEIF NOT ISNULL([T_USER]) THEN "T_USER" ELSEIF NOT ISNULL([N_USER]) THEN "N_USER" ELSE "G_USER" END'
+  flow-name: 'ExcelUsers.tflx'
+  field-metadata: >-
+    'R_USER' (string), 'RULF_USER' (string), 'T_USER' (string), 'N_USER' (string)

@@ -1,0 +1,87 @@
+{
+  "description": "nlq calc case with a datasource: prepare() indexes the datasource (POST /datasources + /fields) then POST /conversations.",
+  "adapter": "nlq",
+  "covers": [
+    "ect-server (calcs, testbench, sample-testbench, nvbench)"
+  ],
+  "requests": [
+    {
+      "method": "POST",
+      "pathAndQuery": "/content-exploration/analytics-assistant/datasources",
+      "headerNames": [
+        "accept",
+        "accept-charset",
+        "content-type"
+      ],
+      "body": {
+        "datasourceMetadata": {
+          "datasourceIdentifier": "public-activity-360",
+          "name": "Activity 360",
+          "fields": [
+            {
+              "name": "Amount",
+              "caption": "Amount",
+              "datatype": "real"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "pathAndQuery": "/content-exploration/analytics-assistant/datasources/ect-golden/fields",
+      "headerNames": [
+        "accept",
+        "accept-charset",
+        "content-type"
+      ],
+      "body": {
+        "datasourceIdentifier": "ect-golden",
+        "fields": [
+          {
+            "name": "Amount",
+            "caption": "Amount",
+            "datatype": "real",
+            "count": 3,
+            "distinctCount": 3,
+            "values": [
+              1,
+              2,
+              3
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "method": "POST",
+      "pathAndQuery": "/content-exploration/analytics-assistant/conversations",
+      "headerNames": [
+        "accept",
+        "accept-charset",
+        "content-type"
+      ],
+      "body": {
+        "intentApplicationAccepts": null,
+        "utterance": {
+          "content": "create a calc for total amount"
+        },
+        "conversationContext": {
+          "conversationHistory": []
+        },
+        "currentNotionalSpec": {
+          "version": "0.2.0",
+          "fields": []
+        },
+        "applicationContext": {
+          "calculationContext": {
+            "formula": null,
+            "caption": "",
+            "errorMessages": []
+          }
+        },
+        "datasourceECTId": "ect-golden"
+      }
+    }
+  ]
+}

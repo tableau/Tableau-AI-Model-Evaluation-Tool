@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "skipLibCheck": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    // TS 7.0 forbids a composite referenced project from disabling emit (TS6310).
+    // This project is type-check-only (Vite builds via esbuild); emit declarations
+    // only to satisfy the composite constraint without producing JS.
+    "emitDeclarationOnly": true,
+    "outDir": "./node_modules/.tmp/tsconfig-node"
+  },
+  "include": ["vite.config.ts"]
+}

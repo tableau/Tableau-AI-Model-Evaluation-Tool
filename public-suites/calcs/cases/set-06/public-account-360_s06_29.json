@@ -1,0 +1,40 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-account-360",
+  "info": {
+    "originalValid": true,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "create calc to determine ranks of customers based on success rates",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "{ RANK(SUM([Win Rate])) }",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-table",
+        "add-explicit-calc-wordage"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Ranking / Top-N"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Sort / Order",
+          "Op: Table Calculation / Window",
+          "Op: Aggregation (Default)"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "a3dc53a92a60f81279f6f5b97818e603"
+}

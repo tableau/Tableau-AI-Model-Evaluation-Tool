@@ -1,0 +1,37 @@
+{
+  "flow": "Sponsor.tflx",
+  "name": "Sponsor",
+  "inputs": [
+    {
+      "name": "Data",
+      "source": "Data.csv",
+      "fields": [
+        {
+          "name": "Sponsor",
+          "datatype": "string",
+          "values": [
+            "Kyler",
+            "Sean",
+            "Rachel",
+            "Shalu",
+            "Andy",
+            "Clinton"
+          ]
+        },
+        {
+          "name": "ID",
+          "datatype": "integer",
+          "values": [
+            "12345",
+            "213982",
+            "21392183",
+            "12324",
+            "3948394",
+            "3948239048",
+            "34234234"
+          ]
+        }
+      ]
+    }
+  ]
+}

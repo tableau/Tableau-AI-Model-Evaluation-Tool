@@ -1,0 +1,41 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-fec-expenditures",
+  "info": {
+    "originalValid": true,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "create calc to compute percent change in total costs from prior quarter",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "(SUM([Disbursement Amount]) - LOOKUP(SUM([Disbursement Amount]), -1)) / LOOKUP(SUM([Disbursement Amount]), -1)",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-table"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement",
+          "Intent: Trend over Time"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Table Calculation / Window",
+          "Op: Date Truncation / Granularity",
+          "Op: Aggregation (Default)",
+          "Op: Arithmetic / Ratio"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "f2cf647e845ddb82018e64df94bceaf3"
+}

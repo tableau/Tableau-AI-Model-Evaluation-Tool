@@ -1,0 +1,445 @@
+{
+  "fixed_now": "2026-09-30T12:34:56+00:00",
+  "runs": {
+    "beefcafe00000000000000000000beef": {
+      "data": {
+        "run": {
+          "job_id": "beefcafe00000000000000000000beef",
+          "org_id": "org-x",
+          "user_id": "user",
+          "ai_feature": "calc",
+          "runner_name": "calc-prompt",
+          "config": {
+            "runner": "calc-prompt",
+            "gateway_url": "https://localhost:5001",
+            "llm_key": "****",
+            "models": {
+              "create": "gpt-4o-mini"
+            },
+            "test_path": "/tests/sample-calcs"
+          },
+          "status": "finished",
+          "total": 2,
+          "completed": 2,
+          "error": null,
+          "created_at": "2026-09-30 10:00:00",
+          "finished_at": "2026-09-30 10:30:05"
+        },
+        "results": [
+          {
+            "id": 1,
+            "job_id": "beefcafe00000000000000000000beef",
+            "test_case_id": "tc-1",
+            "runner": "calc-prompt",
+            "datasource": "Superstore",
+            "utterance": "total sales",
+            "expected": {
+              "calculatedFieldFormula": "SUM([Sales])"
+            },
+            "actual": {
+              "calculatedFieldFormula": "SUM([Sales])"
+            },
+            "latency": 9.4,
+            "debug_info": null,
+            "info": null,
+            "created_at": "2026-10-09 01:36:54"
+          },
+          {
+            "id": 2,
+            "job_id": "beefcafe00000000000000000000beef",
+            "test_case_id": "tc-2",
+            "runner": "calc-prompt",
+            "datasource": "Superstore",
+            "utterance": "profit ratio",
+            "expected": {
+              "calculatedFieldFormula": "SUM([Profit])/SUM([Sales])"
+            },
+            "actual": {
+              "calculatedFieldFormula": "SUM([Profit])"
+            },
+            "latency": 10.1,
+            "debug_info": null,
+            "info": null,
+            "created_at": "2026-10-09 01:36:54"
+          }
+        ],
+        "metrics": [
+          {
+            "id": 1,
+            "job_id": "beefcafe00000000000000000000beef",
+            "test_case_id": "tc-1",
+            "stage": "calculatedFieldFormula",
+            "metric_id": "calc-validity-v1",
+            "metric_name": "calcValidity",
+            "score": 1.0,
+            "explanation": null
+          },
+          {
+            "id": 2,
+            "job_id": "beefcafe00000000000000000000beef",
+            "test_case_id": "tc-2",
+            "stage": "calculatedFieldFormula",
+            "metric_id": null,
+            "metric_name": "calcValidity",
+            "score": 0.5,
+            "explanation": null
+          },
+          {
+            "id": 3,
+            "job_id": "beefcafe00000000000000000000beef",
+            "test_case_id": "tc-1",
+            "stage": "llmJudge",
+            "metric_id": null,
+            "metric_name": "coherence",
+            "score": 0.9,
+            "explanation": "clear"
+          },
+          {
+            "id": 4,
+            "job_id": "beefcafe00000000000000000000beef",
+            "test_case_id": "tc-2",
+            "stage": "llmJudge",
+            "metric_id": null,
+            "metric_name": "coherence",
+            "score": null,
+            "explanation": "Unavailable: judge 503"
+          }
+        ],
+        "errors": [
+          {
+            "id": 1,
+            "job_id": "beefcafe00000000000000000000beef",
+            "test_case_id": "tc-2",
+            "phase": "RUN_TEST",
+            "description": "slow gateway",
+            "is_warning": 0
+          }
+        ]
+      },
+      "state": {
+        "status": "finished",
+        "total": 2,
+        "completed": 2,
+        "judge_provider": "anthropic",
+        "judge_model": "claude-sonnet-4-5"
+      }
+    },
+    "cafe0000000000000000000000000001": {
+      "data": {
+        "run": {
+          "job_id": "cafe0000000000000000000000000001",
+          "org_id": "",
+          "user_id": "user",
+          "ai_feature": "calc",
+          "runner_name": "ect-server",
+          "config": {
+            "runner": "ect-server",
+            "generations_mode": "ces",
+            "suite_id": "calcs-public",
+            "suite_label": "Calc Generation",
+            "tableau_server": "https://tableau.example.com/",
+            "tableau_site": "Sales",
+            "tableau_pat_value": "****",
+            "tableau_server_url": "https://tableau.example.com",
+            "tableau_site_name": "Sales",
+            "tableau_site_luid": "site-luid-9",
+            "tableau_server_version": "2026.4.0",
+            "ces_url": "https://tableau.example.com/content-exploration",
+            "resolved_site_model": "claude-sonnet-4-6",
+            "site_model_provider": "anthropic",
+            "declared_site_model": "gpt-5",
+            "tool_version": "1.2.0",
+            "gateway_url": "http://127.0.0.1:52594",
+            "llm_key": "****"
+          },
+          "status": "paused",
+          "total": 166,
+          "completed": 1,
+          "error": null,
+          "created_at": "2026-09-29 08:15:00",
+          "finished_at": null
+        },
+        "results": [
+          {
+            "id": 3,
+            "job_id": "cafe0000000000000000000000000001",
+            "test_case_id": "tc-1",
+            "runner": "ect-server",
+            "datasource": "Superstore",
+            "utterance": "total sales",
+            "expected": {
+              "calculatedFieldFormula": "SUM([Sales])"
+            },
+            "actual": null,
+            "latency": null,
+            "debug_info": null,
+            "info": null,
+            "created_at": "2026-10-09 01:36:54"
+          }
+        ],
+        "metrics": [],
+        "errors": [
+          {
+            "id": 2,
+            "job_id": "cafe0000000000000000000000000001",
+            "test_case_id": "tc-1",
+            "phase": "RUN_TEST",
+            "description": "HTTP 500 from the gateway",
+            "is_warning": 0
+          },
+          {
+            "id": 3,
+            "job_id": "cafe0000000000000000000000000001",
+            "test_case_id": "tc-1",
+            "phase": "RUN_TEST",
+            "description": "retrying",
+            "is_warning": 1
+          }
+        ]
+      },
+      "state": {
+        "status": "paused",
+        "total": 166,
+        "completed": 1
+      }
+    },
+    "d00d0000000000000000000000000002": {
+      "data": {
+        "run": {
+          "job_id": "d00d0000000000000000000000000002",
+          "org_id": "",
+          "user_id": "user",
+          "ai_feature": "viz-authoring",
+          "runner_name": "ect-server",
+          "config": {
+            "runner": "ect-server",
+            "generations_mode": "ces",
+            "suite_id": "viz authoring/public",
+            "tableau_server": "https://tab.example.com",
+            "tableau_site": "",
+            "ces_url": "http://127.0.0.1:40000",
+            "declared_site_model": "gpt-4o",
+            "tool_version": "0.1.0"
+          },
+          "status": "finished",
+          "total": 4,
+          "completed": 4,
+          "error": null,
+          "created_at": "2026-09-28 23:59:59",
+          "finished_at": "2026-09-29 00:01:00"
+        },
+        "results": [
+          {
+            "id": 4,
+            "job_id": "d00d0000000000000000000000000002",
+            "test_case_id": "v-1",
+            "runner": "ect-server",
+            "datasource": "Superstore",
+            "utterance": "sales by région — 2024",
+            "expected": {
+              "notionalSpec": {
+                "columns": [
+                  "Region"
+                ],
+                "rows": [
+                  "SUM(Sales)"
+                ]
+              }
+            },
+            "actual": {
+              "notionalSpec": {
+                "columns": [
+                  "Region"
+                ],
+                "rows": [
+                  "SUM(Sales)"
+                ]
+              },
+              "user_friendly_reply": "Here is \"sales\", by region"
+            },
+            "latency": 3.25,
+            "debug_info": null,
+            "info": null,
+            "created_at": "2026-10-09 01:36:54"
+          },
+          {
+            "id": 5,
+            "job_id": "d00d0000000000000000000000000002",
+            "test_case_id": "v-2",
+            "runner": "ect-server",
+            "datasource": "Superstore",
+            "utterance": "profit trend",
+            "expected": {
+              "steps": [
+                {
+                  "op": "filter"
+                }
+              ]
+            },
+            "actual": {
+              "steps": []
+            },
+            "latency": 12.0,
+            "debug_info": null,
+            "info": null,
+            "created_at": "2026-10-09 01:36:54"
+          },
+          {
+            "id": 6,
+            "job_id": "d00d0000000000000000000000000002",
+            "test_case_id": "v-3",
+            "runner": "ect-server",
+            "datasource": "Superstore",
+            "utterance": "no metrics",
+            "expected": "just a reply",
+            "actual": null,
+            "latency": null,
+            "debug_info": null,
+            "info": null,
+            "created_at": "2026-10-09 01:36:54"
+          },
+          {
+            "id": 7,
+            "job_id": "d00d0000000000000000000000000002",
+            "test_case_id": "v-4",
+            "runner": "ect-server",
+            "datasource": "Superstore",
+            "utterance": "hide nulls",
+            "expected": {
+              "intent": "NLQ_TO_NOTIONAL_SPEC",
+              "notionalSpec": null
+            },
+            "actual": {
+              "intent": "NLQ_TO_NOTIONAL_SPEC",
+              "notionalSpec": {
+                "chart": "bar"
+              }
+            },
+            "latency": 2.0,
+            "debug_info": null,
+            "info": null,
+            "created_at": "2026-10-09 01:36:54"
+          }
+        ],
+        "metrics": [
+          {
+            "id": 5,
+            "job_id": "d00d0000000000000000000000000002",
+            "test_case_id": "v-1",
+            "stage": "vizQuality",
+            "metric_id": null,
+            "metric_name": "fieldSimilarity",
+            "score": 0.8,
+            "explanation": null
+          },
+          {
+            "id": 6,
+            "job_id": "d00d0000000000000000000000000002",
+            "test_case_id": "v-1",
+            "stage": "vizQuality",
+            "metric_id": null,
+            "metric_name": "chartSimilarity",
+            "score": 1.0,
+            "explanation": null
+          },
+          {
+            "id": 7,
+            "job_id": "d00d0000000000000000000000000002",
+            "test_case_id": "v-1",
+            "stage": "vizQuality",
+            "metric_id": null,
+            "metric_name": "aestheticAccuracy",
+            "score": 0.25,
+            "explanation": null
+          },
+          {
+            "id": 8,
+            "job_id": "d00d0000000000000000000000000002",
+            "test_case_id": "v-1",
+            "stage": "vizQuality",
+            "metric_id": null,
+            "metric_name": "filterAccuracy",
+            "score": null,
+            "explanation": null
+          },
+          {
+            "id": 9,
+            "job_id": "d00d0000000000000000000000000002",
+            "test_case_id": "v-1",
+            "stage": "llmJudge",
+            "metric_id": null,
+            "metric_name": "factualGrounding",
+            "score": 0.7,
+            "explanation": "mostly grounded"
+          },
+          {
+            "id": 10,
+            "job_id": "d00d0000000000000000000000000002",
+            "test_case_id": "v-1",
+            "stage": "llmJudge",
+            "metric_id": null,
+            "metric_name": "novelJudgeMetric",
+            "score": 0.3,
+            "explanation": null
+          },
+          {
+            "id": 11,
+            "job_id": "d00d0000000000000000000000000002",
+            "test_case_id": "v-1",
+            "stage": "somethingElse",
+            "metric_id": null,
+            "metric_name": "mystery",
+            "score": 0.9,
+            "explanation": null
+          },
+          {
+            "id": 12,
+            "job_id": "d00d0000000000000000000000000002",
+            "test_case_id": "v-2",
+            "stage": "llmJudge",
+            "metric_id": null,
+            "metric_name": "coherence",
+            "score": null,
+            "explanation": "Unavailable"
+          },
+          {
+            "id": 13,
+            "job_id": "d00d0000000000000000000000000002",
+            "test_case_id": "v-4",
+            "stage": "intent",
+            "metric_id": null,
+            "metric_name": "equals",
+            "score": 1.0,
+            "explanation": null
+          }
+        ],
+        "errors": [
+          {
+            "id": 4,
+            "job_id": "d00d0000000000000000000000000002",
+            "test_case_id": "v-1",
+            "phase": "EVAL",
+            "description": "tooltip, \"missing\"",
+            "is_warning": 1
+          },
+          {
+            "id": 5,
+            "job_id": "d00d0000000000000000000000000002",
+            "test_case_id": "v-4",
+            "phase": "EVALUATE_RESULT",
+            "description": "This test case has no expected chart in the suite, so the model's chart was not scored; only the request type and the judge's view of the reply are.",
+            "is_warning": 1
+          }
+        ]
+      },
+      "state": {
+        "status": "finished",
+        "total": 4,
+        "completed": 4,
+        "suite_label": "Viz Authoring",
+        "judge_provider": "openai",
+        "judge_model": "gpt-4.1"
+      }
+    }
+  }
+}

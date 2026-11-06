@@ -1,0 +1,49 @@
+- description: 'Check whether Tableau recognizes field as date'
+  id: date-manipulation-3
+  utterances:
+  - canonical: 'Check whether the Order Date field is a date'
+    expected-calc: 'ISDATE([Order Date])'
+  flow-name: 'SuperstoreDateManip3.tflx'
+  field-metadata: >-
+    'Order Date' (string)
+- description: 'Example of date add'
+  id: date-manipulation-4
+  utterances:
+  - canonical: 'Give me sales for the last 10 years... Otherwise return null'
+    expected-calc: >-
+      IF [Order Date]>=DATEADD('year',-10,TODAY()) THEN [Sales] END
+    acceptable-calcs:
+    - 'IF DATEDIFF(''year'', [Order Date], TODAY()) <= 10 THEN [Sales] END'
+    - 'IF [Order Date] >= DATEADD(''year'', -10, {FIXED : MAX([Order Date])}) THEN [Sales] END'
+  flow-name: 'SuperstoreOneOutput.tflx'
+  field-metadata: >-
+    'Order Date' (date), 'Sales' (int)
+- description: 'Example of date diff'
+  id: date-manipulation-5
+  utterances:
+  - canonical: 'How many months passed between when orders were ordered versus shipped?'
+    expected-calc: >-
+      DATEDIFF('month', [Order Date], [Ship Date])
+  flow-name: 'SuperstoreOneOutput.tflx'
+  field-metadata: >-
+    'Order Date' (datetime), 'Ship Date' (datetime)
+- description: 'Example of date formatting'
+  id: date-manipulation-6
+  utterances:
+  - canonical: >-
+      I want my ship date field values to look like '20.April.1900'. Right now it looks 04/20/1900
+    expected-calc: >-
+      STR(DAY([Ship Date])) + "." + DATENAME('month', [Ship Date]) + "." + STR(YEAR([Ship Date]))
+  flow-name: 'SuperstoreOneOutput.tflx'
+  field-metadata: >-
+    'Ship Date' (datetime)
+- description: 'Example of date conversion and formatting'
+  id: date-manipulation-7
+  utterances:
+  - canonical: >-
+      Convert my Time field to a date please. The values look like 08-09-10, month first.
+    expected-calc: >-
+      DATEPARSE("MM-dd-yy", [Time])
+  flow-name: 'SKIP'
+  field-metadata: >-
+    'Time' (string)

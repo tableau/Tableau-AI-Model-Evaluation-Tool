@@ -1,0 +1,17 @@
+{
+  "name": "@tableau-ai-eval/core",
+  "version": "0.1.0",
+  "description": "Shared core: adapter contract, DB, SSE, Tableau connectivity/TLS, LLM judge, config.",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@tableau-ai-eval/run-state": "workspace:*",
+    "js-yaml": "4.1.0"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9"
+  }
+}

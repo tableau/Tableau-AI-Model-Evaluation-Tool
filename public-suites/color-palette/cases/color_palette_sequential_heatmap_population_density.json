@@ -1,0 +1,23 @@
+{
+    "runner": "color-palettes-server",
+    "info": {
+        "version": "1.0.0"
+    },
+    "inputs": [
+        {
+            "utterance": "I need colors for a heatmap showing popuation density",
+            "source": "user",
+            "arguments": {
+                "palette_type": "sequential"
+            },
+            "expected": {
+                "colorPalette": []
+            },
+            "tags": [
+                "color-palette-sequential"
+            ]
+        }
+    ],
+    "id": "b2c3d4e5-f6a7-8901-bcde-f23456789012"
+}
+

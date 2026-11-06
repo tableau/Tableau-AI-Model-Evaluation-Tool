@@ -1,0 +1,63 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-opportunity-360",
+  "info": {
+    "requirement-id": "D-248-de49330ff1bbbc83",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "sort amount by Primary Product Family in ascending order",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "fields": [
+            {
+              "caption": "Amount",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "encoding": "x",
+              "aggregation": "sum"
+            },
+            {
+              "caption": "Primary Product Family",
+              "data": "string",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "y"
+            }
+          ],
+          "chart": "bar",
+          "sort": {
+            "field": "Primary Product Family",
+            "by": "Amount",
+            "aggregation": "sum",
+            "direction": "asc"
+          }
+        }
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench",
+        "infer-other-field"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Breakdown by Category"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Group By Dimension",
+          "Op: Sort / Order",
+          "Op: Field Inference - Measure / Dimension"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    }
+  ],
+  "id": "55a178cc0fdbf9c535629c8f31942e94"
+}

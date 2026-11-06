@@ -1,0 +1,41 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-fec-expenditures",
+  "info": {
+    "originalValid": false,
+    "reasonInvalid": "Google Sheet Direct Buy value is ignored",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "create a calc to convert Spend Category to numeric values sorted by alphabetic order",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "CASE [Spend Category] WHEN 'Adwords' THEN 1 WHEN 'ALPO' THEN 2 WHEN 'Baidu' THEN 3 WHEN 'Bing' THEN 4 WHEN 'DCM' THEN 5 WHEN 'Eloqua Form' THEN 6 WHEN 'Facebook' THEN 7 WHEN 'GA' THEN 8 WHEN 'Google Sheet Direct Buy' THEN 9 WHEN 'LinkedIn' THEN 10 WHEN 'Twitter' THEN 11 ELSE 0 END",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-logical"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: String Manipulation",
+          "Op: Sort / Order",
+          "Op: Type Conversion",
+          "Op: Conditional Logic"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "5703fa43638ef06076caa81a728d9641"
+}

@@ -1,0 +1,12 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "https://tableau.example.com/content-exploration/analytics-assistant/conversations",
+    "normalizedBody": "{\"applicationContext\":{\"calculationContext\":{\"caption\":\"\",\"errorMessages\":[],\"formula\":null}},\"conversationContext\":{\"conversationHistory\":[]},\"currentNotionalSpec\":{\"fields\":[],\"version\":\"0.2.0\"},\"datasourceECTId\":\"460d197d-0f26-471b-9a3d-596aa6e5f99f\",\"intentApplicationAccepts\":null,\"utterance\":{\"content\":\"flag taxi companies that has disputed transactions\"}}"
+  },
+  "response": {
+    "status": 200,
+    "statusText": "",
+    "body": "{\"intentApplicationDetection\":{\"intent\":\"NLQ_TO_NEW_CALCULATED_FIELD\",\"confidence\":0.5,\"result\":{\"status\":\"OK\",\"notionalSpec\":null,\"calc\":null,\"calculatedFieldFormula\":{\"formula\":\"{ FIXED [Company] : SUM(IF [Payment Type] = 'Dispute' THEN 1 ELSE 0 END) } > 0\",\"caption\":\"Has Disputed Transactions\",\"type\":\"\"},\"calculatedFieldDescription\":\"This calculation flags taxi companies that have at least one disputed transaction. It uses a FIXED LOD to count the number of 'Dispute' payment type records per company — if that count is greater than 0, the company is flagged as TRUE (has disputes), otherwise FALSE. You can drag this field onto the Color or Filter shelf in your viz to highlight or isolate companies with disputed transactions.\",\"warnings\":null,\"_context\":null,\"steps\":null,\"planId\":\"\",\"unsupportedFeatures\":\"\",\"hbiQuery\":null,\"hbiResponse\":null}},\"response\":{\"responseType\":\"GENERATION\",\"content\":\"This calculation flags taxi companies that have at least one disputed transaction. It uses a FIXED LOD to count the number of 'Dispute' payment type records per company — if that count is greater than 0, the company is flagged as TRUE (has disputes), otherwise FALSE. You can drag this field onto the Color or Filter shelf in your viz to highlight or isolate companies with disputed transactions.\",\"id\":\"chatcmpl-60b89da9-21f8-44f1-9d8d-662c41aa3ffd\"}}"
+  }
+}

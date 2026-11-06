@@ -1,0 +1,48 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-fec-expenditures",
+  "info": {
+    "originalValid": false,
+    "reasonInvalid": "Says calculation contains errors: Syntax Error",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "create a calculation of total spend for each reason for payout for the current quarter to date?",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "{ FIXED [Disbursement Purpose] : SUM(IF DATETRUNC('quarter', [Disbursement Date]) = DATETRUNC('quarter', TODAY()) THEN [Disbursement Amount] ELSE 0 END) }",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-date",
+        "add-explicit-calc-wordage"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement",
+          "Intent: Breakdown by Category",
+          "Intent: Trend over Time"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Filter - Date Range / Relative",
+          "Op: Aggregation (Default)",
+          "Op: Group By Dimension",
+          "Op: Date Part Extraction",
+          "Op: Date Truncation / Granularity",
+          "Op: Date Arithmetic",
+          "Op: Conditional Logic",
+          "Op: Level of Detail"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "82e55eb6aedebd75862b7f42ade51379"
+}

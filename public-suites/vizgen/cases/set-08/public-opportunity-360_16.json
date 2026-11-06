@@ -1,0 +1,58 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-opportunity-360",
+  "info": {
+    "requirement-id": "D-248-1e28e0f95a2a2476",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "plot all the deal sizes vs their previous amount",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "gantt",
+          "fields": [
+            {
+              "caption": "Amount",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "encoding": "x",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            },
+            {
+              "caption": "Previous Amount",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "encoding": "y",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Correlation / Relationship"
+        ],
+        "op": [
+          "Op: Group By Dimension"
+        ],
+        "out": [
+          "Out: Other Chart"
+        ]
+      }
+    }
+  ],
+  "id": "75273dc624fefea2401c67696d96282c"
+}

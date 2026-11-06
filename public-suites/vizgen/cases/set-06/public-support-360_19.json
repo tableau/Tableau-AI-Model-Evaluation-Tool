@@ -1,0 +1,35 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-support-360",
+  "info": {
+    "requirement-id": "D-248-a1faa3528ae1308a",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "only show products with cases over 25000",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Threshold Qualification",
+          "Intent: Breakdown by Category"
+        ],
+        "op": [
+          "Op: Filter - Numeric Threshold",
+          "Op: Group By Dimension"
+        ],
+        "out": [
+          "Out: Unspecified Viz"
+        ]
+      }
+    }
+  ],
+  "id": "743df77eb03d95f255b87d55fe668d28"
+}

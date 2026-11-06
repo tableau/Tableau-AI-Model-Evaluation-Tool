@@ -1,0 +1,35 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-ipeds-institutions",
+  "info": {
+    "requirement-id": "F-250-6423a2a14cbb7e5c",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "present the data of admission rate and yield rate using a stacked bar graph categorized by geographic region",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Composition / Share",
+          "Intent: Breakdown by Category"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Group By Dimension"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    }
+  ],
+  "id": "9cea3225d23fa579ef5b4434ab2602e4"
+}

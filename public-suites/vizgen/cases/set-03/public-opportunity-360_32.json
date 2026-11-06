@@ -1,0 +1,36 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-opportunity-360",
+  "info": {
+    "requirement-id": "D-248-dbc878074eb702d0",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "present a histogram for the amounts, organized by Primary Product Family",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Distribution",
+          "Intent: Breakdown by Category"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Group By Dimension",
+          "Op: Binning"
+        ],
+        "out": [
+          "Out: Histogram"
+        ]
+      }
+    }
+  ],
+  "id": "d2442c557352e69e1624d1c4c76cfee3"
+}

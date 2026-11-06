@@ -1,0 +1,69 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-support-360",
+  "info": {
+    "requirement-id": "D-248-d1fd47f2de0f33af",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "count of headcount over time by priority",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "line",
+          "fields": [
+            {
+              "caption": "Number of Employees",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "aggregation": "count",
+              "encoding": "y"
+            },
+            {
+              "caption": "Created Date",
+              "data": "date",
+              "type": "discrete",
+              "role": "dimension",
+              "aggregation": "year",
+              "encoding": "x",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            },
+            {
+              "caption": "Priority",
+              "data": "string",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "color"
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "infer-time-series",
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Trend over Time"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Date Part Extraction",
+          "Op: Group By Dimension",
+          "Op: Date Truncation / Granularity",
+          "Op: Encoding Assignment"
+        ],
+        "out": [
+          "Out: Line Chart"
+        ]
+      }
+    }
+  ],
+  "id": "164f8c2d92ea5b6263032c7817353f75"
+}

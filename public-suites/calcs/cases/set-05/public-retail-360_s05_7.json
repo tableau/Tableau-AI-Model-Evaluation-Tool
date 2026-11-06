@@ -1,0 +1,39 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-retail-360",
+  "info": {
+    "originalValid": true,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "compute the total ratio of cost to price?",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "SUM([Unit Price]) / SUM([Unit Price])",
+          "caption": null
+        }
+      },
+      "tags": [
+        "add-explicit-calc-wordage",
+        "calc-category-normal"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Arithmetic / Ratio",
+          "Op: Aggregation (Default)"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "7935d272c9893b5807d55410d73ffa3d"
+}

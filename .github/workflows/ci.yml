@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: Typecheck, lint and test (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.4.3
+
+      # postinstall generates both calculation parsers and builds the frontend.
+      - name: Install
+        run: bun install --frozen-lockfile
+
+      - name: Typecheck
+        run: bun run typecheck
+
+      - name: Lint
+        run: bun run lint
+
+      - name: Test
+        run: bun test
+
+      # The single executable with the test content embedded; Hyper is
+      # downloaded on first use, so the build itself needs no network beyond npm.
+      - name: Compile
+        run: bun run compile
+
+      - name: Keep the executable
+        uses: actions/upload-artifact@v4
+        with:
+          name: tableau-ai-eval-${{ matrix.os }}
+          path: dist/tableau-ai-eval*
+          if-no-files-found: error
+          retention-days: 7

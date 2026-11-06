@@ -1,0 +1,39 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-activity-360",
+  "info": {
+    "originalValid": true,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "create a calc to change activity owner title to numeric values",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "CASE [Activity Owner Title] WHEN 'Partner - Field' THEN 1 WHEN 'Commercial' THEN 2 WHEN 'Field' THEN 3 WHEN 'Public Sector' THEN 4 WHEN 'Channel' THEN 5 WHEN 'Partner - Inside' THEN 6 WHEN 'Enterprise' THEN 7 WHEN 'Inside' THEN 8 WHEN 'TSI' THEN 9 WHEN 'Needs Research' THEN 10 ELSE 0 END",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-logical"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Data Preparation"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Type Conversion",
+          "Op: Conditional Logic",
+          "Op: Arithmetic / Ratio"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "e00055b05c984f95b658277a352e74bb"
+}

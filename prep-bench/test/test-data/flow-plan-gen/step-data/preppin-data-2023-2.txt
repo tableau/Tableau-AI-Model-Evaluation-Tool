@@ -1,0 +1,40 @@
+<UserStepData>
+<Step name="Transactions" id="5E388F9D-6F88-42AF-AF78-B5D534ADEC46" type="Clean Step">
+Transaction ID (integer),Account Number (integer),Sort Code (string),Bank (string)
+3888,62230725,95-98-82,Data Source Bank
+4746,83172326,42-86-38,Barclays Bank
+5404,34302539,53-28-21,Barclays Bank
+9013,13350031,93-87-71,Natwest
+2535,68745993,57-14-32,Barclays Bank
+4656,60830548,79-82-74,Barclays Bank
+1245,68373125,50-84-66,HSBC
+9741,43638730,56-59-39,HSBC
+1671,77144031,19-55-44,HSBC
+5574,40722610,10-01-98,Halifax
+1298,30601237,42-63-56,Santander
+7086,56630552,59-77-44,Data Source Bank
+3959,82773607,35-59-87,Barclays Bank
+6400,38383736,80-43-62,Santander
+4870,79724968,51-07-41,Lloyds Bank
+7778,38687214,55-07-38,Barclays Bank
+1425,96930299,74-78-92,HSBC
+1314,71210735,61-85-79,Data Source Bank
+2774,10519002,57-54-87,HSBC
+1493,12193988,86-54-42,Data Source Bank
+5644,77656886,21-84-17,Barclays Bank
+8664,51052559,21-09-04,Santander
+8110,40072077,65-90-52,Santander
+1572,72219605,88-53-25,HSBC
+3279,58721386,34-84-32,HSBC
+</Step>
+<Step name="Swift Codes" id="19C20A1E-3C6C-4448-8D5E-EFAC3F153335" type="Clean Step">
+Bank (string),SWIFT code (string),Check Digits (string)
+Lloyds Bank,LOYD,C1
+Barclays Bank,BARC,22
+Halifax,HLFX,22
+HSBC,HBUK,4B
+Natwest,NWBK,2L
+Santander,ABBY,3E
+Data Source Bank,DSBX,12
+</Step>
+</UserStepData>

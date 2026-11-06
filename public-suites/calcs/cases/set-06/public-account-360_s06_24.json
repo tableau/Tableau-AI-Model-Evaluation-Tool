@@ -1,0 +1,37 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-account-360",
+  "info": {
+    "originalValid": true,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "Create a new filter made up from the first word from top client name",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "{ LEFT([Account Name], FIND([Account Name], ' ')) }",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-string"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Breakdown by Category"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: String Manipulation"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "4a6370906ac00a7795cfd6445db9c53a"
+}

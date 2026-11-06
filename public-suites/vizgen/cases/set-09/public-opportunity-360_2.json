@@ -1,0 +1,78 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-opportunity-360",
+  "info": {
+    "requirement-id": "D-248-aeb26ffe7e0545dc",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "give me the average revenue between nov '02 and march '15",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "fields": [
+            {
+              "caption": "Close Date",
+              "data": "date",
+              "type": "continuous",
+              "role": "measure",
+              "encoding": "x",
+              "aggregation": "month",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            },
+            {
+              "caption": "Line Item Value",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "encoding": "y",
+              "aggregation": "avg",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            }
+          ],
+          "chart": "line",
+          "dateRangeFilters": [
+            {
+              "type": "date-range",
+              "field": "Close Date",
+              "includeNull": false,
+              "start": "2002-11",
+              "end": "2015-03"
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "infer-date-time-field",
+        "original-test-bench",
+        "infer-other-field"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement",
+          "Intent: Trend over Time"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Filter - Date Range / Relative",
+          "Op: Group By Dimension",
+          "Op: Field Inference - Date Field",
+          "Op: Aggregation (Non-Default)",
+          "Op: Date Truncation / Granularity",
+          "Op: Field Inference - Measure / Dimension"
+        ],
+        "out": [
+          "Out: Line Chart"
+        ]
+      }
+    }
+  ],
+  "id": "eac7fb91e39f7eb697f9f77ac194a794"
+}

@@ -1,0 +1,23 @@
+{
+    "runner": "color-palettes-server",
+    "info": {
+        "version": "1.0.0"
+    },
+    "inputs": [
+        {
+            "utterance": "Palette for traffic lights (red, yellow, green)",
+            "source": "user",
+            "arguments": {
+                "palette_type": "regular"
+            },
+            "expected": {
+                "colorPalette": ["#FF0000", "#FFFF00", "#00FF00"]
+            },
+            "tags": [
+                "color-palette-regular"
+            ]
+        }
+    ],
+    "id": "f6a2c3d5-8e9f-0a1b-2c3d-4e5f6a7b8c9d"
+}
+

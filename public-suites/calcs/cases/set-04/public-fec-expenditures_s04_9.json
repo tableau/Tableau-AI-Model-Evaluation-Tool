@@ -1,0 +1,40 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-fec-expenditures",
+  "info": {
+    "originalValid": true,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "create a calc that condenses spend categories into groups of 'Travel', 'Payroll' and 'Other' based on the first word",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "CASE LEFT([Spend Category], FIND([Spend Category], ' ') - 1) WHEN 'LinkedIn' THEN 'Social Media' WHEN 'Facebook' THEN 'Social Media' WHEN 'Twitter' THEN 'Social Media' WHEN 'Google' THEN 'Search' WHEN 'Bing' THEN 'Search' WHEN 'Baidu' THEN 'Search' ELSE 'Other' END",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-string",
+        "add-explicit-calc-wordage"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Breakdown by Category"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: String Manipulation",
+          "Op: Conditional Logic",
+          "Op: Arithmetic / Ratio"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "d8e751baf592a9c34637d04848bb39ed"
+}

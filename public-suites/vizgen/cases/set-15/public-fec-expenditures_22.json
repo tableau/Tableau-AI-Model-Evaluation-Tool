@@ -1,0 +1,33 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-fec-expenditures",
+  "info": {
+    "requirement-id": "F-248-81bbd4566ff6fbf9",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "sort by disbursement amount ascending",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Ranking / Top-N"
+        ],
+        "op": [
+          "Op: Sort / Order"
+        ],
+        "out": [
+          "Out: Unspecified Viz"
+        ]
+      }
+    }
+  ],
+  "id": "21809c4217bf0d4eb93273b9e5cfd10f"
+}

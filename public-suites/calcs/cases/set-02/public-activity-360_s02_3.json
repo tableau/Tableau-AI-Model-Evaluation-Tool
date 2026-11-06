@@ -1,0 +1,42 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-activity-360",
+  "info": {
+    "originalValid": false,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "create calc to rank the items by how many registrations each item had",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "RANK(SUM({FIXED [Subject]: COUNT([Contact Name])}))",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-table"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Ranking / Top-N"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Aggregation (Default)",
+          "Op: Group By Dimension",
+          "Op: Sort / Order",
+          "Op: Limit / Top-N",
+          "Op: Table Calculation / Window",
+          "Op: Level of Detail"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "4a2654ac85497cfc3ffa3c80ac44c699"
+}

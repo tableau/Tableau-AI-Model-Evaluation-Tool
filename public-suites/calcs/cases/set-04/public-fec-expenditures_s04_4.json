@@ -1,0 +1,44 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-fec-expenditures",
+  "info": {
+    "originalValid": false,
+    "reasonInvalid": "All fields must be aggregate or constant when using table calculation functions or fields from multiple data sources",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "create calc for % change in cost per lead by disbursement purpose",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "(SUM([Disbursement Amount]) / SUM([Candidate Disbursements]) - LOOKUP(SUM([Disbursement Amount]) / SUM([Candidate Disbursements]), -1)) / ABS(LOOKUP(SUM([Disbursement Amount]) / SUM([Candidate Disbursements]), -1))",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-arithmetic",
+        "add-explicit-calc-wordage"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement",
+          "Intent: Comparison",
+          "Intent: Breakdown by Category"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Arithmetic / Ratio",
+          "Op: Group By Dimension",
+          "Op: Table Calculation / Window",
+          "Op: Aggregation (Default)"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "44f73ac795641d0c444d13b875fe7cf4"
+}

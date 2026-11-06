@@ -1,0 +1,39 @@
+{
+  "id": "8bdc963bd37e9c5bfd75b8bad61cdb48",
+  "runner": "calc-prompt",
+  "datasource": "public-activity-360",
+  "info": {
+    "note": "Sample test case for BYOLLM local testing via calc-prompt runner",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "Create a calculation for days since the last activity was recorded",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "DATEDIFF('day', [Activity Date], TODAY())",
+          "caption": "Days Since Last Activity"
+        }
+      },
+      "tags": [
+        "byollm-test",
+        "date-calc"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Date Arithmetic",
+          "Op: Date Part Extraction"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ]
+}

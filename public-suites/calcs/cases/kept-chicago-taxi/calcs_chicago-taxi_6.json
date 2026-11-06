@@ -1,0 +1,25 @@
+{
+  "runner": "ect-server",
+  "datasource": "chicago-taxi-trips-2024-calcs",
+  "info": {
+    "originalValid": true
+  },
+  "inputs": [
+    {
+      "utterance": "create a calc to bin company into taxi if it contains 'taxi' in its name",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "IF CONTAINS([Company], 'taxi') THEN 'Taxi' ELSE [Company] END",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-string",
+        "add-explicit-calc-wordage"
+      ]
+    }
+  ],
+  "id": "10c92037-5ddc-41ba-bf57-8c102390e156"
+}

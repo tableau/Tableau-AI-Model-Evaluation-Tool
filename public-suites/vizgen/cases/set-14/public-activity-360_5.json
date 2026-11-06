@@ -1,0 +1,60 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-activity-360",
+  "info": {
+    "requirement-id": "D-248-2e3710ebfdd486d8",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "include everything except for Follow-up call",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "text",
+          "fields": [
+            {
+              "caption": "Opportunity Name",
+              "data": "string",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "x",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            }
+          ],
+          "categoricalFilters": [
+            {
+              "type": "categorical",
+              "field": "Subject",
+              "exclude": true,
+              "values": [
+                "Follow-up call"
+              ]
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench",
+        "infer-other-field"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Filter - Categorical",
+          "Op: Field Inference - Measure / Dimension"
+        ],
+        "out": [
+          "Out: Text Table"
+        ]
+      }
+    }
+  ],
+  "id": "8f846686f2560695200b536732615e01"
+}

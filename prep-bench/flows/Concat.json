@@ -1,0 +1,40 @@
+{
+  "flow": "Concat.tflx",
+  "name": "Concat",
+  "inputs": [
+    {
+      "name": "Data",
+      "source": "Data.csv",
+      "fields": [
+        {
+          "name": "First Name",
+          "datatype": "string",
+          "values": [
+            "Harold",
+            "Pete",
+            "Ken",
+            "Matt",
+            "Gene",
+            "Steve",
+            "Linda",
+            "Odella"
+          ]
+        },
+        {
+          "name": "Last Name",
+          "datatype": "string",
+          "values": [
+            "Pawlan",
+            "Kriz",
+            "Black",
+            "Abelman",
+            "Hale",
+            "Nguyen",
+            "Cazamias",
+            "Nelson"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+    "runner": "ect-server",
+    "datasource": "retail-nto",
+    "info": {
+        "originalValid": true
+    },
+    "inputs": [
+        {
+            "utterance": "compute the volume of orders per month - make this an lod",
+            "source": "user",
+            "expected": {
+                "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+                "calculatedFieldFormula": {
+                    "formula": "{ FIXED DATEPART('month', [Order Placed Date]), DATEPART('year', [Order Placed Date]) : COUNT([OrderID]) }",
+                    "caption": null
+                }
+            },
+            "tags": [
+                "add-explicit-calc-wordage",
+                "calc-category-lod"
+            ]
+        }
+    ],
+    "id": "fd21e66b-887e-4a57-a4f5-f3ab4bd145f6"
+}

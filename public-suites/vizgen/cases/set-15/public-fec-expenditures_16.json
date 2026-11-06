@@ -1,0 +1,34 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-fec-expenditures",
+  "info": {
+    "requirement-id": "D-248-a1faa3528ae1308a",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "show only segment targeting types with candidate disbursements below 100000",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Threshold Qualification"
+        ],
+        "op": [
+          "Op: Filter - Numeric Threshold",
+          "Op: Filter - Categorical"
+        ],
+        "out": [
+          "Out: Unspecified Viz"
+        ]
+      }
+    }
+  ],
+  "id": "5b094cacd73b34c7ee2c9b0c82fc34c5"
+}

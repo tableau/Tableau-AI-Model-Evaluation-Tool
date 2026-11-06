@@ -1,0 +1,69 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-opportunity-360",
+  "info": {
+    "requirement-id": "D-248-de49330ff1bbbc83",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "in ascending order, organize the account by opportunity type",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Opportunity Type",
+              "data": "string",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "x"
+            },
+            {
+              "caption": "Account Name",
+              "data": "string",
+              "type": "continuous",
+              "role": "measure",
+              "aggregation": "countd",
+              "encoding": "y",
+              "_tb_wildcards": [
+                "aggregation"
+              ]
+            }
+          ],
+          "sort": {
+            "field": "Opportunity Type",
+            "by": "Account Name",
+            "aggregation": "countd",
+            "direction": "asc",
+            "_tb_wildcards": [
+              "aggregation"
+            ]
+          }
+        }
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Breakdown by Category",
+          "Intent: Ranking / Top-N"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Group By Dimension",
+          "Op: Sort / Order",
+          "Op: Aggregation (Non-Default)"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    }
+  ],
+  "id": "88efe20dbae6b90fd53199e35129adbf"
+}

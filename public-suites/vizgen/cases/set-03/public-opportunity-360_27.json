@@ -1,0 +1,35 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-opportunity-360",
+  "info": {
+    "requirement-id": "D-250-7d112d3df1cd4e69",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "leave out Renewal from Opportunity Name",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Lookup / Retrieval",
+          "Intent: Threshold Qualification"
+        ],
+        "op": [
+          "Op: Filter - Categorical",
+          "Op: Aggregation (Default)"
+        ],
+        "out": [
+          "Out: Unspecified Viz"
+        ]
+      }
+    }
+  ],
+  "id": "82d44f151dfc98ec1e597fe9db2ed9db"
+}

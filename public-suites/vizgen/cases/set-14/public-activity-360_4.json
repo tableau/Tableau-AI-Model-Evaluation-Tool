@@ -1,0 +1,109 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-activity-360",
+  "info": {
+    "requirement-id": "D-248-b8df43152911f2f3",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "show me events in AZ",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "text",
+          "fields": [
+            {
+              "caption": "Opportunity Name",
+              "data": "string",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "x",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            }
+          ],
+          "categoricalFilters": [
+            {
+              "type": "categorical",
+              "field": "Billing State",
+              "values": [
+                "AZ"
+              ],
+              "_tb_wildcards": [
+                "field"
+              ]
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Lookup / Retrieval",
+          "Intent: Geographic Analysis"
+        ],
+        "op": [
+          "Op: Filter - Categorical"
+        ],
+        "out": [
+          "Out: Text Table"
+        ]
+      }
+    },
+    {
+      "utterance": "filter to Follow-up call and Schedule demo",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "text",
+          "fields": [
+            {
+              "caption": "Opportunity Name",
+              "data": "string",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "x",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            }
+          ],
+          "categoricalFilters": [
+            {
+              "type": "categorical",
+              "field": "Subject",
+              "values": [
+                "Follow-up call",
+                "Schedule demo"
+              ]
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Filter - Categorical",
+          "Op: Context Carryover / Follow-up"
+        ],
+        "out": [
+          "Out: Text Table"
+        ]
+      }
+    }
+  ],
+  "id": "0aa371bc9085b8282bd96adc1222e481"
+}

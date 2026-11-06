@@ -1,0 +1,44 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-fec-expenditures",
+  "info": {
+    "originalValid": true,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "create calc to compute percent difference in disbursement amount for each disbursement purpose compared to the previous month",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "ZN((SUM([Disbursement Amount]) - LOOKUP(SUM([Disbursement Amount]), -1)) / ABS(LOOKUP(SUM([Disbursement Amount]), -1)))",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-table"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement",
+          "Intent: Breakdown by Category",
+          "Intent: Trend over Time"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Table Calculation / Window",
+          "Op: Date Truncation / Granularity",
+          "Op: Group By Dimension",
+          "Op: Aggregation (Default)",
+          "Op: Null Handling",
+          "Op: Arithmetic / Ratio"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "500137ce46468ad18cba74cec92f13a2"
+}

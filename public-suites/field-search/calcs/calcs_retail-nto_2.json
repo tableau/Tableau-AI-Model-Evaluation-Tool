@@ -1,0 +1,457 @@
+{
+ "test_id": "ce6afec3-6528-4fd1-824e-6c2989b9b9f8",
+ "datasource": "retail-nto",
+ "matched_fields": [
+  {
+   "name": "Measure Names",
+   "datatype": "string"
+  },
+  {
+   "name": "Brand",
+   "datatype": "string",
+   "allDistinctValues": [
+    "Null",
+    "Northern Trail Outfitters"
+   ]
+  },
+  {
+   "name": "Carrier",
+   "datatype": "string",
+   "allDistinctValues": [
+    "FedEx",
+    "Null",
+    "UPS",
+    "FasTrac"
+   ]
+  },
+  {
+   "name": "Category",
+   "datatype": "string",
+   "allDistinctValues": [
+    "Women",
+    "Null",
+    "Nutrition",
+    "Men",
+    "Electronics",
+    "Kids",
+    "Cycle",
+    "Gear"
+   ]
+  },
+  {
+   "name": "City",
+   "datatype": "geographic",
+   "sampleValues": [
+    "Santa Clara",
+    "Null",
+    "Elizabeth",
+    "Exeter",
+    "Vacaville",
+    "Chardon",
+    "Boise",
+    "Springville",
+    "Greer",
+    "Algonquin"
+   ]
+  },
+  {
+   "name": "Color",
+   "datatype": "string",
+   "sampleValues": [
+    "Miscellaneous",
+    "Navy",
+    "Pink",
+    "White",
+    "Beige",
+    "Purple",
+    "Blue",
+    "violet",
+    "Green",
+    "multi"
+   ]
+  },
+  {
+   "name": "Country",
+   "datatype": "geographic",
+   "allDistinctValues": [
+    "USA",
+    "Null"
+   ]
+  },
+  {
+   "name": "Customer - Age Category",
+   "datatype": "string",
+   "sampleValues": [
+    "25 - 34",
+    "55 - 64",
+    "Null",
+    "85 and more",
+    "Less than 18",
+    "18 - 24",
+    "35 - 44",
+    "65 - 74",
+    "45 - 54",
+    "75 - 84"
+   ]
+  },
+  {
+   "name": "CustomerID",
+   "datatype": "string",
+   "sampleValues": [
+    "D1.1961",
+    "D1.420",
+    "Null",
+    "D1.1149",
+    "D1.600",
+    "D1.501",
+    "D1.577",
+    "D1.1397",
+    "D1.579",
+    "D1.1152"
+   ]
+  },
+  {
+   "name": "Customer",
+   "datatype": "string",
+   "sampleValues": [
+    "Amel Lee",
+    "Nicolas Watts",
+    "Null",
+    "Angela Leung",
+    "Rob Ryan",
+    "Sheng Clark",
+    "Ed Marshall",
+    "Brent Di",
+    "Charlotte Pownell",
+    "Sena Zhu"
+   ]
+  },
+  {
+   "name": "Delivery",
+   "datatype": "string",
+   "allDistinctValues": [
+    "Null",
+    "Order Delayed",
+    "Ontime Delivery"
+   ]
+  },
+  {
+   "name": "Discount",
+   "datatype": "number"
+  },
+  {
+   "name": "Gender",
+   "datatype": "string",
+   "allDistinctValues": [
+    "Null",
+    "Female",
+    "Male",
+    "Other"
+   ]
+  },
+  {
+   "name": "Gross Margin",
+   "datatype": "number"
+  },
+  {
+   "name": "ImageLink",
+   "datatype": "string",
+   "allDistinctValues": [
+    "Null"
+   ]
+  },
+  {
+   "name": "Internal Purchase Price",
+   "datatype": "number"
+  },
+  {
+   "name": "InventoryUnits",
+   "datatype": "number"
+  },
+  {
+   "name": "Last Month Affected?",
+   "datatype": "boolean"
+  },
+  {
+   "name": "Lat",
+   "datatype": "geographic"
+  },
+  {
+   "name": "Latitude (generated)",
+   "datatype": "geographic"
+  },
+  {
+   "name": "Long",
+   "datatype": "geographic"
+  },
+  {
+   "name": "Longitude (generated)",
+   "datatype": "geographic"
+  },
+  {
+   "name": "Measure Values",
+   "datatype": "number"
+  },
+  {
+   "name": "Order Placed Date",
+   "datatype": "date"
+  },
+  {
+   "name": "Order Return Time",
+   "datatype": "number"
+  },
+  {
+   "name": "Order Ship Time",
+   "datatype": "number"
+  },
+  {
+   "name": "Order Total Delivery Time",
+   "datatype": "number"
+  },
+  {
+   "name": "Order Transit Time",
+   "datatype": "number"
+  },
+  {
+   "name": "OrderID",
+   "datatype": "number"
+  },
+  {
+   "name": "OrderLineID",
+   "datatype": "string",
+   "sampleValues": [
+    "I8409",
+    "I21188",
+    "I52628",
+    "Null",
+    "I88727",
+    "I15269",
+    "I88021",
+    "I30654",
+    "I65146",
+    "I75666"
+   ]
+  },
+  {
+   "name": "OrderMin",
+   "datatype": "number"
+  },
+  {
+   "name": "PID",
+   "datatype": "string",
+   "sampleValues": [
+    "Null",
+    "3050104A6CAAC",
+    "4061138A2WAD7",
+    "2031169AFBAEL",
+    "2031004BI9ADY",
+    "3010650AC8AEO",
+    "2020995BFVAEE",
+    "4080341AA5AD7",
+    "2050452AFFACT",
+    "2020477A4MAD4"
+   ]
+  },
+  {
+   "name": "Payment Type",
+   "datatype": "string",
+   "allDistinctValues": [
+    "Paypal",
+    "Amex",
+    "Null",
+    "Google Pay",
+    "Visa",
+    "Apple Pay",
+    "Mastercard"
+   ]
+  },
+  {
+   "name": "Percent Discount",
+   "datatype": "number"
+  },
+  {
+   "name": "Premium",
+   "datatype": "string",
+   "allDistinctValues": [
+    "Null",
+    "Non-Premium",
+    "Premium"
+   ]
+  },
+  {
+   "name": "Product CategoryID",
+   "datatype": "number"
+  },
+  {
+   "name": "Product Code",
+   "datatype": "number"
+  },
+  {
+   "name": "Product Name",
+   "datatype": "string",
+   "sampleValues": [
+    "YetiBar Blueberry/Bison Paleo, 2oz bar 24 Pack (Case)",
+    "NTO Waffle Beanie",
+    "Null",
+    "Banchee 65 Backpack",
+    "Girls\u2019 Resolve Reflective Jacket",
+    "Cannondale Foray 1 27.5\" Women's Bike - 2019",
+    "Mica Fl 2",
+    "Men\u2019s Montana NTO-tech Mitts",
+    "STROMER ST2 Sport Electric Bike",
+    "Wool Slopestyle Light Elite"
+   ]
+  },
+  {
+   "name": "Product Price",
+   "datatype": "number"
+  },
+  {
+   "name": "Product Type",
+   "datatype": "string",
+   "sampleValues": [
+    "gear-cycling-locks",
+    "Null",
+    "men-bottoms-snow",
+    "women-bottoms-running",
+    "women-shoes-sandals",
+    "men-jackets-casual",
+    "shoes-men-sandals",
+    "men-tops-sweatshirts",
+    "gear-cycling-bikes",
+    "kids-toddlers-jackets"
+   ]
+  },
+  {
+   "name": "ProductID",
+   "datatype": "number"
+  },
+  {
+   "name": "ProductLink",
+   "datatype": "string",
+   "allDistinctValues": [
+    "Null"
+   ]
+  },
+  {
+   "name": "Return Flag",
+   "datatype": "string",
+   "allDistinctValues": [
+    "No",
+    "Null",
+    "Yes"
+   ]
+  },
+  {
+   "name": "Return Reason Code",
+   "datatype": "number"
+  },
+  {
+   "name": "Returns",
+   "datatype": "number"
+  },
+  {
+   "name": "SKU ID",
+   "datatype": "string",
+   "sampleValues": [
+    "Null",
+    "4100106ASJAEF",
+    "4080099AA3",
+    "1050191AVJAAR",
+    "3050103BDOAB0",
+    "501500AW6AD7",
+    "2010309AZ1AEJ",
+    "1021049A81ADY",
+    "1010751ABSADY",
+    "2040616A6NADY"
+   ]
+  },
+  {
+   "name": "Sale Price",
+   "datatype": "number"
+  },
+  {
+   "name": "Sales",
+   "datatype": "number"
+  },
+  {
+   "name": "Shipping Time",
+   "datatype": "number"
+  },
+  {
+   "name": "Shipping Type",
+   "datatype": "string",
+   "allDistinctValues": [
+    "Null",
+    "One Day Delivery",
+    "Standard Delivery",
+    "Two Day Delivery"
+   ]
+  },
+  {
+   "name": "State",
+   "datatype": "geographic",
+   "sampleValues": [
+    "West Virginia",
+    "Null",
+    "Indiana",
+    "Massachusetts",
+    "Missouri",
+    "Louisiana",
+    "New Jersey",
+    "Utah",
+    "Wisconsin",
+    "South Carolina"
+   ]
+  },
+  {
+   "name": "Subcategory",
+   "datatype": "string",
+   "sampleValues": [
+    "Sleeping Bags",
+    "Null",
+    "Tents",
+    "Energy",
+    "Bike Accessories",
+    "Bottoms",
+    "Bike Helmets",
+    "Drinks",
+    "Luggage",
+    "Jackets"
+   ]
+  },
+  {
+   "name": "Subsubcategory",
+   "datatype": "string",
+   "sampleValues": [
+    "Water Bottles and Cages",
+    "Null",
+    "Gels",
+    "2 Person",
+    "Radical Series",
+    "Hats",
+    "Mountain Bike Helmets",
+    "Coffee",
+    "5F 25F",
+    "Bars"
+   ]
+  },
+  {
+   "name": "Tax",
+   "datatype": "number"
+  },
+  {
+   "name": "Units",
+   "datatype": "number"
+  },
+  {
+   "name": "ZIP Code",
+   "datatype": "geographic"
+  },
+  {
+   "name": "Migrated Data",
+   "datatype": "number"
+  }
+ ],
+ "calc_fields": []
+}

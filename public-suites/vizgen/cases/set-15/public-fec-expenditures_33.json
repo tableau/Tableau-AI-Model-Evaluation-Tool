@@ -1,0 +1,34 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-fec-expenditures",
+  "info": {
+    "requirement-id": "D-248-dbc878074eb702d0",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "chart disbursement amount per spend category as a histogram",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Distribution"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Group By Dimension"
+        ],
+        "out": [
+          "Out: Histogram"
+        ]
+      }
+    }
+  ],
+  "id": "4c6fd3cccdd083f19596d32210238e1d"
+}

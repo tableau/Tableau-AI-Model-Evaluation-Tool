@@ -1,0 +1,64 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-fec-expenditures",
+  "info": {
+    "requirement-id": "D-248-8d4bd7bdd1fed34a",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "which category are we spending the most money on? Show only March to April",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "fields": [
+            {
+              "caption": "Disbursement Amount",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "encoding": "x",
+              "aggregation": "sum"
+            },
+            {
+              "caption": "Disbursement Purpose",
+              "data": "string",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "y"
+            }
+          ],
+          "chart": "bar",
+          "dateRangeFilters": [
+            {
+              "type": "date-range",
+              "field": "Disbursement Date",
+              "start": "2023-03-01",
+              "end": "2023-04-30"
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Filter - Date Range / Relative",
+          "Op: Filter - Categorical",
+          "Op: Group By Dimension"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    }
+  ],
+  "id": "901195cdf2a9285c8abc1b5e3171896f"
+}

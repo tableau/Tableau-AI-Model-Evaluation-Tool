@@ -1,0 +1,75 @@
+- description: 'Test definition usage of FIND'
+  id: string-manipulation-1
+  utterances:
+  - canonical: 'Give me the 1-based index for the position of the substring "ON-" within my Order Number field'
+    expected-calc: 'FIND([Order Number], "ON-")'
+  flow-name: 'StringManipFind.tflx'
+  field-metadata: >-
+    'Order Number' (string)
+- description: 'Test definition usage of SPLIT'
+  id: string-manipulation-2
+  utterances:
+  - canonical: 'Give me the number in Order Number after ON-'
+    expected-calc: 'SPLIT([Order Number], "ON-", 2)'
+    acceptable-calcs:
+    - 'INT(SPLIT([Order Number], "ON-", 2))'
+    - 'REPLACE([Order Number], "ON-", "")'
+    - 'INT(REPLACE([Order Number], "ON-", ""))'
+    - 'MID([Order Number], 4)'
+  flow-name: 'StringManipFind.tflx'
+  field-metadata: >-
+    'Order Number' (string)
+- description: 'Test definition usage of REPLACE'
+  id: string-manipulation-3
+  utterances:
+  - canonical: 'Replace the ON- in my order number with empty string'
+    expected-calc: 'REPLACE([Order Number], "ON-", "")'
+  flow-name: 'StringManipFind.tflx'
+  field-metadata: >-
+    'Order Number' (string)
+- description: 'Test definition usage of TRIM'
+  id: string-manipulation-4
+  utterances:
+  - canonical: 'My paragraph text has a bunch of leading and trailing whitspace... can you remove it?'
+    expected-calc: 'TRIM([P Text])'
+  flow-name: 'StringManipTrim.tflx'
+  field-metadata: >-
+    'P Text' (string)
+- description: 'Test definition usage of RTRIM'
+  id: string-manipulation-5
+  utterances:
+  - canonical: 'My paragraph text has a bunch of white space at the end of it. Can you fix that?'
+    expected-calc: 'RTRIM([P Text])'
+  flow-name: 'StringManipTrim.tflx'
+  field-metadata: >-
+    'P Text' (string)
+- description: 'Test capitalization basics'
+  id: string-manipulation-6
+  utterances:
+  - canonical: 'My customer names are all caps. e.g. KYLER LITTLE. Can you make it look like Kyler Little?'
+    expected-calc: 'PROPER([Customer Name])'
+  flow-name: 'StringManipMisc.tflx'
+  field-metadata: >-
+    'Customer Name' (string)
+- description: 'Test regex basics'
+  id: string-manipulation-7
+  utterances:
+  - canonical: 'My LLM is returning python code in triple backticks. Can you help me extract it?'
+    expected-calc: 'REGEXP_EXTRACT([Response], "```(.*)```")'
+    acceptable-calcs:
+    - 'REGEXP_EXTRACT([Response], "```(?:python)?\s*([\s\S]*?)```")'
+    - 'REGEXP_EXTRACT([Response], "(?s)```(?:python)?\s*(.*?)```")'
+  flow-name: 'StringManipMisc.tflx'
+  field-metadata: >-
+    'Response' (string)
+- description: 'Test regex basics'
+  id: string-manipulation-8
+  utterances:
+  - canonical: 'I think my LLM is returning python code in triple backticks. Write a calculation that tells me whether or not each Response contains that.'
+    expected-calc: 'REGEXP_MATCH([Response], "```(.*)```")'
+    acceptable-calcs:
+    - 'CONTAINS([Response], "```")'
+    - 'REGEXP_MATCH([Response], "```[\s\S]*```")'
+  flow-name: 'StringManipMisc.tflx'
+  field-metadata: >-
+    'Response' (string)

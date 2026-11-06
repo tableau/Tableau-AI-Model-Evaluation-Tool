@@ -1,0 +1,41 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-activity-360",
+  "info": {
+    "originalValid": true,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "create calc to compute percentage of duration for each opportunity stage",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "(SUM([Duration (minutes)]) / SUM({ FIXED : SUM([Duration (minutes)]) })) * 100",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-table"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Composition / Share"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Aggregation (Default)",
+          "Op: Group By Dimension",
+          "Op: Arithmetic / Ratio",
+          "Op: Level of Detail",
+          "Op: Table Calculation / Window"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "cc7cb8a49477e5962ef9a57df4534cc6"
+}

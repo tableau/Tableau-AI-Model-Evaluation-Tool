@@ -1,0 +1,73 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-opportunity-360",
+  "info": {
+    "requirement-id": "D-248-de49330ff1bbbc83",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "Top regions by amount",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "fields": [
+            {
+              "caption": "Amount",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "encoding": "x",
+              "aggregation": "sum",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            },
+            {
+              "caption": "Billing Country",
+              "data": "string",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "y"
+            }
+          ],
+          "chart": "bar",
+          "sort": {
+            "field": "Billing Country",
+            "by": "Amount",
+            "aggregation": "sum",
+            "direction": "desc",
+            "_tb_wildcards": [
+              "by"
+            ]
+          }
+        }
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench",
+        "infer-other-field",
+        "infer-non-default-aggregation"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Ranking / Top-N",
+          "Intent: Breakdown by Category"
+        ],
+        "op": [
+          "Op: Aggregation (Non-Default)",
+          "Op: Group By Dimension",
+          "Op: Limit / Top-N",
+          "Op: Field Inference - Measure / Dimension",
+          "Op: Aggregation (Default)",
+          "Op: Sort / Order"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    }
+  ],
+  "id": "38b3813cd13c99bd1ca07f86dc8c1cbd"
+}

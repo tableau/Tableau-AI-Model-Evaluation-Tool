@@ -1,0 +1,35 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-fec-expenditures",
+  "info": {
+    "requirement-id": "D-250-fe4c8bda2b93a7de",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "what are my top 20 sources by disbursement amount per lead",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Ranking / Top-N"
+        ],
+        "op": [
+          "Op: Limit / Top-N",
+          "Op: Group By Dimension",
+          "Op: Aggregation (Non-Default)"
+        ],
+        "out": [
+          "Out: Unspecified Viz"
+        ]
+      }
+    }
+  ],
+  "id": "6cf6b58e1217165a4a325602727abed3"
+}

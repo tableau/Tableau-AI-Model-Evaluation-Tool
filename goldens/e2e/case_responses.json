@@ -1,0 +1,207 @@
+[
+  {
+    "id": "dd21e3e9-e260-4629-8467-58a26d941830",
+    "utterance": "create calc to compute the average number of minutes per trip for each company",
+    "datasource": "chicago-taxi-trips-2024-calcs",
+    "expected": {
+      "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+      "calculatedFieldFormula": {
+        "formula": "{ FIXED [Company] : AVG([Trip Seconds] / 60) }",
+        "caption": null
+      }
+    },
+    "conversation_response": {
+      "intentApplicationDetection": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "confidence": 0.5,
+        "result": {
+          "status": "OK",
+          "notionalSpec": null,
+          "calc": null,
+          "calculatedFieldFormula": {
+            "formula": "AVG([Trip Seconds] / 60)",
+            "caption": "Avg Minutes Per Trip",
+            "type": ""
+          },
+          "calculatedFieldDescription": "This calculation divides each trip's duration (in seconds) by 60 to convert it to minutes, then takes the average across all trips. When [Company] is placed in the view, it will show the average trip duration in minutes for each company.",
+          "warnings": null,
+          "_context": null,
+          "steps": null,
+          "planId": "",
+          "unsupportedFeatures": "",
+          "hbiQuery": null,
+          "hbiResponse": null
+        }
+      },
+      "response": {
+        "responseType": "GENERATION",
+        "content": "This calculation divides each trip's duration (in seconds) by 60 to convert it to minutes, then takes the average across all trips. When [Company] is placed in the view, it will show the average trip duration in minutes for each company.",
+        "id": "chatcmpl-8af50491-1706-4d65-9258-ad7d107f3616"
+      }
+    }
+  },
+  {
+    "id": "36b88c07-da80-4b6c-9fb7-1e9804c26375",
+    "utterance": "create a calc to flag weekdays only",
+    "datasource": "chicago-taxi-trips-2024-calcs",
+    "expected": {
+      "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+      "calculatedFieldFormula": {
+        "formula": "IF DATENAME('weekday', [Trip Start Timestamp]) <> 'Saturday' AND DATENAME('weekday', [Trip Start Timestamp]) <> 'Sunday' THEN 'Weekday' ELSE 'Weekend' END",
+        "caption": null
+      }
+    },
+    "conversation_response": {
+      "intentApplicationDetection": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "confidence": 0.5,
+        "result": {
+          "status": "OK",
+          "notionalSpec": null,
+          "calc": null,
+          "calculatedFieldFormula": {
+            "formula": "IF DATEPART('weekday', [Trip Start Timestamp]) IN (2, 3, 4, 5, 6) THEN 1 ELSE 0 END",
+            "caption": "Flag: Weekday",
+            "type": ""
+          },
+          "calculatedFieldDescription": "This calculation flags records that occur on weekdays (Monday–Friday) by returning 1, and 0 for weekends (Saturday–Sunday). It uses DATEPART to extract the day of the week from the [Trip Start Timestamp] field, where 2=Monday through 6=Friday. You can use this flag to filter, color, or aggregate weekday trips specifically.",
+          "warnings": null,
+          "_context": null,
+          "steps": null,
+          "planId": "",
+          "unsupportedFeatures": "",
+          "hbiQuery": null,
+          "hbiResponse": null
+        }
+      },
+      "response": {
+        "responseType": "GENERATION",
+        "content": "This calculation flags records that occur on weekdays (Monday–Friday) by returning 1, and 0 for weekends (Saturday–Sunday). It uses DATEPART to extract the day of the week from the [Trip Start Timestamp] field, where 2=Monday through 6=Friday. You can use this flag to filter, color, or aggregate weekday trips specifically.",
+        "id": "chatcmpl-4d02b2a8-973a-456d-915b-ef72e3858008"
+      }
+    }
+  },
+  {
+    "id": "06a037ac-3124-49d9-be74-f654d0a2b2b2",
+    "utterance": "create calc to determine if trip is started in the current week",
+    "datasource": "chicago-taxi-trips-2024-calcs",
+    "expected": {
+      "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+      "calculatedFieldFormula": {
+        "formula": "IF DATETRUNC('week', [Trip Start Timestamp]) = DATETRUNC('week', TODAY()) THEN 'Current Week' ELSE 'Not Current Week' END",
+        "caption": null
+      }
+    },
+    "conversation_response": {
+      "intentApplicationDetection": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "confidence": 0.5,
+        "result": {
+          "status": "OK",
+          "notionalSpec": null,
+          "calc": null,
+          "calculatedFieldFormula": {
+            "formula": "DATETRUNC('week', [Trip Start Timestamp]) = DATETRUNC('week', TODAY())",
+            "caption": "Is Trip Started in Current Week",
+            "type": ""
+          },
+          "calculatedFieldDescription": "This calculation returns TRUE if a trip's start date falls within the current week, and FALSE otherwise. It works by truncating both the trip's start timestamp and today's date to the beginning of their respective weeks, then comparing them. You can use this field as a filter (keep only TRUE values) or as a color/label to highlight current-week trips.",
+          "warnings": null,
+          "_context": null,
+          "steps": null,
+          "planId": "",
+          "unsupportedFeatures": "",
+          "hbiQuery": null,
+          "hbiResponse": null
+        }
+      },
+      "response": {
+        "responseType": "GENERATION",
+        "content": "This calculation returns TRUE if a trip's start date falls within the current week, and FALSE otherwise. It works by truncating both the trip's start timestamp and today's date to the beginning of their respective weeks, then comparing them. You can use this field as a filter (keep only TRUE values) or as a color/label to highlight current-week trips.",
+        "id": "chatcmpl-64bd411d-3956-4aaf-b271-5399f1d0e48b"
+      }
+    }
+  },
+  {
+    "id": "10c92037-5ddc-41ba-bf57-8c102390e156",
+    "utterance": "create a calc to bin company into taxi if it contains 'taxi' in its name",
+    "datasource": "chicago-taxi-trips-2024-calcs",
+    "expected": {
+      "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+      "calculatedFieldFormula": {
+        "formula": "IF CONTAINS([Company], 'taxi') THEN 'Taxi' ELSE [Company] END",
+        "caption": null
+      }
+    },
+    "conversation_response": {
+      "intentApplicationDetection": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "confidence": 0.5,
+        "result": {
+          "status": "OK",
+          "notionalSpec": null,
+          "calc": null,
+          "calculatedFieldFormula": {
+            "formula": "IF CONTAINS(LOWER([Company]), 'taxi') THEN 'Taxi' ELSE 'Other' END",
+            "caption": "Company - Taxi Bin",
+            "type": ""
+          },
+          "calculatedFieldDescription": "This calculated field checks whether the Company name contains the word 'taxi' (case-insensitive). If it does, the company is categorized as **'Taxi'**; otherwise, it is categorized as **'Other'**. You can drag this field onto Color, Rows, or Filters in your viz to segment companies by this grouping.",
+          "warnings": null,
+          "_context": null,
+          "steps": null,
+          "planId": "",
+          "unsupportedFeatures": "",
+          "hbiQuery": null,
+          "hbiResponse": null
+        }
+      },
+      "response": {
+        "responseType": "GENERATION",
+        "content": "This calculated field checks whether the Company name contains the word 'taxi' (case-insensitive). If it does, the company is categorized as **'Taxi'**; otherwise, it is categorized as **'Other'**. You can drag this field onto Color, Rows, or Filters in your viz to segment companies by this grouping.",
+        "id": "chatcmpl-00656f25-cd7b-4d8d-a194-14ac528d0ab2"
+      }
+    }
+  },
+  {
+    "id": "84bf0519-74ee-4ffa-b719-98a2f36c7f86",
+    "utterance": "flag taxi companies that has disputed transactions",
+    "datasource": "chicago-taxi-trips-2024-calcs",
+    "expected": {
+      "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+      "calculatedFieldFormula": {
+        "formula": "IF { FIXED [Company] : MAX(IF [Payment Type] = 'Dispute' THEN 1 ELSE 0 END) } = 1 THEN 1 ELSE 0 END",
+        "caption": null
+      }
+    },
+    "conversation_response": {
+      "intentApplicationDetection": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "confidence": 0.5,
+        "result": {
+          "status": "OK",
+          "notionalSpec": null,
+          "calc": null,
+          "calculatedFieldFormula": {
+            "formula": "{ FIXED [Company] : SUM(IF [Payment Type] = 'Dispute' THEN 1 ELSE 0 END) } > 0",
+            "caption": "Has Disputed Transactions",
+            "type": ""
+          },
+          "calculatedFieldDescription": "This calculation flags taxi companies that have at least one disputed transaction. It uses a FIXED LOD to count the number of 'Dispute' payment type records per company — if that count is greater than 0, the company is flagged as TRUE (has disputes), otherwise FALSE. You can drag this field onto the Color or Filter shelf in your viz to highlight or isolate companies with disputed transactions.",
+          "warnings": null,
+          "_context": null,
+          "steps": null,
+          "planId": "",
+          "unsupportedFeatures": "",
+          "hbiQuery": null,
+          "hbiResponse": null
+        }
+      },
+      "response": {
+        "responseType": "GENERATION",
+        "content": "This calculation flags taxi companies that have at least one disputed transaction. It uses a FIXED LOD to count the number of 'Dispute' payment type records per company — if that count is greater than 0, the company is flagged as TRUE (has disputes), otherwise FALSE. You can drag this field onto the Color or Filter shelf in your viz to highlight or isolate companies with disputed transactions.",
+        "id": "chatcmpl-60b89da9-21f8-44f1-9d8d-662c41aa3ffd"
+      }
+    }
+  }
+]

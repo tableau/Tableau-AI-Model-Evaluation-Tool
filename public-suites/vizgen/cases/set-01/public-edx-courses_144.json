@@ -1,0 +1,35 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-edx-courses",
+  "info": {
+    "requirement-id": "D-248-dbc878074eb702d0",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "Show me count of assets provisioned by account names as a histogram",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Distribution"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Group By Dimension",
+          "Op: Binning"
+        ],
+        "out": [
+          "Out: Histogram"
+        ]
+      }
+    }
+  ],
+  "id": "4b54406020cfde584f0c1281cff259c7"
+}

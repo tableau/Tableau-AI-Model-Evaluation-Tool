@@ -1,0 +1,42 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-fec-expenditures",
+  "info": {
+    "additionalNotes": "Argument to avg(an aggregate function) is already an aggregation and cannot be further aggregated. hOW IS CP Lead computed?",
+    "originalValid": false,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "create a calc to compute average amount per purpose for each type and purpose, regardless of filters applied",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "{FIXED [Disbursement Purpose], [Election Type] : AVG([File Number])}",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-lod",
+        "add-explicit-calc-wordage"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement",
+          "Intent: Breakdown by Category"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Level of Detail",
+          "Op: Group By Dimension",
+          "Op: Aggregation (Non-Default)"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "d7c30dd393b51368378fbc57308ac054"
+}

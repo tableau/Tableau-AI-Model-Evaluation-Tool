@@ -1,0 +1,41 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-account-360",
+  "info": {
+    "originalValid": true,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "Create a calc to compute the number of business days between first and last order dates",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "{(DATEDIFF('day', [First Order Date], [Most Recent Order Date]) - (7 - DATEPART('weekday', [First Order Date])) - DATEPART('weekday', [Most Recent Order Date])) / 7*5 + MIN(5, (7 - (DATEPART('weekday', [First Order Date])))) + MIN(5, (DATEPART('weekday', [Most Recent Order Date]) - 1)) - 1}",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-date",
+        "add-explicit-calc-wordage"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Date Arithmetic",
+          "Op: Date Part Extraction",
+          "Op: Aggregation (Non-Default)",
+          "Op: Arithmetic / Ratio"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "0d2f33d40887d7c5e73991b764d468c4"
+}

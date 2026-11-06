@@ -1,0 +1,54 @@
+{
+  "flow": "Position.tflx",
+  "name": "Position",
+  "inputs": [
+    {
+      "name": "Data",
+      "source": "Data.csv",
+      "fields": [
+        {
+          "name": "Position",
+          "datatype": "string",
+          "values": [
+            "(42.5, 1.5)",
+            "(24, 54)",
+            "(33, 65)",
+            "(17.050000000000001, -61.799999999999997)",
+            "(18.25, -63.170000000000002)",
+            "(41, 20)",
+            "(40, 45)",
+            "(12.25, -68.75)"
+          ]
+        },
+        {
+          "name": "ISO 3166 Country Code",
+          "datatype": "string",
+          "values": [
+            "AD",
+            "AE",
+            "AF",
+            "AG",
+            "AI",
+            "AL",
+            "AM",
+            "AN"
+          ]
+        },
+        {
+          "name": "Country",
+          "datatype": "string",
+          "values": [
+            "Andorra",
+            "United Arab Emirates",
+            "Afghanistan",
+            "Antigua and Barbuda",
+            "Anguilla",
+            "Albania",
+            "Armenia",
+            "Netherlands Antilles"
+          ]
+        }
+      ]
+    }
+  ]
+}

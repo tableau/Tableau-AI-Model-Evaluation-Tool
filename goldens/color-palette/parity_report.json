@@ -1,0 +1,106 @@
+{
+  "summary": {
+    "cases": 6,
+    "metric_comparisons": 12,
+    "divergences": 0,
+    "tolerance": 0.000001
+  },
+  "cases": [
+    {
+      "id": "0e7a69b1-67fa-4e03-84e4-5115c6b57d8a",
+      "paletteType": "regular",
+      "metrics": {
+        "distinguishability": {
+          "ts": 1,
+          "py": 1,
+          "ok": true
+        },
+        "groundTruthValidity": {
+          "ts": 0.5171850712779206,
+          "py": 0.5171850713,
+          "ok": true
+        }
+      }
+    },
+    {
+      "id": "f6a2c3d5-8e9f-0a1b-2c3d-4e5f6a7b8c9d",
+      "paletteType": "regular",
+      "metrics": {
+        "distinguishability": {
+          "ts": 1,
+          "py": 1,
+          "ok": true
+        },
+        "groundTruthValidity": {
+          "ts": 0.37269732877468115,
+          "py": 0.3726973288,
+          "ok": true
+        }
+      }
+    },
+    {
+      "id": "f1a075d2-378a-47c2-8773-c4b6e83f8a63",
+      "paletteType": "sequential",
+      "metrics": {
+        "gradientSmoothness": {
+          "ts": 0.8033920660353464,
+          "py": 0.803392066,
+          "ok": true
+        },
+        "groundTruthValidity": {
+          "ts": 0.9926414862683375,
+          "py": 0.9926414863,
+          "ok": true
+        }
+      }
+    },
+    {
+      "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+      "paletteType": "sequential",
+      "metrics": {
+        "gradientSmoothness": {
+          "ts": 0.7555758081418544,
+          "py": 0.7555758081,
+          "ok": true
+        }
+      }
+    },
+    {
+      "id": "a50bc729-e385-4951-8337-f4f883f9fa57",
+      "paletteType": "diverging",
+      "metrics": {
+        "gradientSmoothness": {
+          "ts": 0.8804098109194274,
+          "py": 0.8804098109,
+          "ok": true
+        },
+        "divergingStructure": {
+          "ts": 1,
+          "py": 1,
+          "ok": true
+        },
+        "groundTruthValidity": {
+          "ts": 0.44796734441310654,
+          "py": 0.4479673444,
+          "ok": true
+        }
+      }
+    },
+    {
+      "id": "e7f8a9b0-c1d2-3456-efab-789012345678",
+      "paletteType": "diverging",
+      "metrics": {
+        "gradientSmoothness": {
+          "ts": 0.8365878100449958,
+          "py": 0.83658781,
+          "ok": true
+        },
+        "divergingStructure": {
+          "ts": 1,
+          "py": 1,
+          "ok": true
+        }
+      }
+    }
+  ]
+}

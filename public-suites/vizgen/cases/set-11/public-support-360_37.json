@@ -1,0 +1,141 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-support-360",
+  "info": {
+    "requirement-id": "D-248-f3ae333f017d7b95",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "count of headcount over time by priority",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "line",
+          "fields": [
+            {
+              "caption": "Number of Employees",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "aggregation": "count",
+              "encoding": "y"
+            },
+            {
+              "caption": "Created Date",
+              "data": "date",
+              "type": "discrete",
+              "role": "dimension",
+              "aggregation": "year",
+              "encoding": "x",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            },
+            {
+              "caption": "Priority",
+              "data": "string",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "color"
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "infer-time-series",
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Trend over Time"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Date Part Extraction",
+          "Op: Group By Dimension",
+          "Op: Date Truncation / Granularity",
+          "Op: Encoding Assignment"
+        ],
+        "out": [
+          "Out: Line Chart"
+        ]
+      }
+    },
+    {
+      "utterance": "filter to last 2 years",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "line",
+          "fields": [
+            {
+              "caption": "Number of Employees",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "aggregation": "count",
+              "encoding": "y"
+            },
+            {
+              "caption": "Created Date",
+              "data": "date",
+              "type": "discrete",
+              "role": "dimension",
+              "aggregation": "year",
+              "encoding": "x",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            },
+            {
+              "caption": "Priority",
+              "data": "string",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "color"
+            }
+          ],
+          "relativeDateFilters": [
+            {
+              "type": "relative-date",
+              "field": "Created Date",
+              "amount": 2,
+              "period": "years",
+              "direction": "previous",
+              "_tb_wildcards": [
+                "field"
+              ]
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "infer-date-time-field",
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Ranking / Top-N"
+        ],
+        "op": [
+          "Op: Filter - Date Range / Relative",
+          "Op: Group By Dimension",
+          "Op: Aggregation (Default)",
+          "Op: Date Truncation / Granularity",
+          "Op: Encoding Assignment",
+          "Op: Field Inference - Date Field",
+          "Op: Context Carryover / Follow-up"
+        ],
+        "out": [
+          "Out: Line Chart"
+        ]
+      }
+    }
+  ],
+  "id": "5a92606dc410147d99b05b80bfff4fd8"
+}

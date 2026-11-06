@@ -1,0 +1,23 @@
+{
+    "runner": "color-palettes-server",
+    "info": {
+        "version": "1.0.0"
+    },
+    "inputs": [
+        {
+            "utterance": "Pie chart with 8 segments",
+            "source": "user",
+            "arguments": {
+                "palette_type": "regular"
+            },
+            "expected": {
+                "colorPalette": []
+            },
+            "tags": [
+                "color-palette-regular"
+            ]
+        }
+    ],
+    "id": "d4e0a1b3-6c7d-8e9f-0a1b-2c3d4e5f6a7b"
+}
+

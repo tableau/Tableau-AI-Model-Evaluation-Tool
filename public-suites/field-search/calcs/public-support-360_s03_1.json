@@ -1,0 +1,412 @@
+{
+ "test_id": "833de75990da9f15e8434abed73623b8",
+ "datasource": "public-support-360",
+ "matched_fields": [
+  {
+   "name": "Case Subject",
+   "datatype": "string",
+   "sampleValues": [
+    "Defective Product",
+    "Delivery Damage",
+    "Warranty Claim",
+    "Refund Request",
+    "Missing Parts / Hardware",
+    "Installation Issue",
+    "Product Returns",
+    "Order Inquiry",
+    "Delayed Shipment",
+    "Technical Issue - Benchmark Landscaping Associat"
+   ]
+  },
+  {
+   "name": "Case Status",
+   "datatype": "string",
+   "sampleValues": [
+    "Closed",
+    "Resolved",
+    "Working",
+    "New"
+   ]
+  },
+  {
+   "name": "Case Type",
+   "datatype": "string",
+   "sampleValues": [
+    "Defective Product",
+    "Delivery Damage",
+    "Warranty Claim",
+    "Refund Request",
+    "Missing Parts / Hardware",
+    "Installation Issue",
+    "Technical Issue",
+    "Billing Question",
+    "Onboarding Assistance",
+    "Product Returns"
+   ]
+  },
+  {
+   "name": "Case Origin",
+   "datatype": "string",
+   "sampleValues": [
+    "Web",
+    "Phone"
+   ]
+  },
+  {
+   "name": "Priority",
+   "datatype": "string",
+   "sampleValues": [
+    "Medium",
+    "High",
+    "Low"
+   ]
+  },
+  {
+   "name": "Created Date",
+   "datatype": "date"
+  },
+  {
+   "name": "Closed Date",
+   "datatype": "date"
+  },
+  {
+   "name": "Account Name",
+   "datatype": "string",
+   "sampleValues": [
+    "Titan Commercial Builders Metro",
+    "Plains Construction Metro",
+    "Liberty Commercial Builders & Sons",
+    "Southern Construction Group",
+    "Benchmark Landscaping Associates",
+    "Metro Contractors North",
+    "Highpoint Asset Management Metro",
+    "Fairfield Commercial Builders Partners",
+    "Kingston Contractors North",
+    "Ashton Outdoor Services & Sons"
+   ]
+  },
+  {
+   "name": "Industry",
+   "datatype": "string",
+   "sampleValues": [
+    "Residential Construction",
+    "Commercial Construction",
+    "Property Management",
+    "Home Services",
+    "Landscaping & Grounds",
+    "Real Estate Development",
+    "Facility Management",
+    "Government / Municipal"
+   ]
+  },
+  {
+   "name": "Account Type",
+   "datatype": "string",
+   "sampleValues": [
+    "Enterprise",
+    "Mid-Market",
+    "SMB"
+   ]
+  },
+  {
+   "name": "Number of Employees",
+   "datatype": "number"
+  },
+  {
+   "name": "Annual Revenue",
+   "datatype": "number"
+  },
+  {
+   "name": "Billing City",
+   "datatype": "geographic",
+   "sampleValues": [
+    "Johnsonton",
+    "Lake David",
+    "South Jeffchester",
+    "New Marie",
+    "Fostermouth",
+    "Pereztown",
+    "North Frankton",
+    "South Heather",
+    "South Susan",
+    "Katietown"
+   ]
+  },
+  {
+   "name": "Billing State",
+   "datatype": "geographic",
+   "sampleValues": [
+    "FL",
+    "AZ",
+    "GA",
+    "OH",
+    "NC",
+    "TX",
+    "NY",
+    "WA",
+    "IL",
+    "CA"
+   ]
+  },
+  {
+   "name": "Billing Country",
+   "datatype": "geographic",
+   "sampleValues": [
+    "United States"
+   ]
+  },
+  {
+   "name": "Case Owner",
+   "datatype": "string",
+   "sampleValues": [
+    "Sofia Hill",
+    "Benjamin Taylor",
+    "Emily King",
+    "Grace Green",
+    "Noah Thompson",
+    "Charlotte Jackson",
+    "Avery Scott",
+    "Alexander Young",
+    "Elizabeth Lopez",
+    "Sophia Anderson"
+   ]
+  },
+  {
+   "name": "Case Owner Manager",
+   "datatype": "string",
+   "sampleValues": [
+    "Charlotte Jackson",
+    "Ethan Davies",
+    "Sophia Anderson",
+    "Victoria Chen",
+    "Noah Thompson",
+    "Isabella Moore",
+    "Olivia Kim",
+    "Liam O'Connell",
+    "Benjamin Taylor",
+    "James Thomas"
+   ]
+  },
+  {
+   "name": "Case Owner Title",
+   "datatype": "string",
+   "sampleValues": [
+    "Tier 1 Agent",
+    "Tier 2 Agent",
+    "Manager",
+    "VP"
+   ]
+  },
+  {
+   "name": "Case Owner Department",
+   "datatype": "string",
+   "sampleValues": [
+    "Customer Support"
+   ]
+  },
+  {
+   "name": "Case Owner Division",
+   "datatype": "string",
+   "sampleValues": [
+    "Returns & Refunds",
+    "B2B Pro Support",
+    "B2C Customer Support",
+    "Customer Support"
+   ]
+  },
+  {
+   "name": "Case Owner State",
+   "datatype": "geographic",
+   "sampleValues": [
+    "CO",
+    "CA",
+    "MA",
+    "IL",
+    "NY"
+   ]
+  },
+  {
+   "name": "Contact Name",
+   "datatype": "string",
+   "sampleValues": [
+    "Michael Miller",
+    "Jacob Cobb",
+    "Jennifer Williams",
+    "Traci Nguyen",
+    "Eric Carpenter",
+    "Kimberly Martinez",
+    "James Smith",
+    "Jason Johnson",
+    "Scott Jordan",
+    "Samantha Miller"
+   ]
+  },
+  {
+   "name": "Contact Title",
+   "datatype": "string",
+   "sampleValues": [
+    "General Manager",
+    "Operations Director",
+    "Owner"
+   ]
+  },
+  {
+   "name": "Contact City",
+   "datatype": "geographic",
+   "sampleValues": [
+    "Davidmouth",
+    "Port Christina",
+    "Port Tiffany",
+    "Lake Cynthia",
+    "Port Scott",
+    "West Stephanie",
+    "North Michael",
+    "West Robert",
+    "South Michael",
+    "North Ethan"
+   ]
+  },
+  {
+   "name": "Contact State",
+   "datatype": "geographic",
+   "sampleValues": [
+    "GA",
+    "FL",
+    "NC",
+    "IL",
+    "OH",
+    "AZ",
+    "TX",
+    "NY",
+    "WA",
+    "CA"
+   ]
+  },
+  {
+   "name": "Refund Amount",
+   "datatype": "number"
+  },
+  {
+   "name": "Refund Status",
+   "datatype": "string",
+   "sampleValues": [
+    "Approved",
+    "Completed",
+    "Pending"
+   ]
+  },
+  {
+   "name": "Refund Reason",
+   "datatype": "string",
+   "sampleValues": [
+    "Wrong item",
+    "Defective product",
+    "Customer cancelled order",
+    "Damaged in transit",
+    "Missing items",
+    "Order not received",
+    "Does not match description",
+    "Overcharge",
+    "Duplicate charge"
+   ]
+  },
+  {
+   "name": "Refund Issue Date",
+   "datatype": "date"
+  },
+  {
+   "name": "Order Date",
+   "datatype": "date"
+  },
+  {
+   "name": "Order Amount",
+   "datatype": "number"
+  },
+  {
+   "name": "Order Type",
+   "datatype": "string",
+   "sampleValues": [
+    "In-Store",
+    "Pro Desk",
+    "Online",
+    "Phone"
+   ]
+  },
+  {
+   "name": "Order Status",
+   "datatype": "string",
+   "sampleValues": [
+    "Completed",
+    "Cancelled",
+    "Returned"
+   ]
+  },
+  {
+   "name": "Store",
+   "datatype": "string",
+   "sampleValues": [
+    "Data Depot - Chicago North",
+    "Data Depot - New York South",
+    "Data Depot - Pittsburgh North",
+    "Data Depot - Columbus North",
+    "Data Depot - Minneapolis North",
+    "Data Depot - Atlanta North",
+    "Data Depot - Los Angeles South",
+    "Data Depot - St Louis North",
+    "Data Depot - Baltimore North",
+    "Data Depot - Miami North"
+   ]
+  },
+  {
+   "name": "Store Region",
+   "datatype": "string",
+   "sampleValues": [
+    "Midwest",
+    "Northeast",
+    "West",
+    "South"
+   ]
+  },
+  {
+   "name": "Account Assets",
+   "datatype": "number"
+  },
+  {
+   "name": "Latest Asset Install Date",
+   "datatype": "date"
+  },
+  {
+   "name": "Account Open Cases",
+   "datatype": "number"
+  },
+  {
+   "name": "Is Open",
+   "datatype": "boolean",
+   "sampleValues": [
+    "true",
+    "false"
+   ]
+  },
+  {
+   "name": "Is High Priority",
+   "datatype": "boolean",
+   "sampleValues": [
+    "true",
+    "false"
+   ]
+  },
+  {
+   "name": "Days to Close",
+   "datatype": "number"
+  },
+  {
+   "name": "Days Since Order",
+   "datatype": "number"
+  },
+  {
+   "name": "Case Age (days)",
+   "datatype": "number"
+  }
+ ],
+ "calc_fields": []
+}

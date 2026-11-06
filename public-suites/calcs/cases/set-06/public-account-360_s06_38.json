@@ -1,0 +1,38 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-account-360",
+  "info": {
+    "originalValid": true,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "Create a nested LOD calculation to get the maximum total order amount per region and then find the average for each account name",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "{ FIXED [Account Name] : AVG({ FIXED [Primary Store Region] : MAX([Total Order Amount]) }) }",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-nested-lod"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Level of Detail",
+          "Op: Aggregation (Non-Default)"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "f2d931176c12a438ba6f0cf1726b6dd4"
+}

@@ -1,0 +1,114 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-account-360",
+  "info": {
+    "requirement-id": "D-248-985d6d41172604db",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "how many reps does each sales manager have?",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Sales Manager",
+              "data": "string",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "y"
+            },
+            {
+              "caption": "Sales Representative",
+              "data": "string",
+              "type": "continuous",
+              "role": "measure",
+              "aggregation": "countd",
+              "encoding": "x"
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Breakdown by Category",
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Group By Dimension",
+          "Op: Aggregation (Non-Default)"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    },
+    {
+      "utterance": "show only managers who have between 3 and 6 reps",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Sales Manager",
+              "data": "string",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "y",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            },
+            {
+              "caption": "Sales Representative",
+              "data": "string",
+              "type": "continuous",
+              "role": "measure",
+              "aggregation": "countd",
+              "encoding": "x"
+            }
+          ],
+          "rangeFilters": [
+            {
+              "type": null,
+              "numeric-range": null,
+              "field": "Sales Representative",
+              "start": 3,
+              "end": 6,
+              "aggregation": "countd"
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Breakdown by Category"
+        ],
+        "op": [
+          "Op: Filter - Numeric Threshold",
+          "Op: Group By Dimension",
+          "Op: Aggregation (Non-Default)",
+          "Op: Context Carryover / Follow-up"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    }
+  ],
+  "id": "5cf50bb8d594331135b2a2b5145d878e"
+}

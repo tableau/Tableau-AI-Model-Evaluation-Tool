@@ -1,0 +1,678 @@
+{
+ "rows": [
+  {
+   "kind": "calc-gen",
+   "record": {
+    "canonical": "Sum sales",
+    "field-metadata": "'Sales' (real), 'Region' (string)",
+    "flow-name": "Orders",
+    "expected-calc": "SUM([Sales])",
+    "case_id": "case.0"
+   },
+   "body": {
+    "intentApplicationDetection": {
+     "result": {
+      "calculatedFieldFormula": {
+       "formula": "SUM([Sales])",
+       "caption": "Sales total"
+      }
+     }
+    },
+    "response": {
+     "content": "Adds sales.\n```json\n{\"calc\":\"SUM([Sales])\"}\n```"
+    }
+   },
+   "request": {
+    "intentApplicationAccepts": [
+     {
+      "intent": "CALC_PREP"
+     }
+    ],
+    "utterance": {
+     "content": "Sum sales"
+    },
+    "conversationContext": {
+     "conversationHistory": [],
+     "context": {
+      "prep.flowPlan.spatialCalcs": false
+     }
+    },
+    "datasourceMetadata": {
+     "datasourceIdentifier": "Orders",
+     "name": "Orders",
+     "fields": [
+      {
+       "name": "Sales",
+       "caption": "Sales",
+       "datatype": "real"
+      },
+      {
+       "name": "Region",
+       "caption": "Region",
+       "datatype": "string"
+      }
+     ]
+    }
+   },
+   "row": {
+    "test_case_id": "case.0",
+    "runner": "prep-calc-gen",
+    "datasource": "Orders",
+    "utterance": "Sum sales",
+    "turn": 0,
+    "expected": {
+     "calculation": "SUM([Sales])"
+    },
+    "actual": {
+     "calculation": "SUM([Sales])",
+     "user_friendly_reply": "Adds sales.",
+     "caption": "Sales total"
+    },
+    "latency": null,
+    "errors": [],
+    "metrics": {
+     "calculatedFieldFormula": [
+      {
+       "metric_id": "PrepCalcGrammar",
+       "metric_name": "calcValidity",
+       "score": 1.0,
+       "explanation": "Valid Tableau Prep formula."
+      },
+      {
+       "metric_id": "PrepCalcSimilarity",
+       "metric_name": "levenshteinSimilarity",
+       "score": 1.0,
+       "explanation": "The same formula as expected, apart from spacing, letter case or quote style."
+      }
+     ]
+    },
+    "debug_info": {},
+    "info": {}
+   }
+  },
+  {
+   "kind": "calc-gen",
+   "record": {
+    "canonical": "Unknown field",
+    "field-metadata": "'Sales' (real)",
+    "expected-calc": "SUM([Sales])",
+    "case_id": "case.1"
+   },
+   "body": {
+    "intentApplicationDetection": {
+     "result": {
+      "calculatedFieldFormula": {
+       "formula": "SUM([Missing])"
+      }
+     }
+    }
+   },
+   "request": {
+    "intentApplicationAccepts": [
+     {
+      "intent": "CALC_PREP"
+     }
+    ],
+    "utterance": {
+     "content": "Unknown field"
+    },
+    "conversationContext": {
+     "conversationHistory": [],
+     "context": {
+      "prep.flowPlan.spatialCalcs": false
+     }
+    },
+    "datasourceMetadata": {
+     "datasourceIdentifier": "prep-flow",
+     "name": "prep-flow",
+     "fields": [
+      {
+       "name": "Sales",
+       "caption": "Sales",
+       "datatype": "real"
+      }
+     ]
+    }
+   },
+   "row": {
+    "test_case_id": "case.1",
+    "runner": "prep-calc-gen",
+    "datasource": null,
+    "utterance": "Unknown field",
+    "turn": 0,
+    "expected": {
+     "calculation": "SUM([Sales])"
+    },
+    "actual": {
+     "calculation": "SUM([Missing])",
+     "user_friendly_reply": null
+    },
+    "latency": null,
+    "errors": [],
+    "metrics": {
+     "calculatedFieldFormula": [
+      {
+       "metric_id": "PrepCalcGrammar",
+       "metric_name": "calcValidity",
+       "score": 0.0,
+       "explanation": "Field not in the data: [Missing]"
+      },
+      {
+       "metric_id": "PrepCalcSimilarity",
+       "metric_name": "levenshteinSimilarity",
+       "score": 0.75,
+       "explanation": "3 of the 4 expected tokens appear in order in the written formula (4 tokens). First difference: expected '[Sales]', written '[Missing]'."
+      }
+     ]
+    },
+    "debug_info": {},
+    "info": {}
+   }
+  },
+  {
+   "kind": "calc-gen",
+   "record": {
+    "canonical": "Sum sales",
+    "expected-calc": "SUM([Sales])",
+    "case_id": "case.2"
+   },
+   "body": {
+    "response": {
+     "content": "Which field should I use?"
+    }
+   },
+   "request": {
+    "intentApplicationAccepts": [
+     {
+      "intent": "CALC_PREP"
+     }
+    ],
+    "utterance": {
+     "content": "Sum sales"
+    },
+    "conversationContext": {
+     "conversationHistory": [],
+     "context": {
+      "prep.flowPlan.spatialCalcs": false
+     }
+    },
+    "datasourceMetadata": {
+     "datasourceIdentifier": "prep-flow",
+     "name": "prep-flow",
+     "fields": []
+    }
+   },
+   "row": {
+    "test_case_id": "case.2",
+    "runner": "prep-calc-gen",
+    "datasource": null,
+    "utterance": "Sum sales",
+    "turn": 0,
+    "expected": {
+     "calculation": "SUM([Sales])"
+    },
+    "actual": {
+     "calculation": null,
+     "user_friendly_reply": "Which field should I use?"
+    },
+    "latency": null,
+    "errors": [],
+    "metrics": {
+     "calculatedFieldFormula": [
+      {
+       "metric_id": "PrepCalcGrammar",
+       "metric_name": "calcValidity",
+       "score": 0.0,
+       "explanation": "The model asked a question instead of writing a formula, so there is no formula to check."
+      },
+      {
+       "metric_id": "PrepCalcSimilarity",
+       "metric_name": "levenshteinSimilarity",
+       "score": 0.0,
+       "explanation": "The model wrote no formula."
+      }
+     ]
+    },
+    "debug_info": {},
+    "info": {}
+   }
+  },
+  {
+   "kind": "calc-gen",
+   "record": {
+    "canonical": "Tell a joke",
+    "expected-calc": null,
+    "case_id": "case.3"
+   },
+   "body": {
+    "response": {
+     "content": "I cannot help with that."
+    }
+   },
+   "request": {
+    "intentApplicationAccepts": [
+     {
+      "intent": "CALC_PREP"
+     }
+    ],
+    "utterance": {
+     "content": "Tell a joke"
+    },
+    "conversationContext": {
+     "conversationHistory": [],
+     "context": {
+      "prep.flowPlan.spatialCalcs": false
+     }
+    },
+    "datasourceMetadata": {
+     "datasourceIdentifier": "prep-flow",
+     "name": "prep-flow",
+     "fields": []
+    }
+   },
+   "row": {
+    "test_case_id": "case.3",
+    "runner": "prep-calc-gen",
+    "datasource": null,
+    "utterance": "Tell a joke",
+    "turn": 0,
+    "expected": {
+     "calculation": null
+    },
+    "actual": {
+     "calculation": null,
+     "user_friendly_reply": "I cannot help with that."
+    },
+    "latency": null,
+    "errors": [],
+    "metrics": {
+     "calculatedFieldFormula": [
+      {
+       "metric_id": "PrepCalcGrammar",
+       "metric_name": "calcValidity",
+       "score": 1.0,
+       "explanation": "The request called for no formula and the model wrote none."
+      }
+     ]
+    },
+    "debug_info": {},
+    "info": {}
+   }
+  },
+  {
+   "kind": "flow-plan-gen",
+   "record": {
+    "canonical": "Clean and aggregate",
+    "user_data": "Sales,Region\n1,West",
+    "expected-flow-plan": [
+     "clean",
+     "aggregate"
+    ],
+    "case_id": "case.4"
+   },
+   "body": {
+    "response": {
+     "content": "```json\n{\"steps\":[{\"functionName\":\"clean\"},{\"functionName\":\"aggregate\"}]}\n```"
+    }
+   },
+   "request": {
+    "intentApplicationAccepts": [
+     {
+      "intent": "GENERATE_FLOW_PLAN_PREP_COPILOT"
+     }
+    ],
+    "utterance": {
+     "content": "Clean and aggregate"
+    },
+    "conversationContext": {
+     "conversationHistory": [],
+     "context": {
+      "prep.flowPlan.spatialCalcs": false,
+      "prep.flowPlan.userDataString": "Sales,Region\n1,West"
+     }
+    },
+    "datasourceMetadata": {
+     "datasourceIdentifier": "prep-flow",
+     "name": "prep-flow",
+     "fields": []
+    }
+   },
+   "row": {
+    "test_case_id": "case.4",
+    "runner": "prep-flow-plan-gen",
+    "datasource": null,
+    "utterance": "Clean and aggregate",
+    "turn": 0,
+    "expected": {
+     "flowPlan": [
+      "clean",
+      "aggregate"
+     ]
+    },
+    "actual": {
+     "flowPlan": {
+      "steps": [
+       {
+        "functionName": "clean"
+       },
+       {
+        "functionName": "aggregate"
+       }
+      ]
+     }
+    },
+    "latency": null,
+    "errors": [],
+    "metrics": {
+     "flowPlan": [
+      {
+       "metric_id": "PrepFlowPlanSimilarity",
+       "metric_name": "planSimilarity",
+       "score": 1.0,
+       "explanation": "2 steps match in order (2 expected, 2 planned)."
+      },
+      {
+       "metric_id": "PrepFlowPlanStepRecall",
+       "metric_name": "stepRecall",
+       "score": 1.0,
+       "explanation": "2 of 2 expected steps are in the plan."
+      },
+      {
+       "metric_id": "PrepFlowPlanStepPrecision",
+       "metric_name": "stepPrecision",
+       "score": 1.0,
+       "explanation": "All 2 planned steps were expected."
+      }
+     ]
+    },
+    "debug_info": {},
+    "info": {}
+   }
+  },
+  {
+   "kind": "flow-plan-gen",
+   "record": {
+    "canonical": "Clean and aggregate",
+    "expected-flow-plan": [
+     "clean",
+     "aggregate"
+    ],
+    "case_id": "case.5"
+   },
+   "body": {
+    "response": {
+     "content": "I cannot do this."
+    }
+   },
+   "request": {
+    "intentApplicationAccepts": [
+     {
+      "intent": "GENERATE_FLOW_PLAN_PREP_COPILOT"
+     }
+    ],
+    "utterance": {
+     "content": "Clean and aggregate"
+    },
+    "conversationContext": {
+     "conversationHistory": [],
+     "context": {
+      "prep.flowPlan.spatialCalcs": false,
+      "prep.flowPlan.userDataString": ""
+     }
+    },
+    "datasourceMetadata": {
+     "datasourceIdentifier": "prep-flow",
+     "name": "prep-flow",
+     "fields": []
+    }
+   },
+   "row": {
+    "test_case_id": "case.5",
+    "runner": "prep-flow-plan-gen",
+    "datasource": null,
+    "utterance": "Clean and aggregate",
+    "turn": 0,
+    "expected": {
+     "flowPlan": [
+      "clean",
+      "aggregate"
+     ]
+    },
+    "actual": {
+     "raw_reply": "I cannot do this.",
+     "no_plan": "decline"
+    },
+    "latency": null,
+    "errors": [
+     {
+      "phase": "flow_plan",
+      "description": "The model declined the request instead of planning the flow, so the case scores zero.",
+      "warning": true
+     }
+    ],
+    "metrics": {
+     "flowPlan": [
+      {
+       "metric_id": "PrepFlowPlanSimilarity",
+       "metric_name": "planSimilarity",
+       "score": 0.0,
+       "explanation": "0 steps match in order (2 expected, 0 planned)."
+      },
+      {
+       "metric_id": "PrepFlowPlanStepRecall",
+       "metric_name": "stepRecall",
+       "score": 0.0,
+       "explanation": "0 of 2 expected steps are in the plan. Missing: clean, aggregate."
+      },
+      {
+       "metric_id": "PrepFlowPlanStepPrecision",
+       "metric_name": "stepPrecision",
+       "score": 0.0,
+       "explanation": "The plan has no steps."
+      }
+     ]
+    },
+    "debug_info": {},
+    "info": {}
+   }
+  },
+  {
+   "kind": "intent-gen",
+   "record": {
+    "canonical": "Now calculate profit",
+    "history": [
+     "Show sales"
+    ],
+    "expected-intent": "calc",
+    "case_id": "case.6"
+   },
+   "body": {
+    "response": {
+     "content": "result: calc\nExplanation"
+    }
+   },
+   "request": {
+    "intentApplicationAccepts": [
+     {
+      "intent": "DETECT_INTENT_PREP_COPILOT"
+     }
+    ],
+    "utterance": {
+     "content": "Now calculate profit"
+    },
+    "conversationContext": {
+     "conversationHistory": [
+      {
+       "utterance": {
+        "content": "Show sales",
+        "source": "user"
+       }
+      }
+     ],
+     "context": {
+      "prep.flowPlan.spatialCalcs": false
+     }
+    },
+    "datasourceMetadata": {
+     "datasourceIdentifier": "prep-flow",
+     "name": "prep-flow",
+     "fields": []
+    }
+   },
+   "row": {
+    "test_case_id": "case.6",
+    "runner": "prep-intent-gen",
+    "datasource": null,
+    "utterance": "Now calculate profit",
+    "turn": 1,
+    "expected": {
+     "intent": "calc"
+    },
+    "actual": {
+     "intent": "calc"
+    },
+    "latency": null,
+    "errors": [],
+    "metrics": {
+     "intent": [
+      {
+       "metric_id": "PrepIntentMatch",
+       "metric_name": "equals",
+       "score": 1.0,
+       "explanation": "Matches: calc."
+      }
+     ]
+    },
+    "debug_info": {
+     "conversation": [
+      "Show sales"
+     ]
+    },
+    "info": {}
+   }
+  },
+  {
+   "kind": "intent-gen",
+   "record": {
+    "canonical": "Make a flow",
+    "expected-intent": "flow-plan",
+    "case_id": "case.7"
+   },
+   "body": {
+    "response": {
+     "content": "other"
+    }
+   },
+   "request": {
+    "intentApplicationAccepts": [
+     {
+      "intent": "DETECT_INTENT_PREP_COPILOT"
+     }
+    ],
+    "utterance": {
+     "content": "Make a flow"
+    },
+    "conversationContext": {
+     "conversationHistory": [],
+     "context": {
+      "prep.flowPlan.spatialCalcs": false
+     }
+    },
+    "datasourceMetadata": {
+     "datasourceIdentifier": "prep-flow",
+     "name": "prep-flow",
+     "fields": []
+    }
+   },
+   "row": {
+    "test_case_id": "case.7",
+    "runner": "prep-intent-gen",
+    "datasource": null,
+    "utterance": "Make a flow",
+    "turn": 0,
+    "expected": {
+     "intent": "flow-plan"
+    },
+    "actual": {
+     "intent": "other"
+    },
+    "latency": null,
+    "errors": [],
+    "metrics": {
+     "intent": [
+      {
+       "metric_id": "PrepIntentMatch",
+       "metric_name": "equals",
+       "score": 0.0,
+       "explanation": "Expected flow-plan, the model said other."
+      }
+     ]
+    },
+    "debug_info": {},
+    "info": {}
+   }
+  },
+  {
+   "kind": "intent-gen",
+   "record": {
+    "canonical": "Hello",
+    "expected-intent": "other",
+    "case_id": "case.8"
+   },
+   "body": {
+    "response": {
+     "content": "Hello there"
+    }
+   },
+   "request": {
+    "intentApplicationAccepts": [
+     {
+      "intent": "DETECT_INTENT_PREP_COPILOT"
+     }
+    ],
+    "utterance": {
+     "content": "Hello"
+    },
+    "conversationContext": {
+     "conversationHistory": [],
+     "context": {
+      "prep.flowPlan.spatialCalcs": false
+     }
+    },
+    "datasourceMetadata": {
+     "datasourceIdentifier": "prep-flow",
+     "name": "prep-flow",
+     "fields": []
+    }
+   },
+   "row": {
+    "test_case_id": "case.8",
+    "runner": "prep-intent-gen",
+    "datasource": null,
+    "utterance": "Hello",
+    "turn": 0,
+    "expected": {
+     "intent": "other"
+    },
+    "actual": {
+     "intent": "",
+     "raw_reply": "Hello there"
+    },
+    "latency": null,
+    "errors": [],
+    "metrics": {
+     "intent": [
+      {
+       "metric_id": "PrepIntentMatch",
+       "metric_name": "equals",
+       "score": 0.0,
+       "explanation": "Expected other, the model said hello-there."
+      }
+     ]
+    },
+    "debug_info": {},
+    "info": {}
+   }
+  }
+ ]
+}

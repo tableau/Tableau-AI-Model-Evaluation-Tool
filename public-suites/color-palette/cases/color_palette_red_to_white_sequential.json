@@ -1,0 +1,22 @@
+{
+    "runner": "color-palettes-server",
+    "info": {
+        "version": "1.0.0"
+    },
+    "inputs": [
+        {
+            "utterance": "Red to white, 3 colors",
+            "source": "user",
+            "arguments": {
+                "palette_type": "sequential"
+            },
+            "expected": {
+                "colorPalette": ["#FF0000", "#FF7F7F", "#FFFFFF"]
+            },
+            "tags": [
+                "color-palette-sequential"
+            ]
+        }
+    ],
+    "id": "f1a075d2-378a-47c2-8773-c4b6e83f8a63"
+}

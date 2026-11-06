@@ -1,0 +1,341 @@
+/* Custom pieces of the UI kit (src/ui): the parts the open-source Tableau UI
+   library does not ship — tooltip, popover, dialog, drawer, alert, card,
+   table, toast — drawn with the library's own design tokens so they match its
+   widgets. Every color is a token variable with the library's fallback. */
+
+:root {
+  --tui-radius: 2px;
+  --tui-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+}
+
+/* ---- typography ------------------------------------------------------- */
+.tui-text { color: var(--color-font-default-default, #2e2e2e); }
+.tui-text-secondary { color: var(--color-font-default-secondary, #5c5c5c); }
+.tui-text-subtle { color: var(--color-font-default-subtle, #939393); }
+.tui-text-danger { color: var(--color-font-default-error, #ba0517); }
+.tui-text-success { color: var(--color-font-default-success, #22683e); }
+.tui-text-warning { color: var(--color-feedback-default-warning, #6f3400); }
+.tui-text-strong { font-weight: 600; }
+.tui-text-code {
+  font-family: Menlo, Consolas, "Courier New", monospace;
+  font-size: 0.92em;
+  background: var(--color-elevation-surface-default-subtle, #f3f3f3);
+  border: 1px solid var(--color-elevation-border-default-subtle, #e5e5e5);
+  border-radius: var(--tui-radius);
+  padding: 0 4px;
+}
+.tui-text-ellipsis { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; display: inline-block; max-width: 100%; vertical-align: bottom; }
+.tui-clamp { display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; }
+.tui-title { margin: 0; color: var(--color-font-default-default, #2e2e2e); font-weight: 600; }
+.tui-title-1 { font-size: 24px; line-height: 32px; }
+.tui-title-2 { font-size: 20px; line-height: 28px; }
+.tui-title-3 { font-size: 18px; line-height: 24px; }
+.tui-title-4 { font-size: 16px; line-height: 24px; }
+.tui-paragraph { margin: 0 0 8px; }
+.tui-link {
+  color: var(--color-feedback-default-info, #05628a);
+  text-decoration: none;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+}
+.tui-link:hover { text-decoration: underline; }
+.tui-link[disabled] { color: var(--color-font-default-disabled, #c9c9c9); cursor: not-allowed; text-decoration: none; }
+
+/* ---- button extras ------------------------------------------------------ */
+.tui-btn-icon-only {
+  display: inline-flex; align-items: center; justify-content: center; vertical-align: middle;
+  padding-left: 8px !important; padding-right: 8px !important;
+}
+.tui-btn-content { display: inline-flex; align-items: center; gap: 6px; }
+.tui-btn-link-outline {
+  display: inline-flex; align-items: center; gap: 6px;
+  height: 32px; padding: 0 12px; border-radius: var(--tui-radius);
+  border: 1px solid var(--color-elevation-border-default-medium, #939393);
+  color: var(--color-font-default-default, #2e2e2e);
+  background: var(--color-elevation-surface-default-default, #fff);
+  font: inherit; font-weight: 500; text-decoration: none; cursor: pointer; box-sizing: border-box;
+}
+.tui-btn-link-outline.tui-small { height: 24px; padding: 0 8px; font-size: 12px; }
+.tui-btn-link-outline:hover { background: var(--color-elevation-surface-default-subtle, #f3f3f3); }
+.tui-btn-link-outline[aria-disabled="true"] { color: var(--color-font-default-disabled, #c9c9c9); border-color: var(--color-elevation-border-default-subtle, #e5e5e5); pointer-events: none; }
+.tui-spin { animation: tui-rotate 1s linear infinite; display: inline-block; }
+@keyframes tui-rotate { to { transform: rotate(360deg); } }
+
+/* ---- layout ------------------------------------------------------------- */
+.tui-space { display: inline-flex; align-items: center; }
+.tui-space-vertical { display: inline-flex; flex-direction: column; align-items: flex-start; }
+.tui-space-wrap { flex-wrap: wrap; }
+.tui-divider { border: 0; border-top: 1px solid var(--color-elevation-border-default-subtle, #e5e5e5); margin: 16px 0; }
+.tui-divider-text {
+  display: flex; align-items: center; gap: 12px; margin: 20px 0 12px;
+  color: var(--color-font-default-default, #2e2e2e); font-weight: 600; font-size: 16px; line-height: 24px;
+}
+.tui-divider-text::before, .tui-divider-text::after {
+  content: ""; flex: 1; border-top: 1px solid var(--color-elevation-border-default-subtle, #e5e5e5);
+}
+
+/* ---- card --------------------------------------------------------------- */
+.tui-card {
+  background: var(--color-elevation-surface-default-default, #fff);
+  border: 1px solid var(--color-elevation-border-default-subtle, #e5e5e5);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.tui-card-inner { background: var(--color-elevation-surface-default-subtle, #f3f3f3); }
+.tui-card-head {
+  display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  padding: 10px 16px; font-weight: 600;
+  border-bottom: 1px solid var(--color-elevation-border-default-subtle, #e5e5e5);
+}
+.tui-card-body { padding: 16px; }
+.tui-card-small .tui-card-body { padding: 12px; }
+.tui-card-small .tui-card-head { padding: 8px 12px; }
+
+/* ---- alert -------------------------------------------------------------- */
+.tui-alert {
+  display: flex; gap: 10px; align-items: flex-start;
+  padding: 10px 12px; border-radius: var(--tui-radius);
+  border-left: 4px solid; font-size: 14px; line-height: 20px;
+  color: var(--color-font-default-default, #2e2e2e);
+}
+.tui-alert-info { background: var(--color-feedback-default-info-light, #cfe9fe); border-color: var(--color-feedback-default-info, #05628a); }
+.tui-alert-info .tui-alert-icon { color: var(--color-feedback-default-info, #05628a); }
+.tui-alert-success { background: var(--color-feedback-default-success-light, #cdefc4); border-color: var(--color-feedback-default-success, #22683e); }
+.tui-alert-success .tui-alert-icon { color: var(--color-feedback-default-success, #22683e); }
+.tui-alert-warning { background: var(--color-feedback-default-warning-light, #f9e3b6); border-color: var(--color-feedback-default-warning-neutral, #fcc003); }
+.tui-alert-warning .tui-alert-icon { color: var(--color-feedback-default-warning, #6f3400); }
+.tui-alert-error { background: var(--color-feedback-default-error-light, #feded8); border-color: var(--color-feedback-default-error, #ba0517); }
+.tui-alert-error .tui-alert-icon { color: var(--color-feedback-default-error, #ba0517); }
+.tui-alert-icon { flex-shrink: 0; margin-top: 2px; font-size: 16px; }
+.tui-alert-body { flex: 1; min-width: 0; }
+.tui-alert-message { font-weight: 600; }
+.tui-alert-description { margin-top: 2px; color: var(--color-font-default-secondary, #5c5c5c); }
+.tui-alert-close { background: none; border: 0; cursor: pointer; color: var(--color-font-default-secondary, #5c5c5c); padding: 0 2px; font-size: 14px; }
+
+/* ---- overlays (tooltip, popover) --------------------------------------- */
+.tui-anchor { display: inline-flex; align-items: center; vertical-align: middle; max-width: 100%; }
+.tui-anchor-block { display: block; }
+.tui-tooltip {
+  position: fixed; z-index: 1600; max-width: 320px;
+  background: var(--color-elevation-surface-inverse-default, #242424);
+  color: var(--color-font-inverse-default, #f3f3f3);
+  font-size: 12px; line-height: 16px; padding: 6px 8px; border-radius: var(--tui-radius);
+  box-shadow: var(--tui-shadow); pointer-events: none; white-space: normal;
+}
+.tui-popover {
+  position: fixed; z-index: 1500; min-width: 160px; max-width: 420px;
+  background: var(--color-elevation-surface-default-default, #fff);
+  color: var(--color-font-default-default, #2e2e2e);
+  border: 1px solid var(--color-elevation-border-default-subtle, #e5e5e5);
+  border-radius: 4px; box-shadow: var(--tui-shadow); padding: 12px; font-size: 13px; line-height: 18px;
+}
+.tui-popover-title { font-weight: 600; margin-bottom: 6px; }
+/* A menu inside a popover (e.g. the Download choices): plain rows that
+   highlight on hover, no link underline — the TDS menu idiom. */
+.tui-menu { display: flex; flex-direction: column; min-width: 160px; margin: -6px -8px; }
+.tui-menu-item {
+  display: block; padding: 6px 12px; border-radius: 2px;
+  color: var(--color-font-default-default, #333); text-decoration: none; font-size: 14px; line-height: 20px;
+  background: none; border: 0; text-align: left; cursor: pointer; font-family: inherit;
+}
+.tui-menu-item:hover, .tui-menu-item:focus-visible { background: var(--color-elevation-surface-default-subtle, #f3f3f3); text-decoration: none; outline: none; }
+.tui-confirm-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 12px; }
+
+/* ---- dialog / drawer --------------------------------------------------- */
+.tui-backdrop {
+  position: fixed; inset: 0; z-index: 1400; background: rgba(0, 0, 0, 0.45);
+  display: flex; align-items: flex-start; justify-content: center; padding: 64px 16px;
+  overflow: auto;
+}
+.tui-dialog {
+  background: var(--color-elevation-surface-default-default, #fff);
+  border-radius: 4px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  width: 100%; max-width: 560px; display: flex; flex-direction: column; max-height: calc(100vh - 96px);
+}
+.tui-dialog-head, .tui-drawer-head {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 12px 20px;
+  background: var(--color-elevation-surface-default-subtle, #f3f3f3);
+  border-bottom: 1px solid var(--color-elevation-border-default-subtle, #e5e5e5);
+  font-size: 16px; line-height: 24px; font-weight: 600;
+  border-radius: 4px 4px 0 0;
+}
+.tui-dialog-body { padding: 20px; overflow: auto; }
+.tui-dialog-foot, .tui-drawer-foot {
+  display: flex; justify-content: flex-end; gap: 8px; padding: 12px 20px;
+  border-top: 1px solid var(--color-elevation-border-default-subtle, #e5e5e5);
+}
+.tui-drawer-foot { justify-content: flex-start; }
+.tui-close { background: none; border: 0; cursor: pointer; font-size: 16px; line-height: 1; color: var(--color-font-default-secondary, #5c5c5c); padding: 4px; border-radius: var(--tui-radius); display: inline-flex; }
+.tui-close:hover { background: var(--color-elevation-border-default-subtle, #e5e5e5); }
+.tui-drawer-backdrop { position: fixed; inset: 0; z-index: 1400; background: rgba(0, 0, 0, 0.45); }
+.tui-drawer {
+  position: fixed; top: 0; right: 0; bottom: 0; z-index: 1401;
+  background: var(--color-elevation-surface-default-default, #fff);
+  box-shadow: -4px 0 16px rgba(0, 0, 0, 0.2);
+  display: flex; flex-direction: column; max-width: 100vw;
+}
+.tui-drawer-head { border-radius: 0; }
+.tui-drawer-body { padding: 20px; overflow: auto; flex: 1; }
+
+/* ---- toast ---------------------------------------------------------------- */
+.tui-toasts { position: fixed; top: 16px; left: 50%; transform: translateX(-50%); z-index: 1700; display: flex; flex-direction: column; gap: 8px; align-items: center; pointer-events: none; }
+.tui-toast {
+  display: flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 4px;
+  background: var(--color-elevation-surface-default-default, #fff);
+  color: var(--color-font-default-default, #2e2e2e);
+  box-shadow: var(--tui-shadow); font-size: 14px; line-height: 20px; pointer-events: auto;
+  border: 1px solid var(--color-elevation-border-default-subtle, #e5e5e5);
+}
+.tui-toast-success .tui-toast-icon { color: var(--color-feedback-default-success, #22683e); }
+.tui-toast-error .tui-toast-icon { color: var(--color-feedback-default-error, #ba0517); }
+.tui-toast-warning .tui-toast-icon { color: var(--color-feedback-default-warning-neutral, #fcc003); }
+.tui-toast-info .tui-toast-icon { color: var(--color-feedback-default-info, #05628a); }
+
+/* ---- skeleton ----------------------------------------------------------- */
+.tui-skeleton-line { height: 14px; border-radius: var(--tui-radius); background: var(--color-elevation-border-default-subtle, #e5e5e5); margin: 8px 0; }
+.tui-skeleton-active .tui-skeleton-line { animation: tui-pulse 1.4s ease-in-out infinite; }
+@keyframes tui-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
+
+/* ---- table -------------------------------------------------------------- */
+/* A table wider than its place scrolls sideways. The scrollbar the browser
+   would draw sits under the table's last row, out of sight on a long page
+   (bug bash S6-2), so it is hidden and a bar that sticks to the bottom of
+   the window stands in for it; shadows on the clipped edges say there is
+   more. */
+.tui-table-scroller { position: relative; }
+.tui-table-wrap { overflow-x: auto; }
+.tui-table-overflow .tui-table-wrap { scrollbar-width: none; }
+.tui-table-overflow .tui-table-wrap::-webkit-scrollbar { display: none; }
+.tui-table-hscroll {
+  position: sticky; bottom: 0; z-index: 3; height: 12px; overflow-x: auto; overflow-y: hidden;
+  background: var(--color-elevation-surface-default-default, #fff);
+  border-top: 1px solid var(--color-elevation-border-default-subtle, #e5e5e5);
+}
+/* Always drawn, also where the system hides scrollbars until they move (macOS
+   overlay scrollbars): the bar is the one sign the table goes on. Chrome and
+   Safari ignore the ::-webkit-scrollbar rules once scrollbar-width is set, so
+   that property is only for browsers without them (Firefox). */
+@supports not selector(::-webkit-scrollbar) {
+  .tui-table-hscroll { scrollbar-width: thin; scrollbar-color: var(--color-font-default-subtle, #939393) transparent; }
+}
+.tui-table-hscroll::-webkit-scrollbar { height: 10px; }
+.tui-table-hscroll::-webkit-scrollbar-track { background: transparent; }
+.tui-table-hscroll::-webkit-scrollbar-thumb { background: var(--color-font-default-subtle, #939393); border-radius: 5px; border: 2px solid var(--color-elevation-surface-default-default, #fff); }
+.tui-table-more-left::before, .tui-table-more-right::after {
+  content: ""; position: absolute; top: 0; bottom: 0; width: 20px; pointer-events: none; z-index: 2;
+}
+.tui-table-more-left::before { left: 0; background: linear-gradient(to right, rgba(0, 0, 0, 0.14), rgba(0, 0, 0, 0)); }
+/* The right shadow sits against the pinned columns, where the clipping is. */
+.tui-table-more-right::after { right: var(--tui-pinned-width, 0px); background: linear-gradient(to left, rgba(0, 0, 0, 0.14), rgba(0, 0, 0, 0)); }
+.tui-table { border-collapse: separate; border-spacing: 0; width: 100%; font-size: 14px; line-height: 20px; }
+.tui-table th {
+  text-align: left; font-weight: 600; padding: 8px 12px;
+  background: var(--color-elevation-surface-default-subtle, #f3f3f3);
+  color: var(--color-font-default-secondary, #5c5c5c);
+  border-bottom: 1px solid var(--color-elevation-border-default-subtle, #e5e5e5);
+  white-space: nowrap;
+}
+/* A header that can be dragged onto another to move its column. */
+.tui-th-draggable { cursor: grab; }
+.tui-th-dragging { opacity: 0.5; }
+.tui-th-drag-over { box-shadow: inset 3px 0 0 var(--color-feedback-default-info, #05628a); }
+.tui-table td { padding: 10px 12px; border-bottom: 1px solid var(--color-elevation-border-default-subtle, #e5e5e5); vertical-align: top; background: var(--color-elevation-surface-default-default, #fff); }
+.tui-table-small th { padding: 6px 10px; } .tui-table-small td { padding: 8px 10px; }
+.tui-table tr:hover td { background: #fafafa; }
+.tui-table .tui-fixed-right { position: sticky; right: 0; z-index: 1; box-shadow: -6px 0 6px -6px rgba(0, 0, 0, 0.15); }
+.tui-table .tui-fixed-right-2 { right: var(--tui-fixed-right-2, 0); }
+.tui-table-empty { padding: 24px; text-align: center; color: var(--color-font-default-subtle, #939393); }
+.tui-table-expand { background: none; border: 1px solid var(--color-elevation-border-default-default, #c9c9c9); border-radius: var(--tui-radius); width: 18px; height: 18px; line-height: 1; cursor: pointer; padding: 0; color: var(--color-font-default-secondary, #5c5c5c); }
+.tui-table-expanded td { background: var(--color-elevation-surface-default-subtle, #f3f3f3); }
+.tui-pagination { display: flex; align-items: center; gap: 8px; justify-content: flex-end; padding: 10px 0; font-size: 12px; line-height: 24px; color: var(--color-font-default-secondary, #5c5c5c); flex-wrap: wrap; white-space: nowrap; }
+.tui-page-btn {
+  display: inline-flex; align-items: center; justify-content: center; flex: none; width: 24px; height: 24px; padding: 0; cursor: pointer;
+  font-size: 12px; line-height: 1; border-radius: var(--tui-radius);
+  border: 1px solid var(--color-elevation-border-default-default, #c9c9c9);
+  background: var(--color-elevation-surface-default-default, #fff);
+  color: var(--color-font-default-default, #2e2e2e);
+}
+.tui-page-btn:hover:not(:disabled) { border-color: var(--color-feedback-default-info, #05628a); color: var(--color-feedback-default-info, #05628a); }
+.tui-page-btn:focus-visible { outline: 2px solid var(--color-feedback-default-info, #05628a); outline-offset: 1px; }
+.tui-page-btn:disabled { cursor: default; color: var(--color-font-default-subtle, #939393); border-color: var(--color-elevation-border-default-subtle, #e5e5e5); }
+.tui-page-size { display: inline-flex; align-items: center; width: 104px; }
+.tui-pagination select { height: 24px; }
+.metrics-table .tui-table td { vertical-align: top; }
+
+/* ---- collapse (Disclosure with actions) --------------------------------- */
+.tui-collapse-item { position: relative; }
+.tui-collapse-item + .tui-collapse-item { margin-top: 4px; }
+.tui-collapse-extra { position: absolute; right: 12px; top: 10px; z-index: 2; display: inline-flex; gap: 4px; align-items: center; }
+.tui-collapse-item.tui-has-extra > button, .tui-collapse-item.tui-has-extra > div > button { padding-right: var(--tui-extra-width, 200px) !important; }
+.tui-collapse-static { padding: 10px 12px; }
+/* The summary row sits under the header text (past the chevron) and above
+   the body; the library's own, now empty, content box is not shown. */
+.tui-collapse-summary { padding: 0 12px 10px 26px; font-size: 12px; line-height: 16px; }
+.tui-collapse-item.tui-has-summary > div:first-child > button[aria-expanded] { padding-bottom: 4px; }
+.tui-collapse-item.tui-has-summary > div:first-child > button + * { display: none; }
+.tui-collapse-body { padding: 8px 12px 12px; }
+.tui-collapse-bordered { border: 1px solid var(--color-elevation-border-default-subtle, #e5e5e5); border-radius: 4px; }
+.tui-collapse-bordered .tui-collapse-item { border-bottom: 1px solid var(--color-elevation-border-default-subtle, #e5e5e5); margin: 0; }
+.tui-collapse-bordered .tui-collapse-item:last-child { border-bottom: 0; }
+
+/* ---- form --------------------------------------------------------------- */
+.tui-form-item { margin-bottom: 14px; }
+.tui-form-label { display: block; font-size: 12px; line-height: 16px; font-weight: 500; color: var(--color-font-default-secondary, #5c5c5c); margin-bottom: 4px; }
+.tui-form-required::before { content: "* "; color: var(--color-font-default-error, #ba0517); }
+.tui-form-extra { font-size: 12px; color: var(--color-font-default-subtle, #939393); margin-top: 4px; }
+.tui-form-error { font-size: 12px; color: var(--color-font-default-error, #ba0517); margin-top: 4px; }
+.tui-input-wrap { position: relative; display: block; }
+.tui-input-prefix { position: absolute; left: 8px; top: 50%; transform: translateY(-50%); color: var(--color-font-default-subtle, #939393); pointer-events: none; display: inline-flex; }
+
+/* Drawer forms sit on grey inner cards. The library's transparent fields
+   inherit that grey and look disabled; keep enabled fields white, including
+   on hover/focus, without changing disabled colors or dropdown arrow images. */
+.tui-drawer .tui-input-wrap input:not(:disabled),
+.tui-drawer .tui-select-wrap select:not(:disabled) {
+  background-color: var(--color-elevation-surface-default-default, #fff) !important;
+}
+
+/* ---- library widget sizing inside the kit ------------------------------- */
+/* The library's disclosure, text field and select size to their content;
+   inside a page section or a form they fill the row. */
+.tui-collapse-item > div:first-child { display: block; width: 100%; }
+.tui-collapse-item > div:first-child > button { width: 100% !important; text-align: left; box-sizing: border-box; }
+.tui-collapse-item > div:first-child > button > span { display: flex; align-items: flex-start; width: 100%; }
+.tui-collapse-item > div:first-child > button > span > span:last-child { flex: 1; min-width: 0; }
+.tui-collapse-bordered > .tui-collapse-item > div:first-child > button { padding-top: 12px; padding-bottom: 12px; }
+.tui-input-wrap > div, .tui-input-wrap > div > div { width: 100%; }
+.tui-input-wrap label:empty { display: none; }
+.tui-select-wrap { display: block; width: 100%; }
+.tui-select-wrap > div { width: 100%; }
+/* Size the bordered field, not just the native select inside it. A taller
+   select in the library's 24px field overflows and puts its text off-center. */
+.tui-select-wrap-small > div > div { height: 28px; }
+.tui-select-wrap select { width: 100%; }
+.tui-btn-icon-only { min-width: 0 !important; }
+
+/* The library paints a disclosure header mid-grey on hover and while expanded;
+   Tableau's own pages use the light surface grey on hover and leave an
+   expanded card white (UX review 2026-09-30). */
+.tui-collapse-item > div:first-child > button[aria-expanded] { background: transparent !important; transition: background 120ms; }
+.tui-collapse-item > div:first-child > button[aria-expanded]:hover { background: var(--color-elevation-surface-default-subtle, #f3f3f3) !important; }
+.tui-collapse-item > div:first-child > button[aria-expanded="true"] { background: transparent !important; }
+.tui-collapse-item > div:first-child > button[aria-expanded="true"]:hover { background: var(--color-elevation-surface-default-subtle, #f3f3f3) !important; }
+/* The library centres its chevron on a 22px first line; a header title uses
+   that line box so the chevron sits level with the text. */
+.tui-collapse-item .tui-collapse-title, .tui-collapse-item .tui-collapse-title > * { line-height: 22px; }
+.tui-collapse-item > div:first-child > button > span > svg { margin-top: 4px; }
+/* Tabs as a page section: the strip and the panel share the page's left
+   edge (the library indents the first tab and pads the panel), and tab
+   titles use the body size. */
+.tui-tabs [role="tab"] { font-size: 14px; }
+.tui-tabs [role="tab"]:first-child > div { padding-left: 0; }
+/* The library's panel scrolls on its own (overflow-y auto); the page is the
+   scroller here, and a sticky element inside the panel (the table's sideways
+   scrollbar) needs the panel to let it through. */
+.tui-tabs [role="tabpanel"] { padding: 0; overflow: visible; }
+/* Icon + text inside a tag: a real gap, not a space character. */
+.tui-tag-content { display: inline-flex; align-items: center; gap: 5px; vertical-align: middle; }

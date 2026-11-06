@@ -1,0 +1,110 @@
+{
+  "_generated_by": "gen_tfidf_cosine.py",
+  "_rounding_decimals": 10,
+  "_library": "scikit-learn (TfidfVectorizer + cosine_similarity), default params",
+  "cases": [
+    {
+      "name": "single_sentence",
+      "cosine_similarity_matrix": [
+        [
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "identical_sentences",
+      "cosine_similarity_matrix": [
+        [
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "zero_token_overlap",
+      "cosine_similarity_matrix": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "partial_overlap_three",
+      "cosine_similarity_matrix": [
+        [
+          1.0,
+          0.5363499141,
+          0.0
+        ],
+        [
+          0.5363499141,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "unicode_text",
+      "cosine_similarity_matrix": [
+        [
+          1.0,
+          1.0,
+          0.0
+        ],
+        [
+          1.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "realistic_narrative",
+      "cosine_similarity_matrix": [
+        [
+          1.0,
+          0.0676669486,
+          0.5913180455,
+          0.0
+        ],
+        [
+          0.0676669486,
+          1.0,
+          0.0676669486,
+          0.0
+        ],
+        [
+          0.5913180455,
+          0.0676669486,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  ]
+}

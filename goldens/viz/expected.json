@@ -1,0 +1,857 @@
+{
+  "_note": "compute_viz_quality_metrics(expected, actual, expected_reply=, actual_reply=)",
+  "cases": [
+    {
+      "name": "exact_match_bar",
+      "metrics": [
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "chartSimilarity",
+          "score": 1.0,
+          "explanation": "Chart family matches ('bar')."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "fieldSimilarity",
+          "score": 1.0,
+          "explanation": "Every field matches by name on every channel: Year, Sales (sum)."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "filterAccuracy",
+          "score": 1.0,
+          "explanation": "No filters expected and none produced."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "sortAccuracy",
+          "score": 1.0,
+          "explanation": "No sort expected; none produced."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "axisAccuracy",
+          "score": 1.0,
+          "explanation": "Axis fields match: X=Year, Y=Sales (sum)."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "aestheticAccuracy",
+          "score": 1.0,
+          "explanation": "All aesthetic channels match."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "tooltipAccuracy",
+          "score": 1.0,
+          "explanation": "Tooltip-encoded fields match."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "informationSimilarity",
+          "score": 0.33806170189140655,
+          "explanation": "Word overlap between the model's reply and the expected reply: 34%."
+        }
+      ]
+    },
+    {
+      "name": "chart_showme_plausible",
+      "metrics": [
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "chartSimilarity",
+          "score": 0.5,
+          "explanation": "Different chart family — expected 'line', got 'area'."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "fieldSimilarity",
+          "score": 1.0,
+          "explanation": "Every field matches by name on every channel: Order Date, Profit (sum)."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "filterAccuracy",
+          "score": 1.0,
+          "explanation": "No filters expected and none produced."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "sortAccuracy",
+          "score": 1.0,
+          "explanation": "No sort expected; none produced."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "axisAccuracy",
+          "score": 1.0,
+          "explanation": "Axis fields match: X=Order Date, Y=Profit (sum)."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "aestheticAccuracy",
+          "score": 1.0,
+          "explanation": "All aesthetic channels match."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "tooltipAccuracy",
+          "score": 1.0,
+          "explanation": "Tooltip-encoded fields match."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "informationSimilarity",
+          "score": 0.9166666666666669,
+          "explanation": "Word overlap between a description of the model's chart and a description of the expected chart: 92%."
+        }
+      ]
+    },
+    {
+      "name": "axis_swapped",
+      "metrics": [
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "chartSimilarity",
+          "score": 1.0,
+          "explanation": "Chart family matches ('bar')."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "fieldSimilarity",
+          "score": 1.0,
+          "explanation": "Every field matches by name on every channel: Category, Revenue (sum). X and Y are swapped for Category, Revenue (sum) (not penalized)."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "filterAccuracy",
+          "score": 1.0,
+          "explanation": "No filters expected and none produced."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "sortAccuracy",
+          "score": 1.0,
+          "explanation": "No sort expected; none produced."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "axisAccuracy",
+          "score": 1.0,
+          "explanation": "Axis fields match, with X and Y swapped (not penalized): X=Revenue (sum), Y=Category."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "aestheticAccuracy",
+          "score": 1.0,
+          "explanation": "All aesthetic channels match."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "tooltipAccuracy",
+          "score": 1.0,
+          "explanation": "Tooltip-encoded fields match."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "informationSimilarity",
+          "score": 1.0,
+          "explanation": "Word overlap between a description of the model's chart and a description of the expected chart: 100%."
+        }
+      ]
+    },
+    {
+      "name": "field_typo_and_filters",
+      "metrics": [
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "chartSimilarity",
+          "score": 1.0,
+          "explanation": "Chart family matches ('bar')."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "fieldSimilarity",
+          "score": 0.0,
+          "explanation": "Matched 0 of 2 expected fields by name (missing: Region, Sales; extra: Regionn, Sale). A similar name is not a match."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "filterAccuracy",
+          "score": 1.0,
+          "explanation": "Filters match: Region = East, West."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "sortAccuracy",
+          "score": 1.0,
+          "explanation": "No sort expected; none produced."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "axisAccuracy",
+          "score": 0.0,
+          "explanation": "Axis fields differ — expected X=Region, Y=Sales; got X=Regionn, Y=Sale."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "aestheticAccuracy",
+          "score": 1.0,
+          "explanation": "All aesthetic channels match."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "tooltipAccuracy",
+          "score": 1.0,
+          "explanation": "Tooltip-encoded fields match."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "informationSimilarity",
+          "score": 0.8685990362153793,
+          "explanation": "Word overlap between a description of the model's chart and a description of the expected chart: 87%."
+        }
+      ]
+    },
+    {
+      "name": "sort_added_by_model",
+      "metrics": [
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "chartSimilarity",
+          "score": 1.0,
+          "explanation": "Chart family matches ('bar')."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "fieldSimilarity",
+          "score": 1.0,
+          "explanation": "Every field matches by name on every channel: Category, Sales."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "filterAccuracy",
+          "score": 1.0,
+          "explanation": "No filters expected and none produced."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "sortAccuracy",
+          "score": 1.0,
+          "explanation": "Sort added by model (not required, not penalized)."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "axisAccuracy",
+          "score": 1.0,
+          "explanation": "Axis fields match: X=Category, Y=Sales."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "aestheticAccuracy",
+          "score": 1.0,
+          "explanation": "All aesthetic channels match."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "tooltipAccuracy",
+          "score": 1.0,
+          "explanation": "Tooltip-encoded fields match."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "informationSimilarity",
+          "score": 0.8981462390204985,
+          "explanation": "Word overlap between a description of the model's chart and a description of the expected chart: 90%."
+        }
+      ]
+    },
+    {
+      "name": "sort_missing_expected",
+      "metrics": [
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "chartSimilarity",
+          "score": 1.0,
+          "explanation": "Chart family matches ('bar')."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "fieldSimilarity",
+          "score": 1.0,
+          "explanation": "Every field matches by name on every channel: Category, Sales."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "filterAccuracy",
+          "score": 1.0,
+          "explanation": "No filters expected and none produced."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "sortAccuracy",
+          "score": 0.0,
+          "explanation": "Expected a sort, model produced none."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "axisAccuracy",
+          "score": 1.0,
+          "explanation": "Axis fields match: X=Category, Y=Sales."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "aestheticAccuracy",
+          "score": 1.0,
+          "explanation": "All aesthetic channels match."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "tooltipAccuracy",
+          "score": 1.0,
+          "explanation": "Tooltip-encoded fields match."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "informationSimilarity",
+          "score": 0.9999999999999998,
+          "explanation": "Word overlap between a description of the model's chart and a description of the expected chart: 100%."
+        }
+      ]
+    },
+    {
+      "name": "aesthetic_and_tooltip",
+      "metrics": [
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "chartSimilarity",
+          "score": 1.0,
+          "explanation": "Chart family matches ('scatterplot')."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "fieldSimilarity",
+          "score": 0.4,
+          "explanation": "Matched 2 of 4 expected fields by name (missing: Segment, Order ID; extra: Category). A similar name is not a match."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "filterAccuracy",
+          "score": 1.0,
+          "explanation": "No filters expected and none produced."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "sortAccuracy",
+          "score": 1.0,
+          "explanation": "No sort expected; none produced."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "axisAccuracy",
+          "score": 1.0,
+          "explanation": "Axis fields match: X=Sales, Y=Profit."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "aestheticAccuracy",
+          "score": 0.0,
+          "explanation": "Aesthetic channels — different color."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "tooltipAccuracy",
+          "score": 0.0,
+          "explanation": "Tooltip-encoded fields differ from expected."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "informationSimilarity",
+          "score": 0.8868440532177395,
+          "explanation": "Word overlap between a description of the model's chart and a description of the expected chart: 89%."
+        }
+      ]
+    },
+    {
+      "name": "no_actual_spec_force_zero",
+      "metrics": [
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "chartSimilarity",
+          "score": 0.0,
+          "explanation": "The model did not produce a chart, so there is nothing to compare."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "fieldSimilarity",
+          "score": 0.0,
+          "explanation": "The model did not produce a chart, so there is nothing to compare."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "filterAccuracy",
+          "score": 0.0,
+          "explanation": "The model did not produce a chart, so there is nothing to compare."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "sortAccuracy",
+          "score": 0.0,
+          "explanation": "The model did not produce a chart, so there is nothing to compare."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "axisAccuracy",
+          "score": 0.0,
+          "explanation": "The model did not produce a chart, so there is nothing to compare."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "aestheticAccuracy",
+          "score": 0.0,
+          "explanation": "The model did not produce a chart, so there is nothing to compare."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "tooltipAccuracy",
+          "score": 0.0,
+          "explanation": "The model did not produce a chart, so there is nothing to compare."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "informationSimilarity",
+          "score": 0.0,
+          "explanation": "Word overlap between the model's reply and the expected reply: 0%."
+        }
+      ]
+    },
+    {
+      "name": "inferred_axes_no_encoding",
+      "metrics": [
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "chartSimilarity",
+          "score": 1.0,
+          "explanation": "Chart family matches ('bar')."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "fieldSimilarity",
+          "score": 1.0,
+          "explanation": "Every field matches by name on every channel: Product, Quantity (sum)."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "filterAccuracy",
+          "score": 1.0,
+          "explanation": "No filters expected and none produced."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "sortAccuracy",
+          "score": 1.0,
+          "explanation": "No sort expected; none produced."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "axisAccuracy",
+          "score": 1.0,
+          "explanation": "Axis fields match: X=Product, Y=Quantity (sum)."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "aestheticAccuracy",
+          "score": 1.0,
+          "explanation": "All aesthetic channels match."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "tooltipAccuracy",
+          "score": 1.0,
+          "explanation": "Tooltip-encoded fields match."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "informationSimilarity",
+          "score": 1.0,
+          "explanation": "Word overlap between a description of the model's chart and a description of the expected chart: 100%."
+        }
+      ]
+    },
+    {
+      "name": "info_similarity_only",
+      "metrics": [
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "chartSimilarity",
+          "score": 1.0,
+          "explanation": "Chart family matches ('bar')."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "fieldSimilarity",
+          "score": 1.0,
+          "explanation": "Every field matches by name on every channel: Quarter, Revenue (sum)."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "filterAccuracy",
+          "score": 1.0,
+          "explanation": "No filters expected and none produced."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "sortAccuracy",
+          "score": 1.0,
+          "explanation": "No sort expected; none produced."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "axisAccuracy",
+          "score": 1.0,
+          "explanation": "Axis fields match: X=Quarter, Y=Revenue (sum)."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "aestheticAccuracy",
+          "score": 1.0,
+          "explanation": "All aesthetic channels match."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "tooltipAccuracy",
+          "score": 1.0,
+          "explanation": "Tooltip-encoded fields match."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "informationSimilarity",
+          "score": 0.5345224838248487,
+          "explanation": "Word overlap between the model's reply and the expected reply: 53%."
+        }
+      ]
+    },
+    {
+      "name": "every_filter_kind_dates_normalized",
+      "metrics": [
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "chartSimilarity",
+          "score": 1.0,
+          "explanation": "Chart family matches ('bar')."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "fieldSimilarity",
+          "score": 1.0,
+          "explanation": "Every field matches by name on every channel: Region, Sales (sum)."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "filterAccuracy",
+          "score": 0.5,
+          "explanation": "Matched 2 of 4 expected filters (missing: sum of Sales up to 450000000; Close Date in the previous 1 quarters)."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "sortAccuracy",
+          "score": 1.0,
+          "explanation": "No sort expected; none produced."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "axisAccuracy",
+          "score": 1.0,
+          "explanation": "Axis fields match: X=Region, Y=Sales (sum)."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "aestheticAccuracy",
+          "score": 1.0,
+          "explanation": "All aesthetic channels match."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "tooltipAccuracy",
+          "score": 1.0,
+          "explanation": "Tooltip-encoded fields match."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "informationSimilarity",
+          "score": 0.8320502943378437,
+          "explanation": "Word overlap between a description of the model's chart and a description of the expected chart: 83%."
+        }
+      ]
+    },
+    {
+      "name": "wildcard_field_and_filter",
+      "metrics": [
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "chartSimilarity",
+          "score": 1.0,
+          "explanation": "Chart family matches ('bar')."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "fieldSimilarity",
+          "score": 0.6666666666666666,
+          "explanation": "Matched 2 of 2 expected fields by name (extra: Segment). A similar name is not a match."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "filterAccuracy",
+          "score": 1.0,
+          "explanation": "Filters match: any field = Furniture."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "sortAccuracy",
+          "score": 1.0,
+          "explanation": "No sort expected; none produced."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "axisAccuracy",
+          "score": 0.5,
+          "explanation": "One axis field matches, one differs — expected X=ANY, Y=Profit; got X=Sub-Category, Y=Profit. A swap of X and Y would not be penalized."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "aestheticAccuracy",
+          "score": 0.0,
+          "explanation": "Aesthetic channels — extra color."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "tooltipAccuracy",
+          "score": 1.0,
+          "explanation": "Tooltip-encoded fields match."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "informationSimilarity",
+          "score": 0.2886751345948129,
+          "explanation": "Word overlap between the model's reply and a description of the expected chart: 29%."
+        }
+      ]
+    },
+    {
+      "name": "actual_no_fields_filter_still_compared",
+      "metrics": [
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "chartSimilarity",
+          "score": 0.0,
+          "explanation": "The model's chart has no fields, so there is no chart to compare."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "fieldSimilarity",
+          "score": 0.0,
+          "explanation": "The model's chart has no fields, so there is no chart to compare."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "filterAccuracy",
+          "score": 1.0,
+          "explanation": "Filters match: Region = East."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "sortAccuracy",
+          "score": 0.0,
+          "explanation": "The model's chart has no fields, so there is no chart to compare."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "axisAccuracy",
+          "score": 0.0,
+          "explanation": "The model's chart has no fields, so there is no chart to compare."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "aestheticAccuracy",
+          "score": 0.0,
+          "explanation": "The model's chart has no fields, so there is no chart to compare."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "tooltipAccuracy",
+          "score": 0.0,
+          "explanation": "The model's chart has no fields, so there is no chart to compare."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "informationSimilarity",
+          "score": 0.8485281374238569,
+          "explanation": "Word overlap between a description of the model's chart and a description of the expected chart: 85%."
+        }
+      ]
+    },
+    {
+      "name": "single_axis_kpi",
+      "metrics": [
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "chartSimilarity",
+          "score": 1.0,
+          "explanation": "Chart family matches ('text')."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "fieldSimilarity",
+          "score": 1.0,
+          "explanation": "Every field matches by name on every channel: Sales (sum)."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "filterAccuracy",
+          "score": 1.0,
+          "explanation": "No filters expected and none produced."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "sortAccuracy",
+          "score": 1.0,
+          "explanation": "No sort expected; none produced."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "axisAccuracy",
+          "score": 1.0,
+          "explanation": "Axis fields match: X=(none), Y=Sales (sum)."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "aestheticAccuracy",
+          "score": 1.0,
+          "explanation": "All aesthetic channels match."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "tooltipAccuracy",
+          "score": 1.0,
+          "explanation": "Tooltip-encoded fields match."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "informationSimilarity",
+          "score": 1.0,
+          "explanation": "Word overlap between a description of the model's chart and a description of the expected chart: 100%."
+        }
+      ]
+    },
+    {
+      "name": "one_axis_matches",
+      "metrics": [
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "chartSimilarity",
+          "score": 1.0,
+          "explanation": "Chart family matches ('bar')."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "fieldSimilarity",
+          "score": 0.25,
+          "explanation": "Matched 1 of 2 expected fields by name (missing: Region; extra: State, Profit). A similar name is not a match."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "filterAccuracy",
+          "score": 1.0,
+          "explanation": "No filters expected and none produced."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "sortAccuracy",
+          "score": 0.0,
+          "explanation": "Expected a sort, model produced none."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "axisAccuracy",
+          "score": 0.5,
+          "explanation": "One axis field matches, one differs — expected X=Region, Y=Sales (sum); got X=State, Y=Sales (sum). A swap of X and Y would not be penalized."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "aestheticAccuracy",
+          "score": 1.0,
+          "explanation": "All aesthetic channels match."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "tooltipAccuracy",
+          "score": 0.0,
+          "explanation": "Tooltip-encoded fields differ from expected."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "informationSimilarity",
+          "score": 0.7660323462854266,
+          "explanation": "Word overlap between a description of the model's chart and a description of the expected chart: 77%."
+        }
+      ]
+    },
+    {
+      "name": "no_expected_chart",
+      "metrics": []
+    },
+    {
+      "name": "describe_spec_both_sides",
+      "metrics": [
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "chartSimilarity",
+          "score": 1.0,
+          "explanation": "Chart family matches ('line')."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "fieldSimilarity",
+          "score": 0.6666666666666666,
+          "explanation": "Matched 2 of 3 expected fields by name (missing: Segment). A similar name is not a match."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "filterAccuracy",
+          "score": 0.0,
+          "explanation": "Matched 0 of 1 expected filters (missing: Order Date from 2024)."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "sortAccuracy",
+          "score": 0.0,
+          "explanation": "Expected a sort, model produced none."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "axisAccuracy",
+          "score": 1.0,
+          "explanation": "Axis fields match: X=Order Date, Y=Sales (sum)."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "aestheticAccuracy",
+          "score": 0.0,
+          "explanation": "Aesthetic channels — missing color."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "tooltipAccuracy",
+          "score": 1.0,
+          "explanation": "Tooltip-encoded fields match."
+        },
+        {
+          "metric_id": "VizQuality",
+          "metric_name": "informationSimilarity",
+          "score": 0.8542821429703302,
+          "explanation": "Word overlap between a description of the model's chart and a description of the expected chart: 85%."
+        }
+      ]
+    }
+  ]
+}

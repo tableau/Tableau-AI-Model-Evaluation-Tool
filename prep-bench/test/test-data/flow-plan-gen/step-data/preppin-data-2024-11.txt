@@ -1,0 +1,7 @@
+﻿<UserStepData>
+<Step name="Dates" id="42EE2633-3F9C-4B59-96C5-4C8385CC9E4A" type="Clean Step">
+Date (date)
+1st January
+31st December
+</Step>
+</UserStepData>

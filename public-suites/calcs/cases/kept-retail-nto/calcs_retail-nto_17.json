@@ -1,0 +1,25 @@
+{
+    "runner": "ect-server",
+    "datasource": "retail-nto",
+    "info": {
+        "originalValid": true
+    },
+    "inputs": [
+        {
+            "utterance": "create a calculated field that's the running total of the percent of total of the sum of sales",
+            "source": "user",
+            "expected": {
+                "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+                "calculatedFieldFormula": {
+                    "formula": "RUNNING_SUM(SUM([Sales]) / WINDOW_SUM(SUM([Sales])))",
+                    "caption": null
+                }
+            },
+            "tags": [
+                "add-explicit-calc-wordage",
+                "calc-category-table"
+            ]
+        }
+    ],
+    "id": "5f45a4a2-606d-4c96-a3f8-971aac54c3b7"
+}

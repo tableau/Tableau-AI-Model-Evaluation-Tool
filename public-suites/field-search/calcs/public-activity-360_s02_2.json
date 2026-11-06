@@ -1,0 +1,373 @@
+{
+ "test_id": "6b03d5afbdcaf09cc218016842f3ce8a",
+ "datasource": "public-activity-360",
+ "matched_fields": [
+  {
+   "name": "Subject",
+   "datatype": "string",
+   "sampleValues": [
+    "Follow-up call",
+    "Schedule demo",
+    "Review contract",
+    "Send proposal",
+    "Discovery call",
+    "Onboarding session",
+    "Product demo",
+    "Contract review"
+   ]
+  },
+  {
+   "name": "Activity Date",
+   "datatype": "date"
+  },
+  {
+   "name": "Task Status",
+   "datatype": "string",
+   "sampleValues": [
+    "Completed"
+   ]
+  },
+  {
+   "name": "Priority",
+   "datatype": "string",
+   "sampleValues": [
+    "Normal"
+   ]
+  },
+  {
+   "name": "Activity Type",
+   "datatype": "string",
+   "sampleValues": [
+    "Task",
+    "Event"
+   ]
+  },
+  {
+   "name": "Start Time",
+   "datatype": "date"
+  },
+  {
+   "name": "End Time",
+   "datatype": "date"
+  },
+  {
+   "name": "Duration (minutes)",
+   "datatype": "number"
+  },
+  {
+   "name": "Opportunity Name",
+   "datatype": "string",
+   "sampleValues": [
+    "Pro Desk - Capital Properties & Sons - Project Bid",
+    "Pro Desk - Granite Plumbing & HVAC Metro - FY2025",
+    "Pro Desk - Vanguard Turf Services Associates - FY2026",
+    "Pro Desk - Magnolia Parks & Recreation Associa - FY2026",
+    "Pro Desk - Kingston Contractors Metro - Project Bid",
+    "Pro Desk - Apex County Public Works - Project Bid",
+    "Pro Desk - Stonegate Realty Group South - FY2024",
+    "Pro Desk - Meridian Construction Co. North - FY2024",
+    "Pro Desk - Vanguard Electrical Services Metro - Project Bid",
+    "Pro Desk - Highpoint Homes & Sons - Add-on"
+   ]
+  },
+  {
+   "name": "Opportunity Stage",
+   "datatype": "string",
+   "sampleValues": [
+    "Closed Won",
+    "Closed Lost",
+    "Qualification",
+    "Prospecting",
+    "Needs Analysis",
+    "Value Proposition",
+    "Id. Decision Makers",
+    "Perception Analysis",
+    "Proposal/Price Quote",
+    "Negotiation/Review"
+   ]
+  },
+  {
+   "name": "Opportunity Amount",
+   "datatype": "number"
+  },
+  {
+   "name": "Opportunity Close Date",
+   "datatype": "date"
+  },
+  {
+   "name": "Opportunity Type",
+   "datatype": "string",
+   "sampleValues": [
+    "Project Bid",
+    "Bulk Material Order",
+    "New Pro Account",
+    "Installation Services"
+   ]
+  },
+  {
+   "name": "Lead Source",
+   "datatype": "string",
+   "sampleValues": [
+    "Partner",
+    "Web",
+    "Word of mouth",
+    "Trade Show",
+    "External Referral",
+    "Employee Referral",
+    "Advertisement",
+    "Public Relations",
+    "Seminar - Partner",
+    "Other"
+   ]
+  },
+  {
+   "name": "Opportunity Created Date",
+   "datatype": "date"
+  },
+  {
+   "name": "Activity Owner",
+   "datatype": "string",
+   "sampleValues": [
+    "Delfina Latchford",
+    "Hunter Lopez",
+    "Cynthia Delaney",
+    "Michael Moore",
+    "Jack O'Briant",
+    "Ed Jacobs",
+    "Brendan Sweed",
+    "Chris Selesnick",
+    "David Wieder",
+    "Toby Swindell"
+   ]
+  },
+  {
+   "name": "Activity Owner Manager",
+   "datatype": "string",
+   "sampleValues": [
+    "Chris Selesnick",
+    "David Wieder",
+    "Melanie Seite",
+    "Darren Powers",
+    "Jasper Cacioppo",
+    "Phillina Ober",
+    "Ionia McGrath",
+    "Muhammed Madeneni",
+    "Maria Etezadi"
+   ]
+  },
+  {
+   "name": "Activity Owner Title",
+   "datatype": "string",
+   "sampleValues": [
+    "Sales Representative Enterprise",
+    "Sales Representative Mid-Market",
+    "Sales Representative SMB",
+    "VP Sales Southeast",
+    "VP Sales Southwest",
+    "VP Sales Northeast",
+    "VP Sales Midwest",
+    "VP Sales West",
+    "VP Sales North",
+    "Head of Sales"
+   ]
+  },
+  {
+   "name": "Activity Owner Department",
+   "datatype": "string",
+   "sampleValues": [
+    "Sales"
+   ]
+  },
+  {
+   "name": "Activity Owner Division",
+   "datatype": "string",
+   "sampleValues": [
+    "Sales - Southeast",
+    "Sales - Southwest",
+    "Sales - Midwest",
+    "Sales - Northwest",
+    "Sales - Northeast",
+    "Sales - West",
+    "Sales - North",
+    "Sales - Global"
+   ]
+  },
+  {
+   "name": "Activity Owner State",
+   "datatype": "geographic",
+   "sampleValues": [
+    "Georgia",
+    "New Mexico",
+    "California",
+    "Ohio",
+    "British Columbia",
+    "Pennsylvania",
+    "Texas",
+    "North Carolina",
+    "Massachusetts",
+    "Oregon"
+   ]
+  },
+  {
+   "name": "Contact Name",
+   "datatype": "string",
+   "sampleValues": [
+    "Jessica Boyd",
+    "Hannah Mcmillan",
+    "Jason Leach",
+    "Kelly Lewis",
+    "Alyssa Jarvis",
+    "Francis Mcdowell",
+    "Steve Hernandez",
+    "Joseph Stanton",
+    "Benjamin Hodges",
+    "Austin Singh"
+   ]
+  },
+  {
+   "name": "Contact Title",
+   "datatype": "string",
+   "sampleValues": [
+    "Operations Director",
+    "General Manager",
+    "Owner"
+   ]
+  },
+  {
+   "name": "Account Name",
+   "datatype": "string",
+   "sampleValues": [
+    "Apex County Public Works",
+    "Vanguard Electrical Services Metro",
+    "Highpoint Homes & Sons",
+    "Great Lakes Property Group",
+    "Riverside Renovations & Sons",
+    "Evergreen Home Builders West",
+    "Jefferson Building Group",
+    "Stonegate Realty Group South",
+    "Cypress Services South",
+    "Sentinel Properties LLC East"
+   ]
+  },
+  {
+   "name": "Industry",
+   "datatype": "string",
+   "sampleValues": [
+    "Residential Construction",
+    "Property Management",
+    "Home Services",
+    "Real Estate Development",
+    "Commercial Construction",
+    "Landscaping & Grounds",
+    "Government / Municipal",
+    "Facility Management"
+   ]
+  },
+  {
+   "name": "Account Type",
+   "datatype": "string",
+   "sampleValues": [
+    "Enterprise",
+    "Mid-Market",
+    "SMB"
+   ]
+  },
+  {
+   "name": "Number of Employees",
+   "datatype": "number"
+  },
+  {
+   "name": "Annual Revenue",
+   "datatype": "number"
+  },
+  {
+   "name": "Billing City",
+   "datatype": "geographic",
+   "sampleValues": [
+    "Port Patriciamouth",
+    "East Nathanborough",
+    "Joseside",
+    "Thompsonton",
+    "Port Michael",
+    "Allenchester",
+    "Port Ashley",
+    "South Gina",
+    "Lake Brentmouth",
+    "South Ashley"
+   ]
+  },
+  {
+   "name": "Billing State",
+   "datatype": "geographic",
+   "sampleValues": [
+    "AZ",
+    "NY",
+    "NC",
+    "GA",
+    "TX",
+    "FL",
+    "WA",
+    "CA",
+    "OH",
+    "IL"
+   ]
+  },
+  {
+   "name": "Billing Country",
+   "datatype": "geographic",
+   "sampleValues": [
+    "United States"
+   ]
+  },
+  {
+   "name": "Days Before Close",
+   "datatype": "number"
+  },
+  {
+   "name": "Days Since Opportunity Created",
+   "datatype": "number"
+  },
+  {
+   "name": "Activity Month",
+   "datatype": "string",
+   "sampleValues": [
+    "2026-07",
+    "2026-08",
+    "2026-06",
+    "2024-09",
+    "2024-10",
+    "2024-11",
+    "2025-12",
+    "2025-11",
+    "2025-01",
+    "2026-02"
+   ]
+  },
+  {
+   "name": "Weekday",
+   "datatype": "string",
+   "sampleValues": [
+    "Monday",
+    "Tuesday",
+    "Thursday",
+    "Friday",
+    "Wednesday",
+    "Saturday",
+    "Sunday"
+   ]
+  },
+  {
+   "name": "Is Completed",
+   "datatype": "boolean",
+   "sampleValues": [
+    "true",
+    "false"
+   ]
+  },
+  {
+   "name": "Activities on Opportunity",
+   "datatype": "number"
+  }
+ ],
+ "calc_fields": []
+}

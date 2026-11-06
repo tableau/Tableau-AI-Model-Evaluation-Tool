@@ -1,0 +1,39 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-account-360",
+  "info": {
+    "originalValid": true,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "Create a calc to Bin max lifetime deal amount into High, medium, low buckets based on thresholds 100K and 200K",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "{IF [Largest Opportunity Amount] <= 100000 THEN 'Low' ELSEIF [Largest Opportunity Amount] > 100000 AND [Largest Opportunity Amount] <= 200000 THEN 'Medium' ELSE 'High' END}",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-logical",
+        "add-explicit-calc-wordage"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Breakdown by Category"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Binning",
+          "Op: Conditional Logic"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "d2d6112cc055e4b4bab9bb31fa351c42"
+}

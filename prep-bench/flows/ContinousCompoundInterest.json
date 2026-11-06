@@ -1,0 +1,52 @@
+{
+  "flow": "ContinousCompoundInterest.tflx",
+  "name": "ContinousCompoundInterest",
+  "inputs": [
+    {
+      "name": "Data",
+      "source": "Data.csv",
+      "fields": [
+        {
+          "name": "Account",
+          "datatype": "string",
+          "values": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G",
+            "H"
+          ]
+        },
+        {
+          "name": "Principal",
+          "datatype": "integer",
+          "values": [
+            "2093",
+            "31289",
+            "483",
+            "4839",
+            "349",
+            "989",
+            "1000",
+            "4785"
+          ]
+        },
+        {
+          "name": "Rate",
+          "datatype": "real",
+          "values": [
+            "0.04",
+            "0.07",
+            "0.09",
+            "0.1",
+            "0.03",
+            "0.05"
+          ]
+        }
+      ]
+    }
+  ]
+}

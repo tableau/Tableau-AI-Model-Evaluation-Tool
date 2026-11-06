@@ -1,0 +1,335 @@
+{
+ "test_id": "7935d272c9893b5807d55410d73ffa3d",
+ "datasource": "public-retail-360",
+ "matched_fields": [
+  {
+   "name": "Item Name",
+   "datatype": "string",
+   "sampleValues": [
+    "Drywall Primer 1 Gallon",
+    "Interior Satin Paint Custom Color 1 Gallon",
+    "Interior Flat Paint White 1 Gallon",
+    "Epoxy Floor Coating Kit 1-Car Garage",
+    "Exterior Paint Custom Color 5 Gallon",
+    "9\" Roller Frame & Cover Kit",
+    "Deck & Fence Stain Cedar 1 Gallon",
+    "Exterior Satin Paint Custom Color 1 Gallon",
+    "Concrete & Masonry Sealer 1 Gallon",
+    "Interior Eggshell Paint Custom Color 1 Gallon"
+   ]
+  },
+  {
+   "name": "Quantity",
+   "datatype": "number"
+  },
+  {
+   "name": "Unit Price",
+   "datatype": "number"
+  },
+  {
+   "name": "Line Total",
+   "datatype": "number"
+  },
+  {
+   "name": "Product Name",
+   "datatype": "string",
+   "sampleValues": [
+    "Drywall Primer 1 Gallon",
+    "Interior Satin Paint Custom Color 1 Gallon",
+    "Interior Flat Paint White 1 Gallon",
+    "Epoxy Floor Coating Kit 1-Car Garage",
+    "Exterior Paint Custom Color 5 Gallon",
+    "9\" Roller Frame & Cover Kit",
+    "Deck & Fence Stain Cedar 1 Gallon",
+    "Exterior Satin Paint Custom Color 1 Gallon",
+    "Concrete & Masonry Sealer 1 Gallon",
+    "Interior Eggshell Paint Custom Color 1 Gallon"
+   ]
+  },
+  {
+   "name": "Product Code",
+   "datatype": "string",
+   "sampleValues": [
+    "DD-PNT-007",
+    "DD-PNT-003",
+    "DD-PNT-001",
+    "DD-PNT-010",
+    "DD-PNT-006",
+    "DD-PNT-011",
+    "DD-PNT-008",
+    "DD-PNT-005",
+    "DD-PNT-009",
+    "DD-PNT-002"
+   ]
+  },
+  {
+   "name": "Product Family",
+   "datatype": "string",
+   "sampleValues": [
+    "Paint & Coatings",
+    "Tools & Hardware",
+    "Doors & Windows",
+    "Electrical",
+    "Plumbing",
+    "Lumber & Building Materials",
+    "Flooring",
+    "HVAC",
+    "Kitchen & Bath",
+    "Appliances"
+   ]
+  },
+  {
+   "name": "Product Active",
+   "datatype": "boolean",
+   "sampleValues": [
+    "true",
+    "false"
+   ]
+  },
+  {
+   "name": "Order Id",
+   "datatype": "string",
+   "sampleValues": [
+    "ORD-DD-028737",
+    "ORD-DD-018562",
+    "ORD-DD-013985",
+    "ORD-DD-018850",
+    "ORD-DD-018849",
+    "ORD-DD-013991",
+    "ORD-DD-013993",
+    "ORD-DD-023819",
+    "ORD-DD-023821",
+    "ORD-DD-023823"
+   ]
+  },
+  {
+   "name": "Order Date",
+   "datatype": "date"
+  },
+  {
+   "name": "Order Time",
+   "datatype": "date"
+  },
+  {
+   "name": "Order Total",
+   "datatype": "number"
+  },
+  {
+   "name": "Order Status",
+   "datatype": "string",
+   "sampleValues": [
+    "Completed",
+    "Cancelled",
+    "Returned"
+   ]
+  },
+  {
+   "name": "Order Type",
+   "datatype": "string",
+   "sampleValues": [
+    "In-Store",
+    "Pro Desk",
+    "Online",
+    "Phone"
+   ]
+  },
+  {
+   "name": "Store",
+   "datatype": "string",
+   "sampleValues": [
+    "Data Depot - Los Angeles South",
+    "Data Depot - Chicago North",
+    "Data Depot - New York South",
+    "Data Depot - Atlanta North",
+    "Data Depot - Miami North",
+    "Data Depot - Denver North",
+    "Data Depot - Columbus North",
+    "Data Depot - Baltimore North",
+    "Data Depot - Seattle North",
+    "Data Depot - Minneapolis North"
+   ]
+  },
+  {
+   "name": "Store Region",
+   "datatype": "string",
+   "sampleValues": [
+    "West",
+    "Midwest",
+    "South",
+    "Northeast"
+   ]
+  },
+  {
+   "name": "Store Type",
+   "datatype": "string",
+   "sampleValues": [
+    "Urban",
+    "Rural",
+    "Suburban"
+   ]
+  },
+  {
+   "name": "Store City",
+   "datatype": "geographic",
+   "sampleValues": [
+    "New York",
+    "Chicago",
+    "Los Angeles",
+    "Atlanta",
+    "Miami",
+    "Denver",
+    "Columbus",
+    "Baltimore",
+    "Seattle",
+    "Minneapolis"
+   ]
+  },
+  {
+   "name": "Store State",
+   "datatype": "geographic",
+   "sampleValues": [
+    "TX",
+    "CA",
+    "NY",
+    "IL",
+    "MO",
+    "PA",
+    "GA",
+    "FL",
+    "CO",
+    "OH"
+   ]
+  },
+  {
+   "name": "Store Square Footage",
+   "datatype": "number"
+  },
+  {
+   "name": "Store Open Date",
+   "datatype": "date"
+  },
+  {
+   "name": "Customer Name",
+   "datatype": "string",
+   "sampleValues": [
+    "James Smith",
+    "Kevin Smith",
+    "Richard Jones",
+    "Michael Martin",
+    "Ashley Smith",
+    "Michael Miller",
+    "Amanda Bishop",
+    "Michael Johnson",
+    "Christopher Smith",
+    "David Smith"
+   ]
+  },
+  {
+   "name": "Customer City",
+   "datatype": "geographic",
+   "sampleValues": [
+    "South Michael",
+    "Michaelmouth",
+    "West James",
+    "North Michael",
+    "Lake John",
+    "New David",
+    "West Michael",
+    "Lake Daniel",
+    "East Jessica",
+    "East David"
+   ]
+  },
+  {
+   "name": "Customer State",
+   "datatype": "geographic",
+   "sampleValues": [
+    "AZ",
+    "GA",
+    "NY",
+    "WA",
+    "TX",
+    "IL",
+    "CA",
+    "FL",
+    "NC",
+    "OH"
+   ]
+  },
+  {
+   "name": "Customer Title",
+   "datatype": "string",
+   "sampleValues": [
+    "Operations Director",
+    "Owner",
+    "General Manager"
+   ]
+  },
+  {
+   "name": "Customer Birthdate",
+   "datatype": "date"
+  },
+  {
+   "name": "Review Rating",
+   "datatype": "number"
+  },
+  {
+   "name": "Review Date",
+   "datatype": "date"
+  },
+  {
+   "name": "Customer Orders",
+   "datatype": "number"
+  },
+  {
+   "name": "Customer Lifetime Value",
+   "datatype": "number"
+  },
+  {
+   "name": "Customer First Order",
+   "datatype": "date"
+  },
+  {
+   "name": "Customer Last Order",
+   "datatype": "date"
+  },
+  {
+   "name": "Items in Order",
+   "datatype": "number"
+  },
+  {
+   "name": "Order Month",
+   "datatype": "string",
+   "sampleValues": [
+    "2025-08",
+    "2025-09",
+    "2026-02",
+    "2026-03",
+    "2024-09",
+    "2025-10",
+    "2025-02",
+    "2026-01",
+    "2025-03",
+    "2024-10"
+   ]
+  },
+  {
+   "name": "Order Weekday",
+   "datatype": "string",
+   "sampleValues": [
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Saturday",
+    "Friday",
+    "Sunday",
+    "Monday"
+   ]
+  },
+  {
+   "name": "Days Since Store Opened",
+   "datatype": "number"
+  }
+ ],
+ "calc_fields": []
+}

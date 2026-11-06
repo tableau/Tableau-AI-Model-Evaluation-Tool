@@ -1,0 +1,48 @@
+{
+  "flow": "ABCD.tflx",
+  "name": "ABCD",
+  "inputs": [
+    {
+      "name": "Data 2",
+      "source": "Data.csv",
+      "fields": [
+        {
+          "name": "A",
+          "datatype": "string",
+          "values": [
+            "Fun",
+            "by",
+            "big"
+          ]
+        },
+        {
+          "name": "B",
+          "datatype": "string",
+          "values": [
+            "with",
+            "dr",
+            "bang"
+          ]
+        },
+        {
+          "name": "C",
+          "datatype": "string",
+          "values": [
+            "flags",
+            "sheldon",
+            "theory"
+          ]
+        },
+        {
+          "name": "D",
+          "datatype": "string",
+          "values": [
+            "presented",
+            "cooper",
+            "leonard"
+          ]
+        }
+      ]
+    }
+  ]
+}

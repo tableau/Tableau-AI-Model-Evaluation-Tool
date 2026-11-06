@@ -1,0 +1,37 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-account-360",
+  "info": {
+    "requirement-id": "F-250-6423a2a14cbb7e5c",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "compare active sales to sales pipeline in a single bar and sliced by primary store region",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Comparison",
+          "Intent: Breakdown by Category",
+          "Intent: Aggregate Measurement",
+          "Intent: Composition / Share"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Group By Dimension"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    }
+  ],
+  "id": "36071afd80448941f33152fd31db246d"
+}

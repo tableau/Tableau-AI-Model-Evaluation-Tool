@@ -1,0 +1,26 @@
+{
+    "runner": "ect-server",
+    "datasource": "streaming_key_metrics",
+    "info": {
+        "originalValid": true
+    },
+    "inputs": [
+        {
+            "utterance": "Create a calculated field named 'Percent of Total Registrations' to calculate the percentage of 'Registrations' for each 'Platform' relative to the total 'Registrations'.",
+            "source": "user",
+            "expected": {
+                "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+                "calculatedFieldFormula": {
+                    "formula": "SUM([Registrations]) / TOTAL(SUM([Registrations]))",
+                    "caption": null
+                }
+            },
+            "tags": [
+                "add-explicit-calc-wordage",
+                "multi-step",
+                "calc-category-table"
+            ]
+        }
+    ],
+    "id": "8a30132f-8c98-48a6-9791-818335b4e9e7"
+}

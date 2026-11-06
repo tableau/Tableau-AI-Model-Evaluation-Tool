@@ -1,0 +1,35 @@
+- description: 'Test proper usage of ROW_NUMBER and ORDERBY'
+  id: rank-2
+  utterances:
+  - canonical: 'Create a unique sorting key so I can sort my data by Sales. I want to see which states are generating the most sales'
+    expected-calc: '{ ORDERBY [Sales] DESC : ROW_NUMBER() }'
+  flow-name: 'SuperstoreOneOutput.tflx'
+  field-metadata: >-
+    'State' (string), 'Sales' (int)
+- description: 'Test most basic usage of RANK function'
+  id: rank-3
+  utterances:
+  - canonical: 'Rank my rows by sales, highest sales first'
+    expected-calc: '{ ORDERBY [Sales] DESC : RANK() }'
+    acceptable-calcs:
+    - '{ ORDERBY [Sales] DESC : ROW_NUMBER() }'
+    - '{ ORDERBY [Sales] DESC : RANK_DENSE() }'
+  flow-name: 'SuperstoreOneOutput.tflx'
+  field-metadata: >-
+    'Sales' (int)
+- description: 'Test RANK (standard competition ranking: 1, 2, 2, 4)'
+  id: rank-4
+  utterances:
+  - canonical: 'Rank the results of the race, but make sure if two teams tied, they have the same rank. But if two teams tie for 2nd, the team after is in 4th, not 3rd.'
+    expected-calc: '{ ORDERBY [Finishing Time] ASC : RANK() }'
+  flow-name: 'RaceRank.tflx'
+  field-metadata: >-
+    'Team' (string), 'Finishing Time' (number)
+- description: 'Test most basic usage of RANK_DENSE function'
+  id: rank-5
+  utterances:
+  - canonical: 'Rank the results of the race, but make sure if two teams tied, they have the same rank. But if two teams tie for 2nd, the team after is in 3rd, not 4th.'
+    expected-calc: '{ ORDERBY [Finishing Time] ASC : RANK_DENSE() }'
+  flow-name: 'RaceRank.tflx'
+  field-metadata: >-
+    'Team' (string), 'Finishing Time' (number)

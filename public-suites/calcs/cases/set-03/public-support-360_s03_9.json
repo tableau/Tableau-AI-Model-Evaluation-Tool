@@ -1,0 +1,41 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-support-360",
+  "info": {
+    "originalValid": false,
+    "reasonInvalid": "The calculation cannot be performed because the `Speciality` field does not contain any dental-related terms.",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "create calcs to compute number of urgent cases related to defective product",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "COUNTD(IF [Priority] = 'F' AND [Case Type] = 'DENTIST' THEN [Number of Employees] END)",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-logical"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Conditional Logic",
+          "Op: Filter - Categorical",
+          "Op: Aggregation (Default)",
+          "Op: Aggregation (Non-Default)"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "7659aaa5d37897b75ad080e14e37dba2"
+}

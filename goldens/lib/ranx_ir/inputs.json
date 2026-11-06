@@ -1,0 +1,48 @@
+{
+  "description": "ranx ranking reference inputs for hit_rate@1/5/10, MAP, MRR, precision, and recall. Each case uses one query q1. Relevance grades are non-negative integers; retrieval scores sort descending. Equal-score ties and empty rankings are covered.",
+  "metrics": ["hit_rate@1", "hit_rate@5", "hit_rate@10", "map", "mrr", "precision", "recall"],
+  "cases": [
+    {
+      "name": "clean_top_ranked_relevant",
+      "note": "Two relevant docs; both ranked at the top by score. Ideal ordering.",
+      "qrels": {"q1": {"dA": 1, "dB": 1}},
+      "run": {"q1": {"dA": 0.9, "dB": 0.8, "dC": 0.3, "dD": 0.1}}
+    },
+    {
+      "name": "relevant_ranked_low",
+      "note": "Single relevant doc ranked last among 4 retrieved -> mrr = 1/4, hit_rate@1 = 0, hit_rate@5 = 1.",
+      "qrels": {"q1": {"dD": 1}},
+      "run": {"q1": {"dA": 0.9, "dB": 0.8, "dC": 0.7, "dD": 0.6}}
+    },
+    {
+      "name": "tie_equal_scores",
+      "note": "Relevant dR and non-relevant dX have IDENTICAL scores. Captures ranx tie-breaking behavior explicitly (pre-flagged divergence point).",
+      "qrels": {"q1": {"dR": 1}},
+      "run": {"q1": {"dX": 0.5, "dR": 0.5, "dY": 0.2}}
+    },
+    {
+      "name": "tie_all_equal",
+      "note": "All three retrieved docs share the same score; one is relevant. Extreme tie case.",
+      "qrels": {"q1": {"dR": 1}},
+      "run": {"q1": {"dA": 0.5, "dB": 0.5, "dR": 0.5}}
+    },
+    {
+      "name": "graded_relevance",
+      "note": "Graded (non-binary) relevance grades.",
+      "qrels": {"q1": {"dA": 2, "dB": 1, "dC": 3}},
+      "run": {"q1": {"dC": 0.9, "dA": 0.7, "dB": 0.5, "dD": 0.2}}
+    },
+    {
+      "name": "empty_run",
+      "note": "Query has relevant docs in qrels but the run retrieved nothing for it. make_comparable=True governs handling.",
+      "qrels": {"q1": {"dA": 1}},
+      "run": {"q1": {}}
+    },
+    {
+      "name": "no_relevant_retrieved",
+      "note": "Run retrieved only non-relevant docs; the relevant doc dZ was not retrieved.",
+      "qrels": {"q1": {"dZ": 1}},
+      "run": {"q1": {"dA": 0.9, "dB": 0.5}}
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+- description: 'Check whether Prep can correctly compute std deviation using LOD'
+  id: aggregate-function-1
+  utterances:
+  - canonical: >-
+      What's the standard deviation of our profit per region ?
+    expected-calc: '{FIXED [Region] : STDEV([Profit])}'
+    acceptable-calcs:
+    - '{FIXED [Region] : STDEVP([Profit])}'
+  flow-name: 'SuperstoreOneOutput.tflx'
+  field-metadata: >-
+    'Region' (string), 'Profit' (int)
+- description: 'Check whether Prep can correctly compute population variance using LOD'
+  id: aggregate-function-2
+  utterances:
+  - canonical: >-
+      What's the variance of our profit per region ? Btw, these profits representation the entire population (our entire sales data).
+    expected-calc: '{FIXED [Region] : VARP([Profit])}'
+  flow-name: 'SuperstoreOneOutput.tflx'
+  field-metadata: >-
+    'Region' (string), 'Profit' (int)
+- description: 'Example of getting a percentile based on another field'
+  id: aggregate-function-3
+  utterances:
+  - canonical: >-
+      What's the 95th percentile of queue times we're seeing processing orders by order type?
+    expected-calc: '{FIXED [Order Type] : PERCENTILE([Queue Time - Seconds], 0.95)}'
+  flow-name: 'QueueTimes.tflx'
+  field-metadata: >-
+    'Order Type' (string), 'Order' (string), 'Queue Time - Seconds' (int)

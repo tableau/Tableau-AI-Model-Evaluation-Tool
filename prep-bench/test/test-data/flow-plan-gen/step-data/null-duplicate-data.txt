@@ -1,0 +1,60 @@
+<UserStepData>
+<Step name="Animals" id="602FD89E-00A9-4398-835E-A38F4E9BA288" type="Clean Step">
+Animal (string),Species (string),Habitat (string),Diet (string),Average Lifespan (Years) (int)
+Dolphin,Delphinidae,Desert,Omnivore,15
+Tiger,Panthera tigris,Savannah,Carnivore,50
+Elephant,Loxodonta,Mountain,Omnivore,20
+Penguin,Aptenodytes,Savannah,Omnivore,25
+Kangaroo,Macropus,Forest,Herbivore,10
+Lion,Panthera leo,Desert,Carnivore,35
+Dolphin,Delphinidae,Jungle,Omnivore,10
+Kangaroo,Macropus,Forest,Carnivore,30
+Tiger,Panthera tigris,Desert,Herbivore,40
+Kangaroo,Macropus,Grasslands,,30
+Elephant,Loxodonta,Savannah,Herbivore,35
+Koala,Phascolarctos,Savannah,Herbivore,40
+Tiger,Panthera tigris,Desert,Carnivore,12
+Koala,Phascolarctos,Jungle,Herbivore,40
+Cheetah,Acinonyx jubatus,Mountain,Herbivore,40
+Lion,Panthera leo,Jungle,Omnivore,10
+Elephant,Loxodonta,Grasslands,Carnivore,70
+Tiger,Panthera tigris,Jungle,Herbivore,35
+Elephant,Loxodonta,Coastal,Carnivore,50
+Koala,Phascolarctos,Jungle,Omnivore,30
+Lion,Panthera leo,Grasslands,Omnivore,10
+Cheetah,Acinonyx jubatus,Coastal,Herbivore,12
+Panda,Ailuropoda,Savannah,Omnivore,25
+Koala,Phascolarctos,Jungle,Herbivore,30
+Tiger,Panthera tigris,Antarctica,Omnivore,25
+Dolphin,Delphinidae,Grasslands,Omnivore,15
+Koala,Phascolarctos,Mountain,Omnivore,20
+Tiger,Panthera tigris,Mountain,Omnivore,15
+Panda,Ailuropoda,Grasslands,Omnivore,50
+Dolphin,Delphinidae,Mountain,Omnivore,15
+Giraffe,Giraffa,Mountain,Herbivore,15
+Cheetah,Acinonyx jubatus,Desert,Omnivore,50
+Penguin,Aptenodytes,Antarctica,Carnivore,12
+Cheetah,Acinonyx jubatus,Forest,Carnivore,30
+Giraffe,Giraffa,Grasslands,Herbivore,40
+,Macropus,Coastal,Carnivore,15
+Tiger,Panthera tigris,Savannah,Herbivore,12
+Lion,Panthera leo,Coastal,Omnivore,25
+Dolphin,Delphinidae,Grasslands,Omnivore,30
+,Delphinidae,Mountain,Carnivore,12
+Elephant,Loxodonta,Coastal,Carnivore,70
+Elephant,Loxodonta,Coastal,Herbivore,35
+Kangaroo,Macropus,Jungle,Carnivore,50
+,Acinonyx jubatus,Coastal,Omnivore,15
+Cheetah,Acinonyx jubatus,Desert,Omnivore,25
+,Panthera leo,Coastal,Omnivore,50
+Kangaroo,Macropus,Coastal,Herbivore,40
+Giraffe,Giraffa,Savannah,Carnivore,30
+Elephant,Loxodonta,Antarctica,Carnivore,25
+Dolphin,Delphinidae,Savannah,Omnivore,35
+Tiger,Panthera tigris,Desert,Carnivore,12
+Koala,Phascolarctos,Savannah,Herbivore,40
+Elephant,Loxodonta,Grasslands,Carnivore,70
+Lion,Panthera leo,Jungle,Omnivore,10
+,Delphinidae,Mountain,Carnivore,12
+</Step>
+</UserStepData>

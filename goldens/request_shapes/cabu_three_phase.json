@@ -1,0 +1,69 @@
+{
+  "description": "cabu dashboard-QA: 3-phase POST create-conversation → POST utterance → GET stream, all under /analytics-assistant/cabu/conversations.",
+  "adapter": "cabu",
+  "covers": [
+    "cabu-dashboard-qa (dashboard-qa-*, cabu-multi-turn-smoke)"
+  ],
+  "requests": [
+    {
+      "method": "POST",
+      "pathAndQuery": "/analytics-assistant/cabu/conversations",
+      "headerNames": [
+        "accept",
+        "content-type",
+        "cookie"
+      ],
+      "body": {
+        "dashboardDatasources": [
+          {
+            "datasourceLuid": "ds-golden",
+            "name": "Superstore"
+          }
+        ],
+        "sessionId": "",
+        "traceId": "traceid00000001",
+        "workbookLuid": "wb-golden"
+      }
+    },
+    {
+      "method": "POST",
+      "pathAndQuery": "/analytics-assistant/cabu/conversations/conv-golden/utterances",
+      "headerNames": [
+        "accept",
+        "content-type",
+        "cookie"
+      ],
+      "body": {
+        "utterance": {
+          "content": "what are the top products?",
+          "source": "user"
+        },
+        "localization": {
+          "locale": "en_US",
+          "language": "en"
+        },
+        "scope": "sc",
+        "datasources": [
+          {
+            "sdmName": "sdm1",
+            "datasourceLuid": "sdm1"
+          }
+        ],
+        "parentLuid": "parent-golden",
+        "sessionId": "",
+        "traceId": "traceid00000002"
+      }
+    },
+    {
+      "method": "GET",
+      "pathAndQuery": "/analytics-assistant/cabu/conversations/conv-golden/utterances/utt-golden/stream",
+      "headerNames": [
+        "accept",
+        "cookie",
+        "x-b3-traceid",
+        "x-xsrf-token"
+      ],
+      "body": null
+    }
+  ]
+}

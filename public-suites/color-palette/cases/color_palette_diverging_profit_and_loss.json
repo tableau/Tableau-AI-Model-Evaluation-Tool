@@ -1,0 +1,23 @@
+{
+    "runner": "color-palettes-server",
+    "info": {
+        "version": "1.0.0"
+    },
+    "inputs": [
+        {
+            "utterance": "Profit and loss",
+            "source": "user",
+            "arguments": {
+                "palette_type": "diverging"
+            },
+            "expected": {
+                "colorPalette": []
+            },
+            "tags": [
+                "color-palette-diverging"
+            ]
+        }
+    ],
+    "id": "a3b4c5d6-e7f8-9012-abcd-345678901234"
+}
+

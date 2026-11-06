@@ -1,0 +1,243 @@
+{
+  "_comment": "Hand-built expected/actual fixture pairs checked against independent reference scores in expected.json. Each case carries a stable datasource id whose fields are supplied inline under datasources. The native computeMetric registry is checked by packages/evals/src/metrics/golden_parity.test.ts.",
+
+  "datasources": {
+    "taxi": {
+      "fields": [
+        { "caption": "Company", "datatype": "string" },
+        { "caption": "Trip Seconds", "datatype": "real" },
+        { "caption": "Trip Miles", "datatype": "real" },
+        { "caption": "Fare", "datatype": "real" },
+        { "caption": "Payment Type", "datatype": "string" }
+      ]
+    },
+    "retail": {
+      "fields": [
+        { "caption": "Sales", "datatype": "real" },
+        { "caption": "Region", "datatype": "string" },
+        { "caption": "Category", "datatype": "string" },
+        { "caption": "Profit", "datatype": "real" }
+      ]
+    }
+  },
+
+  "equals_cases": [
+    {
+      "name": "equals_exact_intent",
+      "utterance": "create a calc",
+      "datasource": "taxi",
+      "expected": "NLQ_TO_NEW_CALCULATED_FIELD",
+      "actual": "NLQ_TO_NEW_CALCULATED_FIELD"
+    },
+    {
+      "name": "equals_mismatch_intent",
+      "utterance": "create a calc",
+      "datasource": "taxi",
+      "expected": "NLQ_TO_NEW_CALCULATED_FIELD",
+      "actual": "NLQ_TO_VIZ"
+    },
+    {
+      "name": "equals_actual_null",
+      "utterance": "create a calc",
+      "datasource": "taxi",
+      "expected": "NLQ_TO_NEW_CALCULATED_FIELD",
+      "actual": null
+    },
+    {
+      "name": "equals_object_exact",
+      "utterance": "create a calc",
+      "datasource": "taxi",
+      "expected": { "formula": "SUM([Sales])", "caption": null },
+      "actual": { "formula": "SUM([Sales])", "caption": null }
+    },
+    {
+      "name": "equals_object_diff",
+      "utterance": "create a calc",
+      "datasource": "taxi",
+      "expected": { "formula": "SUM([Sales])", "caption": null },
+      "actual": { "formula": "AVG([Sales])", "caption": null }
+    }
+  ],
+
+  "calc_validity_cases": [
+    {
+      "name": "calc_validity_valid_simple",
+      "utterance": "sum of fare",
+      "datasource": "taxi",
+      "actual_formula": "SUM([Fare])"
+    },
+    {
+      "name": "calc_validity_invalid_field",
+      "utterance": "sum of nonexistent",
+      "datasource": "taxi",
+      "actual_formula": "SUM([Nonexistent])"
+    },
+    {
+      "name": "calc_validity_syntax_error",
+      "utterance": "broken",
+      "datasource": "taxi",
+      "actual_formula": "SUM([Fare]"
+    },
+    {
+      "name": "calc_validity_empty_string",
+      "utterance": "empty",
+      "datasource": "taxi",
+      "actual_formula": ""
+    },
+    {
+      "name": "calc_validity_null",
+      "utterance": "null formula",
+      "datasource": "taxi",
+      "actual_formula": null
+    }
+  ],
+
+  "calc_field_validity_cases": [
+    {
+      "name": "cfv_all_valid_fields",
+      "utterance": "sum of fare per company",
+      "datasource": "taxi",
+      "actual_formula": "{ FIXED [Company] : SUM([Fare]) }"
+    },
+    {
+      "name": "cfv_one_invalid_field",
+      "utterance": "mix valid + invalid",
+      "datasource": "taxi",
+      "actual_formula": "SUM([Fare]) + SUM([Nonexistent])"
+    },
+    {
+      "name": "cfv_empty_formula",
+      "utterance": "empty",
+      "datasource": "taxi",
+      "actual_formula": ""
+    }
+  ],
+
+  "calc_field_accuracy_cases": [
+    {
+      "name": "cfa_exact_fields",
+      "utterance": "avg trip seconds per company",
+      "datasource": "taxi",
+      "expected_formula": "{ FIXED [Company] : AVG([Trip Seconds]) }",
+      "actual_formula": "{ FIXED [Company] : AVG([Trip Seconds]) }"
+    },
+    {
+      "name": "cfa_partial_field_match",
+      "utterance": "two fields expected one actual",
+      "datasource": "taxi",
+      "expected_formula": "SUM([Trip Seconds]) / SUM([Trip Miles])",
+      "actual_formula": "SUM([Trip Seconds])"
+    },
+    {
+      "name": "cfa_extra_actual_field",
+      "utterance": "one expected two actual",
+      "datasource": "taxi",
+      "expected_formula": "SUM([Fare])",
+      "actual_formula": "SUM([Fare]) + SUM([Trip Miles])"
+    },
+    {
+      "name": "cfa_disjoint_fields",
+      "utterance": "no overlap",
+      "datasource": "taxi",
+      "expected_formula": "SUM([Fare])",
+      "actual_formula": "SUM([Trip Miles])"
+    },
+    {
+      "name": "cfa_empty_actual",
+      "utterance": "empty actual formula",
+      "datasource": "taxi",
+      "expected_formula": "SUM([Fare])",
+      "actual_formula": ""
+    }
+  ],
+
+  "calc_value_accuracy_cases": [
+    {
+      "name": "cva_exact_values",
+      "utterance": "string literals match",
+      "datasource": "retail",
+      "expected_formula": "IF [Region] = \"West\" THEN [Sales] END",
+      "actual_formula": "IF [Region] = \"West\" THEN [Sales] END"
+    },
+    {
+      "name": "cva_partial_values",
+      "utterance": "two literals expected one actual",
+      "datasource": "retail",
+      "expected_formula": "IF [Region] = \"West\" OR [Region] = \"East\" THEN 1 END",
+      "actual_formula": "IF [Region] = \"West\" THEN 1 END"
+    },
+    {
+      "name": "cva_no_values_expected",
+      "utterance": "expected has no string literals",
+      "datasource": "retail",
+      "expected_formula": "SUM([Sales])",
+      "actual_formula": "IF [Region] = \"West\" THEN 1 END"
+    },
+    {
+      "name": "cva_empty_actual",
+      "utterance": "empty actual",
+      "datasource": "retail",
+      "expected_formula": "IF [Region] = \"West\" THEN 1 END",
+      "actual_formula": ""
+    }
+  ],
+
+  "spec_field_validity_cases": [
+    {
+      "name": "sfv_all_valid",
+      "utterance": "spec with valid fields",
+      "datasource": "retail",
+      "actual": { "fields": [{ "field": "Sales" }, { "field": "Region" }] }
+    },
+    {
+      "name": "sfv_one_invalid",
+      "utterance": "spec with one invalid field",
+      "datasource": "retail",
+      "actual": { "fields": [{ "field": "Sales" }, { "field": "Bogus" }] }
+    },
+    {
+      "name": "sfv_empty_actual",
+      "utterance": "spec with no fields",
+      "datasource": "retail",
+      "actual": { "fields": [] }
+    }
+  ],
+
+  "spec_field_accuracy_cases": [
+    {
+      "name": "sfa_exact",
+      "utterance": "spec fields exact",
+      "datasource": "retail",
+      "expected": { "fields": [{ "field": "Sales" }, { "field": "Region" }] },
+      "actual": { "fields": [{ "field": "Sales" }, { "field": "Region" }] }
+    },
+    {
+      "name": "sfa_partial",
+      "utterance": "spec fields partial",
+      "datasource": "retail",
+      "expected": { "fields": [{ "field": "Sales" }, { "field": "Region" }, { "field": "Category" }] },
+      "actual": { "fields": [{ "field": "Sales" }, { "field": "Region" }] }
+    },
+    {
+      "name": "sfa_extra_actual",
+      "utterance": "spec extra actual field",
+      "datasource": "retail",
+      "expected": { "fields": [{ "field": "Sales" }] },
+      "actual": { "fields": [{ "field": "Sales" }, { "field": "Profit" }] }
+    },
+    {
+      "name": "sfa_empty_actual",
+      "utterance": "spec empty actual",
+      "datasource": "retail",
+      "expected": { "fields": [{ "field": "Sales" }] },
+      "actual": { "fields": [] }
+    },
+    {
+      "name": "sfa_caption_key",
+      "utterance": "spec via caption key",
+      "datasource": "retail",
+      "expected": { "columns": [{ "caption": "Sales" }, { "caption": "Region" }] },
+      "actual": { "columns": [{ "caption": "Sales" }] }
+    }
+  ]
+}

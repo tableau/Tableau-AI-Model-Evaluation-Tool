@@ -1,0 +1,36 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-support-360",
+  "info": {
+    "requirement-id": "D-248-dbc878074eb702d0",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "chart case volume count by case type as a histogram",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Distribution",
+          "Intent: Breakdown by Category"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Group By Dimension",
+          "Op: Binning"
+        ],
+        "out": [
+          "Out: Histogram"
+        ]
+      }
+    }
+  ],
+  "id": "bd7d2892877f5f89aafa6864fefa145e"
+}

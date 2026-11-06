@@ -1,0 +1,12 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "https://tableau.example.com/content-exploration/analytics-assistant/conversations",
+    "normalizedBody": "{\"applicationContext\":{\"calculationContext\":{\"caption\":\"\",\"errorMessages\":[],\"formula\":null}},\"conversationContext\":{\"conversationHistory\":[]},\"currentNotionalSpec\":{\"fields\":[],\"version\":\"0.2.0\"},\"datasourceECTId\":\"460d197d-0f26-471b-9a3d-596aa6e5f99f\",\"intentApplicationAccepts\":null,\"utterance\":{\"content\":\"create a calc to flag weekdays only\"}}"
+  },
+  "response": {
+    "status": 200,
+    "statusText": "",
+    "body": "{\"intentApplicationDetection\":{\"intent\":\"NLQ_TO_NEW_CALCULATED_FIELD\",\"confidence\":0.5,\"result\":{\"status\":\"OK\",\"notionalSpec\":null,\"calc\":null,\"calculatedFieldFormula\":{\"formula\":\"IF DATEPART('weekday', [Trip Start Timestamp]) IN (2, 3, 4, 5, 6) THEN 1 ELSE 0 END\",\"caption\":\"Flag: Weekday\",\"type\":\"\"},\"calculatedFieldDescription\":\"This calculation flags records that occur on weekdays (Monday–Friday) by returning 1, and 0 for weekends (Saturday–Sunday). It uses DATEPART to extract the day of the week from the [Trip Start Timestamp] field, where 2=Monday through 6=Friday. You can use this flag to filter, color, or aggregate weekday trips specifically.\",\"warnings\":null,\"_context\":null,\"steps\":null,\"planId\":\"\",\"unsupportedFeatures\":\"\",\"hbiQuery\":null,\"hbiResponse\":null}},\"response\":{\"responseType\":\"GENERATION\",\"content\":\"This calculation flags records that occur on weekdays (Monday–Friday) by returning 1, and 0 for weekends (Saturday–Sunday). It uses DATEPART to extract the day of the week from the [Trip Start Timestamp] field, where 2=Monday through 6=Friday. You can use this flag to filter, color, or aggregate weekday trips specifically.\",\"id\":\"chatcmpl-4d02b2a8-973a-456d-915b-ef72e3858008\"}}"
+  }
+}

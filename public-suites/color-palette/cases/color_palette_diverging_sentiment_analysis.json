@@ -1,0 +1,23 @@
+{
+    "runner": "color-palettes-server",
+    "info": {
+        "version": "1.0.0"
+    },
+    "inputs": [
+        {
+            "utterance": "Colors for sentiment analysis (positive, neutral, negative)",
+            "source": "user",
+            "arguments": {
+                "palette_type": "diverging"
+            },
+            "expected": {
+                "colorPalette": []
+            },
+            "tags": [
+                "color-palette-diverging"
+            ]
+        }
+    ],
+    "id": "b4c5d6e7-f8a9-0123-bcde-456789012345"
+}
+

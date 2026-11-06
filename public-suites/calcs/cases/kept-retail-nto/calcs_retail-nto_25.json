@@ -1,0 +1,25 @@
+{
+    "runner": "ect-server",
+    "datasource": "retail-nto",
+    "info": {
+        "originalValid": true
+    },
+    "inputs": [
+        {
+            "utterance": "if the subsubcategory contains a numeric character, return true, otherwise false\"",
+            "source": "user",
+            "expected": {
+                "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+                "calculatedFieldFormula": {
+                    "formula": "IF CONTAINS([Subsubcategory], '0') OR CONTAINS([Subsubcategory], '1') OR CONTAINS([Subsubcategory], '2') OR CONTAINS([Subsubcategory], '3') OR CONTAINS([Subsubcategory], '4') OR CONTAINS([Subsubcategory], '5') OR CONTAINS([Subsubcategory], '6') OR CONTAINS([Subsubcategory], '7') OR CONTAINS([Subsubcategory], '8') OR CONTAINS([Subsubcategory], '9') THEN TRUE ELSE FALSE END",
+                    "caption": null
+                }
+            },
+            "tags": [
+                "add-explicit-calc-wordage",
+                "calc-category-string"
+            ]
+        }
+    ],
+    "id": "743cf078-d76f-4427-ae6b-7d91e5672016"
+}

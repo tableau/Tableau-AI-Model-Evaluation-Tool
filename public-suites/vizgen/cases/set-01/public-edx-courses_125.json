@@ -1,0 +1,73 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-edx-courses",
+  "info": {
+    "requirement-id": "D-248-b8df43152911f2f3",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "add filter on Subject Area = Circuits",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Course Id",
+              "data": "string",
+              "type": "discrete",
+              "role": "measure",
+              "aggregation": "count",
+              "encoding": "y",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            }
+          ],
+          "categoricalFilters": [
+            {
+              "type": "categorical",
+              "field": "Term",
+              "values": [
+                "2013_Spring"
+              ],
+              "_tb_wildcards": [
+                "field"
+              ]
+            },
+            {
+              "type": "categorical",
+              "field": "Subject Area",
+              "values": [
+                "Circuits"
+              ]
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench",
+        "infer-other-field",
+        "infer-non-default-aggregation"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Lookup / Retrieval"
+        ],
+        "op": [
+          "Op: Filter - Categorical",
+          "Op: Aggregation (Default)",
+          "Op: Field Inference - Measure / Dimension",
+          "Op: Aggregation (Non-Default)"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    }
+  ],
+  "id": "94a460f293d0dad693876f82867f6df1"
+}

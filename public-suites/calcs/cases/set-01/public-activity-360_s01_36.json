@@ -1,0 +1,37 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-activity-360",
+  "info": {
+    "originalValid": true,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "create a calc to change Status to numeric values",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "CASE [Task Status] WHEN 'Cancel' THEN 1 WHEN 'Not Started' THEN 2 WHEN 'Closed' THEN 3 WHEN 'Deferred' THEN 4 WHEN 'Approved' THEN 5 WHEN 'Completed' THEN 6 WHEN 'In Progress' THEN 7 WHEN 'Rejected' THEN 8 ELSE 0 END",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-logical"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Threshold Qualification"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Conditional Logic"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "5c243c676351dda26825535b3bed3abf"
+}

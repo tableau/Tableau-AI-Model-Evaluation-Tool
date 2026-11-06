@@ -1,0 +1,40 @@
+{
+  "description": "nlq multistep-plan case (no datasource): identical /conversations request shape; runner name only selects metrics-plan.",
+  "adapter": "nlq",
+  "covers": [
+    "multistep-plan (multistep-plan)",
+    "dashboard-viz-narrative-config"
+  ],
+  "requests": [
+    {
+      "method": "POST",
+      "pathAndQuery": "/content-exploration/analytics-assistant/conversations",
+      "headerNames": [
+        "accept",
+        "accept-charset",
+        "content-type"
+      ],
+      "body": {
+        "intentApplicationAccepts": null,
+        "utterance": {
+          "content": "show a plan"
+        },
+        "conversationContext": {
+          "conversationHistory": []
+        },
+        "currentNotionalSpec": {
+          "version": "0.2.0",
+          "fields": []
+        },
+        "applicationContext": {
+          "calculationContext": {
+            "formula": null,
+            "caption": "",
+            "errorMessages": []
+          }
+        },
+        "datasourceECTId": null
+      }
+    }
+  ]
+}

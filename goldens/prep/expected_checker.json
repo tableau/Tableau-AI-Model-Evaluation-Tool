@@ -1,0 +1,958 @@
+{
+ "checks": [
+  {
+   "formula": "SUM([Sales])",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": []
+  },
+  {
+   "formula": "{ FIXED [Region]: SUM([Sales]) }",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": []
+  },
+  {
+   "formula": "IF [Profit] > 0 THEN 'a' ELSE 'b' END",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": []
+  },
+  {
+   "formula": "CASE [Region] WHEN 'West' THEN 1 ELSE 0 END",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": []
+  },
+  {
+   "formula": "DATEDIFF('day', [Order Date], TODAY())",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": []
+  },
+  {
+   "formula": "[Sales] * 2 /* a block comment is valid Tableau */",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": []
+  },
+  {
+   "formula": "Sales * 2",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": []
+  },
+  {
+   "formula": "REGEXP_EXTRACT([Region], '([\\s\\S]*)')",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": []
+  },
+  {
+   "formula": "```SUM([Sales])```",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": [
+    "Unexpected character '`'"
+   ]
+  },
+  {
+   "formula": "FOO([Sales])",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": [
+    "Function not in the Tableau Prep reference: FOO"
+   ]
+  },
+  {
+   "formula": "IF [Profit] > 0 THEN 'a' ELSE 'b'",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": [
+    "IF without END"
+   ]
+  },
+  {
+   "formula": "IF THEN 1 END",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": [
+    "IF without a condition"
+   ]
+  },
+  {
+   "formula": "CASE [Region] WHEN 'a' THEN 1",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": [
+    "CASE without END"
+   ]
+  },
+  {
+   "formula": "SUM([Sales]",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": [
+    "Function call without its closing bracket"
+   ]
+  },
+  {
+   "formula": "{FIXED [Region] SUM([Sales])}",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": [
+    "Level-of-detail expression without the colon after its dimensions"
+   ]
+  },
+  {
+   "formula": "'unterminated",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": [
+    "Text without its closing quote"
+   ]
+  },
+  {
+   "formula": "[Nonexistent] * 2",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": [
+    "Field not in the data: [Nonexistent]"
+   ]
+  },
+  {
+   "formula": "sum([sales])",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": [
+    "Field [sales] is written [Sales] in the data"
+   ]
+  },
+  {
+   "formula": "[Sales] +",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": [
+    "The formula ends before it is complete (at character 10)"
+   ]
+  },
+  {
+   "formula": "SUM([Sales])) ",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": [
+    "Unexpected ')' at character 13"
+   ]
+  },
+  {
+   "formula": "",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": [
+    "Empty formula"
+   ]
+  },
+  {
+   "formula": "   ",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": [
+    "Empty formula"
+   ]
+  },
+  {
+   "formula": "IF [Profit] > 0 THEN\n 'a'\nELSEIF [Sales] < 2 THEN 'b'\n END",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": []
+  },
+  {
+   "formula": "{ PARTITION [Region]: {ORDERBY [Sales] DESC: RANK()} }",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": []
+  },
+  {
+   "formula": "{ PARTITION [Region]: {STR [Sales] DESC: RANK()} }",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": [
+    "Unexpected ':' at character 21",
+    "PARTITION left unfinished"
+   ]
+  },
+  {
+   "formula": "STR([Sales])[0]",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": [
+    "Unexpected '[0]' at character 13"
+   ]
+  },
+  {
+   "formula": "[Region] IN ('West', 'East')",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": []
+  },
+  {
+   "formula": "#2024-01-01#",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": []
+  },
+  {
+   "formula": "#2024-01",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": [
+    "Date without its closing #"
+   ]
+  },
+  {
+   "formula": "IF [Profit] THEN ELSE END",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": [
+    "Unexpected 'ELSE' at character 18",
+    "THEN without a value"
+   ]
+  },
+  {
+   "formula": "{ORDERBY [Sales] : ",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": [
+    "ORDERBY left unfinished"
+   ]
+  },
+  {
+   "formula": "LEFT([Region]",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": [
+    "Function call without its closing bracket"
+   ]
+  },
+  {
+   "formula": "CASE WHEN 1 THEN 2 END",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": [
+    "Unexpected 'WHEN' at character 6",
+    "CASE without a value to compare"
+   ]
+  },
+  {
+   "formula": "IIF([Profit]>0, \"x\", 'y')",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": []
+  },
+  {
+   "formula": "// only a comment",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": [
+    "The formula ends before it is complete (at character 18)"
+   ]
+  },
+  {
+   "formula": "[Sales] @ 2",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": [
+    "Unexpected character '@'",
+    "Unexpected '2' at character 11"
+   ]
+  },
+  {
+   "formula": "ZN([Sales]) + ZN([Profit])",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": []
+  },
+  {
+   "formula": "{FIXED [Region]: }",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": [
+    "Cannot read the formula at character 18 after '{FIXED [Region]: }'"
+   ]
+  },
+  {
+   "formula": "IF [a] > 1 THEN 1 ELSE",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": [
+    "ELSE without a value",
+    "Field not in the data: [a]"
+   ]
+  },
+  {
+   "formula": "CASE [Region] END",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": []
+  },
+  {
+   "formula": "{ INCLUDE [Region] : SUM([Sales]) }",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": [
+    "Level-of-detail expression of a kind Tableau Prep does not support"
+   ]
+  },
+  {
+   "formula": "DATEPART('month', [Order Date]) = 3 AND [Region] = \"West\"",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": []
+  },
+  {
+   "formula": "STARTSWITH([Region], 'W') OR ENDSWITH([Region], 'st')",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": []
+  },
+  {
+   "formula": "[Sales]]",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": [
+    "Field name without its closing ]"
+   ]
+  },
+  {
+   "formula": "[Sales",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": [
+    "Field name without its closing ]"
+   ]
+  },
+  {
+   "formula": "\"text",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": [
+    "Text without its closing quote"
+   ]
+  },
+  {
+   "formula": "ROUND([Sales], 2) / 0.5",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": []
+  },
+  {
+   "formula": "NOT ISNULL([Region])",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": []
+  },
+  {
+   "formula": "MAX([Sales], [Profit])",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": []
+  },
+  {
+   "formula": "1 +* 2",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": [
+    "Unexpected '*' at character 4"
+   ]
+  },
+  {
+   "formula": "(([Sales])",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": [
+    "The formula ends before it is complete (at character 11)"
+   ]
+  },
+  {
+   "formula": "```FOO([X])```",
+   "fields": null,
+   "problems": [
+    "Unexpected character '`'",
+    "Function not in the Tableau Prep reference: FOO"
+   ]
+  },
+  {
+   "formula": null,
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ],
+   "problems": [
+    "Empty formula"
+   ]
+  },
+  {
+   "formula": "{FIXED [Region] : STDEV([Profit])}",
+   "field_metadata": "'Region' (string), 'Profit' (int)",
+   "problems": []
+  },
+  {
+   "formula": "{FIXED [Region] : VARP([Profit])}",
+   "field_metadata": "'Region' (string), 'Profit' (int)",
+   "problems": []
+  },
+  {
+   "formula": "{FIXED [Order Type] : PERCENTILE([Queue Time - Seconds], 0.95)}",
+   "field_metadata": "'Order Type' (string), 'Order' (string), 'Queue Time - Seconds' (int)",
+   "problems": []
+  },
+  {
+   "formula": "IFNULL([A],\"\")+IFNULL([B],\"\")+IFNULL([C],\"\")+IFNULL([D],\"\")",
+   "field_metadata": "'A' (String), 'B' (String), 'C' (String), 'D' (String)",
+   "problems": []
+  },
+  {
+   "formula": "IF NOT ISNULL([Sponsor]) AND NOT ISNULL([ID]) THEN [Sponsor] END",
+   "field_metadata": "'Sponsor' (String), 'ID' (String)",
+   "problems": []
+  },
+  {
+   "formula": "IF [Patient Admitted] = 'Not Admitted' THEN DATEDIFF('day', [Tbl_ECAttendance.EmergencyCareDepartureDateTime], [Tbl_ECAttendance.EmergencyCareArrivalDateTime]) ELSEIF [Patient Admitted] = 'Admitted' THEN DATEDIFF('day', [Tbl_ECAdmissions.DischargeDateTime_HospitalProviderSpell], [Tbl_ECAttendance.EmergencyCareArrivalDateTime]) END",
+   "field_metadata": "'Patient Admitted' (String), 'Tbl_ECAttendance.EmergencyCareDepartureDateTime' (datetime), 'Tbl_ECAttendance.EmergencyCareArrivalDateTime' (datetime), 'Tbl_ECAdmissions.DischargeDateTime_HospitalProviderSpell' (datetime), 'Tbl_ECAttendance.EmergencyCareArrivalDateTime' (datetime)",
+   "problems": []
+  },
+  {
+   "formula": "IF ISNULL([minutes]) THEN \"No data\" ELSEIF [minutes] >= 240 THEN \"Breached 4hrs\" ELSE \"Not breached 4hrs\" END",
+   "field_metadata": "'minutes' (int)",
+   "problems": []
+  },
+  {
+   "formula": "DATETRUNC(\"month\",[Order Date])",
+   "field_metadata": "'Order Date' (datetime)",
+   "problems": []
+  },
+  {
+   "formula": "STR(DATEPART('hour',[Tbl_ECAttendance.EmergencyCareDepartureDateTime]))+':'+STR(0)+STR(0)",
+   "field_metadata": "'Tbl_ECAttendance.EmergencyCareDepartureDateTime' (datetime)",
+   "problems": []
+  },
+  {
+   "formula": "{FIXED [Region]: MAX([Order Date])}",
+   "field_metadata": "'Region' (string), 'Order Date' (datetime)",
+   "problems": []
+  },
+  {
+   "formula": "NOT ISNULL([A]) AND NOT ISNULL([B])",
+   "field_metadata": "'A' (string), 'B' (string)",
+   "problems": []
+  },
+  {
+   "formula": "IF ({PARTITION [A], [B], [C], [D]: { ORDERBY [A] DESC:  ROW_NUMBER() } } = 1) THEN 'Unique' ELSE 'Duplicate' END",
+   "field_metadata": "'A' (string), 'B' (string), 'C' (string), 'D' (string)",
+   "problems": []
+  },
+  {
+   "formula": "IF NOT ISNULL([R_USER]) THEN \"R_USER\" ELSEIF NOT ISNULL([RULF_USER]) THEN \"RULF_USER\" ELSEIF NOT ISNULL([T_USER]) THEN \"T_USER\" ELSEIF NOT ISNULL([N_USER]) THEN \"N_USER\" ELSE \"G_USER\" END",
+   "field_metadata": "'R_USER' (string), 'RULF_USER' (string), 'T_USER' (string), 'N_USER' (string)",
+   "problems": []
+  },
+  {
+   "formula": "ISDATE([Order Date])",
+   "field_metadata": "'Order Date' (string)",
+   "problems": []
+  },
+  {
+   "formula": "IF [Order Date]>=DATEADD('year',-10,TODAY()) THEN [Sales] END",
+   "field_metadata": "'Order Date' (date), 'Sales' (int)",
+   "problems": []
+  },
+  {
+   "formula": "DATEDIFF('month', [Order Date], [Ship Date])",
+   "field_metadata": "'Order Date' (datetime), 'Ship Date' (datetime)",
+   "problems": []
+  },
+  {
+   "formula": "DATEPARSE(\"dd.MMMM.yyyy\", STR([Ship Date]))",
+   "field_metadata": "'Ship Date' (datetime)",
+   "problems": []
+  },
+  {
+   "formula": "DATEPARSE(\"dd.MM.yy\", STR([Time]))",
+   "field_metadata": "'Time' (string)",
+   "problems": []
+  },
+  {
+   "formula": "ROUND([Profit], -4)",
+   "field_metadata": "'Profit' (int)",
+   "problems": []
+  },
+  {
+   "formula": "ZN([Sales])",
+   "field_metadata": "'Sales' (int)",
+   "problems": []
+  },
+  {
+   "formula": "[Principal] * EXP([Rate] * 5)",
+   "field_metadata": "'Rate' (int), 'Account' (string), 'Principal' (int)",
+   "problems": []
+  },
+  {
+   "formula": "{ FIXED [Region]: SUM([Sales]) }",
+   "field_metadata": "I have a field called \"Sales\" of the Number data type that contains the amount of a sales transaction for a given date. I have a \"Region\" field capturing the region of the United States (values: North, South, East, West)",
+   "problems": []
+  },
+  {
+   "formula": "{ PARTITION [Region]: {ORDERBY [Sales] DESC: RANK()} }",
+   "field_metadata": "I have a Region field (string), and Sales field (number).",
+   "problems": []
+  },
+  {
+   "formula": "[First Name] + \" \" + [Last Name]",
+   "field_metadata": "First Name field (string) and a Last Name field (string)",
+   "problems": []
+  },
+  {
+   "formula": "SPLIT([Customer Name], ' ', 1)",
+   "field_metadata": "\"Customer Name\" of the String data type",
+   "problems": []
+  },
+  {
+   "formula": "[Quota] * 1.10",
+   "field_metadata": "\"Quota\" of the Number datatype",
+   "problems": []
+  },
+  {
+   "formula": "SPLIT([Customer Name], ' ', 2) + \" \" + SPLIT([Customer Name], ' ', 1)",
+   "field_metadata": "\"Customer Name\", String",
+   "problems": []
+  },
+  {
+   "formula": "FLOAT(TRIM(REPLACE(SPLIT([Position], ',', 2), ')', '')))",
+   "field_metadata": "\"Position\", String",
+   "problems": []
+  },
+  {
+   "formula": "{PARTITION [Category] : {ORDERBY [Order Date] ASC : LOOKUP([Sales], 0)}} - {PARTITION [Category] : {ORDERBY [Order Date] ASC : LOOKUP([Sales], -1)}}",
+   "field_metadata": "Category field (string), Order Date field (date), and Sales field (number)",
+   "problems": []
+  },
+  {
+   "formula": "{PARTITION [State]: {ORDERBY [Sales] DESC: RANK()}}",
+   "field_metadata": "'State' (string), 'Sales' (int)",
+   "problems": []
+  },
+  {
+   "formula": "{ ORDERBY [Sales] DESC : RANK() }",
+   "field_metadata": "'Sales' (int)",
+   "problems": []
+  },
+  {
+   "formula": "{ ORDERBY [Finishing Time] ASC : RANK_MODIFIED() }",
+   "field_metadata": "'Team' (string), 'Finishing Time' (number)",
+   "problems": []
+  },
+  {
+   "formula": "{ ORDERBY [Finishing Time] ASC : RANK_DENSE() }",
+   "field_metadata": "'Team' (string), 'Finishing Time' (number)",
+   "problems": []
+  },
+  {
+   "formula": "FIND([Order Number], \"ON-\")",
+   "field_metadata": "'Order Number' (string)",
+   "problems": []
+  },
+  {
+   "formula": "SPLIT([Order Number], \"ON-\", 2)",
+   "field_metadata": "'Order Number' (string)",
+   "problems": []
+  },
+  {
+   "formula": "REPLACE([Order Number], \"ON-\", \"\")",
+   "field_metadata": "'Order Number' (string)",
+   "problems": []
+  },
+  {
+   "formula": "TRIM([P Text])",
+   "field_metadata": "'P Text' (string)",
+   "problems": []
+  },
+  {
+   "formula": "RTRIM([P Text])",
+   "field_metadata": "'P Text' (string)",
+   "problems": []
+  },
+  {
+   "formula": "PROPER([Customer Name])",
+   "field_metadata": "'Customer Name' (string)",
+   "problems": []
+  },
+  {
+   "formula": "REGEXP_EXTRACT([Response], \"```(.*)```\")",
+   "field_metadata": "'Response' (string)",
+   "problems": []
+  },
+  {
+   "formula": "REGEXP_MATCH([Response], \"```(.*)```\")",
+   "field_metadata": "'Response' (string)",
+   "problems": []
+  }
+ ],
+ "similarity": [
+  {
+   "expected": "SUM([Sales])",
+   "actual": "sum([Sales])",
+   "score": 1.0,
+   "explanation": "The same formula as expected, apart from spacing, letter case or quote style."
+  },
+  {
+   "expected": "{FIXED [Region] : STDEV([Profit])}",
+   "actual": "{ FIXED [Region]: STDEV([Profit]) }",
+   "score": 1.0,
+   "explanation": "The same formula as expected, apart from spacing, letter case or quote style."
+  },
+  {
+   "expected": "IF [Profit] > 0 THEN 'Profit' ELSE 'Loss' END",
+   "actual": "IF [Profit]>0 THEN \"Profit\" ELSE \"Loss\" END",
+   "score": 1.0,
+   "explanation": "The same formula as expected, apart from spacing, letter case or quote style."
+  },
+  {
+   "expected": "[Sales] * 2 // doubled",
+   "actual": "[Sales]*2",
+   "score": 1.0,
+   "explanation": "The same formula as expected, apart from spacing, letter case or quote style."
+  },
+  {
+   "expected": "SUM([Sales])",
+   "actual": "AVG([Sales])",
+   "score": 0.75,
+   "explanation": "3 of the 4 expected tokens appear in order in the written formula (4 tokens). First difference: expected 'SUM', written 'AVG'."
+  },
+  {
+   "expected": "[Profit]/[Sales]",
+   "actual": "[Sales]/[Profit]",
+   "score": 0.3333333333333333,
+   "explanation": "1 of the 3 expected tokens appear in order in the written formula (3 tokens). First difference: '[Sales] /' is extra."
+  },
+  {
+   "expected": "SUM([Sales])",
+   "actual": "",
+   "score": 0.0,
+   "explanation": "The model wrote no formula."
+  },
+  {
+   "expected": "",
+   "actual": "",
+   "score": 1.0,
+   "explanation": "Both formulas are empty."
+  },
+  {
+   "expected": "",
+   "actual": "SUM([Sales])",
+   "score": 0.0,
+   "explanation": "No formula was expected."
+  },
+  {
+   "expected": "IF NOT ISNULL([R_USER]) THEN 'R_USER' ELSEIF NOT ISNULL([P_USER]) THEN 'P_USER' ELSEIF NOT ISNULL([P_USER]) THEN 'P_USER' ELSEIF NOT ISNULL([P_USER]) THEN 'P_USER' ELSEIF NOT ISNULL([P_USER]) THEN 'P_USER' ELSE 'NONE' END",
+   "actual": "IF NOT ISNULL([R_USER]) AND [R_USER] != '' THEN 'R_USER' ELSEIF NOT ISNULL([P_USER]) THEN 'P_USER' ELSEIF NOT ISNULL([P_USER]) THEN 'P_USER' ELSEIF NOT ISNULL([P_USER]) THEN 'P_USER' ELSEIF NOT ISNULL([P_USER]) THEN 'P_USER' ELSE 'NONE' END",
+   "score": 0.9555555555555556,
+   "explanation": "43 of the 43 expected tokens appear in order in the written formula (47 tokens). First difference: 'AND [R_USER] != ''' is extra."
+  },
+  {
+   "expected": "DATEDIFF('day', [A Very Long Field Name Number One], [Another Extremely Long Field Name Two])",
+   "actual": "DATEDIFF('month', [A Very Long Field Name Number One Changed Again], [B])",
+   "score": 0.625,
+   "explanation": "5 of the 8 expected tokens appear in order in the written formula (8 tokens). First difference: expected ''day'', written ''month''."
+  },
+  {
+   "expected": "SUM([Sales]) / COUNT([Orders])",
+   "actual": "SUM([Sales]) / COUNTD([Orders]) * 1.0",
+   "score": 0.8,
+   "explanation": "8 of the 9 expected tokens appear in order in the written formula (11 tokens). First difference: expected 'COUNT', written 'COUNTD'."
+  }
+ ],
+ "metadata": [
+  {
+   "text": "'Region' (string), 'Profit' (int)",
+   "fields": [
+    "Profit",
+    "Region"
+   ]
+  },
+  {
+   "text": "field \"Sales\" of Number type",
+   "fields": null
+  },
+  {
+   "text": null,
+   "fields": null
+  },
+  {
+   "text": "'A' (x), 'A' (y), 'B c'",
+   "fields": [
+    "A",
+    "B c"
+   ]
+  },
+  {
+   "text": "no fields",
+   "fields": null
+  }
+ ],
+ "intents": [
+  {
+   "answer": "calc",
+   "label": "calc"
+  },
+  {
+   "answer": " `calc` ",
+   "label": "calc"
+  },
+  {
+   "answer": "Calc.",
+   "label": "calc"
+  },
+  {
+   "answer": "\"flow-plan\"",
+   "label": "flow-plan"
+  },
+  {
+   "answer": "flow plan",
+   "label": "flow-plan"
+  },
+  {
+   "answer": "flow_plan",
+   "label": "flow-plan"
+  },
+  {
+   "answer": "other\n",
+   "label": "other"
+  },
+  {
+   "answer": "",
+   "label": ""
+  },
+  {
+   "answer": null,
+   "label": ""
+  },
+  {
+   "answer": "Flow  Plan.",
+   "label": "flow-plan"
+  },
+  {
+   "answer": "'calc'.",
+   "label": "calc"
+  },
+  {
+   "answer": "`Other`",
+   "label": "other"
+  }
+ ]
+}

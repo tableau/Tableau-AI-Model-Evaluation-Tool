@@ -1,0 +1,39 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-retail-360",
+  "info": {
+    "originalValid": true,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "create a calculated field to Count the letter R in the item name",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "LEN([Item Name]) - LEN(REPLACE([Item Name], 'R', ''))",
+          "caption": null
+        }
+      },
+      "tags": [
+        "add-explicit-calc-wordage",
+        "calc-category-string"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: String Manipulation",
+          "Op: Arithmetic / Ratio"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "f0abdccacd7b0662bc254050d69033ef"
+}

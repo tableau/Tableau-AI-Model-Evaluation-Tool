@@ -1,0 +1,39 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-activity-360",
+  "info": {
+    "originalValid": true,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "create a calc to set all lead sources that has partner string to 'Partner' and web string to 'Web'",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "IF CONTAINS([Lead Source], 'linkedin') THEN 'Linkedin' ELSEIF CONTAINS([Lead Source], 'salesforce') THEN 'Salesforce' ELSE [Lead Source] END",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-logical",
+        "calc-category-string"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Threshold Qualification"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: String Manipulation",
+          "Op: Conditional Logic"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "62540e480d999f0ea6330fbdacdb038d"
+}

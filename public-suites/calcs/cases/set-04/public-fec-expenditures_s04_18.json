@@ -1,0 +1,43 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-fec-expenditures",
+  "info": {
+    "originalValid": false,
+    "reasonInvalid": "ORDERBY, Partition",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "create calc to compute rolling 7 days avg of candidate disbursements",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "WINDOW_AVG(SUM([Candidate Disbursements]), -6, 0)",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-table"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement",
+          "Intent: Trend over Time"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Table Calculation / Window",
+          "Op: Date Truncation / Granularity",
+          "Op: Aggregation (Non-Default)",
+          "Op: Aggregation (Default)",
+          "Op: Arithmetic / Ratio"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "f9eb02a457dc8ff0c7874026e2ae5c14"
+}

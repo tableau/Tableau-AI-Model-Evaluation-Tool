@@ -1,0 +1,41 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-account-360",
+  "info": {
+    "originalValid": true,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "Create a calc to show activities that are month to date",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "{ [Most Recent Order Date] <= TODAY() AND DATETRUNC( 'month', [Most Recent Order Date]) = DATETRUNC('month', TODAY() ) }",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-date",
+        "add-explicit-calc-wordage"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Threshold Qualification"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Conditional Logic",
+          "Op: Date Truncation / Granularity",
+          "Op: Date Part Extraction",
+          "Op: Date Arithmetic"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "22150e43a3101294711d45c7b4d71704"
+}

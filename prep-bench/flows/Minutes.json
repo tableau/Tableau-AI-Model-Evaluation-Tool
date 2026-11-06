@@ -1,0 +1,26 @@
+{
+  "flow": "Minutes.tflx",
+  "name": "Minutes",
+  "inputs": [
+    {
+      "name": "Data",
+      "source": "Data.csv",
+      "fields": [
+        {
+          "name": "minutes",
+          "datatype": "integer",
+          "values": [
+            "453",
+            "789",
+            "319",
+            "665",
+            "372",
+            "209",
+            "887",
+            "506"
+          ]
+        }
+      ]
+    }
+  ]
+}

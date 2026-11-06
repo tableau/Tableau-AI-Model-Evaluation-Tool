@@ -1,0 +1,49 @@
+<UserStepData>
+<Step name="Customers" id="507FB578-1C2B-46EE-B134-90597AE0B1D2" type="Clean Step">
+Customer Name (string),Order ID (int),Order Date (date),Product (string),Quantity (int),Total Price (real)
+Angelina Jolie,1001,2023-09-01,Widget A,3,29.99
+Anglina Joolie,1002,2023-09-02,Widget B,2,19.99
+Agjalina Jowlie,1003,2023-09-03,Widget A,1,9.99
+Robert Downey,1004,2023-09-04,Widget C,4,39.99
+Robret Downy,1005,2023-09-05,Widget B,2,19.99
+Roebrt Dnwoy,1006,2023-09-06,Widget A,5,49.99
+Chris Hemsworth,1007,2023-09-07,Widget C,3,29.99
+Chris Hmesworth,1008,2023-09-08,Widget B,1,9.99
+Cris Hmswrth,1009,2023-09-09,Widget A,2,19.99
+Jennifer Aniston,1010,2023-09-10,Widget C,4,39.99
+Jennifr Anniston,1011,2023-09-11,Widget B,2,19.99
+Jenifer Anston,1012,2023-09-12,Widget A,3,29.99
+Scarlett Johansson,1013,2023-09-13,Widget C,5,49.99
+Scarllet Jonhson,1014,2023-09-14,Widget B,4,39.99
+Skarlet Johansn,1015,2023-09-15,Widget A,1,9.99
+Tom Hanks,1016,2023-09-16,Widget C,2,19.99
+Tom Hnks,1017,2023-09-17,Widget B,3,29.99
+Tm Hanks,1018,2023-09-18,Widget A,5,49.99
+Emma Watson,1019,2023-09-19,Widget C,1,9.99
+Emma Wstson,1020,2023-09-20,Widget B,2,19.99
+Emmma Waston,1021,2023-09-21,Widget A,4,39.99
+Chris Evans,1022,2023-09-22,Widget C,2,19.99
+Chriss Evans,1023,2023-09-23,Widget B,3,29.99
+Chis Evans,1024,2023-09-24,Widget A,1,9.99
+Brad Pitt,1025,2023-09-25,Widget C,5,49.99
+Brad Pit,1026,2023-09-26,Widget B,2,19.99
+Bradd Pit,1027,2023-09-27,Widget A,3,29.99
+Leonardo DiCaprio,1028,2023-09-28,Widget C,4,39.99
+Leonrdo DCaprio,1029,2023-09-29,Widget B,1,9.99
+Leonardo DiCapio,1030,2023-09-30,Widget A,2,19.99
+Robert Downey,1031,2023-09-30,Widget C,3,29.99
+Robrt Downey,1032,2023-09-30,Widget B,5,49.99
+Angelina Jolie,1033,2023-09-30,Widget A,1,9.99
+Anglina Joile,1034,2023-09-30,Widget C,2,19.99
+Chris Hemsworth,1035,2023-09-30,Widget B,4,39.99
+Scarlett Johansson,1036,2023-09-30,Widget A,3,29.99
+Scarllett Jonson,1037,2023-09-30,Widget C,1,9.99
+Tom Hanks,1038,2023-09-30,Widget B,2,19.99
+Tom Hanks,1039,2023-09-30,Widget A,5,49.99
+Jennifer Aniston,1040,2023-09-30,Widget C,4,39.99
+Jennifr Aniston,1041,2023-09-30,Widget B,3,29.99
+Chris Hemsworth,1042,2023-09-30,Widget A,2,19.99
+Robert Downey,1043,2023-09-30,Widget C,5,49.99
+Angelina Jolie,1044,2023-09-30,Widget B,1,9.99
+</Step>
+</UserStepData>

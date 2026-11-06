@@ -1,0 +1,25 @@
+{
+    "runner": "ect-server",
+    "datasource": "retail-nto",
+    "info": {
+        "originalValid": true
+    },
+    "inputs": [
+        {
+            "utterance": "Create a flag if order placed date is part of the prior year based on the current date",
+            "source": "user",
+            "expected": {
+                "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+                "calculatedFieldFormula": {
+                    "formula": "IF YEAR([Order Placed Date]) = YEAR(TODAY()) - 1 THEN TRUE ELSE FALSE END",
+                    "caption": null
+                }
+            },
+            "tags": [
+                "add-explicit-calc-wordage",
+                "calc-category-date"
+            ]
+        }
+    ],
+    "id": "19fcc3c5-642b-47e2-8d16-aec8ad0ce160"
+}

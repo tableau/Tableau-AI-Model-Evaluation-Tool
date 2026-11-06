@@ -1,0 +1,40 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-activity-360",
+  "info": {
+    "originalValid": true,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "create a calc to determine the number of business days between created and the last close date",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "(DATEDIFF('day',[Opportunity Created Date],[Opportunity Close Date]) - (7-DATEPART('weekday',[Opportunity Created Date])) - DATEPART('weekday',[Opportunity Close Date])) / 7*5 + MIN(5,(7-(DATEPART('weekday',[Opportunity Created Date])))) + MIN(5,(DATEPART('weekday',[Opportunity Close Date])-1))-1",
+          "caption": null
+        }
+      },
+      "tags": [
+        "add-explicit-calc-wordage"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Data Preparation"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Date Arithmetic",
+          "Op: Date Part Extraction",
+          "Op: Aggregation (Non-Default)",
+          "Op: Arithmetic / Ratio"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "fe28ede2a98dea3463edaf188e496091"
+}

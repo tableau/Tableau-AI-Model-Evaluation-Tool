@@ -1,0 +1,37 @@
+- description: 'Remap - general question'
+  id: fuzzy-remap-1
+  utterances:
+  - canonical: >-
+      Can you help me clean up the Customer Name Field?
+    expected-flow-plan:
+    - GroupValuesByPronunciationCommonCharactersOrSpelling
+    - MakeStringTitlecase
+    acceptable-flow-plans:
+    - [GroupValuesByPronunciationCommonCharactersOrSpelling]
+    - [TrimSpacesFromString, GroupValuesByPronunciationCommonCharactersOrSpelling]
+    - [RemoveExtraSpacesFromString, GroupValuesByPronunciationCommonCharactersOrSpelling, MakeStringTitlecase]
+  data-location: 'test/test-data/flow-plan-gen/step-data/name-typos.txt'
+- description: 'Remap - pronunciation'
+  id: fuzzy-remap-2
+  utterances:
+  - canonical: >-
+      Can you help me group Customer Names by pronunciation?
+    expected-flow-plan:
+    - GroupValuesByPronunciationCommonCharactersOrSpelling
+  data-location: 'test/test-data/flow-plan-gen/step-data/name-typos.txt'
+- description: 'Remap - general question'
+  id: fuzzy-remap-3
+  utterances:
+  - canonical: >-
+      Can you help me group Customer Names by spelling?
+    expected-flow-plan:
+    - GroupValuesByPronunciationCommonCharactersOrSpelling
+  data-location: 'test/test-data/flow-plan-gen/step-data/name-typos.txt'
+- description: 'Remap - general question'
+  id: fuzzy-remap-4
+  utterances:
+  - canonical: >-
+      Can you help me group Customer Names by common characters?
+    expected-flow-plan:
+    - GroupValuesByPronunciationCommonCharactersOrSpelling
+  data-location: 'test/test-data/flow-plan-gen/step-data/name-typos.txt'

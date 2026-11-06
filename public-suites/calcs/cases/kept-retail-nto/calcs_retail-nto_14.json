@@ -1,0 +1,25 @@
+{
+    "runner": "ect-server",
+    "datasource": "retail-nto",
+    "info": {
+        "originalValid": true
+    },
+    "inputs": [
+        {
+            "utterance": "flag the top 5 customers based on total profit per categ",
+            "source": "user",
+            "expected": {
+                "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+                "calculatedFieldFormula": {
+                    "formula": "IF RANK_UNIQUE(SUM([Gross Margin])) <= 5 THEN 'Top 5' ELSE 'Not Top 5' END",
+                    "caption": null
+                }
+            },
+            "tags": [
+                "add-explicit-calc-wordage",
+                "calc-category-table"
+            ]
+        }
+    ],
+    "id": "59949ab7-3346-4d16-b2d2-b0583059e2ba"
+}

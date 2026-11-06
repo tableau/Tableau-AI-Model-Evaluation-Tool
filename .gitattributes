@@ -1,0 +1,2 @@
+# Committed zstd dictionary for the release content pack (scripts/train-content-dict.ts).
+*.zdict binary

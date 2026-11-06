@@ -1,0 +1,39 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-activity-360",
+  "info": {
+    "originalValid": true,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "Create a calc to update strings of Activity Type containing task to 'Tasks' and event to 'Events'",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "IF CONTAINS(LOWER([Activity Type]), 'social') THEN 'Socials' ELSEIF CONTAINS(LOWER([Activity Type]), 'call') THEN 'Call' ELSE [Activity Type] END",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-logical",
+        "calc-category-string"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Threshold Qualification"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: String Manipulation",
+          "Op: Conditional Logic"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "356d18abe54ed7b859bee22f784b0be3"
+}

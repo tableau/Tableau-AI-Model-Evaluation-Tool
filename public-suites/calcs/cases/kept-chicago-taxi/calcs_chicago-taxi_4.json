@@ -1,0 +1,25 @@
+{
+  "runner": "ect-server",
+  "datasource": "chicago-taxi-trips-2024-calcs",
+  "info": {
+    "originalValid": true
+  },
+  "inputs": [
+    {
+      "utterance": "create calc to determine if trip is started in the current week",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "IF DATETRUNC('week', [Trip Start Timestamp]) = DATETRUNC('week', TODAY()) THEN 'Current Week' ELSE 'Not Current Week' END",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-date",
+        "add-explicit-calc-wordage"
+      ]
+    }
+  ],
+  "id": "06a037ac-3124-49d9-be74-f654d0a2b2b2"
+}

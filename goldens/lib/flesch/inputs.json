@@ -1,0 +1,17 @@
+{
+  "description": "Flesch reference inputs using py-readability-metrics word/syllable counts and manual sentence counts, without punkt. Formula: 206.835 - 1.015*(words/sentences) - 84.6*(syllables/words). Normalized scores round to four decimals. Each paragraph has at least 100 words.",
+  "paragraphs": [
+    {
+      "name": "simple_repetitive",
+      "manual_sentence_count": 12,
+      "note": "12 identical simple sentences. Easy readability.",
+      "text": "The cat sat on the mat and looked at the sun. The cat sat on the mat and looked at the sun. The cat sat on the mat and looked at the sun. The cat sat on the mat and looked at the sun. The cat sat on the mat and looked at the sun. The cat sat on the mat and looked at the sun. The cat sat on the mat and looked at the sun. The cat sat on the mat and looked at the sun. The cat sat on the mat and looked at the sun. The cat sat on the mat and looked at the sun. The cat sat on the mat and looked at the sun. The cat sat on the mat and looked at the sun."
+    },
+    {
+      "name": "business_narrative",
+      "manual_sentence_count": 8,
+      "note": "Realistic dashboard narrative with longer words. Harder readability.",
+      "text": "Total revenue increased substantially during the third quarter, driven primarily by exceptional performance across the enterprise segment. The northern region demonstrated remarkable growth, outpacing every other territory by a considerable margin throughout the reporting period. Customer acquisition accelerated meaningfully, although retention metrics remained relatively unchanged compared to previous quarters. Operational efficiency improvements contributed positively to overall profitability, offsetting elevated marketing expenditures. Management anticipates continued momentum, contingent upon favorable macroeconomic conditions and sustained investment in strategic initiatives. Several product categories experienced accelerating demand, particularly within the premium tier offerings. International expansion efforts yielded encouraging preliminary results, establishing foundations for future geographic diversification. Analysts responded favorably, revising their projections upward following the announcement."
+    }
+  ]
+}

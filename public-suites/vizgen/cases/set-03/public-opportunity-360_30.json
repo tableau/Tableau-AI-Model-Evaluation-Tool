@@ -1,0 +1,35 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-opportunity-360",
+  "info": {
+    "requirement-id": "F-250-e9e83304cc99ef81",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "place COUNTD <Opportunity Name> on the vertical axis and <Billing State> on the horizontal axis",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement",
+          "Intent: Breakdown by Category"
+        ],
+        "op": [
+          "Op: Aggregation (Non-Default)",
+          "Op: Group By Dimension"
+        ],
+        "out": [
+          "Out: Unspecified Viz"
+        ]
+      }
+    }
+  ],
+  "id": "95e7451a98c4c116b7b48c2823d7166d"
+}

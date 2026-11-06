@@ -1,0 +1,25 @@
+{
+    "runner": "ect-server",
+    "datasource": "retail-nto",
+    "info": {
+        "originalValid": true
+    },
+    "inputs": [
+        {
+            "utterance": "compute each product's return rate by month",
+            "source": "user",
+            "expected": {
+                "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+                "calculatedFieldFormula": {
+                    "formula": "{ FIXED [ProductID], DATETRUNC('month', [Order Placed Date]) : SUM([Returns]) } / { FIXED [ProductID], DATETRUNC('month', [Order Placed Date]) : COUNTD([OrderID]) }",
+                    "caption": null
+                }
+            },
+            "tags": [
+                "add-explicit-calc-wordage",
+                "calc-category-lod"
+            ]
+        }
+    ],
+    "id": "a0fe6b3a-d16e-4552-94fa-c91495e52ce3"
+}

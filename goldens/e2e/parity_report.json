@@ -1,0 +1,370 @@
+{
+  "_generated_by": "replay_parity.ts",
+  "_note": "Python vs TS scored from the SAME recorded (scrubbed) CES responses. TS re-run in REPLAY mode from goldens/e2e/ces_fixtures; reference scores retained in goldens/e2e/py_results.json.",
+  "tolerance": 1e-9,
+  "cases_compared": 5,
+  "metric_comparisons": 35,
+  "metric_exact": 35,
+  "metric_within_tolerance": 0,
+  "metric_divergences": 0,
+  "actual_extraction_agreements": 10,
+  "actual_extraction_divergences": 0,
+  "per_metric_agreement": {
+    "equals": {
+      "exact": 5,
+      "total": 5
+    },
+    "calcValidity": {
+      "exact": 5,
+      "total": 5
+    },
+    "calcFieldValidity": {
+      "exact": 5,
+      "total": 5
+    },
+    "fieldPrecision": {
+      "exact": 5,
+      "total": 5
+    },
+    "fieldRecall": {
+      "exact": 5,
+      "total": 5
+    },
+    "valuePrecision": {
+      "exact": 5,
+      "total": 5
+    },
+    "valueRecall": {
+      "exact": 5,
+      "total": 5
+    }
+  },
+  "divergences": [],
+  "cases": [
+    {
+      "id": "dd21e3e9-e260-4629-8467-58a26d941830",
+      "utterance": "create calc to compute the average number of minutes per trip for each company",
+      "stages": {
+        "intent": {
+          "actual_agree": true,
+          "metrics": [
+            {
+              "metric": "equals",
+              "ts": 1,
+              "python": 1,
+              "diff": 0,
+              "status": "EXACT"
+            }
+          ]
+        },
+        "calculatedFieldFormula": {
+          "actual_agree": true,
+          "metrics": [
+            {
+              "metric": "calcValidity",
+              "ts": 1,
+              "python": 1,
+              "diff": 0,
+              "status": "EXACT"
+            },
+            {
+              "metric": "calcFieldValidity",
+              "ts": 1,
+              "python": 1,
+              "diff": 0,
+              "status": "EXACT"
+            },
+            {
+              "metric": "fieldPrecision",
+              "ts": 1,
+              "python": 1,
+              "diff": 0,
+              "status": "EXACT"
+            },
+            {
+              "metric": "fieldRecall",
+              "ts": 0.5,
+              "python": 0.5,
+              "diff": 0,
+              "status": "EXACT"
+            },
+            {
+              "metric": "valuePrecision",
+              "ts": 1,
+              "python": 1,
+              "diff": 0,
+              "status": "EXACT"
+            },
+            {
+              "metric": "valueRecall",
+              "ts": 1,
+              "python": 1,
+              "diff": 0,
+              "status": "EXACT"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "36b88c07-da80-4b6c-9fb7-1e9804c26375",
+      "utterance": "create a calc to flag weekdays only",
+      "stages": {
+        "intent": {
+          "actual_agree": true,
+          "metrics": [
+            {
+              "metric": "equals",
+              "ts": 1,
+              "python": 1,
+              "diff": 0,
+              "status": "EXACT"
+            }
+          ]
+        },
+        "calculatedFieldFormula": {
+          "actual_agree": true,
+          "metrics": [
+            {
+              "metric": "calcValidity",
+              "ts": 1,
+              "python": 1,
+              "diff": 0,
+              "status": "EXACT"
+            },
+            {
+              "metric": "calcFieldValidity",
+              "ts": 1,
+              "python": 1,
+              "diff": 0,
+              "status": "EXACT"
+            },
+            {
+              "metric": "fieldPrecision",
+              "ts": 1,
+              "python": 1,
+              "diff": 0,
+              "status": "EXACT"
+            },
+            {
+              "metric": "fieldRecall",
+              "ts": 1,
+              "python": 1,
+              "diff": 0,
+              "status": "EXACT"
+            },
+            {
+              "metric": "valuePrecision",
+              "ts": 0,
+              "python": 0,
+              "diff": 0,
+              "status": "EXACT"
+            },
+            {
+              "metric": "valueRecall",
+              "ts": 0,
+              "python": 0,
+              "diff": 0,
+              "status": "EXACT"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "06a037ac-3124-49d9-be74-f654d0a2b2b2",
+      "utterance": "create calc to determine if trip is started in the current week",
+      "stages": {
+        "intent": {
+          "actual_agree": true,
+          "metrics": [
+            {
+              "metric": "equals",
+              "ts": 1,
+              "python": 1,
+              "diff": 0,
+              "status": "EXACT"
+            }
+          ]
+        },
+        "calculatedFieldFormula": {
+          "actual_agree": true,
+          "metrics": [
+            {
+              "metric": "calcValidity",
+              "ts": 1,
+              "python": 1,
+              "diff": 0,
+              "status": "EXACT"
+            },
+            {
+              "metric": "calcFieldValidity",
+              "ts": 1,
+              "python": 1,
+              "diff": 0,
+              "status": "EXACT"
+            },
+            {
+              "metric": "fieldPrecision",
+              "ts": 1,
+              "python": 1,
+              "diff": 0,
+              "status": "EXACT"
+            },
+            {
+              "metric": "fieldRecall",
+              "ts": 1,
+              "python": 1,
+              "diff": 0,
+              "status": "EXACT"
+            },
+            {
+              "metric": "valuePrecision",
+              "ts": 0,
+              "python": 0,
+              "diff": 0,
+              "status": "EXACT"
+            },
+            {
+              "metric": "valueRecall",
+              "ts": 0,
+              "python": 0,
+              "diff": 0,
+              "status": "EXACT"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "10c92037-5ddc-41ba-bf57-8c102390e156",
+      "utterance": "create a calc to bin company into taxi if it contains 'taxi' in its name",
+      "stages": {
+        "intent": {
+          "actual_agree": true,
+          "metrics": [
+            {
+              "metric": "equals",
+              "ts": 1,
+              "python": 1,
+              "diff": 0,
+              "status": "EXACT"
+            }
+          ]
+        },
+        "calculatedFieldFormula": {
+          "actual_agree": true,
+          "metrics": [
+            {
+              "metric": "calcValidity",
+              "ts": 1,
+              "python": 1,
+              "diff": 0,
+              "status": "EXACT"
+            },
+            {
+              "metric": "calcFieldValidity",
+              "ts": 1,
+              "python": 1,
+              "diff": 0,
+              "status": "EXACT"
+            },
+            {
+              "metric": "fieldPrecision",
+              "ts": 1,
+              "python": 1,
+              "diff": 0,
+              "status": "EXACT"
+            },
+            {
+              "metric": "fieldRecall",
+              "ts": 1,
+              "python": 1,
+              "diff": 0,
+              "status": "EXACT"
+            },
+            {
+              "metric": "valuePrecision",
+              "ts": 0.5,
+              "python": 0.5,
+              "diff": 0,
+              "status": "EXACT"
+            },
+            {
+              "metric": "valueRecall",
+              "ts": 1,
+              "python": 1,
+              "diff": 0,
+              "status": "EXACT"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "84bf0519-74ee-4ffa-b719-98a2f36c7f86",
+      "utterance": "flag taxi companies that has disputed transactions",
+      "stages": {
+        "intent": {
+          "actual_agree": true,
+          "metrics": [
+            {
+              "metric": "equals",
+              "ts": 1,
+              "python": 1,
+              "diff": 0,
+              "status": "EXACT"
+            }
+          ]
+        },
+        "calculatedFieldFormula": {
+          "actual_agree": true,
+          "metrics": [
+            {
+              "metric": "calcValidity",
+              "ts": 1,
+              "python": 1,
+              "diff": 0,
+              "status": "EXACT"
+            },
+            {
+              "metric": "calcFieldValidity",
+              "ts": 1,
+              "python": 1,
+              "diff": 0,
+              "status": "EXACT"
+            },
+            {
+              "metric": "fieldPrecision",
+              "ts": 1,
+              "python": 1,
+              "diff": 0,
+              "status": "EXACT"
+            },
+            {
+              "metric": "fieldRecall",
+              "ts": 1,
+              "python": 1,
+              "diff": 0,
+              "status": "EXACT"
+            },
+            {
+              "metric": "valuePrecision",
+              "ts": 1,
+              "python": 1,
+              "diff": 0,
+              "status": "EXACT"
+            },
+            {
+              "metric": "valueRecall",
+              "ts": 1,
+              "python": 1,
+              "diff": 0,
+              "status": "EXACT"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

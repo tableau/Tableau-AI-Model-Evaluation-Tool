@@ -1,0 +1,22 @@
+{
+    "runner": "color-palettes-server",
+    "info": {
+        "version": "1.0.0"
+    },
+    "inputs": [
+        {
+            "utterance": "Red, blue, yellow",
+            "source": "user",
+            "arguments": {
+                "palette_type": "regular"
+            },
+            "expected": {
+                "colorPalette": ["#FF0000", "#0000FF", "#FFFF00"]
+            },
+            "tags": [
+                "color-palette-regular"
+            ]
+        }
+    ],
+    "id": "0e7a69b1-67fa-4e03-84e4-5115c6b57d8a"
+}

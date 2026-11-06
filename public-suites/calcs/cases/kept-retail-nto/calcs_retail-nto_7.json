@@ -1,0 +1,25 @@
+{
+    "runner": "ect-server",
+    "datasource": "retail-nto",
+    "info": {
+        "originalValid": true
+    },
+    "inputs": [
+        {
+            "utterance": "compute rank of products with most profits per category - make it an LoD",
+            "source": "user",
+            "expected": {
+                "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+                "calculatedFieldFormula": {
+                    "formula": "RANK_UNIQUE(SUM({ FIXED [Category], [Product Name] : SUM([Gross Margin]) }))",
+                    "caption": null
+                }
+            },
+            "tags": [
+                "add-explicit-calc-wordage",
+                "calc-category-lod"
+            ]
+        }
+    ],
+    "id": "4d95df3a-22b2-4542-92d2-5a732c387075"
+}

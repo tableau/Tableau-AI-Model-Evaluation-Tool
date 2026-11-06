@@ -1,0 +1,37 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-account-360",
+  "info": {
+    "originalValid": true,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "Can you create a fixed LOD calculation to get the value of Number of Assets for each Phone?",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "{ FIXED [Phone] : [Number of Assets] }",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-non-aggregated-lod"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Lookup / Retrieval"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Level of Detail"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "836c88a06bd23fdb65e3834dd4466d0c"
+}

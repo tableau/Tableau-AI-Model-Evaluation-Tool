@@ -1,0 +1,404 @@
+{
+  "_note": "Python-golden scores for the ect-server metric classes. Compared by src/metrics/golden_parity.test.ts. Explanations are informational (validator error text is expected to differ).",
+  "cases": [
+    {
+      "name": "equals_exact_intent",
+      "metric_class": "Equals",
+      "metrics": [
+        {
+          "metric_name": "equals",
+          "score": 1.0,
+          "explanation": null
+        }
+      ]
+    },
+    {
+      "name": "equals_mismatch_intent",
+      "metric_class": "Equals",
+      "metrics": [
+        {
+          "metric_name": "equals",
+          "score": 0.0,
+          "explanation": null
+        }
+      ]
+    },
+    {
+      "name": "equals_actual_null",
+      "metric_class": "Equals",
+      "metrics": [
+        {
+          "metric_name": "equals",
+          "score": 0.0,
+          "explanation": null
+        }
+      ]
+    },
+    {
+      "name": "equals_object_exact",
+      "metric_class": "Equals",
+      "metrics": [
+        {
+          "metric_name": "equals",
+          "score": 1.0,
+          "explanation": null
+        }
+      ]
+    },
+    {
+      "name": "equals_object_diff",
+      "metric_class": "Equals",
+      "metrics": [
+        {
+          "metric_name": "equals",
+          "score": 0.0,
+          "explanation": null
+        }
+      ]
+    },
+    {
+      "name": "calc_validity_valid_simple",
+      "metric_class": "CalcValidity",
+      "metrics": [
+        {
+          "metric_name": "calcValidity",
+          "score": 1.0,
+          "explanation": null
+        }
+      ]
+    },
+    {
+      "name": "calc_validity_invalid_field",
+      "metric_class": "CalcValidity",
+      "metrics": [
+        {
+          "metric_name": "calcValidity",
+          "score": 0.0,
+          "explanation": [
+            "Field not in the data source: [Nonexistent]"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "calc_validity_syntax_error",
+      "metric_class": "CalcValidity",
+      "metrics": [
+        {
+          "metric_name": "calcValidity",
+          "score": 0.0,
+          "explanation": [
+            "Syntax Error: Syntax error at line 1, column 10: missing ')' at '<EOF>'"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "calc_validity_empty_string",
+      "metric_class": "CalcValidity",
+      "metrics": [
+        {
+          "metric_name": "calcValidity",
+          "score": 0.0,
+          "explanation": "Empty formula"
+        }
+      ]
+    },
+    {
+      "name": "calc_validity_null",
+      "metric_class": "CalcValidity",
+      "metrics": [
+        {
+          "metric_name": "calcValidity",
+          "score": 0.0,
+          "explanation": "Empty formula"
+        }
+      ]
+    },
+    {
+      "name": "cfv_all_valid_fields",
+      "metric_class": "CalcFieldValidity",
+      "metrics": [
+        {
+          "metric_name": "calcFieldValidity",
+          "score": 1.0,
+          "explanation": null
+        }
+      ]
+    },
+    {
+      "name": "cfv_one_invalid_field",
+      "metric_class": "CalcFieldValidity",
+      "metrics": [
+        {
+          "metric_name": "calcFieldValidity",
+          "score": 0.5,
+          "explanation": null
+        }
+      ]
+    },
+    {
+      "name": "cfv_empty_formula",
+      "metric_class": "CalcFieldValidity",
+      "metrics": [
+        {
+          "metric_name": "calcFieldValidity",
+          "score": 0.0,
+          "explanation": null
+        }
+      ]
+    },
+    {
+      "name": "cfa_exact_fields",
+      "metric_class": "CalcFieldAccuracy",
+      "metrics": [
+        {
+          "metric_name": "fieldPrecision",
+          "score": 1.0,
+          "explanation": null
+        },
+        {
+          "metric_name": "fieldRecall",
+          "score": 1.0,
+          "explanation": null
+        }
+      ]
+    },
+    {
+      "name": "cfa_partial_field_match",
+      "metric_class": "CalcFieldAccuracy",
+      "metrics": [
+        {
+          "metric_name": "fieldPrecision",
+          "score": 1.0,
+          "explanation": null
+        },
+        {
+          "metric_name": "fieldRecall",
+          "score": 0.5,
+          "explanation": null
+        }
+      ]
+    },
+    {
+      "name": "cfa_extra_actual_field",
+      "metric_class": "CalcFieldAccuracy",
+      "metrics": [
+        {
+          "metric_name": "fieldPrecision",
+          "score": 0.5,
+          "explanation": null
+        },
+        {
+          "metric_name": "fieldRecall",
+          "score": 1.0,
+          "explanation": null
+        }
+      ]
+    },
+    {
+      "name": "cfa_disjoint_fields",
+      "metric_class": "CalcFieldAccuracy",
+      "metrics": [
+        {
+          "metric_name": "fieldPrecision",
+          "score": 0.0,
+          "explanation": null
+        },
+        {
+          "metric_name": "fieldRecall",
+          "score": 0.0,
+          "explanation": null
+        }
+      ]
+    },
+    {
+      "name": "cfa_empty_actual",
+      "metric_class": "CalcFieldAccuracy",
+      "metrics": [
+        {
+          "metric_name": "fieldPrecision",
+          "score": 0.0,
+          "explanation": null
+        },
+        {
+          "metric_name": "fieldRecall",
+          "score": 0.0,
+          "explanation": null
+        }
+      ]
+    },
+    {
+      "name": "cva_exact_values",
+      "metric_class": "CalcValueAccuracy",
+      "metrics": [
+        {
+          "metric_name": "valuePrecision",
+          "score": 1.0,
+          "explanation": "Matched 1 of 1 expected values."
+        },
+        {
+          "metric_name": "valueRecall",
+          "score": 1.0,
+          "explanation": "Matched 1 of 1 expected values."
+        }
+      ]
+    },
+    {
+      "name": "cva_partial_values",
+      "metric_class": "CalcValueAccuracy",
+      "metrics": [
+        {
+          "metric_name": "valuePrecision",
+          "score": 1.0,
+          "explanation": "Matched 2 of 3 expected values (missing: \"East\")."
+        },
+        {
+          "metric_name": "valueRecall",
+          "score": 0.6666666666666666,
+          "explanation": "Matched 2 of 3 expected values (missing: \"East\")."
+        }
+      ]
+    },
+    {
+      "name": "cva_no_values_expected",
+      "metric_class": "CalcValueAccuracy",
+      "metrics": [
+        {
+          "metric_name": "valuePrecision",
+          "score": 0.0,
+          "explanation": "The expected formula has no literal values; the answer adds 1, \"West\"."
+        }
+      ]
+    },
+    {
+      "name": "cva_empty_actual",
+      "metric_class": "CalcValueAccuracy",
+      "metrics": [
+        {
+          "metric_name": "valuePrecision",
+          "score": 0.0,
+          "explanation": "Matched 0 of 2 expected values (missing: 1, \"West\")."
+        },
+        {
+          "metric_name": "valueRecall",
+          "score": 0.0,
+          "explanation": "Matched 0 of 2 expected values (missing: 1, \"West\")."
+        }
+      ]
+    },
+    {
+      "name": "sfv_all_valid",
+      "metric_class": "SpecFieldValidity",
+      "metrics": [
+        {
+          "metric_name": "fieldValidity",
+          "score": 1.0,
+          "explanation": null
+        }
+      ]
+    },
+    {
+      "name": "sfv_one_invalid",
+      "metric_class": "SpecFieldValidity",
+      "metrics": [
+        {
+          "metric_name": "fieldValidity",
+          "score": 0.5,
+          "explanation": null
+        }
+      ]
+    },
+    {
+      "name": "sfv_empty_actual",
+      "metric_class": "SpecFieldValidity",
+      "metrics": [
+        {
+          "metric_name": "fieldValidity",
+          "score": 0.0,
+          "explanation": null
+        }
+      ]
+    },
+    {
+      "name": "sfa_exact",
+      "metric_class": "SpecFieldAccuracy",
+      "metrics": [
+        {
+          "metric_name": "precision",
+          "score": 1.0,
+          "explanation": null
+        },
+        {
+          "metric_name": "recall",
+          "score": 1.0,
+          "explanation": null
+        }
+      ]
+    },
+    {
+      "name": "sfa_partial",
+      "metric_class": "SpecFieldAccuracy",
+      "metrics": [
+        {
+          "metric_name": "precision",
+          "score": 1.0,
+          "explanation": null
+        },
+        {
+          "metric_name": "recall",
+          "score": 0.6666666666666666,
+          "explanation": null
+        }
+      ]
+    },
+    {
+      "name": "sfa_extra_actual",
+      "metric_class": "SpecFieldAccuracy",
+      "metrics": [
+        {
+          "metric_name": "precision",
+          "score": 0.5,
+          "explanation": null
+        },
+        {
+          "metric_name": "recall",
+          "score": 1.0,
+          "explanation": null
+        }
+      ]
+    },
+    {
+      "name": "sfa_empty_actual",
+      "metric_class": "SpecFieldAccuracy",
+      "metrics": [
+        {
+          "metric_name": "precision",
+          "score": 0.0,
+          "explanation": null
+        },
+        {
+          "metric_name": "recall",
+          "score": 0.0,
+          "explanation": null
+        }
+      ]
+    },
+    {
+      "name": "sfa_caption_key",
+      "metric_class": "SpecFieldAccuracy",
+      "metrics": [
+        {
+          "metric_name": "precision",
+          "score": 1.0,
+          "explanation": null
+        },
+        {
+          "metric_name": "recall",
+          "score": 0.5,
+          "explanation": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-activity-360",
+  "info": {
+    "requirement-id": "F-248-81bbd4566ff6fbf9",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "only show accounts with average attendees greater than 5 and sort them in descending order by attendee count",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Account Name",
+              "data": "string",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "x",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            },
+            {
+              "caption": "Duration (minutes)",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "encoding": "y"
+            }
+          ],
+          "rangeFilters": [
+            {
+              "type": "numeric-range",
+              "field": "Duration (minutes)",
+              "aggregation": "avg",
+              "start": 5,
+              "includeNull": false
+            }
+          ],
+          "sort": {
+            "field": "Account Name",
+            "by": "Duration (minutes)",
+            "aggregation": "sum",
+            "direction": "desc",
+            "_tb_wildcards": [
+              "field"
+            ]
+          }
+        }
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Threshold Qualification",
+          "Intent: Ranking / Top-N"
+        ],
+        "op": [
+          "Op: Aggregation (Non-Default)",
+          "Op: Filter - Numeric Threshold",
+          "Op: Sort / Order",
+          "Op: Group By Dimension"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    }
+  ],
+  "id": "67e08541a9b7cb87676054686e948bec"
+}

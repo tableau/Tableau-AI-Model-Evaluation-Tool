@@ -1,0 +1,25 @@
+{
+    "runner": "ect-server",
+    "datasource": "retail-nto",
+    "info": {
+        "originalValid": true
+    },
+    "inputs": [
+        {
+            "utterance": "flag the top 5 customers based on total profit per categ - make it an LoD",
+            "source": "user",
+            "expected": {
+                "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+                "calculatedFieldFormula": {
+                    "formula": "IF RANK(SUM({ FIXED [Customer], [Category] : SUM([Gross Margin]) })) <= 5 THEN 'Top 5' ELSE 'Not Top 5' END",
+                    "caption": null
+                }
+            },
+            "tags": [
+                "add-explicit-calc-wordage",
+                "calc-category-lod"
+            ]
+        }
+    ],
+    "id": "19988a6b-bca3-4c37-8290-5bfaa064b1d1"
+}

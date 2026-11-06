@@ -1,0 +1,41 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-activity-360",
+  "info": {
+    "originalValid": false,
+    "reasonInvalid": "Server didn't return anything",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "Create a calc to compute sales activities related to 'Project Bid' we had last month?",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "IF CONTAINS([Subject], 'Tableau') OR CONTAINS([Subject], 'Tableau') THEN IF DATEDIFF('month', [Activity Date], TODAY()) = 1 THEN 1 ELSE 0 END ELSE 0 END",
+          "caption": "This calculation checks if the 'Description' or 'Subject' fields contain the keyword 'Tableau' and if the 'Last Activity Date' is from last month. If both conditions are met, it returns 1; otherwise, it returns 0. Add the calculated field 'Tableau Sales Activities Last Month' to your Viz. You can then use it to count the number of sales activities related to 'Tableau' from last month by summing this field."
+        }
+      },
+      "tags": [
+        "add-explicit-calc-wordage"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Threshold Qualification"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Date Part Extraction",
+          "Op: Date Arithmetic",
+          "Op: String Manipulation",
+          "Op: Conditional Logic"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "72b674a30e181e2b176a587f06a08c1e"
+}

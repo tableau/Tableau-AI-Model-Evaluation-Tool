@@ -1,0 +1,2114 @@
+- id: intent-1
+  utterances:
+  - canonical: What's the secret to National Treasure? What does Ben discover?
+    expected-intent: other
+- id: intent-2
+  utterances:
+  - canonical: What does the theory of relativity explain?
+    expected-intent: other
+- id: intent-3
+  utterances:
+  - canonical: What are the benefits of meditation?
+    expected-intent: other
+- id: intent-4
+  utterances:
+  - canonical: What are the principles of sustainable development?
+    expected-intent: other
+- id: intent-5
+  utterances:
+  - canonical: What is genetic engineering?
+    expected-intent: other
+- id: intent-6
+  utterances:
+  - canonical: What are the symptoms of diabetes?
+    expected-intent: other
+- id: intent-7
+  utterances:
+  - canonical: What does the term quantum mechanics mean?
+    expected-intent: other
+- id: intent-8
+  utterances:
+  - canonical: What are the fundamentals of photography?
+    expected-intent: other
+- id: intent-9
+  utterances:
+  - canonical: What is cardiovascular fitness?
+    expected-intent: other
+- id: intent-10
+  utterances:
+  - canonical: What are the causes of air pollution?
+    expected-intent: other
+- id: intent-11
+  utterances:
+  - canonical: What is global warming?
+    expected-intent: other
+- id: intent-12
+  utterances:
+  - canonical: What does the term AI refer to?
+    expected-intent: other
+- id: intent-13
+  utterances:
+  - canonical: What is the Big Bang theory?
+    expected-intent: other
+- id: intent-14
+  utterances:
+  - canonical: What are the health benefits of yoga?
+    expected-intent: other
+- id: intent-15
+  utterances:
+  - canonical: What is organic farming?
+    expected-intent: other
+- id: intent-16
+  utterances:
+  - canonical: What is machine learning?
+    expected-intent: other
+- id: intent-17
+  utterances:
+  - canonical: What is the purpose of the United Nations?
+    expected-intent: other
+- id: intent-18
+  utterances:
+  - canonical: What is blockchain technology?
+    expected-intent: other
+- id: intent-19
+  utterances:
+  - canonical: What is the meaning of life?
+    expected-intent: other
+- id: intent-20
+  utterances:
+  - canonical: What is the new iPhone feature?
+    expected-intent: other
+- id: intent-21
+  utterances:
+  - canonical: What are the effects of climate change?
+    expected-intent: other
+- id: intent-22
+  utterances:
+  - canonical: What does a balanced diet consist of?
+    expected-intent: other
+- id: intent-23
+  utterances:
+  - canonical: What is veganism?
+    expected-intent: other
+- id: intent-24
+  utterances:
+  - canonical: What are the seven wonders of the world?
+    expected-intent: other
+- id: intent-25
+  utterances:
+  - canonical: What is the structure of a cell?
+    expected-intent: other
+- id: intent-26
+  utterances:
+  - canonical: What are the benefits of renewable energy?
+    expected-intent: other
+- id: intent-27
+  utterances:
+  - canonical: What is corporate social responsibility?
+    expected-intent: other
+- id: intent-28
+  utterances:
+  - canonical: What does biodiversity refer to?
+    expected-intent: other
+- id: intent-29
+  utterances:
+  - canonical: What is cognitive behavioral therapy?
+    expected-intent: other
+- id: intent-30
+  utterances:
+  - canonical: What is the principle of supply and demand in economics?
+    expected-intent: other
+- id: intent-31
+  utterances:
+  - canonical: What are the basic elements of art?
+    expected-intent: other
+- id: intent-32
+  utterances:
+  - canonical: What is mental health?
+    expected-intent: other
+- id: intent-33
+  utterances:
+  - canonical: What is the cause of obesity?
+    expected-intent: other
+- id: intent-34
+  utterances:
+  - canonical: What are the symptoms of COVID-19?
+    expected-intent: other
+- id: intent-35
+  utterances:
+  - canonical: What is the process of photosynthesis?
+    expected-intent: other
+- id: intent-36
+  utterances:
+  - canonical: What is the importance of organic chemistry?
+    expected-intent: other
+- id: intent-37
+  utterances:
+  - canonical: What are the functions of proteins in the body?
+    expected-intent: other
+- id: intent-38
+  utterances:
+  - canonical: What are the impacts of overpopulation?
+    expected-intent: other
+- id: intent-39
+  utterances:
+  - canonical: What are the benefits of regular exercise?
+    expected-intent: other
+- id: intent-40
+  utterances:
+  - canonical: What are dark matter and dark energy?
+    expected-intent: other
+- id: intent-41
+  utterances:
+  - canonical: What is human rights?
+    expected-intent: other
+- id: intent-42
+  utterances:
+  - canonical: What is the role of the Internet in modern society?
+    expected-intent: other
+- id: intent-43
+  utterances:
+  - canonical: What is financial literacy?
+    expected-intent: other
+- id: intent-44
+  utterances:
+  - canonical: What is mindfulness?
+    expected-intent: other
+- id: intent-45
+  utterances:
+  - canonical: What is quantum computing?
+    expected-intent: other
+- id: intent-46
+  utterances:
+  - canonical: "What does the term \u2018emotional intelligence\u2019 mean?"
+    expected-intent: other
+- id: intent-47
+  utterances:
+  - canonical: What is a firewall in computer networking?
+    expected-intent: other
+- id: intent-48
+  utterances:
+  - canonical: What is the significance of the Periodic Table?
+    expected-intent: other
+- id: intent-49
+  utterances:
+  - canonical: What is the importance of sleep?
+    expected-intent: other
+- id: intent-50
+  utterances:
+  - canonical: What is autism?
+    expected-intent: other
+- id: intent-51
+  utterances:
+  - canonical: What is the role of artificial intelligence in healthcare?
+    expected-intent: other
+- id: intent-52
+  utterances:
+  - canonical: What is photosynthesis?
+    expected-intent: other
+- id: intent-53
+  utterances:
+  - canonical: What are the pros and cons of nuclear energy?
+    expected-intent: other
+- id: intent-54
+  utterances:
+  - canonical: What are the implications of Brexit?
+    expected-intent: other
+- id: intent-55
+  utterances:
+  - canonical: What are the functions of the thyroid gland?
+    expected-intent: other
+- id: intent-56
+  utterances:
+  - canonical: What is the internet of things (IoT)?
+    expected-intent: other
+- id: intent-57
+  utterances:
+  - canonical: What is the best way to learn a foreign language?
+    expected-intent: other
+- id: intent-58
+  utterances:
+  - canonical: What is an algorithm in computer science?
+    expected-intent: other
+- id: intent-59
+  utterances:
+  - canonical: What is a black hole?
+    expected-intent: other
+- id: intent-60
+  utterances:
+  - canonical: What is the impact of deforestation?
+    expected-intent: other
+- id: intent-61
+  utterances:
+  - canonical: What are the benefits of reading books?
+    expected-intent: other
+- id: intent-62
+  utterances:
+  - canonical: What are microplastics?
+    expected-intent: other
+- id: intent-63
+  utterances:
+  - canonical: What is gravitational force?
+    expected-intent: other
+- id: intent-64
+  utterances:
+  - canonical: What is the difference between plant and animal cells?
+    expected-intent: other
+- id: intent-65
+  utterances:
+  - canonical: What is the role of chlorophyll in photosynthesis?
+    expected-intent: other
+- id: intent-66
+  utterances:
+  - canonical: What are the dangers of passive smoking?
+    expected-intent: other
+- id: intent-67
+  utterances:
+  - canonical: What is a pandemic?
+    expected-intent: other
+- id: intent-68
+  utterances:
+  - canonical: What are the effects of fast food on health?
+    expected-intent: other
+- id: intent-69
+  utterances:
+  - canonical: What is an eco-friendly lifestyle?
+    expected-intent: other
+- id: intent-70
+  utterances:
+  - canonical: What are renewable resources?
+    expected-intent: other
+- id: intent-71
+  utterances:
+  - canonical: What is conflict resolution?
+    expected-intent: other
+- id: intent-72
+  utterances:
+  - canonical: What does the term 'biodiversity' mean?
+    expected-intent: other
+- id: intent-73
+  utterances:
+  - canonical: What are the impacts of ocean acidification?
+    expected-intent: other
+- id: intent-74
+  utterances:
+  - canonical: What are the principles of graphic design?
+    expected-intent: other
+- id: intent-75
+  utterances:
+  - canonical: What are the symptoms of depression?
+    expected-intent: other
+- id: intent-76
+  utterances:
+  - canonical: What is epigenetics?
+    expected-intent: other
+- id: intent-77
+  utterances:
+  - canonical: What is the purpose of meditation?
+    expected-intent: other
+- id: intent-78
+  utterances:
+  - canonical: What is child development?
+    expected-intent: other
+- id: intent-79
+  utterances:
+  - canonical: What is the function of the heart in the human body?
+    expected-intent: other
+- id: intent-80
+  utterances:
+  - canonical: What is the role of the World Health Organization?
+    expected-intent: other
+- id: intent-81
+  utterances:
+  - canonical: What is climate change mitigation?
+    expected-intent: other
+- id: intent-82
+  utterances:
+  - canonical: What are the side effects of antibiotics?
+    expected-intent: other
+- id: intent-83
+  utterances:
+  - canonical: What are the latest fashion trends?
+    expected-intent: other
+- id: intent-84
+  utterances:
+  - canonical: What is the importance of hydration?
+    expected-intent: other
+- id: intent-85
+  utterances:
+  - canonical: What are the ingredients in a vegan diet?
+    expected-intent: other
+- id: intent-86
+  utterances:
+  - canonical: What is the impact of social media on youth?
+    expected-intent: other
+- id: intent-87
+  utterances:
+  - canonical: What are the benefits of a positive mindset?
+    expected-intent: other
+- id: intent-88
+  utterances:
+  - canonical: What is the purpose of the ozone layer?
+    expected-intent: other
+- id: intent-89
+  utterances:
+  - canonical: What is ozone depletion?
+    expected-intent: other
+- id: intent-90
+  utterances:
+  - canonical: What is the impact of diet on mental health?
+    expected-intent: other
+- id: intent-91
+  utterances:
+  - canonical: What is the impact of technology on society?
+    expected-intent: other
+- id: intent-92
+  utterances:
+  - canonical: What are the symptoms of an allergic reaction?
+    expected-intent: other
+- id: intent-93
+  utterances:
+  - canonical: What are the effects of pollution on health?
+    expected-intent: other
+- id: intent-94
+  utterances:
+  - canonical: What are the types of renewable energy?
+    expected-intent: other
+- id: intent-95
+  utterances:
+  - canonical: What are the benefits of recycling?
+    expected-intent: other
+- id: intent-96
+  utterances:
+  - canonical: What are the causes and effects of the Syrian Civil War?
+    expected-intent: other
+- id: intent-97
+  utterances:
+  - canonical: What are the effects of radiation exposure?
+    expected-intent: other
+- id: intent-98
+  utterances:
+  - canonical: What is the importance of equal rights?
+    expected-intent: other
+- id: intent-99
+  utterances:
+  - canonical: What is the impact of alcohol on the liver?
+    expected-intent: other
+- id: intent-100
+  utterances:
+  - canonical: What are the roles of the United Nations?
+    expected-intent: other
+- id: intent-101
+  utterances:
+  - canonical: What are the benefits of a zero-waste lifestyle?
+    expected-intent: other
+- id: intent-102
+  utterances:
+  - canonical: What is the impact of tourism on the environment?
+    expected-intent: other
+- id: intent-103
+  utterances:
+  - canonical: What is the importance of financial planning?
+    expected-intent: other
+- id: intent-104
+  utterances:
+  - canonical: What are the adverse effects of sugar on health?
+    expected-intent: other
+- id: intent-105
+  utterances:
+  - canonical: What are the principles of 3D printing?
+    expected-intent: other
+- id: intent-106
+  utterances:
+  - canonical: What are the basic concepts of yoga?
+    expected-intent: other
+- id: intent-107
+  utterances:
+  - canonical: What is urban farming and its benefits?
+    expected-intent: other
+- id: intent-108
+  utterances:
+  - canonical: What is solar energy?
+    expected-intent: other
+- id: intent-109
+  utterances:
+  - canonical: What are the principles of virtual reality?
+    expected-intent: other
+- id: intent-110
+  utterances:
+  - canonical: How to deal with stress at work?
+    expected-intent: other
+- id: intent-111
+  utterances:
+  - canonical: How to invest in stocks?
+    expected-intent: other
+- id: intent-112
+  utterances:
+  - canonical: How do anti-depressant drugs work?
+    expected-intent: other
+- id: intent-113
+  utterances:
+  - canonical: How to prepare for a job interview?
+    expected-intent: other
+- id: intent-114
+  utterances:
+  - canonical: How to choose the right career path?
+    expected-intent: other
+- id: intent-115
+  utterances:
+  - canonical: How to change a flat tire?
+    expected-intent: other
+- id: intent-116
+  utterances:
+  - canonical: How to maintain a healthy diet?
+    expected-intent: other
+- id: intent-117
+  utterances:
+  - canonical: How do vaccines work?
+    expected-intent: other
+- id: intent-118
+  utterances:
+  - canonical: How to communicate effectively?
+    expected-intent: other
+- id: intent-119
+  utterances:
+  - canonical: How to manage time efficiently?
+    expected-intent: other
+- id: intent-120
+  utterances:
+  - canonical: How to write a business plan?
+    expected-intent: other
+- id: intent-121
+  utterances:
+  - canonical: How do I stop procrastinating?
+    expected-intent: other
+- id: intent-122
+  utterances:
+  - canonical: How to make homemade pasta?
+    expected-intent: other
+- id: intent-123
+  utterances:
+  - canonical: How do I recover deleted files on my computer?
+    expected-intent: other
+- id: intent-124
+  utterances:
+  - canonical: How to brew your own beer?
+    expected-intent: other
+- id: intent-125
+  utterances:
+  - canonical: How do I track my fitness progress?
+    expected-intent: other
+- id: intent-126
+  utterances:
+  - canonical: How to build a personal brand?
+    expected-intent: other
+- id: intent-127
+  utterances:
+  - canonical: How to negotiate a salary raise?
+    expected-intent: other
+- id: intent-128
+  utterances:
+  - canonical: How to improve my credit score?
+    expected-intent: other
+- id: intent-129
+  utterances:
+  - canonical: How to read nutrition labels?
+    expected-intent: other
+- id: intent-130
+  utterances:
+  - canonical: How can I increase my reading speed?
+    expected-intent: other
+- id: intent-131
+  utterances:
+  - canonical: How to plant a tree?
+    expected-intent: other
+- id: intent-132
+  utterances:
+  - canonical: How to reduce carbon footprint at home?
+    expected-intent: other
+- id: intent-133
+  utterances:
+  - canonical: How to start a non-profit organization?
+    expected-intent: other
+- id: intent-134
+  utterances:
+  - canonical: How to maximize a small living space?
+    expected-intent: other
+- id: intent-135
+  utterances:
+  - canonical: How to learn a new language quickly?
+    expected-intent: other
+- id: intent-136
+  utterances:
+  - canonical: How do quantum computers work?
+    expected-intent: other
+- id: intent-137
+  utterances:
+  - canonical: How to prepare for a natural disaster?
+    expected-intent: other
+- id: intent-138
+  utterances:
+  - canonical: How to meditate for stress reduction?
+    expected-intent: other
+- id: intent-139
+  utterances:
+  - canonical: How to potty train a puppy?
+    expected-intent: other
+- id: intent-140
+  utterances:
+  - canonical: How to write a research paper?
+    expected-intent: other
+- id: intent-141
+  utterances:
+  - canonical: How to overcome fear of public speaking?
+    expected-intent: other
+- id: intent-142
+  utterances:
+  - canonical: How to save money for retirement?
+    expected-intent: other
+- id: intent-143
+  utterances:
+  - canonical: How can I improve my memory?
+    expected-intent: other
+- id: intent-144
+  utterances:
+  - canonical: How does climate change affect wildlife?
+    expected-intent: other
+- id: intent-145
+  utterances:
+  - canonical: How to draft a legal contract?
+    expected-intent: other
+- id: intent-146
+  utterances:
+  - canonical: How to get a real estate license?
+    expected-intent: other
+- id: intent-147
+  utterances:
+  - canonical: How to start a podcast?
+    expected-intent: other
+- id: intent-148
+  utterances:
+  - canonical: How to use Photoshop?
+    expected-intent: other
+- id: intent-149
+  utterances:
+  - canonical: How to optimize website for SEO?
+    expected-intent: other
+- id: intent-150
+  utterances:
+  - canonical: How to make a vegan cheesecake?
+    expected-intent: other
+- id: intent-151
+  utterances:
+  - canonical: How to create a mobile app?
+    expected-intent: other
+- id: intent-152
+  utterances:
+  - canonical: How to play chess?
+    expected-intent: other
+- id: intent-153
+  utterances:
+  - canonical: How do I change car oil?
+    expected-intent: other
+- id: intent-154
+  utterances:
+  - canonical: How to raise a bilingual child?
+    expected-intent: other
+- id: intent-155
+  utterances:
+  - canonical: How does a nuclear reactor work?
+    expected-intent: other
+- id: intent-156
+  utterances:
+  - canonical: How to make homemade wine?
+    expected-intent: other
+- id: intent-157
+  utterances:
+  - canonical: How to build an emergency kit?
+    expected-intent: other
+- id: intent-158
+  utterances:
+  - canonical: How to find the value of an antique?
+    expected-intent: other
+- id: intent-159
+  utterances:
+  - canonical: How to become a morning person?
+    expected-intent: other
+- id: intent-160
+  utterances:
+  - canonical: How does artificial intelligence work?
+    expected-intent: other
+- id: intent-161
+  utterances:
+  - canonical: How to reduce water pollution?
+    expected-intent: other
+- id: intent-162
+  utterances:
+  - canonical: How to calculate body mass index?
+    expected-intent: other
+    plausible-intents: [calc]
+- id: intent-163
+  utterances:
+  - canonical: How to write a book review?
+    expected-intent: other
+- id: intent-164
+  utterances:
+  - canonical: How to organize your closets?
+    expected-intent: other
+- id: intent-165
+  utterances:
+  - canonical: How to get rid of ants in the house?
+    expected-intent: other
+- id: intent-166
+  utterances:
+  - canonical: How to make a good first impression?
+    expected-intent: other
+- id: intent-167
+  utterances:
+  - canonical: How to design a website?
+    expected-intent: other
+- id: intent-168
+  utterances:
+  - canonical: How to improve your handwriting?
+    expected-intent: other
+- id: intent-169
+  utterances:
+  - canonical: How to care for a newborn?
+    expected-intent: other
+- id: intent-170
+  utterances:
+  - canonical: How to start a small business?
+    expected-intent: other
+- id: intent-171
+  utterances:
+  - canonical: How to make compost at home?
+    expected-intent: other
+- id: intent-172
+  utterances:
+  - canonical: How to make ice cream?
+    expected-intent: other
+- id: intent-173
+  utterances:
+  - canonical: How to create a budget?
+    expected-intent: other
+    plausible-intents: [flow-plan]
+- id: intent-174
+  utterances:
+  - canonical: How to lose weight?
+    expected-intent: other
+- id: intent-175
+  utterances:
+  - canonical: How to stop smoking?
+    expected-intent: other
+- id: intent-176
+  utterances:
+  - canonical: How to cure a hangover?
+    expected-intent: other
+- id: intent-177
+  utterances:
+  - canonical: How to train for a marathon?
+    expected-intent: other
+- id: intent-178
+  utterances:
+  - canonical: How to get a passport?
+    expected-intent: other
+- id: intent-179
+  utterances:
+  - canonical: How to style curly hair?
+    expected-intent: other
+- id: intent-180
+  utterances:
+  - canonical: How to prevent heart disease?
+    expected-intent: other
+- id: intent-181
+  utterances:
+  - canonical: How to make sushi at home?
+    expected-intent: other
+- id: intent-182
+  utterances:
+  - canonical: How to start a blog?
+    expected-intent: other
+- id: intent-183
+  utterances:
+  - canonical: How to clean a fish tank?
+    expected-intent: other
+- id: intent-184
+  utterances:
+  - canonical: How to build a deck?
+    expected-intent: other
+- id: intent-185
+  utterances:
+  - canonical: How to install solar panels?
+    expected-intent: other
+- id: intent-186
+  utterances:
+  - canonical: How to write a resume?
+    expected-intent: other
+- id: intent-187
+  utterances:
+  - canonical: How to take good photos?
+    expected-intent: other
+- id: intent-188
+  utterances:
+  - canonical: How to paint a room?
+    expected-intent: other
+- id: intent-189
+  utterances:
+  - canonical: How to build a tree house?
+    expected-intent: other
+- id: intent-190
+  utterances:
+  - canonical: How to decorate a living room?
+    expected-intent: other
+- id: intent-191
+  utterances:
+  - canonical: How to bake bread?
+    expected-intent: other
+- id: intent-192
+  utterances:
+  - canonical: How to practice yoga at home?
+    expected-intent: other
+- id: intent-193
+  utterances:
+  - canonical: How to make a smoothie?
+    expected-intent: other
+- id: intent-194
+  utterances:
+  - canonical: How to write a cover letter?
+    expected-intent: other
+- id: intent-195
+  utterances:
+  - canonical: How to grow tomatoes?
+    expected-intent: other
+- id: intent-196
+  utterances:
+  - canonical: How to knit a scarf?
+    expected-intent: other
+- id: intent-197
+  utterances:
+  - canonical: How to install a ceiling fan?
+    expected-intent: other
+- id: intent-198
+  utterances:
+  - canonical: How to apply for a student loan?
+    expected-intent: other
+- id: intent-199
+  utterances:
+  - canonical: How to get rid of acne?
+    expected-intent: other
+- id: intent-200
+  utterances:
+  - canonical: How to learn coding?
+    expected-intent: other
+- id: intent-201
+  utterances:
+  - canonical: How to play guitar?
+    expected-intent: other
+- id: intent-202
+  utterances:
+  - canonical: How to set up a fish tank?
+    expected-intent: other
+- id: intent-203
+  utterances:
+  - canonical: How to set fitness goals?
+    expected-intent: other
+- id: intent-204
+  utterances:
+  - canonical: How to make a cocktail?
+    expected-intent: other
+- id: intent-205
+  utterances:
+  - canonical: How to draw manga?
+    expected-intent: other
+- id: intent-206
+  utterances:
+  - canonical: How to protect your identity online?
+    expected-intent: other
+- id: intent-207
+  utterances:
+  - canonical: How to make a candle?
+    expected-intent: other
+- id: intent-208
+  utterances:
+  - canonical: How to write a press release?
+    expected-intent: other
+- id: intent-209
+  utterances:
+  - canonical: How to make a soap?
+    expected-intent: other
+- id: intent-210
+  utterances:
+  - canonical: How to apply makeup?
+    expected-intent: other
+- id: intent-211
+  utterances:
+  - canonical: How to speak French?
+    expected-intent: other
+- id: intent-212
+  utterances:
+  - canonical: How to make a greenhouse at home?
+    expected-intent: other
+- id: intent-213
+  utterances:
+  - canonical: How to deal with loneliness?
+    expected-intent: other
+- id: intent-214
+  utterances:
+  - canonical: How to start beekeeping?
+    expected-intent: other
+- id: intent-215
+  utterances:
+  - canonical: How to start an online store?
+    expected-intent: other
+- id: intent-216
+  utterances:
+  - canonical: How to write a movie script?
+    expected-intent: other
+- id: intent-217
+  utterances:
+  - canonical: How to make a pizza from scratch?
+    expected-intent: other
+- id: intent-218
+  utterances:
+  - canonical: How to increase your metabolism?
+    expected-intent: other
+- id: intent-219
+  utterances:
+  - canonical: How to make a YouTube channel?
+    expected-intent: other
+- id: intent-220
+  utterances:
+  - canonical: Where will I go after death?
+    expected-intent: other
+- id: intent-221
+  utterances:
+  - canonical: Where is the smallest country located?
+    expected-intent: other
+- id: intent-222
+  utterances:
+  - canonical: Where did the first Olympic Games take place?
+    expected-intent: other
+- id: intent-223
+  utterances:
+  - canonical: Where is the deepest point in the ocean?
+    expected-intent: other
+- id: intent-224
+  utterances:
+  - canonical: Where can I find the best sushi in Tokyo?
+    expected-intent: other
+- id: intent-225
+  utterances:
+  - canonical: Where was the first computer invented?
+    expected-intent: other
+- id: intent-226
+  utterances:
+  - canonical: Where does the Nile River begin?
+    expected-intent: other
+- id: intent-227
+  utterances:
+  - canonical: Where was the Declaration of Independence signed?
+    expected-intent: other
+- id: intent-228
+  utterances:
+  - canonical: Where is the Eiffel Tower?
+    expected-intent: other
+- id: intent-229
+  utterances:
+  - canonical: Where will the next Olympics be held?
+    expected-intent: other
+- id: intent-230
+  utterances:
+  - canonical: Where is the Mona Lisa exhibited?
+    expected-intent: other
+- id: intent-231
+  utterances:
+  - canonical: Where can one see the northern lights?
+    expected-intent: other
+- id: intent-232
+  utterances:
+  - canonical: Where does Santa Claus live?
+    expected-intent: other
+- id: intent-233
+  utterances:
+  - canonical: Where does the Amazon River flow?
+    expected-intent: other
+- id: intent-234
+  utterances:
+  - canonical: Where did the Titanic sink?
+    expected-intent: other
+- id: intent-235
+  utterances:
+  - canonical: Where was Shakespeare born?
+    expected-intent: other
+- id: intent-236
+  utterances:
+  - canonical: Where is the Great Barrier Reef located?
+    expected-intent: other
+- id: intent-237
+  utterances:
+  - canonical: Where was the largest diamond found?
+    expected-intent: other
+- id: intent-238
+  utterances:
+  - canonical: Where does the Tasmanian Devil live?
+    expected-intent: other
+- id: intent-239
+  utterances:
+  - canonical: Where is the most populated city in the world?
+    expected-intent: other
+- id: intent-240
+  utterances:
+  - canonical: Where is the hottest place on Earth?
+    expected-intent: other
+- id: intent-241
+  utterances:
+  - canonical: Where was Jesus Christ born?
+    expected-intent: other
+- id: intent-242
+  utterances:
+  - canonical: Where does the President of the United States live?
+    expected-intent: other
+- id: intent-243
+  utterances:
+  - canonical: Where is Silicon Valley?
+    expected-intent: other
+- id: intent-244
+  utterances:
+  - canonical: Where did the French Revolution begin?
+    expected-intent: other
+- id: intent-245
+  utterances:
+  - canonical: Where was the Great Wall of China built?
+    expected-intent: other
+- id: intent-246
+  utterances:
+  - canonical: Where is the International Space Station?
+    expected-intent: other
+- id: intent-247
+  utterances:
+  - canonical: Where does the equator pass through?
+    expected-intent: other
+- id: intent-248
+  utterances:
+  - canonical: Where is the Statue of Liberty?
+    expected-intent: other
+- id: intent-249
+  utterances:
+  - canonical: Where are the Pyramids of Giza?
+    expected-intent: other
+- id: intent-250
+  utterances:
+  - canonical: Where was Martin Luther King Jr. assassinated?
+    expected-intent: other
+- id: intent-251
+  utterances:
+  - canonical: Where does the Eurovision Song Contest take place?
+    expected-intent: other
+- id: intent-252
+  utterances:
+  - canonical: Where can the oldest tree in the world be found?
+    expected-intent: other
+- id: intent-253
+  utterances:
+  - canonical: Where was the last World Cup held?
+    expected-intent: other
+- id: intent-254
+  utterances:
+  - canonical: Where is the Leaning Tower of Pisa?
+    expected-intent: other
+- id: intent-255
+  utterances:
+  - canonical: Where did Louis Pasteur discover the vaccine for Rabies?
+    expected-intent: other
+- id: intent-256
+  utterances:
+  - canonical: Where was the first pizza made?
+    expected-intent: other
+- id: intent-257
+  utterances:
+  - canonical: Where is the highest mountain peak in the world?
+    expected-intent: other
+- id: intent-258
+  utterances:
+  - canonical: Where did Buddha attain enlightenment?
+    expected-intent: other
+- id: intent-259
+  utterances:
+  - canonical: Where can I see wild kangaroos?
+    expected-intent: other
+- id: intent-260
+  utterances:
+  - canonical: Where did Amelia Earhart disappear?
+    expected-intent: other
+- id: intent-261
+  utterances:
+  - canonical: Where is the Aurora Borealis visible?
+    expected-intent: other
+- id: intent-262
+  utterances:
+  - canonical: Where was the Magna Carta signed?
+    expected-intent: other
+- id: intent-263
+  utterances:
+  - canonical: Where is the Bermuda Triangle?
+    expected-intent: other
+- id: intent-264
+  utterances:
+  - canonical: Where can I see the Big Ben?
+    expected-intent: other
+- id: intent-265
+  utterances:
+  - canonical: Where is the headquarters of the United Nations?
+    expected-intent: other
+- id: intent-266
+  utterances:
+  - canonical: Where was Albert Einstein born?
+    expected-intent: other
+- id: intent-267
+  utterances:
+  - canonical: Where can I find the Dead Sea?
+    expected-intent: other
+- id: intent-268
+  utterances:
+  - canonical: Where was the first Harry Potter book published?
+    expected-intent: other
+- id: intent-269
+  utterances:
+  - canonical: Where is the driest desert?
+    expected-intent: other
+- id: intent-270
+  utterances:
+  - canonical: Where was the Beatles' first concert?
+    expected-intent: other
+- id: intent-271
+  utterances:
+  - canonical: Where is the largest rainforest?
+    expected-intent: other
+- id: intent-272
+  utterances:
+  - canonical: 'Where were the Dead Sea Scrolls found? '
+    expected-intent: other
+- id: intent-273
+  utterances:
+  - canonical: Where was Nelson Mandela imprisoned?
+    expected-intent: other
+- id: intent-274
+  utterances:
+  - canonical: Where can you find the original Star-Spangled Banner?
+    expected-intent: other
+- id: intent-275
+  utterances:
+  - canonical: Where did Mahatma Gandhi lead the Salt March?
+    expected-intent: other
+- id: intent-276
+  utterances:
+  - canonical: Where is the Colosseum situated?
+    expected-intent: other
+- id: intent-277
+  utterances:
+  - canonical: Where did the Salem Witch Trials take place?
+    expected-intent: other
+- id: intent-278
+  utterances:
+  - canonical: Where is Hollywood located?
+    expected-intent: other
+- id: intent-279
+  utterances:
+  - canonical: Where was the first McDonald's restaurant?
+    expected-intent: other
+- id: intent-280
+  utterances:
+  - canonical: Where can I see the Cherry Blossoms in Japan?
+    expected-intent: other
+- id: intent-281
+  utterances:
+  - canonical: Where was Cleopatra born?
+    expected-intent: other
+- id: intent-282
+  utterances:
+  - canonical: Where is Area 51?
+    expected-intent: other
+- id: intent-283
+  utterances:
+  - canonical: Where was the first Starbucks opened?
+    expected-intent: other
+- id: intent-284
+  utterances:
+  - canonical: Where is the Grand Canyon?
+    expected-intent: other
+- id: intent-285
+  utterances:
+  - canonical: Where did the Wright brothers first fly?
+    expected-intent: other
+- id: intent-286
+  utterances:
+  - canonical: Where did the Battle of Waterloo take place?
+    expected-intent: other
+- id: intent-287
+  utterances:
+  - canonical: Where was the first atomic bomb dropped?
+    expected-intent: other
+- id: intent-288
+  utterances:
+  - canonical: Where is the Louvre Museum located?
+    expected-intent: other
+- id: intent-289
+  utterances:
+  - canonical: Where was President John F. Kennedy assassinated?
+    expected-intent: other
+- id: intent-290
+  utterances:
+  - canonical: Where were the 2020 Summer Olympics held?
+    expected-intent: other
+- id: intent-291
+  utterances:
+  - canonical: Where are the headquarters of Google?
+    expected-intent: other
+- id: intent-292
+  utterances:
+  - canonical: Where does the Red Cross operate?
+    expected-intent: other
+- id: intent-293
+  utterances:
+  - canonical: Where is Mount Everest located?
+    expected-intent: other
+- id: intent-294
+  utterances:
+  - canonical: Where is the Sistine Chapel?
+    expected-intent: other
+- id: intent-295
+  utterances:
+  - canonical: Where can I find the Rosetta Stone?
+    expected-intent: other
+- id: intent-296
+  utterances:
+  - canonical: Where did the Boston Tea Party happen?
+    expected-intent: other
+- id: intent-297
+  utterances:
+  - canonical: Where is the official residence of the Queen of England?
+    expected-intent: other
+- id: intent-298
+  utterances:
+  - canonical: Where is Machu Picchu situated?
+    expected-intent: other
+- id: intent-299
+  utterances:
+  - canonical: Where was the Mother of Dragons born in Game of Thrones?
+    expected-intent: other
+- id: intent-300
+  utterances:
+  - canonical: Where is the oldest university in the world?
+    expected-intent: other
+- id: intent-301
+  utterances:
+  - canonical: Where did the American Revolutionary War start?
+    expected-intent: other
+- id: intent-302
+  utterances:
+  - canonical: Where is the largest volcano on Earth?
+    expected-intent: other
+- id: intent-303
+  utterances:
+  - canonical: Where did the Berlin Wall divide the city?
+    expected-intent: other
+- id: intent-304
+  utterances:
+  - canonical: Where was the Mona Lisa stolen from?
+    expected-intent: other
+- id: intent-305
+  utterances:
+  - canonical: Where is the southernmost city in the world located?
+    expected-intent: other
+- id: intent-306
+  utterances:
+  - canonical: Where did the Hindenburg disaster occur?
+    expected-intent: other
+- id: intent-307
+  utterances:
+  - canonical: Where can I see the tallest statue in the world?
+    expected-intent: other
+- id: intent-308
+  utterances:
+  - canonical: Where was Barack Obama born?
+    expected-intent: other
+- id: intent-309
+  utterances:
+  - canonical: Where can I see wild pandas?
+    expected-intent: other
+- id: intent-310
+  utterances:
+  - canonical: Where was the original Jurassic Park filmed?
+    expected-intent: other
+- id: intent-311
+  utterances:
+  - canonical: Where do the Maasai people live?
+    expected-intent: other
+- id: intent-312
+  utterances:
+  - canonical: Where is the Great White Shark most commonly found?
+    expected-intent: other
+- id: intent-313
+  utterances:
+  - canonical: Where was Beethoven born?
+    expected-intent: other
+- id: intent-314
+  utterances:
+  - canonical: Where was the first Winter Olympics held?
+    expected-intent: other
+- id: intent-315
+  utterances:
+  - canonical: Where are the headquarters of the European Union?
+    expected-intent: other
+- id: intent-316
+  utterances:
+  - canonical: Where did the first man land on the moon?
+    expected-intent: other
+- id: intent-317
+  utterances:
+  - canonical: Where can I find the oldest fossil?
+    expected-intent: other
+- id: intent-318
+  utterances:
+  - canonical: Where did the Black Death originate?
+    expected-intent: other
+- id: intent-319
+  utterances:
+  - canonical: Where is the Great Rift Valley?
+    expected-intent: other
+- id: intent-320
+  utterances:
+  - canonical: Where did the first woman in space launch from?
+    expected-intent: other
+- id: intent-321
+  utterances:
+  - canonical: Where was the first World War fought?
+    expected-intent: other
+- id: intent-322
+  utterances:
+  - canonical: Where is the longest river in the world?
+    expected-intent: other
+- id: intent-323
+  utterances:
+  - canonical: Where did the Cuban Missile Crisis take place?
+    expected-intent: other
+- id: intent-324
+  utterances:
+  - canonical: Where can I find the oldest known map?
+    expected-intent: other
+- id: intent-325
+  utterances:
+  - canonical: Where is the Crystal Palace located?
+    expected-intent: other
+- id: intent-326
+  utterances:
+  - canonical: When will the COVID-19 pandemic end?
+    expected-intent: other
+- id: intent-327
+  utterances:
+  - canonical: When is the next Cricket World Cup scheduled?
+    expected-intent: other
+- id: intent-328
+  utterances:
+  - canonical: When did women get the right to vote in the United States?
+    expected-intent: other
+- id: intent-329
+  utterances:
+  - canonical: When does daylight saving time begin?
+    expected-intent: other
+- id: intent-330
+  utterances:
+  - canonical: When was the first flight by the Wright Brothers?
+    expected-intent: other
+- id: intent-331
+  utterances:
+  - canonical: When will the new season of Game of Thrones start?
+    expected-intent: other
+- id: intent-332
+  utterances:
+  - canonical: When is the next Presidential election in France?
+    expected-intent: other
+- id: intent-333
+  utterances:
+  - canonical: When is Cyber Monday this year?
+    expected-intent: other
+- id: intent-334
+  utterances:
+  - canonical: When is the next solar eclipse?
+    expected-intent: other
+- id: intent-335
+  utterances:
+  - canonical: When do cherry blossoms bloom in Japan?
+    expected-intent: other
+- id: intent-336
+  utterances:
+  - canonical: When was the first iPhone released?
+    expected-intent: other
+- id: intent-337
+  utterances:
+  - canonical: When is the summer solstice?
+    expected-intent: other
+- id: intent-338
+  utterances:
+  - canonical: When was the Great Wall of China built?
+    expected-intent: other
+- id: intent-339
+  utterances:
+  - canonical: When will Mars be closest to Earth?
+    expected-intent: other
+- id: intent-340
+  utterances:
+  - canonical: When did the dinosaurs go extinct?
+    expected-intent: other
+- id: intent-341
+  utterances:
+  - canonical: When is Mother's Day this year?
+    expected-intent: other
+- id: intent-342
+  utterances:
+  - canonical: When did Rome fall?
+    expected-intent: other
+- id: intent-343
+  utterances:
+  - canonical: When does the school year start in Australia?
+    expected-intent: other
+- id: intent-344
+  utterances:
+  - canonical: When does Ramadan begin?
+    expected-intent: other
+- id: intent-345
+  utterances:
+  - canonical: When was the Taj Mahal built?
+    expected-intent: other
+- id: intent-346
+  utterances:
+  - canonical: When will Halley's Comet be visible again?
+    expected-intent: other
+- id: intent-347
+  utterances:
+  - canonical: When is the next leap year?
+    expected-intent: other
+- id: intent-348
+  utterances:
+  - canonical: When was the Declaration of Independence signed?
+    expected-intent: other
+- id: intent-349
+  utterances:
+  - canonical: When do we change the clocks for daylight savings?
+    expected-intent: other
+- id: intent-350
+  utterances:
+  - canonical: When was Shakespeare born?
+    expected-intent: other
+- id: intent-351
+  utterances:
+  - canonical: When is the next Olympics?
+    expected-intent: other
+- id: intent-352
+  utterances:
+  - canonical: When did Internet become widespread?
+    expected-intent: other
+- id: intent-353
+  utterances:
+  - canonical: When do cherry trees bloom in Washington D.C.?
+    expected-intent: other
+- id: intent-354
+  utterances:
+  - canonical: When was the Eiffel Tower built?
+    expected-intent: other
+- id: intent-355
+  utterances:
+  - canonical: When is Hanukkah this year?
+    expected-intent: other
+- id: intent-356
+  utterances:
+  - canonical: When did the Industrial Revolution begin?
+    expected-intent: other
+- id: intent-357
+  utterances:
+  - canonical: When does the rainy season start in India?
+    expected-intent: other
+- id: intent-358
+  utterances:
+  - canonical: When was the Colosseum built?
+    expected-intent: other
+- id: intent-359
+  utterances:
+  - canonical: When does winter start in Canada?
+    expected-intent: other
+- id: intent-360
+  utterances:
+  - canonical: When is Halloween?
+    expected-intent: other
+- id: intent-361
+  utterances:
+  - canonical: When is the Chinese New Year?
+    expected-intent: other
+- id: intent-362
+  utterances:
+  - canonical: When was the United Nations formed?
+    expected-intent: other
+- id: intent-363
+  utterances:
+  - canonical: When does autumn start?
+    expected-intent: other
+- id: intent-364
+  utterances:
+  - canonical: When did World War II end?
+    expected-intent: other
+- id: intent-365
+  utterances:
+  - canonical: When was Nelson Mandela born?
+    expected-intent: other
+- id: intent-366
+  utterances:
+  - canonical: When did the first man land on the moon?
+    expected-intent: other
+- id: intent-367
+  utterances:
+  - canonical: When was the last time Mount Vesuvius erupted?
+    expected-intent: other
+- id: intent-368
+  utterances:
+  - canonical: When will the next James Bond movie be released?
+    expected-intent: other
+- id: intent-369
+  utterances:
+  - canonical: When was the Louvre Museum built?
+    expected-intent: other
+- id: intent-370
+  utterances:
+  - canonical: When is Black Friday this year?
+    expected-intent: other
+- id: intent-371
+  utterances:
+  - canonical: When was the Constitution of the United States written?
+    expected-intent: other
+- id: intent-372
+  utterances:
+  - canonical: When did the Civil Rights Movement occur?
+    expected-intent: other
+- id: intent-373
+  utterances:
+  - canonical: When did the Titanic sink?
+    expected-intent: other
+- id: intent-374
+  utterances:
+  - canonical: When is the deadline for filing taxes?
+    expected-intent: other
+- id: intent-375
+  utterances:
+  - canonical: When was the first computer invented?
+    expected-intent: other
+- id: intent-376
+  utterances:
+  - canonical: When does spring start in Japan?
+    expected-intent: other
+- id: intent-377
+  utterances:
+  - canonical: When was the Panama Canal completed?
+    expected-intent: other
+- id: intent-378
+  utterances:
+  - canonical: When was the first car produced?
+    expected-intent: other
+- id: intent-379
+  utterances:
+  - canonical: When is daylight savings time end?
+    expected-intent: other
+- id: intent-380
+  utterances:
+  - canonical: When did the Renaissance start?
+    expected-intent: other
+- id: intent-381
+  utterances:
+  - canonical: When is the next total lunar eclipse?
+    expected-intent: other
+- id: intent-429
+  utterances:
+  - canonical: When was the Berlin Wall torn down?
+    expected-intent: other
+- id: intent-430
+  utterances:
+  - canonical: When is Easter this year?
+    expected-intent: other
+- id: intent-431
+  utterances:
+  - canonical: When did Elvis Presley die?
+    expected-intent: other
+- id: intent-432
+  utterances:
+  - canonical: When did the French Revolution occur?
+    expected-intent: other
+- id: intent-433
+  utterances:
+  - canonical: When is Amazon Prime Day?
+    expected-intent: other
+- id: intent-434
+  utterances:
+  - canonical: When is Canada Day?
+    expected-intent: other
+- id: intent-435
+  utterances:
+  - canonical: When is the deadline for submitting college applications?
+    expected-intent: other
+- id: intent-436
+  utterances:
+  - canonical: When was Pluto demoted to a dwarf planet?
+    expected-intent: other
+- id: intent-437
+  utterances:
+  - canonical: When is the next FIFA World Cup?
+    expected-intent: other
+- id: intent-438
+  utterances:
+  - canonical: When does hurricane season start in Florida?
+    expected-intent: other
+- id: intent-439
+  utterances:
+  - canonical: When was the Internet invented?
+    expected-intent: other
+- id: intent-440
+  utterances:
+  - canonical: When is Father's Day this year?
+    expected-intent: other
+- id: intent-441
+  utterances:
+  - canonical: When did Martin Luther King Jr. give his I Have a Dream" speech?"
+    expected-intent: other
+- id: intent-442
+  utterances:
+  - canonical: When does Daylight Saving Time start in Europe?
+    expected-intent: other
+- id: intent-443
+  utterances:
+  - canonical: When did Facebook launch?
+    expected-intent: other
+- id: intent-444
+  utterances:
+  - canonical: When was the Statue of Liberty built?
+    expected-intent: other
+- id: intent-445
+  utterances:
+  - canonical: When is the Super Bowl?
+    expected-intent: other
+- id: intent-446
+  utterances:
+  - canonical: When was the Mona Lisa painted?
+    expected-intent: other
+- id: intent-447
+  utterances:
+  - canonical: When is Valentine's Day?
+    expected-intent: other
+- id: intent-448
+  utterances:
+  - canonical: When did Albert Einstein die?
+    expected-intent: other
+- id: intent-449
+  utterances:
+  - canonical: When is the UEFA Champions League Final?
+    expected-intent: other
+- id: intent-450
+  utterances:
+  - canonical: When does summer start in the Southern Hemisphere?
+    expected-intent: other
+- id: intent-451
+  utterances:
+  - canonical: When is Independence Day in America?
+    expected-intent: other
+- id: intent-452
+  utterances:
+  - canonical: When does daylight savings end in Australia?
+    expected-intent: other
+- id: intent-453
+  utterances:
+  - canonical: When was Google launched?
+    expected-intent: other
+- id: intent-454
+  utterances:
+  - canonical: When does winter solstice occur?
+    expected-intent: other
+- id: intent-455
+  utterances:
+  - canonical: When is Earth Day?
+    expected-intent: other
+- id: intent-456
+  utterances:
+  - canonical: When was the first man-made satellite launched into space?
+    expected-intent: other
+- id: intent-457
+  utterances:
+  - canonical: When do the Northern Lights occur?
+    expected-intent: other
+- id: intent-458
+  utterances:
+  - canonical: When did the American Revolutionary War end?
+    expected-intent: other
+- id: intent-459
+  utterances:
+  - canonical: When is Diwali this year?
+    expected-intent: other
+- id: intent-460
+  utterances:
+  - canonical: When does autumn start in the Southern Hemisphere?
+    expected-intent: other
+- id: intent-461
+  utterances:
+  - canonical: When is the next Presidential Election in the United States?
+    expected-intent: other
+- id: intent-462
+  utterances:
+  - canonical: When was the Grand Canyon formed?
+    expected-intent: other
+- id: intent-463
+  utterances:
+  - canonical: When do migratory birds return to the Northern Hemisphere?
+    expected-intent: other
+- id: intent-464
+  utterances:
+  - canonical: When did Instagram launch?
+    expected-intent: other
+- id: intent-465
+  utterances:
+  - canonical: When was the Pyramids of Giza built?
+    expected-intent: other
+- id: intent-466
+  utterances:
+  - canonical: When is New Year's Eve?
+    expected-intent: other
+- id: intent-467
+  utterances:
+  - canonical: When was the first mobile phone invented?
+    expected-intent: other
+- id: intent-468
+  utterances:
+  - canonical: When is Thanksgiving this year?
+    expected-intent: other
+- id: intent-469
+  utterances:
+  - canonical: When did the Middle Ages begin?
+    expected-intent: other
+- id: intent-470
+  utterances:
+  - canonical: When is the next US Census?
+    expected-intent: other
+- id: intent-471
+  utterances:
+  - canonical: When did the Beatles break up?
+    expected-intent: other
+- id: intent-472
+  utterances:
+  - canonical: When was Bitcoin created?
+    expected-intent: other
+- id: intent-473
+  utterances:
+  - canonical: When does spring start in the Northern Hemisphere?
+    expected-intent: other
+- id: intent-474
+  utterances:
+  - canonical: Who invented the computer?
+    expected-intent: other
+- id: intent-475
+  utterances:
+  - canonical: Who is the current President of the United States?
+    expected-intent: other
+- id: intent-476
+  utterances:
+  - canonical: Who painted the Mona Lisa?
+    expected-intent: other
+- id: intent-477
+  utterances:
+  - canonical: Who found the cure for Polio?
+    expected-intent: other
+- id: intent-478
+  utterances:
+  - canonical: Who wrote Romeo and Juliet?
+    expected-intent: other
+- id: intent-479
+  utterances:
+  - canonical: Who was the first woman to fly solo across the Atlantic?
+    expected-intent: other
+- id: intent-480
+  utterances:
+  - canonical: Who discovered America?
+    expected-intent: other
+- id: intent-481
+  utterances:
+  - canonical: Who invented electricity?
+    expected-intent: other
+- id: intent-482
+  utterances:
+  - canonical: Who is the richest person in the world?
+    expected-intent: other
+- id: intent-483
+  utterances:
+  - canonical: Who is the Prime Minister of Canada?
+    expected-intent: other
+- id: intent-484
+  utterances:
+  - canonical: Who composed the Fifth Symphony?
+    expected-intent: other
+- id: intent-485
+  utterances:
+  - canonical: Who was Joan of Arc?
+    expected-intent: other
+- id: intent-486
+  utterances:
+  - canonical: Who founded Facebook?
+    expected-intent: other
+- id: intent-487
+  utterances:
+  - canonical: Who led the French Revolution?
+    expected-intent: other
+- id: intent-488
+  utterances:
+  - canonical: Who is known as the father of Genetics?
+    expected-intent: other
+- id: intent-489
+  utterances:
+  - canonical: Who discovered gravity?
+    expected-intent: other
+- id: intent-490
+  utterances:
+  - canonical: Who is the Queen of England?
+    expected-intent: other
+- id: intent-491
+  utterances:
+  - canonical: Who invented the telephone?
+    expected-intent: other
+- id: intent-492
+  utterances:
+  - canonical: Who was Einstein?
+    expected-intent: other
+- id: intent-493
+  utterances:
+  - canonical: Who is the first black President of America?
+    expected-intent: other
+- id: intent-494
+  utterances:
+  - canonical: Who assassinated Abraham Lincoln?
+    expected-intent: other
+- id: intent-495
+  utterances:
+  - canonical: Who started WWII?
+    expected-intent: other
+- id: intent-496
+  utterances:
+  - canonical: Who proposed the theory of evolution?
+    expected-intent: other
+- id: intent-497
+  utterances:
+  - canonical: Who built the Great Wall of China?
+    expected-intent: other
+- id: intent-498
+  utterances:
+  - canonical: Who is the author of Harry Potter?
+    expected-intent: other
+- id: intent-499
+  utterances:
+  - canonical: Who invented the Internet?
+    expected-intent: other
+- id: intent-500
+  utterances:
+  - canonical: Who is the founder of Microsoft?
+    expected-intent: other
+- id: intent-501
+  utterances:
+  - canonical: Who is the current Pope?
+    expected-intent: other
+- id: intent-502
+  utterances:
+  - canonical: Who were the Wright brothers?
+    expected-intent: other
+- id: intent-503
+  utterances:
+  - canonical: Who is the fastest man in the world?
+    expected-intent: other
+- id: intent-504
+  utterances:
+  - canonical: Who designed the Eiffel Tower?
+    expected-intent: other
+- id: intent-505
+  utterances:
+  - canonical: Who was William Shakespeare?
+    expected-intent: other
+- id: intent-506
+  utterances:
+  - canonical: Who discovered penicillin?
+    expected-intent: other
+- id: intent-507
+  utterances:
+  - canonical: Who invented the light bulb?
+    expected-intent: other
+- id: intent-508
+  utterances:
+  - canonical: Who founded Amazon?
+    expected-intent: other
+- id: intent-509
+  utterances:
+  - canonical: Who was Princess Diana?
+    expected-intent: other
+- id: intent-510
+  utterances:
+  - canonical: Who was Martin Luther King Jr.?
+    expected-intent: other
+- id: intent-511
+  utterances:
+  - canonical: Who is the best-selling artist of all time?
+    expected-intent: other
+- id: intent-512
+  utterances:
+  - canonical: Who is Elon Musk?
+    expected-intent: other
+- id: intent-513
+  utterances:
+  - canonical: Who was the first man in space?
+    expected-intent: other
+- id: intent-514
+  utterances:
+  - canonical: Who is the current UN Secretary-General?
+    expected-intent: other
+- id: intent-515
+  utterances:
+  - canonical: Who won the first World Cup?
+    expected-intent: other
+- id: intent-516
+  utterances:
+  - canonical: Who invented the periodic table?
+    expected-intent: other
+- id: intent-517
+  utterances:
+  - canonical: Who wrote the US Declaration of Independence?
+    expected-intent: other
+- id: intent-518
+  utterances:
+  - canonical: Who was the last Tsar of Russia?
+    expected-intent: other
+- id: intent-519
+  utterances:
+  - canonical: Who invented photography?
+    expected-intent: other
+- id: intent-520
+  utterances:
+  - canonical: Who was the first woman in space?
+    expected-intent: other
+- id: intent-521
+  utterances:
+  - canonical: Who is the current world chess champion?
+    expected-intent: other
+- id: intent-522
+  utterances:
+  - canonical: Who was Steve Jobs?
+    expected-intent: other
+- id: intent-523
+  utterances:
+  - canonical: Who was the first woman Prime Minister of the UK?
+    expected-intent: other
+- id: intent-524
+  utterances:
+  - canonical: Who discovered the DNA structure?
+    expected-intent: other
+- id: intent-525
+  utterances:
+  - canonical: Who created the first vaccine?
+    expected-intent: other
+- id: intent-526
+  utterances:
+  - canonical: Who was the prophet of Islam?
+    expected-intent: other
+- id: intent-527
+  utterances:
+  - canonical: Who is the current Dalai Lama?
+    expected-intent: other
+- id: intent-528
+  utterances:
+  - canonical: Who is the first female Vice-President of the US?
+    expected-intent: other
+- id: intent-529
+  utterances:
+  - canonical: Who wrote the Bible?
+    expected-intent: other
+- id: intent-530
+  utterances:
+  - canonical: Who is the CEO of Google?
+    expected-intent: other
+- id: intent-531
+  utterances:
+  - canonical: Who won the first Nobel prize?
+    expected-intent: other
+- id: intent-532
+  utterances:
+  - canonical: Who was the first Arab astronaut?
+    expected-intent: other
+- id: intent-533
+  utterances:
+  - canonical: Who was the first Roman Emperor?
+    expected-intent: other
+- id: intent-534
+  utterances:
+  - canonical: Who wrote the Quran?
+    expected-intent: other
+- id: intent-535
+  utterances:
+  - canonical: Who is the current World's Heaviest Man?
+    expected-intent: other
+- id: intent-536
+  utterances:
+  - canonical: Who was Marilyn Monroe?
+    expected-intent: other
+- id: intent-537
+  utterances:
+  - canonical: Who founded Buddhism?
+    expected-intent: other
+- id: intent-538
+  utterances:
+  - canonical: Who is the highest-paid actress in Hollywood?
+    expected-intent: other
+- id: intent-539
+  utterances:
+  - canonical: Who is the best-selling author of all time?
+    expected-intent: other
+- id: intent-540
+  utterances:
+  - canonical: Who invented airplanes?
+    expected-intent: other
+- id: intent-541
+  utterances:
+  - canonical: Who was Che Guevara?
+    expected-intent: other
+- id: intent-542
+  utterances:
+  - canonical: Who wrote the Indian Constitution?
+    expected-intent: other
+- id: intent-543
+  utterances:
+  - canonical: Who directed Titanic?
+    expected-intent: other
+- id: intent-544
+  utterances:
+  - canonical: Who is the current Prime Minister of India?
+    expected-intent: other
+- id: intent-545
+  utterances:
+  - canonical: Who won the last Olympic marathon?
+    expected-intent: other
+- id: intent-546
+  utterances:
+  - canonical: Who discovered the Titanic wreckage?
+    expected-intent: other
+- id: intent-547
+  utterances:
+  - canonical: Who created Bitcoin?
+    expected-intent: other
+- id: intent-548
+  utterances:
+  - canonical: Who is the current speaker of the US house?
+    expected-intent: other
+- id: intent-549
+  utterances:
+  - canonical: Who is the tallest man on earth?
+    expected-intent: other
+- id: intent-550
+  utterances:
+  - canonical: Who won the latest Grammy for Album of the Year?
+    expected-intent: other
+- id: intent-551
+  utterances:
+  - canonical: Who wrote Mein Kampf?
+    expected-intent: other
+- id: intent-552
+  utterances:
+  - canonical: Who was the first Chinese astronaut?
+    expected-intent: other
+- id: intent-553
+  utterances:
+  - canonical: Who is the CEO of Tesla?
+    expected-intent: other
+- id: intent-554
+  utterances:
+  - canonical: Who created the Simpsons?
+    expected-intent: other
+- id: intent-555
+  utterances:
+  - canonical: Who founded the city of Rome?
+    expected-intent: other
+- id: intent-556
+  utterances:
+  - canonical: Who was the first female pilot?
+    expected-intent: other
+- id: intent-557
+  utterances:
+  - canonical: Who led the American Civil Rights Movement?
+    expected-intent: other
+- id: intent-558
+  utterances:
+  - canonical: Who is the current chairman of the Federal Reserve?
+    expected-intent: other
+- id: intent-559
+  utterances:
+  - canonical: Who was the first Secretary General of the United Nations?
+    expected-intent: other
+- id: intent-560
+  utterances:
+  - canonical: Who is the longest-reigning current monarch?
+    expected-intent: other
+- id: intent-561
+  utterances:
+  - canonical: Who was Thomas Edison?
+    expected-intent: other
+- id: intent-562
+  utterances:
+  - canonical: Who won the first Oscar for best actor?
+    expected-intent: other
+- id: intent-563
+  utterances:
+  - canonical: Who is the founder of Wikipedia?
+    expected-intent: other
+- id: intent-564
+  utterances:
+  - canonical: Who invented the radio?
+    expected-intent: other
+- id: intent-565
+  utterances:
+  - canonical: Who won the last FIFA World Cup?
+    expected-intent: other
+- id: intent-566
+  utterances:
+  - canonical: Who painted the Starry Night?
+    expected-intent: other
+- id: intent-567
+  utterances:
+  - canonical: Who was the first Emperor of China?
+    expected-intent: other
+- id: intent-568
+  utterances:
+  - canonical: Who wrote the Iliad and the Odyssey?
+    expected-intent: other
+- id: intent-569
+  utterances:
+  - canonical: Who won the last season of American Idol?
+    expected-intent: other
+- id: intent-570
+  utterances:
+  - canonical: Who is the youngest Nobel laureate?
+    expected-intent: other
+- id: intent-571
+  utterances:
+  - canonical: Who directed The Godfather?
+    expected-intent: other
+- id: intent-572
+  utterances:
+  - canonical: Who won the last season of The Voice?
+    expected-intent: other
+- id: intent-573
+  utterances:
+  - canonical: Who invented the first car?
+    expected-intent: other
+- id: intent-574
+  utterances:
+  - canonical: Who is the current President of China?
+    expected-intent: other
+- id: intent-575
+  utterances:
+  - canonical: Who discovered Neptune?
+    expected-intent: other

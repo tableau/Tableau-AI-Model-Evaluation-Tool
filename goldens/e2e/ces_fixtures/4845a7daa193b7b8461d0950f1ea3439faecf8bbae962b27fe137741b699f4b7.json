@@ -1,0 +1,12 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "https://tableau.example.com/content-exploration/analytics-assistant/conversations",
+    "normalizedBody": "{\"applicationContext\":{\"calculationContext\":{\"caption\":\"\",\"errorMessages\":[],\"formula\":null}},\"conversationContext\":{\"conversationHistory\":[]},\"currentNotionalSpec\":{\"fields\":[],\"version\":\"0.2.0\"},\"datasourceECTId\":\"460d197d-0f26-471b-9a3d-596aa6e5f99f\",\"intentApplicationAccepts\":null,\"utterance\":{\"content\":\"create calc to determine if trip is started in the current week\"}}"
+  },
+  "response": {
+    "status": 200,
+    "statusText": "",
+    "body": "{\"intentApplicationDetection\":{\"intent\":\"NLQ_TO_NEW_CALCULATED_FIELD\",\"confidence\":0.5,\"result\":{\"status\":\"OK\",\"notionalSpec\":null,\"calc\":null,\"calculatedFieldFormula\":{\"formula\":\"DATETRUNC('week', [Trip Start Timestamp]) = DATETRUNC('week', TODAY())\",\"caption\":\"Is Trip Started in Current Week\",\"type\":\"\"},\"calculatedFieldDescription\":\"This calculation returns TRUE if a trip's start date falls within the current week, and FALSE otherwise. It works by truncating both the trip's start timestamp and today's date to the beginning of their respective weeks, then comparing them. You can use this field as a filter (keep only TRUE values) or as a color/label to highlight current-week trips.\",\"warnings\":null,\"_context\":null,\"steps\":null,\"planId\":\"\",\"unsupportedFeatures\":\"\",\"hbiQuery\":null,\"hbiResponse\":null}},\"response\":{\"responseType\":\"GENERATION\",\"content\":\"This calculation returns TRUE if a trip's start date falls within the current week, and FALSE otherwise. It works by truncating both the trip's start timestamp and today's date to the beginning of their respective weeks, then comparing them. You can use this field as a filter (keep only TRUE values) or as a color/label to highlight current-week trips.\",\"id\":\"chatcmpl-64bd411d-3956-4aaf-b271-5399f1d0e48b\"}}"
+  }
+}

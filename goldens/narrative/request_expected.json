@@ -1,0 +1,81 @@
+{
+ "arguments": {
+  "dashboardName": "Sales Dashboard",
+  "dashboardArtifacts": [
+   {
+    "artifactType": "IMAGE",
+    "artifact": "base64"
+   }
+  ],
+  "views": [
+   {
+    "name": "Sales",
+    "artifacts": [
+     {
+      "artifactType": "OUTLIERS",
+      "artifact": "[]"
+     },
+     {
+      "artifactType": "IMAGE",
+      "artifact": "ignored"
+     }
+    ]
+   },
+   {
+    "name": "Sales",
+    "datasourceLuid": "ds",
+    "artifacts": [
+     {
+      "artifactType": "PULSE_INSIGHTS",
+      "artifact": "insights"
+     }
+    ]
+   }
+  ]
+ },
+ "trace": "tableau-ai-eval job case",
+ "request": {
+  "artifacts": [
+   {
+    "artifactType": "IMAGE",
+    "artifact": "base64",
+    "vizId": ""
+   },
+   {
+    "artifactType": "OUTLIERS",
+    "artifact": "[]",
+    "vizId": "view-0-11ff9f68"
+   },
+   {
+    "artifactType": "PULSE_INSIGHTS",
+    "artifact": "insights",
+    "vizId": "view-1-11ff9f68"
+   }
+  ],
+  "dashboardMetadata": {
+   "clientId": "SalesDashboard",
+   "name": "Sales Dashboard",
+   "views": [
+    {
+     "name": "Sales",
+     "clientId": "view-0-11ff9f68",
+     "datasourceLuid": ""
+    },
+    {
+     "name": "Sales",
+     "clientId": "view-1-11ff9f68",
+     "datasourceLuid": "ds"
+    }
+   ]
+  },
+  "insightFormatOptions": {},
+  "localization": {
+   "locale": "en_US",
+   "language": "en_US"
+  },
+  "traceInfo": {
+   "sessionId": "tableau-ai-eval job case",
+   "traceId": "tableau-ai-eval job case"
+  }
+ }
+}

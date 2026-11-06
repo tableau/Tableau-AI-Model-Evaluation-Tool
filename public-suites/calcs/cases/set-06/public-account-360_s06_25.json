@@ -1,0 +1,40 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-account-360",
+  "info": {
+    "originalValid": false,
+    "reasonInvalid": "no server response",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "Create a calc to determine the days of week with most activities?",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "DATENAME('weekday', [Latest Opportunity Created])",
+          "caption": "This calculation extracts the day of the week from the 'Last Activity' date field. Add the 'Day of Week' calculated field to the Rows shelf and 'Number of Records' to the Columns shelf to determine which days of the week have the most activities."
+        }
+      },
+      "tags": [
+        "calc-category-aggregate",
+        "add-explicit-calc-wordage"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Ranking / Top-N"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Date Part Extraction",
+          "Op: Aggregation (Default)"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "8b85ed5f9b850bd0ff45f206bd484491"
+}

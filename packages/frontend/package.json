@@ -1,0 +1,52 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "predev": "bun scripts/syncCatalog.ts",
+    "dev": "vite",
+    "prebuild": "bun scripts/syncCatalog.ts",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@tableau-ai-eval/run-state": "workspace:*",
+    "@fontsource/libre-franklin": "^5.3.0",
+    "@tableau/tableau-ui": "^3.15.0",
+    "jsondiffpatch": "^0.6.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-markdown": "^10.1.0",
+    "react-router-dom": "^6.28.0",
+    "react-vega": "^7.6.0",
+    "vega": "^5.33.0",
+    "vega-embed": "^6.29.0",
+    "vega-lite": "^5.23.0",
+    "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "@happy-dom/global-registrator": "^20.14.5",
+    "@testing-library/jest-dom": "^6",
+    "@testing-library/react": "^14",
+    "@types/node": "^20.19.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@types/react-router-dom": "^5.3.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "7.0.2",
+    "vite": "^5.4.11"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

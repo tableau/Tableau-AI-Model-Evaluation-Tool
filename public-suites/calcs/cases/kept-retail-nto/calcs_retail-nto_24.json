@@ -1,0 +1,25 @@
+{
+    "runner": "ect-server",
+    "datasource": "retail-nto",
+    "info": {
+        "originalValid": true
+    },
+    "inputs": [
+        {
+            "utterance": "compute distinct count of subsubcategories longer than 10 characters per subcategory",
+            "source": "user",
+            "expected": {
+                "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+                "calculatedFieldFormula": {
+                    "formula": "{ INCLUDE [Subcategory] : COUNTD(IF LEN([Subsubcategory]) > 10 THEN [Subsubcategory] END) }",
+                    "caption": null
+                }
+            },
+            "tags": [
+                "add-explicit-calc-wordage",
+                "calc-category-lod"
+            ]
+        }
+    ],
+    "id": "f2b08fc0-5476-45ce-a2d9-5302f7620189"
+}

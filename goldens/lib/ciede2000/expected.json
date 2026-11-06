@@ -1,0 +1,133 @@
+{
+  "_generated_by": "gen_ciede2000.py",
+  "_rounding_decimals": 10,
+  "_library": "colour-science (delta_E_CIE2000, sRGB_to_XYZ, XYZ_to_Lab)",
+  "_min_distance_threshold": 10.0,
+  "lab_pairs": [
+    {
+      "name": "identical",
+      "delta_e": 0.0
+    },
+    {
+      "name": "near_threshold_pair",
+      "delta_e": 10.7381913648
+    },
+    {
+      "name": "sharma_case1",
+      "delta_e": 2.0424596802
+    },
+    {
+      "name": "sharma_case_large_hue",
+      "delta_e": 4.3064820958
+    },
+    {
+      "name": "clearly_distinct",
+      "delta_e": 100.0
+    }
+  ],
+  "hex_pairs": [
+    {
+      "name": "hex_identical",
+      "lab1": [
+        47.9819431873,
+        -3.2000251886,
+        -39.3182549333
+      ],
+      "lab2": [
+        47.9819431873,
+        -3.2000251886,
+        -39.3182549333
+      ],
+      "delta_e": 0.0
+    },
+    {
+      "name": "hex_similar_blues",
+      "lab1": [
+        47.9819431873,
+        -3.2000251886,
+        -39.3182549333
+      ],
+      "lab2": [
+        52.4319025308,
+        -4.751343179,
+        -39.1833493429
+      ],
+      "delta_e": 4.5661835015
+    },
+    {
+      "name": "hex_distinct",
+      "lab1": [
+        47.9819431873,
+        -3.2000251886,
+        -39.3182549333
+      ],
+      "lab2": [
+        66.877828433,
+        43.4389389108,
+        71.8691342292
+      ],
+      "delta_e": 52.4298291852
+    }
+  ],
+  "palettes": [
+    {
+      "name": "distinguishable_categorical",
+      "score": 1.0,
+      "min_distance": 26.528291099,
+      "distances": [
+        [
+          0,
+          1,
+          52.4298291852
+        ],
+        [
+          0,
+          2,
+          52.6405432913
+        ],
+        [
+          0,
+          3,
+          48.5723209234
+        ],
+        [
+          1,
+          2,
+          55.2477876166
+        ],
+        [
+          1,
+          3,
+          26.528291099
+        ],
+        [
+          2,
+          3,
+          71.8349045229
+        ]
+      ]
+    },
+    {
+      "name": "too_similar",
+      "score": 0.4566183502,
+      "min_distance": 4.5661835015,
+      "distances": [
+        [
+          0,
+          1,
+          4.5661835015
+        ],
+        [
+          0,
+          2,
+          52.4298291852
+        ],
+        [
+          1,
+          2,
+          51.459602628
+        ]
+      ]
+    }
+  ]
+}

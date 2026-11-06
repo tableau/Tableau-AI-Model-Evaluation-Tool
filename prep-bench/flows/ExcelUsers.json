@@ -1,0 +1,60 @@
+{
+  "flow": "ExcelUsers.tflx",
+  "name": "ExcelUsers",
+  "inputs": [
+    {
+      "name": "Data",
+      "source": "Data.csv",
+      "fields": [
+        {
+          "name": "R_USER",
+          "datatype": "string",
+          "values": [
+            "Rhonda Bennett",
+            "Christian Pierce",
+            "Holly Hoffman",
+            "Lillie Arnold",
+            "Hope Hunter"
+          ]
+        },
+        {
+          "name": "RULF_USER",
+          "datatype": "string",
+          "values": [
+            "Randolph Watkins",
+            "Bill Dixon",
+            "Robin Chandler",
+            "Conrad Phelps",
+            "Guadalupe Thompson"
+          ]
+        },
+        {
+          "name": "T_USER",
+          "datatype": "string",
+          "values": [
+            "Aaron Black",
+            "Travis Hernandez",
+            "Darrin Patrick",
+            "Rosie Cohen",
+            "Dave Luna",
+            "Olivia Erickson",
+            "Bobbie Barrett",
+            "Amelia Simmons"
+          ]
+        },
+        {
+          "name": "N_USER",
+          "datatype": "string",
+          "values": [
+            "Dustin Bell",
+            "Ed Abbott",
+            "Clifford Butler",
+            "Terry Richards",
+            "Arturo Jackson",
+            "Geneva Owens"
+          ]
+        }
+      ]
+    }
+  ]
+}

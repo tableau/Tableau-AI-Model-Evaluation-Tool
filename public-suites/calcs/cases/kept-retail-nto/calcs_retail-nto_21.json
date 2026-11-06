@@ -1,0 +1,25 @@
+{
+    "runner": "ect-server",
+    "datasource": "retail-nto",
+    "info": {
+        "originalValid": true
+    },
+    "inputs": [
+        {
+            "utterance": "create a field that's the difference between the order date and the last day of the current month",
+            "source": "user",
+            "expected": {
+                "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+                "calculatedFieldFormula": {
+                    "formula": "DATEDIFF('day', [Order Placed Date], DATEADD('month', 1, DATETRUNC('month', TODAY())) - 1)",
+                    "caption": null
+                }
+            },
+            "tags": [
+                "add-explicit-calc-wordage",
+                "calc-category-date"
+            ]
+        }
+    ],
+    "id": "6d8ac93a-0782-4a96-a8b7-c2b3af75f9ee"
+}

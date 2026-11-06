@@ -1,0 +1,24 @@
+{
+    "runner": "ect-server",
+    "datasource": "retail-nto",
+    "info": {
+        "originalValid": true
+    },
+    "inputs": [
+        {
+            "utterance": "Classify each return with a human-readable reason instead of numeric codes — map code 0 to 'Wrong Item', 1 to 'Defective', 2 to 'Damaged in Transit', 3 to 'Size/Fit Issue', 4 to 'Changed Mind', and 5 to 'Other'",
+            "source": "user",
+            "expected": {
+                "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+                "calculatedFieldFormula": {
+                    "formula": "CASE [Return Reason Code] WHEN 0 THEN 'Wrong Item' WHEN 1 THEN 'Defective' WHEN 2 THEN 'Damaged in Transit' WHEN 3 THEN 'Size/Fit Issue' WHEN 4 THEN 'Changed Mind' WHEN 5 THEN 'Other' END",
+                    "caption": null
+                }
+            },
+            "tags": [
+                "calc-conditional-if-case"
+            ]
+        }
+    ],
+    "id": "2859261f-cd04-4935-9f3a-e358ece58d5f"
+}

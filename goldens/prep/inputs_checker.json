@@ -1,0 +1,548 @@
+{
+ "_comment": "Prep calculation checker regression inputs: validity, formula similarity, field metadata, intent labels, and shipped expected formulas.",
+ "checks": [
+  {
+   "formula": "SUM([Sales])",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "{ FIXED [Region]: SUM([Sales]) }",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "IF [Profit] > 0 THEN 'a' ELSE 'b' END",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "CASE [Region] WHEN 'West' THEN 1 ELSE 0 END",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "DATEDIFF('day', [Order Date], TODAY())",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "[Sales] * 2 /* a block comment is valid Tableau */",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "Sales * 2",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "REGEXP_EXTRACT([Region], '([\\s\\S]*)')",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "```SUM([Sales])```",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "FOO([Sales])",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "IF [Profit] > 0 THEN 'a' ELSE 'b'",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "IF THEN 1 END",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "CASE [Region] WHEN 'a' THEN 1",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "SUM([Sales]",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "{FIXED [Region] SUM([Sales])}",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "'unterminated",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "[Nonexistent] * 2",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "sum([sales])",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "[Sales] +",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "SUM([Sales])) ",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "   ",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "IF [Profit] > 0 THEN\n 'a'\nELSEIF [Sales] < 2 THEN 'b'\n END",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "{ PARTITION [Region]: {ORDERBY [Sales] DESC: RANK()} }",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "{ PARTITION [Region]: {STR [Sales] DESC: RANK()} }",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "STR([Sales])[0]",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "[Region] IN ('West', 'East')",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "#2024-01-01#",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "#2024-01",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "IF [Profit] THEN ELSE END",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "{ORDERBY [Sales] : ",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "LEFT([Region]",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "CASE WHEN 1 THEN 2 END",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "IIF([Profit]>0, \"x\", 'y')",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "// only a comment",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "[Sales] @ 2",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "ZN([Sales]) + ZN([Profit])",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "{FIXED [Region]: }",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "IF [a] > 1 THEN 1 ELSE",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "CASE [Region] END",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "{ INCLUDE [Region] : SUM([Sales]) }",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "DATEPART('month', [Order Date]) = 3 AND [Region] = \"West\"",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "STARTSWITH([Region], 'W') OR ENDSWITH([Region], 'st')",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "[Sales]]",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "[Sales",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "\"text",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "ROUND([Sales], 2) / 0.5",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "NOT ISNULL([Region])",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "MAX([Sales], [Profit])",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "1 +* 2",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "(([Sales])",
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  },
+  {
+   "formula": "```FOO([X])```",
+   "fields": null
+  },
+  {
+   "formula": null,
+   "fields": [
+    "Sales",
+    "Profit",
+    "Region",
+    "Order Date"
+   ]
+  }
+ ],
+ "similarity": [
+  [
+   "SUM([Sales])",
+   "sum([Sales])"
+  ],
+  [
+   "{FIXED [Region] : STDEV([Profit])}",
+   "{ FIXED [Region]: STDEV([Profit]) }"
+  ],
+  [
+   "IF [Profit] > 0 THEN 'Profit' ELSE 'Loss' END",
+   "IF [Profit]>0 THEN \"Profit\" ELSE \"Loss\" END"
+  ],
+  [
+   "[Sales] * 2 // doubled",
+   "[Sales]*2"
+  ],
+  [
+   "SUM([Sales])",
+   "AVG([Sales])"
+  ],
+  [
+   "[Profit]/[Sales]",
+   "[Sales]/[Profit]"
+  ],
+  [
+   "SUM([Sales])",
+   ""
+  ],
+  [
+   "",
+   ""
+  ],
+  [
+   "",
+   "SUM([Sales])"
+  ],
+  [
+   "IF NOT ISNULL([R_USER]) THEN 'R_USER' ELSEIF NOT ISNULL([P_USER]) THEN 'P_USER' ELSEIF NOT ISNULL([P_USER]) THEN 'P_USER' ELSEIF NOT ISNULL([P_USER]) THEN 'P_USER' ELSEIF NOT ISNULL([P_USER]) THEN 'P_USER' ELSE 'NONE' END",
+   "IF NOT ISNULL([R_USER]) AND [R_USER] != '' THEN 'R_USER' ELSEIF NOT ISNULL([P_USER]) THEN 'P_USER' ELSEIF NOT ISNULL([P_USER]) THEN 'P_USER' ELSEIF NOT ISNULL([P_USER]) THEN 'P_USER' ELSEIF NOT ISNULL([P_USER]) THEN 'P_USER' ELSE 'NONE' END"
+  ],
+  [
+   "DATEDIFF('day', [A Very Long Field Name Number One], [Another Extremely Long Field Name Two])",
+   "DATEDIFF('month', [A Very Long Field Name Number One Changed Again], [B])"
+  ],
+  [
+   "SUM([Sales]) / COUNT([Orders])",
+   "SUM([Sales]) / COUNTD([Orders]) * 1.0"
+  ]
+ ],
+ "metadata": [
+  "'Region' (string), 'Profit' (int)",
+  "field \"Sales\" of Number type",
+  null,
+  "'A' (x), 'A' (y), 'B c'",
+  "no fields"
+ ],
+ "intents": [
+  "calc",
+  " `calc` ",
+  "Calc.",
+  "\"flow-plan\"",
+  "flow plan",
+  "flow_plan",
+  "other\n",
+  "",
+  null,
+  "Flow  Plan.",
+  "'calc'.",
+  "`Other`"
+ ]
+}

@@ -1,0 +1,253 @@
+- description: 'Pivot survey data and do a calc'
+  id: preppin-data-challenge-2023-6-1
+  utterances:
+  - canonical: >-
+      Pivot the survey data to split up Mobile/Online. Then calculate average ratings for each platform (mobile and online). 1. Mobile App Superfans: if the difference between the average is greater than or equal to 2 in the Mobile App's favor 2. Mobile App Fans: if difference >= 1 in mobile's favor 3. Online Interface Fan: difference >= 1 in the Online's favour 4. Online Interface Superfan: greater than or equal to 2 in the Online's favour 5. Neutral if difference is <1
+    expected-flow-plan:
+    - PivotFieldsToRows
+    - CreateCleanStep
+    - CreateCalculatedField
+    - CreateAggregateStep
+    - PivotRowsToFields
+    - CreateCalculatedField
+    - CreateCalculatedField
+  data-location: 'test/test-data/flow-plan-gen/step-data/preppin-data-2023-6.txt'
+- description: 'Pivot survey data'
+  id: preppin-data-challenge-2023-6-2
+  utterances:
+  - canonical: >-
+      Reshape the data so we have 5 rows for each customer, with responses for the Mobile App and Online Interface being in separate fields on the same row
+    expected-flow-plan:
+    - PivotFieldsToRows
+    - CreateCleanStep
+    - RenameOneOrMoreFields
+  data-location: 'test/test-data/flow-plan-gen/step-data/preppin-data-2023-6.txt'
+- description: 'Calcs + aggregation'
+  id: preppin-data-challenge-2023-5-1
+  utterances:
+  - canonical: >-
+      Extract the bank code into a new field, then sum the transactions per bank per month
+    expected-flow-plan:
+    - CustomSplit
+    - RenameOneOrMoreFields
+    - ConvertDateToPart
+    - CreateAggregateStep
+  data-location: 'test/test-data/flow-plan-gen/step-data/preppin-data-2023-5.txt'
+- description: 'Calcs + aggregation more ambiguous'
+  id: preppin-data-challenge-2023-5-2
+  utterances:
+  - canonical: >-
+      I'd like to sum the transactions per bank per month. Can you help?
+    expected-flow-plan:
+    - CustomSplit
+    - RenameOneOrMoreFields
+    - ConvertDateToPart
+    - CreateAggregateStep
+    acceptable-flow-plans:
+    - [CreateCalculatedField, ConvertDateToPart, CreateAggregateStep]
+    - [CustomSplit, ConvertDateToPart, CreateAggregateStep]
+  data-location: 'test/test-data/flow-plan-gen/step-data/preppin-data-2023-5.txt'
+- description: 'Custom split'
+  id: preppin-data-challenge-2024-1-1
+  utterances:
+  - canonical: >-
+      Extract all the flight information into separate fields
+    expected-flow-plan:
+    - CustomSplit
+    - RenameOneOrMoreFields
+  data-location: 'test/test-data/flow-plan-gen/step-data/preppin-data-2024-1.txt'
+- description: 'Custom split + field type change'
+  id: preppin-data-challenge-2024-1-2
+  utterances:
+  - canonical: >-
+      Extract all the flight information into separate fields and then correct the field types
+    expected-flow-plan:
+    - CustomSplit
+    - RenameOneOrMoreFields
+    - ChangeOneOrMoreDataTypes
+  data-location: 'test/test-data/flow-plan-gen/step-data/preppin-data-2024-1.txt'
+- description: 'Analytics question'
+  id: preppin-data-challenge-2024-1-3
+  utterances:
+  - canonical: >-
+      How popular is the flow card?
+    expected-flow-plan:
+    - CreateAggregateStep
+    acceptable-flow-plans:
+    - [CreateCalculatedField]
+    - [FilterValuesByCalculation, CreateAggregateStep]
+    - [CreateAggregateStep, CreateCleanStep, CreateCalculatedField]
+  data-location: 'test/test-data/flow-plan-gen/step-data/preppin-data-2024-1.txt'
+- description: 'Interesting date challenge'
+  id: preppin-data-challenge-2024-11-1
+  utterances:
+  - canonical: >-
+      Create a new row for every date of the year
+    expected-flow-plan:
+    - ChangeOneOrMoreDataTypes
+    - CreateNewRowsStep
+  data-location: 'test/test-data/flow-plan-gen/step-data/preppin-data-2024-11.txt'
+- description: 'Interesting date challenge part 1'
+  id: preppin-data-challenge-2024-11-2
+  utterances:
+  - canonical: >-
+      Create a new row for every date of the year 2024 by moving the dates into the year 2024
+    expected-flow-plan:
+    - CreateCalculatedField
+    - CreateNewRowsStep
+  data-location: 'test/test-data/flow-plan-gen/step-data/preppin-data-2024-11.txt'
+- description: 'Interesting date challenge part 1 and 2'
+  id: preppin-data-challenge-2024-11-3
+  utterances:
+  - canonical: >-
+      Create a new row for every date of the year 2024 by moving the dates into the year 2024 + generate month number and day of year fields
+    expected-flow-plan:
+    - CreateCalculatedField
+    - CreateNewRowsStep
+    - CreateCleanStep
+    - ConvertDateToPart
+    - ConvertDateToPart
+  data-location: 'test/test-data/flow-plan-gen/step-data/preppin-data-2024-11.txt'
+- description: 'Interesting date challenge part 1 and 2 and 3'
+  id: preppin-data-challenge-2024-11-4
+  utterances:
+  - canonical: >-
+      Create a new row for every date of the year 2024 by moving the dates into the year 2024 + generate month number and day of year fields. Now, use these fields to figure out the new dates for each existing date if we had 13 months in a year instead of 12.
+    expected-flow-plan:
+    - CreateCalculatedField
+    - CreateNewRowsStep
+    - CreateCleanStep
+    - ConvertDateToPart
+    - ConvertDateToPart
+    - CreateCalculatedField
+  data-location: 'test/test-data/flow-plan-gen/step-data/preppin-data-2024-11.txt'
+- description: 'Relative date filter'
+  id: preppin-data-challenge-2023-29-1
+  utterances:
+  - canonical: >-
+      Filter dates to everything before July 2023
+    expected-flow-plan:
+    - FilterValuesByDatetimeRange
+  data-location: 'test/test-data/flow-plan-gen/step-data/preppin-data-2023-29.txt'
+- description: 'Relative date filter + aggregation'
+  id: preppin-data-challenge-2023-29-2
+  utterances:
+  - canonical: >-
+      Filter dates to everything before July 2023. Then aggregate the data to a monthly level for each Store and Bike Type
+    expected-flow-plan:
+    - FilterValuesByDatetimeRange
+    - ConvertDateToPart
+    - CreateAggregateStep
+  data-location: 'test/test-data/flow-plan-gen/step-data/preppin-data-2023-29.txt'
+- description: 'Relative date filter + aggregation + new rows'
+  id: preppin-data-challenge-2023-29-3
+  utterances:
+  - canonical: >-
+      Filter dates to everything before July 2023. Then aggregate the data to a monthly level for each Store and Bike Type. Since not every Bike Type has a sale in every Store each Month, scaffold the data by using the lookup function to find the next sales month for each store & bike type and remove nulls.
+    expected-flow-plan:
+    - FilterValuesByDatetimeRange
+    - ConvertDateToPart
+    - CreateAggregateStep
+    - CreateNewRowsStep
+    - CreateCleanStep
+    - FilterNullValues
+    acceptable-flow-plans:
+    - [FilterValuesByDatetimeRange, ConvertDateToPart, CreateAggregateStep, CreateCleanStep, CreateCalculatedField, FilterNullValues]
+  data-location: 'test/test-data/flow-plan-gen/step-data/preppin-data-2023-29.txt'
+- description: 'Pivot data into new fields'
+  id: preppin-data-challenge-2023-4-1
+  utterances:
+  - canonical: >-
+      reshape our data so we have a field for each demographic, for each new customer
+    expected-flow-plan:
+    - PivotRowsToFields
+  data-location: 'test/test-data/flow-plan-gen/step-data/preppin-data-2023-4.txt'
+- description: 'Pivot data into new fields with more ambiguous wording'
+  id: preppin-data-challenge-2023-4-2
+  utterances:
+  - canonical: >-
+      Reshape the data so that there is a row per ID
+    expected-flow-plan:
+    - PivotRowsToFields
+  data-location: 'test/test-data/flow-plan-gen/step-data/preppin-data-2023-4.txt'
+- description: 'Pivot data into new fields + create calc based on new fields'
+  id: preppin-data-challenge-2023-4-3
+  utterances:
+  - canonical: >-
+      Reshape the data so that there is a row per ID and then convert the account type to uppercase and create a calc to determine the most common account type per ethnicity
+    expected-flow-plan:
+    - PivotRowsToFields
+    - CreateCleanStep
+    - MakeStringUppercase
+    - CreateCalculatedField
+    acceptable-flow-plans:
+    - [PivotRowsToFields, CreateCleanStep, MakeStringUppercase, CreateAggregateStep, CreateCleanStep, CreateCalculatedField]
+    - [PivotRowsToFields, CreateCleanStep, MakeStringUppercase, CreateAggregateStep, CreateCleanStep, CreateCalculatedField, FilterValuesByCalculation]
+  data-location: 'test/test-data/flow-plan-gen/step-data/preppin-data-2023-4.txt'
+- description: 'Group By with an aggregation step and no aggregated fields'
+  id: preppin-data-challenge-2023-14-1
+  utterances:
+  - canonical: >-
+      Use an aggregate step to just return all of the Reporters (rename this to Country) and Country Codes.
+    expected-flow-plan:
+    - CreateAggregateStep
+    - CreateCleanStep
+    - RenameOneOrMoreFields
+  data-location: 'test/test-data/flow-plan-gen/step-data/preppin-data-2023-14.txt'
+- description: 'basic aggregation with more ambiguous terminology'
+  id: preppin-data-challenge-2023-13-1
+  utterances:
+  - canonical: >-
+      Get the max trade order by sector
+    expected-flow-plan:
+    - CreateAggregateStep
+  data-location: 'test/test-data/flow-plan-gen/step-data/preppin-data-2023-13.txt'
+- description: 'basic aggregation and then a calc'
+  id: preppin-data-challenge-2023-13-2
+  utterances:
+  - canonical: >-
+      Get the max trade order by sector and then create a calc to get the previous 100 orders
+    expected-flow-plan:
+    - CreateAggregateStep
+    - CreateCleanStep
+    - CreateCalculatedField
+    acceptable-flow-plans:
+    - [CreateAggregateStep, CreateCleanStep, FilterValuesByCalculation]
+  data-location: 'test/test-data/flow-plan-gen/step-data/preppin-data-2023-13.txt'
+- description: 'basic aggregation with very clear terminology'
+  id: preppin-data-challenge-2023-13-3
+  utterances:
+  - canonical: >-
+      calculate the average price by grouping on Trade Order (True) and Sector, then Avg Purchase Price.
+    expected-flow-plan:
+    - CreateAggregateStep
+  data-location: 'test/test-data/flow-plan-gen/step-data/preppin-data-2023-13.txt'
+- description: 'remove nulls'
+  id: null-duplicate-data-1
+  utterances:
+  - canonical: >-
+      Remove null values from the data.
+    expected-flow-plan:
+    - FilterNullValues
+  data-location: 'test/test-data/flow-plan-gen/step-data/null-duplicate-data.txt'
+- description: 'remove duplicate rows'
+  id: null-duplicate-data-2
+  utterances:
+  - canonical: >-
+      Remove duplicate rows.
+    expected-flow-plan:
+    - IdentifyDuplicateRows
+    - FilterValuesByCalculation
+  data-location: 'test/test-data/flow-plan-gen/step-data/null-duplicate-data.txt'
+- description: 'Relative date filter'
+  id: preppin-data-challenge-2024-10-1
+  utterances:
+  - canonical: >-
+      Can you create a flow to filter my data to the most recent 2 years?
+    expected-flow-plan:
+    - ChangeOneOrMoreDataTypes
+    - FilterValuesByRelativeDateFilter
+    acceptable-flow-plans:
+    - [ChangeOneOrMoreDataTypes, FilterValuesByDatetimeRange]
+    - [ChangeOneOrMoreDataTypes, FilterValuesByCalculation]
+  data-location: 'test/test-data/flow-plan-gen/step-data/preppin-data-2024-10.txt'

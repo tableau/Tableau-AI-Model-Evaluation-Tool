@@ -1,0 +1,94 @@
+{
+ "test_id": "396079715e7c412485e0d83704515e92",
+ "datasource": "streaming_key_metrics",
+ "matched_fields": [
+  {
+   "name": "Age Group",
+   "datatype": "string",
+   "sampleValues": [
+    "Gen X",
+    "Boomer",
+    "Millenial",
+    "Gen Z"
+   ]
+  },
+  {
+   "name": "Content Hours",
+   "datatype": "number"
+  },
+  {
+   "name": "Country",
+   "datatype": "geographic",
+   "sampleValues": [
+    "Mexico",
+    "Australia",
+    "Spain",
+    "Sweden",
+    "Canada",
+    "France",
+    "UK",
+    "Netherlands",
+    "Japan",
+    "Germany"
+   ]
+  },
+  {
+   "name": "Date",
+   "datatype": "date"
+  },
+  {
+   "name": "Dau",
+   "datatype": "number"
+  },
+  {
+   "name": "Mau",
+   "datatype": "number"
+  },
+  {
+   "name": "Platform",
+   "datatype": "string",
+   "sampleValues": [
+    "Desktop",
+    "Tablet",
+    "Car",
+    "Mobile"
+   ]
+  },
+  {
+   "name": "Product Plan Name",
+   "datatype": "string",
+   "sampleValues": [
+    "Premium Plus: Enterprise",
+    "Premium: Individual",
+    "Premium: Family",
+    "Premium: Student",
+    "Free: Trial",
+    "Free: Basic",
+    "Premium Plus: VIP",
+    "Premium: Business"
+   ]
+  },
+  {
+   "name": "Product Type",
+   "datatype": "string",
+   "sampleValues": [
+    "Free",
+    "Premium Plus",
+    "Premium"
+   ]
+  },
+  {
+   "name": "Registrations",
+   "datatype": "number"
+  },
+  {
+   "name": "Subscribers",
+   "datatype": "number"
+  },
+  {
+   "name": "Wau",
+   "datatype": "number"
+  }
+ ],
+ "calc_fields": []
+}

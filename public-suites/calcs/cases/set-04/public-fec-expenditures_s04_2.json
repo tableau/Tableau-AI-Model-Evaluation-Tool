@@ -1,0 +1,42 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-fec-expenditures",
+  "info": {
+    "originalValid": true,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "Create calc for total cost spent on ads in 30 days",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "SUM(IF DATEDIFF('day', [Disbursement Date], TODAY()) <= 30 THEN [Disbursement Amount] END)",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-date",
+        "add-explicit-calc-wordage"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Filter - Date Range / Relative",
+          "Op: Date Part Extraction",
+          "Op: Date Arithmetic",
+          "Op: Conditional Logic",
+          "Op: Aggregation (Default)"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "0bdd5f8a98f018a0169f9bcd130816a7"
+}

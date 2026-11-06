@@ -1,0 +1,31 @@
+{
+  "_generated_by": "gen_flesch.py",
+  "_rounding_decimals": 4,
+  "_library": "py-readability-metrics (word/syllable tokenization) + Flesch formula",
+  "_status": "PARTIALLY BLOCKED",
+  "_blocked_reason": "nltk 'punkt_tab' download blocked by local SSRF proxy; Readability(text).flesch() cannot run end-to-end. num_sentences comes from sent_tokenize (punkt). We record raw word/syllable/letter counts (which do NOT need punkt) plus a manual_sentence_count and compute the Flesch score via the library's own formula.",
+  "_flesch_formula": "206.835 - 1.015*(num_words/num_sentences) - 84.6*(num_syllables/num_words)",
+  "_reference_transform": "round(flesch_score / 100, 4)",
+  "paragraphs": [
+    {
+      "name": "simple_repetitive",
+      "num_words": 132,
+      "num_syllables": 144,
+      "num_letters": 408,
+      "num_sentences_manual": 12,
+      "flesch_score_raw": 103.3791,
+      "flesch_score_div100": 1.0338,
+      "_note": "flesch_score_div100 is what ReadabilityScorer stores. num_sentences is MANUAL (punkt blocked); TS port's sentence tokenizer must reproduce num_sentences_manual on this text for parity."
+    },
+    {
+      "name": "business_narrative",
+      "num_words": 111,
+      "num_syllables": 321,
+      "num_letters": 900,
+      "num_sentences_manual": 8,
+      "flesch_score_raw": -51.9022,
+      "flesch_score_div100": -0.519,
+      "_note": "flesch_score_div100 is what ReadabilityScorer stores. num_sentences is MANUAL (punkt blocked); TS port's sentence tokenizer must reproduce num_sentences_manual on this text for parity."
+    }
+  ]
+}

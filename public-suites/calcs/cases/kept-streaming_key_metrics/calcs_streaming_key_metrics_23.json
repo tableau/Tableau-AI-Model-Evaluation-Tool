@@ -1,0 +1,26 @@
+{
+    "runner": "ect-server",
+    "datasource": "streaming_key_metrics",
+    "info": {
+        "originalValid": true
+    },
+    "inputs": [
+        {
+            "utterance": "Compute platform market share as percentage of total Daily Active Users (DAU) for each platform",
+            "source": "user",
+            "expected": {
+                "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+                "calculatedFieldFormula": {
+                    "formula": "SUM([Dau]) / TOTAL(SUM([Dau])) * 100",
+                    "caption": null
+                }
+            },
+            "tags": [
+                "add-explicit-calc-wordage",
+                "multi-step",
+                "calc-category-table"
+            ]
+        }
+    ],
+    "id": "cbb756cfb595490ea2674f10b2663948"
+}

@@ -1,0 +1,25 @@
+{
+    "runner": "ect-server",
+    "datasource": "retail-nto",
+    "info": {
+        "originalValid": true
+    },
+    "inputs": [
+        {
+            "utterance": "create a field that's the concatenation of the first 3 letters of the state, and underscore, the city, and the zipcode",
+            "source": "user",
+            "expected": {
+                "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+                "calculatedFieldFormula": {
+                    "formula": "LEFT([State], 3) + '_' + [City] + '_' + STR([ZIP Code])",
+                    "caption": null
+                }
+            },
+            "tags": [
+                "add-explicit-calc-wordage",
+                "calc-category-string"
+            ]
+        }
+    ],
+    "id": "a562ef1c-2b0e-4ee7-b892-3ef8beb82278"
+}

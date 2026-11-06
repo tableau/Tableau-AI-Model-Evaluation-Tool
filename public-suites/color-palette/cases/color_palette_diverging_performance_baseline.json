@@ -1,0 +1,23 @@
+{
+    "runner": "color-palettes-server",
+    "info": {
+        "version": "1.0.0"
+    },
+    "inputs": [
+        {
+            "utterance": "Colors showing performance above and below baseline",
+            "source": "user",
+            "arguments": {
+                "palette_type": "diverging"
+            },
+            "expected": {
+                "colorPalette": []
+            },
+            "tags": [
+                "color-palette-diverging"
+            ]
+        }
+    ],
+    "id": "d6e7f8a9-b0c1-2345-defa-678901234567"
+}
+

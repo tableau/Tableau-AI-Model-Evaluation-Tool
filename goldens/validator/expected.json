@@ -1,0 +1,499 @@
+{
+  "_valid_columns": {
+    "Sales": "number",
+    "Profit": "number",
+    "Discount": "number",
+    "Quantity": "number",
+    "Customer ID": "string",
+    "Customer Name": "string",
+    "Category": "string",
+    "Order Date": "date",
+    "Ship Date": "date",
+    "Returned": "boolean"
+  },
+  "cases": [
+    {
+      "name": "simple_field",
+      "formula": "[Sales]",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "simple_number_literal",
+      "formula": "42",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "simple_double_literal",
+      "formula": "3.14",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "simple_string_literal",
+      "formula": "\"hello\"",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "simple_boolean_literal",
+      "formula": "TRUE",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "null_literal",
+      "formula": "NULL",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "arith_add_numbers",
+      "formula": "[Sales] + [Profit]",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "arith_sub_numbers",
+      "formula": "[Sales] - [Profit]",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "arith_mul_numbers",
+      "formula": "[Sales] * [Quantity]",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "arith_div_numbers",
+      "formula": "[Sales] / [Quantity]",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "arith_mod_numbers",
+      "formula": "[Quantity] % 2",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "arith_pow_numbers",
+      "formula": "[Sales] ^ 2",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "arith_type_mismatch",
+      "formula": "[Sales] + [Customer Name]",
+      "is_valid": false,
+      "errors": [
+        "Cannot apply + to number and string"
+      ]
+    },
+    {
+      "name": "unary_minus_number",
+      "formula": "-[Sales]",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "unary_minus_string",
+      "formula": "-[Customer Name]",
+      "is_valid": false,
+      "errors": [
+        "Type mismatch: - string"
+      ]
+    },
+    {
+      "name": "paren_expr",
+      "formula": "([Sales] + [Profit]) * 2",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "nested_paren",
+      "formula": "((([Sales])))",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "aggregate_sum",
+      "formula": "SUM([Sales])",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "aggregate_avg",
+      "formula": "AVG([Sales])",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "aggregate_countd",
+      "formula": "COUNTD([Customer ID])",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "aggregate_min",
+      "formula": "MIN([Sales])",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "aggregate_max",
+      "formula": "MAX([Profit])",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "aggregate_count",
+      "formula": "COUNT([Sales])",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "aggregate_ratio",
+      "formula": "SUM([Sales]) / COUNTD([Customer ID])",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "aggregate_sum_string_mismatch",
+      "formula": "SUM([Customer Name])",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "invalid_field",
+      "formula": "SUM([Bogus])",
+      "is_valid": false,
+      "errors": [
+        "Field not in the data source: [Bogus]"
+      ]
+    },
+    {
+      "name": "invalid_bare_field",
+      "formula": "[DoesNotExist]",
+      "is_valid": false,
+      "errors": [
+        "Field not in the data source: [DoesNotExist]"
+      ]
+    },
+    {
+      "name": "unrecognized_function",
+      "formula": "FOObar([Sales])",
+      "is_valid": false,
+      "errors": [
+        "Unknown function: FOOBAR"
+      ]
+    },
+    {
+      "name": "number_func_abs",
+      "formula": "ABS([Profit])",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "number_func_round",
+      "formula": "ROUND([Sales])",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "number_func_type_mismatch",
+      "formula": "ABS([Customer Name])",
+      "is_valid": false,
+      "errors": [
+        "Type mismatch: abs expects a number, found string"
+      ]
+    },
+    {
+      "name": "string_func_upper",
+      "formula": "UPPER([Customer Name])",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "string_func_lower",
+      "formula": "LOWER([Category])",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "string_func_len",
+      "formula": "LEN([Customer Name])",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "string_func_trim",
+      "formula": "TRIM([Category])",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "date_func_datepart",
+      "formula": "DATEPART(\"year\", [Order Date])",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "date_func_datediff",
+      "formula": "DATEDIFF(\"day\", [Order Date], [Ship Date])",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "logical_func_isnull",
+      "formula": "ISNULL([Sales])",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "logical_func_isdate",
+      "formula": "ISDATE([Order Date])",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "comparison_numbers",
+      "formula": "[Sales] > [Profit]",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "comparison_eq",
+      "formula": "[Category] = \"Furniture\"",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "comparison_type_mismatch",
+      "formula": "[Sales] = [Category]",
+      "is_valid": false,
+      "errors": [
+        "Cannot compare number with string using ="
+      ]
+    },
+    {
+      "name": "not_boolean",
+      "formula": "NOT [Returned]",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "not_number_mismatch",
+      "formula": "NOT [Sales]",
+      "is_valid": false,
+      "errors": [
+        "NOT needs a true/false value, found number"
+      ]
+    },
+    {
+      "name": "and_expr",
+      "formula": "[Returned] AND ([Sales] > 0)",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "or_expr",
+      "formula": "([Sales] > 0) OR [Returned]",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "if_then_else",
+      "formula": "IF [Sales] > 0 THEN \"pos\" ELSE \"neg\" END",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "if_elseif",
+      "formula": "IF [Sales] > 100 THEN \"hi\" ELSEIF [Sales] > 0 THEN \"lo\" ELSE \"zero\" END",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "if_condition_not_boolean",
+      "formula": "IF [Sales] THEN \"x\" ELSE \"y\" END",
+      "is_valid": false,
+      "errors": [
+        "Type mismatch: IF condition must be boolean, found number"
+      ]
+    },
+    {
+      "name": "if_branch_mismatch",
+      "formula": "IF [Sales] > 0 THEN \"pos\" ELSE 1 END",
+      "is_valid": false,
+      "errors": [
+        "THEN returns string but ELSE returns number"
+      ]
+    },
+    {
+      "name": "case_expr",
+      "formula": "CASE [Category] WHEN \"Furniture\" THEN 1 WHEN \"Tech\" THEN 2 ELSE 0 END",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "case_branch_mismatch",
+      "formula": "CASE [Category] WHEN \"A\" THEN 1 WHEN \"B\" THEN \"two\" END",
+      "is_valid": false,
+      "errors": [
+        "The CASE branches return different types: number and string"
+      ]
+    },
+    {
+      "name": "in_list_strings",
+      "formula": "[Category] IN (\"Furniture\", \"Tech\")",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "in_list_type_mismatch",
+      "formula": "[Category] IN (1, 2)",
+      "is_valid": false,
+      "errors": [
+        "IN compares a string with a number value (1)",
+        "IN compares a string with a number value (2)"
+      ]
+    },
+    {
+      "name": "ifnull_expr",
+      "formula": "IFNULL([Sales], 0)",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "lod_fixed",
+      "formula": "{FIXED [Category] : SUM([Sales])}",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "lod_include",
+      "formula": "{INCLUDE [Customer ID] : AVG([Sales])}",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "lod_exclude",
+      "formula": "{EXCLUDE [Category] : SUM([Profit])}",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "lod_no_dimensions",
+      "formula": "{FIXED : SUM([Sales])}",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "lod_invalid_dimension",
+      "formula": "{FIXED [Bogus] : SUM([Sales])}",
+      "is_valid": false,
+      "errors": [
+        "Field not in the data source: [Bogus]",
+        "Invalid dimension in LOD at index 0",
+        "Invalid LOD dimensions"
+      ]
+    },
+    {
+      "name": "nested_functions",
+      "formula": "SUM([Sales]) / SUM([Profit])",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "complex_if_aggregate",
+      "formula": "IF SUM([Sales]) > 1000 THEN \"big\" ELSE \"small\" END",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "string_concat_split",
+      "formula": "SPLIT([Customer Name], \" \", 1)",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "replace_func",
+      "formula": "REPLACE([Category], \"a\", \"b\")",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "zn_func",
+      "formula": "ZN([Sales])",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "int_func",
+      "formula": "INT([Sales])",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "syntax_error_trailing_op",
+      "formula": "SUM([Sales]) +",
+      "is_valid": false,
+      "errors": [
+        "Syntax Error: Syntax error at line 1, column 14: mismatched input '<EOF>' expecting {EOL, WSS, LINECOMMENT, BLOCKCOMMENT, '(', '-', '{', FIELDNAME, SECONDARYFIELDNAME, SECONDARYOBJECTNAME, STRINGLITERAL, DATELITERAL, INTEGERLITERAL, DOUBLELITERAL, BOOLEANLITERAL, AGGREGATE, AGGREGATEWITHSAMEARGUMENTS, AGGREGATECOUNT, NUMBERFUNC, DATEFUNC, STRINGFUNC, LOGICALFUNC, NULL, IF, CASE, NOT, IFNULL, FUNCTIONORFIELD}"
+      ]
+    },
+    {
+      "name": "syntax_error_unbalanced_paren",
+      "formula": "SUM([Sales]",
+      "is_valid": false,
+      "errors": [
+        "Syntax Error: Syntax error at line 1, column 11: missing ')' at '<EOF>'"
+      ]
+    },
+    {
+      "name": "syntax_error_empty",
+      "formula": "",
+      "is_valid": false,
+      "errors": [
+        "Empty formula"
+      ]
+    },
+    {
+      "name": "syntax_error_garbage",
+      "formula": "@@@",
+      "is_valid": false,
+      "errors": [
+        "Syntax Error: Syntax error at line 1, column 3: mismatched input '<EOF>' expecting {EOL, WSS, LINECOMMENT, BLOCKCOMMENT, '(', '-', '{', FIELDNAME, SECONDARYFIELDNAME, SECONDARYOBJECTNAME, STRINGLITERAL, DATELITERAL, INTEGERLITERAL, DOUBLELITERAL, BOOLEANLITERAL, AGGREGATE, AGGREGATEWITHSAMEARGUMENTS, AGGREGATECOUNT, NUMBERFUNC, DATEFUNC, STRINGFUNC, LOGICALFUNC, NULL, IF, CASE, NOT, IFNULL, FUNCTIONORFIELD}"
+      ]
+    },
+    {
+      "name": "syntax_error_missing_operand",
+      "formula": "[Sales] * * [Profit]",
+      "is_valid": false,
+      "errors": [
+        "Syntax Error: Syntax error at line 1, column 10: extraneous input '*' expecting {EOL, WSS, LINECOMMENT, BLOCKCOMMENT, '(', '-', '{', FIELDNAME, SECONDARYFIELDNAME, SECONDARYOBJECTNAME, STRINGLITERAL, DATELITERAL, INTEGERLITERAL, DOUBLELITERAL, BOOLEANLITERAL, AGGREGATE, AGGREGATEWITHSAMEARGUMENTS, AGGREGATECOUNT, NUMBERFUNC, DATEFUNC, STRINGFUNC, LOGICALFUNC, NULL, IF, CASE, NOT, IFNULL, FUNCTIONORFIELD}"
+      ]
+    },
+    {
+      "name": "general_func_lower_case",
+      "formula": "power([Sales], 2)",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "general_func_str",
+      "formula": "STR([Sales])",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "name": "general_func_contains",
+      "formula": "CONTAINS([Customer Name], \"Smith\")",
+      "is_valid": true,
+      "errors": []
+    }
+  ]
+}

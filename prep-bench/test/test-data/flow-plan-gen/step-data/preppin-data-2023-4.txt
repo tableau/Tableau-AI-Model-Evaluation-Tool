@@ -1,0 +1,55 @@
+﻿<UserStepData>
+<Step name="Joining Date" id="3AC689D6-93EE-4441-8323-D8C6E9E5C393" type="Clean Step">
+ID (string),Joining Date (date),Demographic (string),Value (string)
+797127,4/19/2023,Ethnicity,Black
+797127,4/19/2023,Date of Birth,6/26/1987
+797127,4/19/2023,Account Type,Platinum
+282672,4/9/2023,Ethnicity,Black
+282672,4/9/2023,Date of Birth,7/20/1991
+282672,4/9/2023,Account Type,Platinum
+339687,4/9/2023,Ethnicity,White
+339687,4/9/2023,Date of Birth,11/29/1946
+339687,4/9/2023,Account Type,Basic
+818135,4/3/2023,Ethnicity,Asian
+818135,4/3/2023,Date of Birth,4/11/1954
+818135,4/3/2023,Account Type,Gold
+192505,4/6/2023,Ethnicity,White
+192505,4/6/2023,Date of Birth,10/15/1966
+192505,4/6/2023,Account Type,Platinum
+669663,4/20/2023,Ethnicity,White
+669663,4/20/2023,Date of Birth,6/2/1994
+669663,4/20/2023,Account Type,Gold
+604416,4/24/2023,Ethnicity,Other
+604416,4/24/2023,Date of Birth,6/29/2004
+604416,4/24/2023,Account Type,Gold
+656794,4/10/2023,Ethnicity,Other
+656794,4/10/2023,Date of Birth,10/21/1951
+656794,4/10/2023,Account Type,Basic
+954550,4/8/2023,Ethnicity,Black
+954550,4/8/2023,Date of Birth,1/23/1953
+954550,4/8/2023,Account Type,Gold
+255005,4/8/2023,Ethnicity,White
+255005,4/8/2023,Date of Birth,1/4/1941
+255005,4/8/2023,Account Type,Basic
+104185,4/25/2023,Ethnicity,White
+104185,4/25/2023,Date of Birth,6/8/1989
+104185,4/25/2023,Account Type,Basic
+637023,4/3/2023,Ethnicity,Black
+637023,4/3/2023,Date of Birth,11/23/1953
+637023,4/3/2023,Account Type,Platinum
+184178,4/9/2023,Ethnicity,Asian
+184178,4/9/2023,Date of Birth,10/29/1958
+184178,4/9/2023,Account Type,Basic
+708191,4/12/2023,Ethnicity,White
+708191,4/12/2023,Date of Birth,6/30/1974
+708191,4/12/2023,Account Type,Basic
+805246,4/16/2023,Ethnicity,Asian
+805246,4/16/2023,Date of Birth,7/20/1971
+805246,4/16/2023,Account Type,Gold
+340059,4/6/2023,Ethnicity,White
+340059,4/6/2023,Date of Birth,1/24/2004
+340059,4/6/2023,Account Type,Basic
+458824,4/19/2023,Ethnicity,Asian
+458824,4/19/2023,Date of Birth,8/3/1967
+</Step>
+</UserStepData>

@@ -1,0 +1,35 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-opportunity-360",
+  "info": {
+    "requirement-id": "D-248-bcc5066b4dd57a3f",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "in the immediate vicinity of Residential Construction, you'll find about Project Bid count",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": null
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Geographic Analysis",
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Filter - Categorical",
+          "Op: Aggregation (Default)"
+        ],
+        "out": [
+          "Out: Unspecified Viz"
+        ]
+      }
+    }
+  ],
+  "id": "2f194ea08d4e0dfb0d90f8eb5c420112"
+}

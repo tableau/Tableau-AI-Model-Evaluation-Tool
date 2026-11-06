@@ -1,0 +1,94 @@
+/* The guided tour and its help dialog, drawn with the Tableau UI library's
+   design tokens like the rest of the kit (ui/ui.css). The tour sits above
+   every other overlay, toasts included. */
+
+/* ---- overlay ------------------------------------------------------------ */
+/* Panels around the lit element: they catch every click outside it, so only
+   the element itself can be used while a step is up. */
+.tour-blocker { position: fixed; z-index: 1800; }
+/* No element to light (still looking, or it never showed): a plain dim. */
+.tour-blocker-dim { background: rgba(0, 0, 0, 0.5); }
+.tour-spotlight {
+  position: fixed; z-index: 1800; pointer-events: none; border-radius: 6px;
+  box-shadow:
+    0 0 0 2px rgba(255, 255, 255, 0.95),
+    0 0 14px 5px rgba(255, 255, 255, 0.35),
+    0 0 0 9999px rgba(0, 0, 0, 0.5);
+}
+.tour-card {
+  position: fixed; z-index: 1801; box-sizing: border-box;
+  width: 340px; max-width: calc(100vw - 32px);
+  display: flex; flex-direction: column; gap: 10px; padding: 16px 20px 18px;
+  background: var(--color-elevation-surface-default-default, #fff);
+  color: var(--color-font-default-default, #2e2e2e);
+  border: 1px solid var(--color-elevation-border-default-subtle, #e5e5e5);
+  border-radius: 4px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+.tour-card:focus-visible { outline: none; }
+.tour-card-head { display: flex; align-items: center; justify-content: space-between; margin-right: -6px; }
+.tour-step-counter, .tour-help-heading {
+  font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.04em;
+  color: var(--color-font-default-secondary, #5c5c5c);
+}
+/* The step counter reads "STEP 1 OF 4"; the dialog's section headings are
+   sentence case ("How it works"). */
+.tour-step-counter { text-transform: uppercase; }
+.tour-card-title { margin: 0; font-size: 16px; line-height: 24px; font-weight: 600; }
+.tour-card-description { margin: 0; font-size: 14px; line-height: 20px; color: var(--color-font-default-secondary, #5c5c5c); }
+.tour-card-try { margin: 0; font-size: 14px; line-height: 20px; }
+.tour-card-try strong { font-weight: 600; }
+/* What the lit element brings up (tooltip, menu, confirmation, message)
+   shows above the dim; the kit puts these below it otherwise. */
+body.tour-active > .tui-popover { z-index: 1810; }
+body.tour-active > .tui-tooltip { z-index: 1820; }
+body.tour-active .tui-toasts { z-index: 1830; }
+.tour-card-actions { display: flex; align-items: center; justify-content: flex-end; gap: 8px; margin-top: 6px; }
+
+/* ---- help dialog --------------------------------------------------------- */
+/* The dialog's title: the tool's logo, then the words. */
+.tour-help-title { display: inline-flex; align-items: center; gap: 10px; }
+.tour-help-title img { height: 28px; width: 28px; display: block; }
+.tour-help-intro { margin: 0 0 20px; font-size: 14px; line-height: 20px; }
+.tour-help-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+@media (max-width: 760px) { .tour-help-columns { grid-template-columns: 1fr; gap: 24px; } }
+.tour-help-column { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.tour-help-heading { margin: 0; }
+.tour-help-concepts { margin: 0; display: flex; flex-direction: column; gap: 14px; }
+.tour-help-concepts dt { font-size: 14px; line-height: 20px; font-weight: 600; }
+.tour-help-concepts dd { margin: 2px 0 0; font-size: 12px; line-height: 18px; color: var(--color-font-default-secondary, #5c5c5c); }
+.tour-help-topics { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.tour-help-topic {
+  display: flex; align-items: center; gap: 12px; width: 100%; box-sizing: border-box; padding: 10px 12px;
+  border: 1px solid var(--color-elevation-border-default-subtle, #e5e5e5); border-radius: 4px;
+  background: var(--color-elevation-surface-default-default, #fff);
+  color: inherit; font: inherit; text-align: left; cursor: pointer;
+  transition: background 0.12s ease, border-color 0.12s ease;
+}
+.tour-help-topic:hover:not(:disabled) {
+  background: var(--color-elevation-surface-default-subtle, #f3f3f3);
+  border-color: var(--color-elevation-border-default-default, #c9c9c9);
+}
+.tour-help-topic:focus-visible { outline: 2px solid var(--color-feedback-default-info, #05628a); outline-offset: 1px; }
+.tour-help-topic:disabled { cursor: default; }
+.tour-help-topic:disabled .tour-help-topic-title { color: var(--color-font-default-subtle, #939393); }
+.tour-help-topic-index {
+  display: inline-flex; align-items: center; justify-content: center; flex: none;
+  width: 28px; height: 28px; box-sizing: border-box; border-radius: 50%;
+  border: 2px solid var(--color-feedback-default-info, #05628a);
+  color: var(--color-feedback-default-info, #05628a);
+  font-size: 12px; line-height: 1; font-weight: 600;
+}
+.tour-help-topic:disabled .tour-help-topic-index {
+  border-color: var(--color-elevation-border-default-default, #c9c9c9);
+  color: var(--color-font-default-subtle, #939393);
+}
+.tour-help-topic-text { display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 0; }
+.tour-help-topic-title { font-size: 14px; line-height: 20px; font-weight: 600; }
+.tour-help-topic-description { font-size: 12px; line-height: 18px; color: var(--color-font-default-secondary, #5c5c5c); }
+.tour-help-topic-play { flex: none; display: inline-flex; font-size: 14px; color: var(--color-font-default-subtle, #939393); }
+.tour-help-topic:hover:not(:disabled) .tour-help-topic-play { color: var(--color-feedback-default-info, #05628a); }
+.tour-help-topic:disabled .tour-help-topic-play { visibility: hidden; }
+
+@media (prefers-reduced-motion: reduce) {
+  .tour-help-topic { transition: none; }
+}

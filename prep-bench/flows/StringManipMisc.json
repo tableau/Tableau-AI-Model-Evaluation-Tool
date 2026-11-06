@@ -1,0 +1,54 @@
+{
+  "flow": "StringManipMisc.tflx",
+  "name": "StringManipMisc",
+  "inputs": [
+    {
+      "name": "Data",
+      "source": "Data.csv",
+      "fields": [
+        {
+          "name": "Customer Name",
+          "datatype": "string",
+          "values": [
+            "NAHIA CARNEVALE",
+            "EFRAT DANIEL",
+            "NIKLAS PANOSYAN",
+            "HERACLES FUSCO",
+            "CATO MELNIK",
+            "NIKODEMOS VAN ASCH",
+            "MWANAHAMISI MCCONNELL",
+            "MANJU ALBERT"
+          ]
+        },
+        {
+          "name": "Question",
+          "datatype": "string",
+          "values": [
+            "How do you check if a string is palindrome in Python?",
+            "How do you find the factorial of a number in Python?",
+            "How do you shuffle a list in Python?",
+            "How do you concatenate two dictionaries in Python 3.5+?",
+            "How do you convert a string to lowercase in Python?",
+            "How do you remove duplicates from a list in Python?",
+            "How do you sort a dictionary by its values in Python?",
+            "How do you reverse a list in Python?"
+          ]
+        },
+        {
+          "name": "Response",
+          "datatype": "string",
+          "values": [
+            "answer: ```is_palindrome = lambda s: s == s[::-1]```",
+            "answer: ```factorial = lambda n: 1 if n == 0 else n * factorial(n-1)```",
+            "answer: ```import random; random.shuffle(my_list)```",
+            "answer: ```merged_dict = {**dict1, **dict2}```",
+            "answer: ```lowercase_string = original_string.lower()```",
+            "answer: ```unique_list = list(set(my_list))```",
+            "answer: ```sorted_dict = {k: v for k, v in sorted(my_dict.items(), key=lambda item: item[1])}```",
+            "answer: ```reversed_list = my_list[::-1]```"
+          ]
+        }
+      ]
+    }
+  ]
+}

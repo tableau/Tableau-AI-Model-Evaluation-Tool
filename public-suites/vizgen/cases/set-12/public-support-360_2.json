@@ -1,0 +1,63 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-support-360",
+  "info": {
+    "requirement-id": "D-248-cd5ed1d580cd4c3f",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "resolved cases week over week",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "line",
+          "fields": [
+            {
+              "caption": "Created Date",
+              "data": "date",
+              "type": "continuous",
+              "aggregation": "week",
+              "role": "dimension",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            },
+            {
+              "caption": "Account Open Cases",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "aggregation": "sum"
+            }
+          ]
+        }
+      },
+      "source": "user",
+      "tags": [
+        "infer-date-time-field",
+        "original-test-bench",
+        "semantic-inference"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement",
+          "Intent: Trend over Time"
+        ],
+        "op": [
+          "Op: Aggregation (Default)",
+          "Op: Filter - Date Range / Relative",
+          "Op: Date Truncation / Granularity",
+          "Op: Group By Dimension",
+          "Op: Field Inference - Date Field",
+          "Op: Disambiguation"
+        ],
+        "out": [
+          "Out: Line Chart"
+        ]
+      }
+    }
+  ],
+  "id": "434e276a8e6a9fdbf30f135070dcb7f5"
+}

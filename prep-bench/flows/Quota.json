@@ -1,0 +1,26 @@
+{
+  "flow": "Quota.tflx",
+  "name": "Quota",
+  "inputs": [
+    {
+      "name": "Data",
+      "source": "Data.csv",
+      "fields": [
+        {
+          "name": "Quota",
+          "datatype": "integer",
+          "values": [
+            "364",
+            "725",
+            "616",
+            "497",
+            "26",
+            "576",
+            "512",
+            "33"
+          ]
+        }
+      ]
+    }
+  ]
+}

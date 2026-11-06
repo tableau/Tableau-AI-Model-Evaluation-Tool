@@ -1,0 +1,171 @@
+{
+ "test_id": "10c92037-5ddc-41ba-bf57-8c102390e156",
+ "datasource": "chicago-taxi-trips-2024-calcs",
+ "matched_fields": [
+  {
+   "name": "Pickup Centroid Latitude",
+   "datatype": "geographic"
+  },
+  {
+   "name": "Pickup Census Tract",
+   "datatype": "number"
+  },
+  {
+   "name": "Extras",
+   "datatype": "number"
+  },
+  {
+   "name": "Dropoff Centroid Latitude",
+   "datatype": "geographic"
+  },
+  {
+   "name": "Pickup Centroid Longitude",
+   "datatype": "geographic"
+  },
+  {
+   "name": "Trip Seconds",
+   "datatype": "number"
+  },
+  {
+   "name": "Dropoff Community Area",
+   "datatype": "number"
+  },
+  {
+   "name": "Dropoff Census Tract",
+   "datatype": "number"
+  },
+  {
+   "name": "Trip End Timestamp",
+   "datatype": "date"
+  },
+  {
+   "name": "Company",
+   "datatype": "string",
+   "sampleValues": [
+    "Tac - Checker Cab Dispatch",
+    "Chicago City Taxi Association",
+    "Leonard Cab Co",
+    "Medallion Leasin",
+    "312 Medallion Management Corp",
+    "City Service",
+    "Tac - Yellow Cab Association",
+    "2733 - 74600 Benny Jona",
+    "Choice Taxi Association Inc",
+    "Patriot Taxi Dba Peace Taxi Associat"
+   ]
+  },
+  {
+   "name": "Trip Miles",
+   "datatype": "number"
+  },
+  {
+   "name": "Taxi ID",
+   "datatype": "string",
+   "sampleValues": [
+    "NA"
+   ]
+  },
+  {
+   "name": "Dropoff Centroid Longitude",
+   "datatype": "geographic"
+  },
+  {
+   "name": "Pickup Community Area",
+   "datatype": "number"
+  },
+  {
+   "name": "Measure Values",
+   "datatype": "number"
+  },
+  {
+   "name": "Measure Names",
+   "datatype": "string"
+  },
+  {
+   "name": "Trip Start Timestamp",
+   "datatype": "date"
+  },
+  {
+   "name": "Pickup Centroid Location",
+   "datatype": "string",
+   "sampleValues": [
+    "POINT (-87.6638654956 41.9726679555)",
+    "POINT (-87.6631267998 42.0003203059)",
+    "POINT (-87.6944151909 41.9868086263)",
+    "POINT (-87.6321092196 41.9002656868)",
+    "POINT (-87.6197106717 41.8950334495)",
+    "POINT (-87.6221729369 41.8706073724)",
+    "POINT (-87.6398538587 41.9347624564)",
+    "POINT (-87.6357600901 41.9074919303)",
+    "POINT (-87.6192895188 41.8340973906)",
+    "POINT (-87.6314065252 41.8710158803)"
+   ]
+  },
+  {
+   "name": "Payment Type",
+   "datatype": "string",
+   "sampleValues": [
+    "No Charge",
+    "Cash",
+    "Prcard",
+    "Credit Card",
+    "Mobile",
+    "Dispute",
+    "Unknown"
+   ]
+  },
+  {
+   "name": "Tips",
+   "datatype": "number"
+  },
+  {
+   "name": "Tolls",
+   "datatype": "number"
+  },
+  {
+   "name": "Trip ID",
+   "datatype": "string",
+   "sampleValues": [
+    "94101cd8533034deebb212c8bb8a7d1204a2b2a2",
+    "1eff1ec5f4679bb60520995588987128e951077a",
+    "a3fa00ca9c355b00e264cbf1135e1d95398b2b90",
+    "4c2a2d75b54be9d8540f2dd1c6b9149aa5899c25",
+    "67135c2040d0606a571d0d6f0350a15a310c2320",
+    "17d4fe59409a86fee70f53427579c2e197f095ea",
+    "3493b6fa5825e09a2f85412ad28027c7116d78eb",
+    "1ae3d2ea7596bd206abe67ea9359d51e82b96b10",
+    "9b74be934f1daee591dc8aa5a06bc41059260cf5",
+    "b59c7282560c64c8d2c9e91054f1467662f47397"
+   ]
+  },
+  {
+   "name": "Dropoff Centroid  Location",
+   "datatype": "string",
+   "sampleValues": [
+    "POINT (-87.6638654956 41.9726679555)",
+    "POINT (-87.6631267998 42.0003203059)",
+    "POINT (-87.6944151909 41.9868086263)",
+    "POINT (-87.6197106717 41.8950334495)",
+    "POINT (-87.6221729369 41.8706073724)",
+    "POINT (-87.6398538587 41.9347624564)",
+    "POINT (-87.6846859492 41.9067077917)",
+    "POINT (-87.651524281 41.6740396135)",
+    "POINT (-87.6357600901 41.9074919303)",
+    "POINT (-87.6192895188 41.8340973906)"
+   ]
+  },
+  {
+   "name": "Trip Total",
+   "datatype": "number"
+  },
+  {
+   "name": "Taxi_Trips_-_2024_20240408.csv",
+   "datatype": "number"
+  },
+  {
+   "name": "Fare",
+   "datatype": "number"
+  }
+ ],
+ "calc_fields": []
+}

@@ -1,0 +1,43 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-fec-expenditures",
+  "info": {
+    "originalValid": false,
+    "reasonInvalid": "Level of detail expressions cannot contain table calculations or the ATTR function.",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "create calc to rank Spend Category by Disbursement Amount",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "RANK(SUM({FIXED [Spend Category]: SUM([Disbursement Amount])}), 'desc')",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-arithmetic",
+        "add-explicit-calc-wordage"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Ranking / Top-N",
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Sort / Order",
+          "Op: Table Calculation / Window",
+          "Op: Level of Detail",
+          "Op: Aggregation (Default)"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "80bafa2fd8ab60e7077ef97407525bad"
+}

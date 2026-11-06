@@ -1,0 +1,44 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-fec-expenditures",
+  "info": {
+    "originalValid": false,
+    "reasonInvalid": "Cannot mix aggregate and non-aggregate arguements with this function.",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "Create a calc that flags travel cost expenses if its higher than last week",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "IF SUM([Disbursement Amount]) > LOOKUP(SUM([Disbursement Amount]), -1) AND ATTR([Disbursement Purpose]) = 'facebook' THEN True ELSE False END",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-logical",
+        "add-explicit-calc-wordage"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Threshold Qualification"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Conditional Logic",
+          "Op: Filter - Date Range / Relative",
+          "Op: Table Calculation / Window",
+          "Op: Aggregation (Non-Default)",
+          "Op: Aggregation (Default)",
+          "Op: Arithmetic / Ratio"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "f2dedaa43e5295aed1d0b024e35b76f6"
+}

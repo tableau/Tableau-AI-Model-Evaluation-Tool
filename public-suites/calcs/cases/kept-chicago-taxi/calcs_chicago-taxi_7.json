@@ -1,0 +1,25 @@
+{
+  "runner": "ect-server",
+  "datasource": "chicago-taxi-trips-2024-calcs",
+  "info": {
+    "originalValid": true
+  },
+  "inputs": [
+    {
+      "utterance": "flag taxi companies that has disputed transactions",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "IF { FIXED [Company] : MAX(IF [Payment Type] = 'Dispute' THEN 1 ELSE 0 END) } = 1 THEN 1 ELSE 0 END",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-logical",
+        "calc-category-lod"
+      ]
+    }
+  ],
+  "id": "84bf0519-74ee-4ffa-b719-98a2f36c7f86"
+}

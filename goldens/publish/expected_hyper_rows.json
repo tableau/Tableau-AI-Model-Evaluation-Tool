@@ -1,0 +1,1291 @@
+{
+  "_status": "OK",
+  "_source": "nlq_eval_publish.build_hyper (real Python, a5f0e65a)",
+  "schema_tag": "ai-model-eval-schema-3",
+  "runs": {
+    "beefcafe00000000000000000000beef": {
+      "counts": {
+        "results": 2,
+        "metrics": 4
+      },
+      "tables": [
+        "results"
+      ],
+      "columns": [
+        {
+          "name": "schema_version",
+          "type": "BIG_INT"
+        },
+        {
+          "name": "run_id",
+          "type": "TEXT"
+        },
+        {
+          "name": "tool_version",
+          "type": "TEXT"
+        },
+        {
+          "name": "run_status",
+          "type": "TEXT"
+        },
+        {
+          "name": "run_started_at",
+          "type": "TIMESTAMP_TZ"
+        },
+        {
+          "name": "run_finished_at",
+          "type": "TIMESTAMP_TZ"
+        },
+        {
+          "name": "run_duration_s",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "exported_at",
+          "type": "TIMESTAMP_TZ"
+        },
+        {
+          "name": "tableau_server_url",
+          "type": "TEXT"
+        },
+        {
+          "name": "tableau_site",
+          "type": "TEXT"
+        },
+        {
+          "name": "tableau_site_luid",
+          "type": "TEXT"
+        },
+        {
+          "name": "tableau_server_version",
+          "type": "TEXT"
+        },
+        {
+          "name": "capability",
+          "type": "TEXT"
+        },
+        {
+          "name": "capability_label",
+          "type": "TEXT"
+        },
+        {
+          "name": "suite_case_count",
+          "type": "BIG_INT"
+        },
+        {
+          "name": "model_under_test",
+          "type": "TEXT"
+        },
+        {
+          "name": "model_provider",
+          "type": "TEXT"
+        },
+        {
+          "name": "answered_by",
+          "type": "TEXT"
+        },
+        {
+          "name": "judge_provider",
+          "type": "TEXT"
+        },
+        {
+          "name": "judge_model",
+          "type": "TEXT"
+        },
+        {
+          "name": "case_number",
+          "type": "BIG_INT"
+        },
+        {
+          "name": "test_case_id",
+          "type": "TEXT"
+        },
+        {
+          "name": "datasource",
+          "type": "TEXT"
+        },
+        {
+          "name": "utterance",
+          "type": "TEXT"
+        },
+        {
+          "name": "expected_kind",
+          "type": "TEXT"
+        },
+        {
+          "name": "expected",
+          "type": "TEXT"
+        },
+        {
+          "name": "actual",
+          "type": "TEXT"
+        },
+        {
+          "name": "latency_s",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "case_status",
+          "type": "TEXT"
+        },
+        {
+          "name": "case_score",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "case_verdict",
+          "type": "TEXT"
+        },
+        {
+          "name": "error_count",
+          "type": "BIG_INT"
+        },
+        {
+          "name": "warning_count",
+          "type": "BIG_INT"
+        },
+        {
+          "name": "errors_text",
+          "type": "TEXT"
+        },
+        {
+          "name": "case_tags",
+          "type": "TEXT"
+        },
+        {
+          "name": "metric_stage",
+          "type": "TEXT"
+        },
+        {
+          "name": "metric_name",
+          "type": "TEXT"
+        },
+        {
+          "name": "metric_id",
+          "type": "TEXT"
+        },
+        {
+          "name": "metric_label",
+          "type": "TEXT"
+        },
+        {
+          "name": "metric_category",
+          "type": "TEXT"
+        },
+        {
+          "name": "metric_category_weight",
+          "type": "BIG_INT"
+        },
+        {
+          "name": "score",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "judge_derived",
+          "type": "BOOL"
+        },
+        {
+          "name": "unavailable",
+          "type": "BOOL"
+        },
+        {
+          "name": "explanation",
+          "type": "TEXT"
+        }
+      ],
+      "rows": [
+        [
+          3,
+          "beefcafe00000000000000000000beef",
+          "",
+          "Completed",
+          "2026-09-30T10:00:00Z",
+          "2026-09-30T10:30:05Z",
+          1805.0,
+          "2026-09-30T12:34:56Z",
+          "",
+          "",
+          "",
+          "",
+          "calc",
+          "Calculated fields",
+          2,
+          "gpt-4o-mini",
+          "",
+          "https://localhost:5001",
+          "anthropic",
+          "claude-sonnet-4-5",
+          1,
+          "tc-1",
+          "Superstore",
+          "total sales",
+          "formula",
+          "{\"calculatedFieldFormula\":\"SUM([Sales])\"}",
+          "{\"calculatedFieldFormula\":\"SUM([Sales])\"}",
+          9.4,
+          "scored",
+          1.0,
+          "pass",
+          0,
+          0,
+          "",
+          "",
+          "calculatedFieldFormula",
+          "calcValidity",
+          "calc-validity-v1",
+          "Calculation Validity",
+          "Calculated fields",
+          13,
+          1.0,
+          false,
+          false,
+          ""
+        ],
+        [
+          3,
+          "beefcafe00000000000000000000beef",
+          "",
+          "Completed",
+          "2026-09-30T10:00:00Z",
+          "2026-09-30T10:30:05Z",
+          1805.0,
+          "2026-09-30T12:34:56Z",
+          "",
+          "",
+          "",
+          "",
+          "calc",
+          "Calculated fields",
+          2,
+          "gpt-4o-mini",
+          "",
+          "https://localhost:5001",
+          "anthropic",
+          "claude-sonnet-4-5",
+          1,
+          "tc-1",
+          "Superstore",
+          "total sales",
+          "formula",
+          "{\"calculatedFieldFormula\":\"SUM([Sales])\"}",
+          "{\"calculatedFieldFormula\":\"SUM([Sales])\"}",
+          9.4,
+          "scored",
+          1.0,
+          "pass",
+          0,
+          0,
+          "",
+          "",
+          "llmJudge",
+          "coherence",
+          "",
+          "Coherence",
+          "Conversation quality",
+          0,
+          0.9,
+          true,
+          false,
+          "clear"
+        ],
+        [
+          3,
+          "beefcafe00000000000000000000beef",
+          "",
+          "Completed",
+          "2026-09-30T10:00:00Z",
+          "2026-09-30T10:30:05Z",
+          1805.0,
+          "2026-09-30T12:34:56Z",
+          "",
+          "",
+          "",
+          "",
+          "calc",
+          "Calculated fields",
+          2,
+          "gpt-4o-mini",
+          "",
+          "https://localhost:5001",
+          "anthropic",
+          "claude-sonnet-4-5",
+          2,
+          "tc-2",
+          "Superstore",
+          "profit ratio",
+          "formula",
+          "{\"calculatedFieldFormula\":\"SUM([Profit])/SUM([Sales])\"}",
+          "{\"calculatedFieldFormula\":\"SUM([Profit])\"}",
+          10.1,
+          "scored",
+          0.5,
+          "partial",
+          1,
+          0,
+          "slow gateway",
+          "",
+          "calculatedFieldFormula",
+          "calcValidity",
+          "",
+          "Calculation Validity",
+          "Calculated fields",
+          13,
+          0.5,
+          false,
+          false,
+          ""
+        ],
+        [
+          3,
+          "beefcafe00000000000000000000beef",
+          "",
+          "Completed",
+          "2026-09-30T10:00:00Z",
+          "2026-09-30T10:30:05Z",
+          1805.0,
+          "2026-09-30T12:34:56Z",
+          "",
+          "",
+          "",
+          "",
+          "calc",
+          "Calculated fields",
+          2,
+          "gpt-4o-mini",
+          "",
+          "https://localhost:5001",
+          "anthropic",
+          "claude-sonnet-4-5",
+          2,
+          "tc-2",
+          "Superstore",
+          "profit ratio",
+          "formula",
+          "{\"calculatedFieldFormula\":\"SUM([Profit])/SUM([Sales])\"}",
+          "{\"calculatedFieldFormula\":\"SUM([Profit])\"}",
+          10.1,
+          "scored",
+          0.5,
+          "partial",
+          1,
+          0,
+          "slow gateway",
+          "",
+          "llmJudge",
+          "coherence",
+          "",
+          "Coherence",
+          "Conversation quality",
+          0,
+          null,
+          true,
+          true,
+          "Unavailable: judge 503"
+        ]
+      ]
+    },
+    "cafe0000000000000000000000000001": {
+      "counts": {
+        "results": 1,
+        "metrics": 0
+      },
+      "tables": [
+        "results"
+      ],
+      "columns": [
+        {
+          "name": "schema_version",
+          "type": "BIG_INT"
+        },
+        {
+          "name": "run_id",
+          "type": "TEXT"
+        },
+        {
+          "name": "tool_version",
+          "type": "TEXT"
+        },
+        {
+          "name": "run_status",
+          "type": "TEXT"
+        },
+        {
+          "name": "run_started_at",
+          "type": "TIMESTAMP_TZ"
+        },
+        {
+          "name": "run_finished_at",
+          "type": "TIMESTAMP_TZ"
+        },
+        {
+          "name": "run_duration_s",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "exported_at",
+          "type": "TIMESTAMP_TZ"
+        },
+        {
+          "name": "tableau_server_url",
+          "type": "TEXT"
+        },
+        {
+          "name": "tableau_site",
+          "type": "TEXT"
+        },
+        {
+          "name": "tableau_site_luid",
+          "type": "TEXT"
+        },
+        {
+          "name": "tableau_server_version",
+          "type": "TEXT"
+        },
+        {
+          "name": "capability",
+          "type": "TEXT"
+        },
+        {
+          "name": "capability_label",
+          "type": "TEXT"
+        },
+        {
+          "name": "suite_case_count",
+          "type": "BIG_INT"
+        },
+        {
+          "name": "model_under_test",
+          "type": "TEXT"
+        },
+        {
+          "name": "model_provider",
+          "type": "TEXT"
+        },
+        {
+          "name": "answered_by",
+          "type": "TEXT"
+        },
+        {
+          "name": "judge_provider",
+          "type": "TEXT"
+        },
+        {
+          "name": "judge_model",
+          "type": "TEXT"
+        },
+        {
+          "name": "case_number",
+          "type": "BIG_INT"
+        },
+        {
+          "name": "test_case_id",
+          "type": "TEXT"
+        },
+        {
+          "name": "datasource",
+          "type": "TEXT"
+        },
+        {
+          "name": "utterance",
+          "type": "TEXT"
+        },
+        {
+          "name": "expected_kind",
+          "type": "TEXT"
+        },
+        {
+          "name": "expected",
+          "type": "TEXT"
+        },
+        {
+          "name": "actual",
+          "type": "TEXT"
+        },
+        {
+          "name": "latency_s",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "case_status",
+          "type": "TEXT"
+        },
+        {
+          "name": "case_score",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "case_verdict",
+          "type": "TEXT"
+        },
+        {
+          "name": "error_count",
+          "type": "BIG_INT"
+        },
+        {
+          "name": "warning_count",
+          "type": "BIG_INT"
+        },
+        {
+          "name": "errors_text",
+          "type": "TEXT"
+        },
+        {
+          "name": "case_tags",
+          "type": "TEXT"
+        },
+        {
+          "name": "metric_stage",
+          "type": "TEXT"
+        },
+        {
+          "name": "metric_name",
+          "type": "TEXT"
+        },
+        {
+          "name": "metric_id",
+          "type": "TEXT"
+        },
+        {
+          "name": "metric_label",
+          "type": "TEXT"
+        },
+        {
+          "name": "metric_category",
+          "type": "TEXT"
+        },
+        {
+          "name": "metric_category_weight",
+          "type": "BIG_INT"
+        },
+        {
+          "name": "score",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "judge_derived",
+          "type": "BOOL"
+        },
+        {
+          "name": "unavailable",
+          "type": "BOOL"
+        },
+        {
+          "name": "explanation",
+          "type": "TEXT"
+        }
+      ],
+      "rows": [
+        [
+          3,
+          "cafe0000000000000000000000000001",
+          "1.2.0",
+          "Paused",
+          "2026-09-29T08:15:00Z",
+          null,
+          null,
+          "2026-09-30T12:34:56Z",
+          "https://tableau.example.com",
+          "Sales",
+          "site-luid-9",
+          "2026.4.0",
+          "calc",
+          "Calculated fields",
+          166,
+          "claude-sonnet-4-6",
+          "anthropic",
+          "https://tableau.example.com/content-exploration",
+          "",
+          "",
+          1,
+          "tc-1",
+          "Superstore",
+          "total sales",
+          "formula",
+          "{\"calculatedFieldFormula\":\"SUM([Sales])\"}",
+          null,
+          null,
+          "error",
+          null,
+          "na",
+          1,
+          1,
+          "HTTP 500 from the gateway",
+          "",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ]
+    },
+    "d00d0000000000000000000000000002": {
+      "counts": {
+        "results": 4,
+        "metrics": 9
+      },
+      "tables": [
+        "results"
+      ],
+      "columns": [
+        {
+          "name": "schema_version",
+          "type": "BIG_INT"
+        },
+        {
+          "name": "run_id",
+          "type": "TEXT"
+        },
+        {
+          "name": "tool_version",
+          "type": "TEXT"
+        },
+        {
+          "name": "run_status",
+          "type": "TEXT"
+        },
+        {
+          "name": "run_started_at",
+          "type": "TIMESTAMP_TZ"
+        },
+        {
+          "name": "run_finished_at",
+          "type": "TIMESTAMP_TZ"
+        },
+        {
+          "name": "run_duration_s",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "exported_at",
+          "type": "TIMESTAMP_TZ"
+        },
+        {
+          "name": "tableau_server_url",
+          "type": "TEXT"
+        },
+        {
+          "name": "tableau_site",
+          "type": "TEXT"
+        },
+        {
+          "name": "tableau_site_luid",
+          "type": "TEXT"
+        },
+        {
+          "name": "tableau_server_version",
+          "type": "TEXT"
+        },
+        {
+          "name": "capability",
+          "type": "TEXT"
+        },
+        {
+          "name": "capability_label",
+          "type": "TEXT"
+        },
+        {
+          "name": "suite_case_count",
+          "type": "BIG_INT"
+        },
+        {
+          "name": "model_under_test",
+          "type": "TEXT"
+        },
+        {
+          "name": "model_provider",
+          "type": "TEXT"
+        },
+        {
+          "name": "answered_by",
+          "type": "TEXT"
+        },
+        {
+          "name": "judge_provider",
+          "type": "TEXT"
+        },
+        {
+          "name": "judge_model",
+          "type": "TEXT"
+        },
+        {
+          "name": "case_number",
+          "type": "BIG_INT"
+        },
+        {
+          "name": "test_case_id",
+          "type": "TEXT"
+        },
+        {
+          "name": "datasource",
+          "type": "TEXT"
+        },
+        {
+          "name": "utterance",
+          "type": "TEXT"
+        },
+        {
+          "name": "expected_kind",
+          "type": "TEXT"
+        },
+        {
+          "name": "expected",
+          "type": "TEXT"
+        },
+        {
+          "name": "actual",
+          "type": "TEXT"
+        },
+        {
+          "name": "latency_s",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "case_status",
+          "type": "TEXT"
+        },
+        {
+          "name": "case_score",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "case_verdict",
+          "type": "TEXT"
+        },
+        {
+          "name": "error_count",
+          "type": "BIG_INT"
+        },
+        {
+          "name": "warning_count",
+          "type": "BIG_INT"
+        },
+        {
+          "name": "errors_text",
+          "type": "TEXT"
+        },
+        {
+          "name": "case_tags",
+          "type": "TEXT"
+        },
+        {
+          "name": "metric_stage",
+          "type": "TEXT"
+        },
+        {
+          "name": "metric_name",
+          "type": "TEXT"
+        },
+        {
+          "name": "metric_id",
+          "type": "TEXT"
+        },
+        {
+          "name": "metric_label",
+          "type": "TEXT"
+        },
+        {
+          "name": "metric_category",
+          "type": "TEXT"
+        },
+        {
+          "name": "metric_category_weight",
+          "type": "BIG_INT"
+        },
+        {
+          "name": "score",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "judge_derived",
+          "type": "BOOL"
+        },
+        {
+          "name": "unavailable",
+          "type": "BOOL"
+        },
+        {
+          "name": "explanation",
+          "type": "TEXT"
+        }
+      ],
+      "rows": [
+        [
+          3,
+          "d00d0000000000000000000000000002",
+          "0.1.0",
+          "Completed",
+          "2026-09-28T23:59:59Z",
+          "2026-09-29T00:01:00Z",
+          61.0,
+          "2026-09-30T12:34:56Z",
+          "https://tab.example.com",
+          "Default",
+          "",
+          "",
+          "viz-authoring",
+          "Build a visualization",
+          4,
+          "gpt-4o",
+          "",
+          "https://tab.example.com/content-exploration",
+          "openai",
+          "gpt-4.1",
+          1,
+          "v-1",
+          "Superstore",
+          "sales by région — 2024",
+          "viz_spec",
+          "{\"notionalSpec\":{\"columns\":[\"Region\"],\"rows\":[\"SUM(Sales)\"]}}",
+          "{\"notionalSpec\":{\"columns\":[\"Region\"],\"rows\":[\"SUM(Sales)\"]},\"user_friendly_reply\":\"Here is \\\"sales\\\", by region\"}",
+          3.25,
+          "scored",
+          0.7666666666666667,
+          "pass",
+          0,
+          1,
+          "",
+          "",
+          "llmJudge",
+          "factualGrounding",
+          "",
+          "Factual Grounding",
+          "Factual grounding",
+          0,
+          0.7,
+          true,
+          false,
+          "mostly grounded"
+        ],
+        [
+          3,
+          "d00d0000000000000000000000000002",
+          "0.1.0",
+          "Completed",
+          "2026-09-28T23:59:59Z",
+          "2026-09-29T00:01:00Z",
+          61.0,
+          "2026-09-30T12:34:56Z",
+          "https://tab.example.com",
+          "Default",
+          "",
+          "",
+          "viz-authoring",
+          "Build a visualization",
+          4,
+          "gpt-4o",
+          "",
+          "https://tab.example.com/content-exploration",
+          "openai",
+          "gpt-4.1",
+          1,
+          "v-1",
+          "Superstore",
+          "sales by région — 2024",
+          "viz_spec",
+          "{\"notionalSpec\":{\"columns\":[\"Region\"],\"rows\":[\"SUM(Sales)\"]}}",
+          "{\"notionalSpec\":{\"columns\":[\"Region\"],\"rows\":[\"SUM(Sales)\"]},\"user_friendly_reply\":\"Here is \\\"sales\\\", by region\"}",
+          3.25,
+          "scored",
+          0.7666666666666667,
+          "pass",
+          0,
+          1,
+          "",
+          "",
+          "llmJudge",
+          "novelJudgeMetric",
+          "",
+          "novelJudgeMetric",
+          "Other",
+          0,
+          0.3,
+          true,
+          false,
+          ""
+        ],
+        [
+          3,
+          "d00d0000000000000000000000000002",
+          "0.1.0",
+          "Completed",
+          "2026-09-28T23:59:59Z",
+          "2026-09-29T00:01:00Z",
+          61.0,
+          "2026-09-30T12:34:56Z",
+          "https://tab.example.com",
+          "Default",
+          "",
+          "",
+          "viz-authoring",
+          "Build a visualization",
+          4,
+          "gpt-4o",
+          "",
+          "https://tab.example.com/content-exploration",
+          "openai",
+          "gpt-4.1",
+          1,
+          "v-1",
+          "Superstore",
+          "sales by région — 2024",
+          "viz_spec",
+          "{\"notionalSpec\":{\"columns\":[\"Region\"],\"rows\":[\"SUM(Sales)\"]}}",
+          "{\"notionalSpec\":{\"columns\":[\"Region\"],\"rows\":[\"SUM(Sales)\"]},\"user_friendly_reply\":\"Here is \\\"sales\\\", by region\"}",
+          3.25,
+          "scored",
+          0.7666666666666667,
+          "pass",
+          0,
+          1,
+          "",
+          "",
+          "somethingElse",
+          "mystery",
+          "",
+          "mystery",
+          "Other",
+          0,
+          0.9,
+          false,
+          false,
+          ""
+        ],
+        [
+          3,
+          "d00d0000000000000000000000000002",
+          "0.1.0",
+          "Completed",
+          "2026-09-28T23:59:59Z",
+          "2026-09-29T00:01:00Z",
+          61.0,
+          "2026-09-30T12:34:56Z",
+          "https://tab.example.com",
+          "Default",
+          "",
+          "",
+          "viz-authoring",
+          "Build a visualization",
+          4,
+          "gpt-4o",
+          "",
+          "https://tab.example.com/content-exploration",
+          "openai",
+          "gpt-4.1",
+          1,
+          "v-1",
+          "Superstore",
+          "sales by région — 2024",
+          "viz_spec",
+          "{\"notionalSpec\":{\"columns\":[\"Region\"],\"rows\":[\"SUM(Sales)\"]}}",
+          "{\"notionalSpec\":{\"columns\":[\"Region\"],\"rows\":[\"SUM(Sales)\"]},\"user_friendly_reply\":\"Here is \\\"sales\\\", by region\"}",
+          3.25,
+          "scored",
+          0.7666666666666667,
+          "pass",
+          0,
+          1,
+          "",
+          "",
+          "vizQuality",
+          "aestheticAccuracy",
+          "",
+          "Aesthetic",
+          "Design",
+          4,
+          0.25,
+          false,
+          false,
+          ""
+        ],
+        [
+          3,
+          "d00d0000000000000000000000000002",
+          "0.1.0",
+          "Completed",
+          "2026-09-28T23:59:59Z",
+          "2026-09-29T00:01:00Z",
+          61.0,
+          "2026-09-30T12:34:56Z",
+          "https://tab.example.com",
+          "Default",
+          "",
+          "",
+          "viz-authoring",
+          "Build a visualization",
+          4,
+          "gpt-4o",
+          "",
+          "https://tab.example.com/content-exploration",
+          "openai",
+          "gpt-4.1",
+          1,
+          "v-1",
+          "Superstore",
+          "sales by région — 2024",
+          "viz_spec",
+          "{\"notionalSpec\":{\"columns\":[\"Region\"],\"rows\":[\"SUM(Sales)\"]}}",
+          "{\"notionalSpec\":{\"columns\":[\"Region\"],\"rows\":[\"SUM(Sales)\"]},\"user_friendly_reply\":\"Here is \\\"sales\\\", by region\"}",
+          3.25,
+          "scored",
+          0.7666666666666667,
+          "pass",
+          0,
+          1,
+          "",
+          "",
+          "vizQuality",
+          "chartSimilarity",
+          "",
+          "Chart Similarity",
+          "Semantics",
+          7,
+          1.0,
+          false,
+          false,
+          ""
+        ],
+        [
+          3,
+          "d00d0000000000000000000000000002",
+          "0.1.0",
+          "Completed",
+          "2026-09-28T23:59:59Z",
+          "2026-09-29T00:01:00Z",
+          61.0,
+          "2026-09-30T12:34:56Z",
+          "https://tab.example.com",
+          "Default",
+          "",
+          "",
+          "viz-authoring",
+          "Build a visualization",
+          4,
+          "gpt-4o",
+          "",
+          "https://tab.example.com/content-exploration",
+          "openai",
+          "gpt-4.1",
+          1,
+          "v-1",
+          "Superstore",
+          "sales by région — 2024",
+          "viz_spec",
+          "{\"notionalSpec\":{\"columns\":[\"Region\"],\"rows\":[\"SUM(Sales)\"]}}",
+          "{\"notionalSpec\":{\"columns\":[\"Region\"],\"rows\":[\"SUM(Sales)\"]},\"user_friendly_reply\":\"Here is \\\"sales\\\", by region\"}",
+          3.25,
+          "scored",
+          0.7666666666666667,
+          "pass",
+          0,
+          1,
+          "",
+          "",
+          "vizQuality",
+          "fieldSimilarity",
+          "",
+          "Field Similarity",
+          "Data",
+          13,
+          0.8,
+          false,
+          false,
+          ""
+        ],
+        [
+          3,
+          "d00d0000000000000000000000000002",
+          "0.1.0",
+          "Completed",
+          "2026-09-28T23:59:59Z",
+          "2026-09-29T00:01:00Z",
+          61.0,
+          "2026-09-30T12:34:56Z",
+          "https://tab.example.com",
+          "Default",
+          "",
+          "",
+          "viz-authoring",
+          "Build a visualization",
+          4,
+          "gpt-4o",
+          "",
+          "https://tab.example.com/content-exploration",
+          "openai",
+          "gpt-4.1",
+          1,
+          "v-1",
+          "Superstore",
+          "sales by région — 2024",
+          "viz_spec",
+          "{\"notionalSpec\":{\"columns\":[\"Region\"],\"rows\":[\"SUM(Sales)\"]}}",
+          "{\"notionalSpec\":{\"columns\":[\"Region\"],\"rows\":[\"SUM(Sales)\"]},\"user_friendly_reply\":\"Here is \\\"sales\\\", by region\"}",
+          3.25,
+          "scored",
+          0.7666666666666667,
+          "pass",
+          0,
+          1,
+          "",
+          "",
+          "vizQuality",
+          "filterAccuracy",
+          "",
+          "Filter",
+          "Functionality",
+          7,
+          null,
+          false,
+          true,
+          ""
+        ],
+        [
+          3,
+          "d00d0000000000000000000000000002",
+          "0.1.0",
+          "Completed",
+          "2026-09-28T23:59:59Z",
+          "2026-09-29T00:01:00Z",
+          61.0,
+          "2026-09-30T12:34:56Z",
+          "https://tab.example.com",
+          "Default",
+          "",
+          "",
+          "viz-authoring",
+          "Build a visualization",
+          4,
+          "gpt-4o",
+          "",
+          "https://tab.example.com/content-exploration",
+          "openai",
+          "gpt-4.1",
+          2,
+          "v-2",
+          "Superstore",
+          "profit trend",
+          "plan",
+          "{\"steps\":[{\"op\":\"filter\"}]}",
+          "{\"steps\":[]}",
+          12.0,
+          "unavailable",
+          null,
+          "na",
+          0,
+          0,
+          "",
+          "",
+          "llmJudge",
+          "coherence",
+          "",
+          "Coherence",
+          "Conversation quality",
+          0,
+          null,
+          true,
+          true,
+          "Unavailable"
+        ],
+        [
+          3,
+          "d00d0000000000000000000000000002",
+          "0.1.0",
+          "Completed",
+          "2026-09-28T23:59:59Z",
+          "2026-09-29T00:01:00Z",
+          61.0,
+          "2026-09-30T12:34:56Z",
+          "https://tab.example.com",
+          "Default",
+          "",
+          "",
+          "viz-authoring",
+          "Build a visualization",
+          4,
+          "gpt-4o",
+          "",
+          "https://tab.example.com/content-exploration",
+          "openai",
+          "gpt-4.1",
+          3,
+          "v-3",
+          "Superstore",
+          "no metrics",
+          "reply",
+          "\"just a reply\"",
+          null,
+          null,
+          "unscored",
+          null,
+          "na",
+          0,
+          0,
+          "",
+          "",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          3,
+          "d00d0000000000000000000000000002",
+          "0.1.0",
+          "Completed",
+          "2026-09-28T23:59:59Z",
+          "2026-09-29T00:01:00Z",
+          61.0,
+          "2026-09-30T12:34:56Z",
+          "https://tab.example.com",
+          "Default",
+          "",
+          "",
+          "viz-authoring",
+          "Build a visualization",
+          4,
+          "gpt-4o",
+          "",
+          "https://tab.example.com/content-exploration",
+          "openai",
+          "gpt-4.1",
+          4,
+          "v-4",
+          "Superstore",
+          "hide nulls",
+          "viz_spec",
+          "{\"intent\":\"NLQ_TO_NOTIONAL_SPEC\",\"notionalSpec\":null}",
+          "{\"intent\":\"NLQ_TO_NOTIONAL_SPEC\",\"notionalSpec\":{\"chart\":\"bar\"}}",
+          2.0,
+          "unscored",
+          null,
+          "na",
+          0,
+          1,
+          "",
+          "",
+          "intent",
+          "equals",
+          "",
+          "Intent Match",
+          "Intent and spec",
+          6,
+          1.0,
+          false,
+          false,
+          ""
+        ]
+      ]
+    }
+  }
+}

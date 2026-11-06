@@ -1,0 +1,125 @@
+{
+  "_generated_by": "gen_ner_dates.py",
+  "_library": "spaCy 3.8.16, model en_core_web_trf v3.8.0 (spacy_version >=3.8.0,<3.9.0)",
+  "_filter": "ent.label_ in ['DATE','TIME'] (matches is_date_related)",
+  "sentences": [
+    {
+      "name": "month_year",
+      "text": "Revenue grew in January 2024 by a wide margin.",
+      "date_time_spans": [
+        {
+          "text": "January 2024",
+          "label": "DATE",
+          "start_char": 16,
+          "end_char": 28
+        }
+      ],
+      "all_entities": [
+        {
+          "text": "January 2024",
+          "label": "DATE",
+          "start_char": 16,
+          "end_char": 28
+        }
+      ]
+    },
+    {
+      "name": "time_of_day",
+      "text": "The report was generated at 5pm on Tuesday.",
+      "date_time_spans": [
+        {
+          "text": "5pm on Tuesday",
+          "label": "TIME",
+          "start_char": 28,
+          "end_char": 42
+        }
+      ],
+      "all_entities": [
+        {
+          "text": "5pm on Tuesday",
+          "label": "TIME",
+          "start_char": 28,
+          "end_char": 42
+        }
+      ]
+    },
+    {
+      "name": "plain_number",
+      "text": "The company reported 121.4M revenue this period.",
+      "date_time_spans": [],
+      "all_entities": [
+        {
+          "text": "121.4M revenue",
+          "label": "MONEY",
+          "start_char": 21,
+          "end_char": 35
+        }
+      ]
+    },
+    {
+      "name": "mixed_date_and_number",
+      "text": "In Q3 2023 the total reached 4.2 million dollars.",
+      "date_time_spans": [
+        {
+          "text": "Q3 2023",
+          "label": "DATE",
+          "start_char": 3,
+          "end_char": 10
+        }
+      ],
+      "all_entities": [
+        {
+          "text": "Q3 2023",
+          "label": "DATE",
+          "start_char": 3,
+          "end_char": 10
+        },
+        {
+          "text": "4.2 million dollars",
+          "label": "MONEY",
+          "start_char": 29,
+          "end_char": 48
+        }
+      ]
+    },
+    {
+      "name": "relative_date",
+      "text": "Sales increased 15% over the last three months.",
+      "date_time_spans": [
+        {
+          "text": "the last three months",
+          "label": "DATE",
+          "start_char": 25,
+          "end_char": 46
+        }
+      ],
+      "all_entities": [
+        {
+          "text": "15%",
+          "label": "PERCENT",
+          "start_char": 16,
+          "end_char": 19
+        },
+        {
+          "text": "the last three months",
+          "label": "DATE",
+          "start_char": 25,
+          "end_char": 46
+        }
+      ]
+    },
+    {
+      "name": "no_temporal",
+      "text": "The margin was 42 percent across all regions.",
+      "date_time_spans": [],
+      "all_entities": [
+        {
+          "text": "42 percent",
+          "label": "PERCENT",
+          "start_char": 15,
+          "end_char": 25
+        }
+      ]
+    }
+  ]
+}

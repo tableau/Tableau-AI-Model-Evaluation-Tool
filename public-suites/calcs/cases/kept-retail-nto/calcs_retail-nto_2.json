@@ -1,0 +1,25 @@
+{
+    "runner": "ect-server",
+    "datasource": "retail-nto",
+    "info": {
+        "originalValid": true
+    },
+    "inputs": [
+        {
+            "utterance": "compute the week number for each month based on oredr placed date",
+            "source": "user",
+            "expected": {
+                "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+                "calculatedFieldFormula": {
+                    "formula": "DATEPART('week', [Order Placed Date]) - DATEPART('week', DATETRUNC('month', [Order Placed Date])) + 1",
+                    "caption": null
+                }
+            },
+            "tags": [
+                "add-explicit-calc-wordage",
+                "calc-category-date"
+            ]
+        }
+    ],
+    "id": "ce6afec3-6528-4fd1-824e-6c2989b9b9f8"
+}

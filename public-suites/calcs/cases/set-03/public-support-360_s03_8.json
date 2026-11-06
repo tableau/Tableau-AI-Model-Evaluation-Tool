@@ -1,0 +1,41 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-support-360",
+  "info": {
+    "originalValid": false,
+    "reasonInvalid": "The calculation cannot be performed because 'GROUP HOME' is not a valid value in the 'POS Description' field.",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "compute number of people that has account name as Titan Commercial Builders Metro and in pro desk",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "COUNTD(IF [Account Name] = 'Cigna' AND [Order Type] = 'GROUP HOME' THEN [Number of Employees] END)",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-logical"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Conditional Logic",
+          "Op: Filter - Categorical",
+          "Op: Aggregation (Default)",
+          "Op: Aggregation (Non-Default)"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "d3255a5180e6dc9c476a15e95c2d9f31"
+}

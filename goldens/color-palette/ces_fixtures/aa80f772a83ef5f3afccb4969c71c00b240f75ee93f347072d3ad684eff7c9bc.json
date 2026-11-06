@@ -1,0 +1,12 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "https://tableau.example.com/content-exploration/analytics-assistant/color-palettes/generate",
+    "normalizedBody": "{\"paletteType\":\"diverging\",\"utterance\":{\"content\":\"Blue to white to orange diverging palette, 3 colors\"}}"
+  },
+  "response": {
+    "status": 200,
+    "statusText": "",
+    "body": "{\"colors\":[\"#2166AC\",\"#FFFFFF\",\"#F97A0B\"],\"generationId\":\"chatcmpl-6216bb66-7d3b-413e-b8a0-9ba96cb13b01\"}"
+  }
+}

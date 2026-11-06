@@ -1,0 +1,42 @@
+{
+  "name": "tableau-ai-eval",
+  "version": "0.1.0",
+  "description": "Tableau AI Model Evaluation Tool: standalone evaluation harness and web UI (Bun workspaces monorepo)",
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "postinstall": "bun run scripts/generate-calc-parser.ts && bun run scripts/generate-prep-parser.ts && bun run scripts/build-frontend.ts",
+    "test": "bun test",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "lint": "biome lint packages scripts",
+    "lint:fix": "biome lint --write packages scripts",
+    "check": "bun run typecheck && bun run lint",
+    "prestart": "bun run scripts/generate-calc-parser.ts && bun run scripts/generate-prep-parser.ts && bun run scripts/build-frontend.ts --if-stale",
+    "start": "bun run packages/server/src/cli.ts serve",
+    "dev": "bun run scripts/dev.ts",
+    "trust": "bun run packages/server/src/cli.ts trust",
+    "compile": "bun run scripts/build.ts",
+    "generate:calc": "bun run scripts/generate-calc-parser.ts",
+    "generate:prep": "bun run scripts/generate-prep-parser.ts",
+    "release": "bun run scripts/release.ts",
+    "release:publish": "bun run scripts/publish.ts",
+    "train-dict": "bun run scripts/train-content-dict.ts",
+    "smoke": "bun run packages/server/src/entry.ts"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@tableau-ai-eval/core": "workspace:*",
+    "@tableau-ai-eval/run-state": "workspace:*",
+    "@tableau-ai-eval/evals": "workspace:*",
+    "@tableau-ai-eval/server": "workspace:*",
+    "@types/bun": "latest",
+    "@types/node": "latest",
+    "antlr-ng": "1.0.10",
+    "bun-types": "latest",
+    "fflate": "^0.8.3",
+    "typescript": "7.0.2"
+  }
+}

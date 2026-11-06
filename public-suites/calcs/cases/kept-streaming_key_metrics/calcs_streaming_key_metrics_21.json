@@ -1,0 +1,26 @@
+{
+    "runner": "ect-server",
+    "datasource": "streaming_key_metrics",
+    "info": {
+        "originalValid": true
+    },
+    "inputs": [
+        {
+            "utterance": "Create a calculated field named 'Day Type' to categorize 'Date' into 'Weekday' and 'Weekend'",
+            "source": "user",
+            "expected": {
+                "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+                "calculatedFieldFormula": {
+                    "formula": "IF DATEPART('weekday', [Date]) IN (1, 7) THEN 'Weekend' ELSE 'Weekday' END",
+                    "caption": null
+                }
+            },
+            "tags": [
+                "add-explicit-calc-wordage",
+                "multi-step",
+                "calc-category-date"
+            ]
+        }
+    ],
+    "id": "0fbf8c82be0443c9a6737cb8e503f183"
+}

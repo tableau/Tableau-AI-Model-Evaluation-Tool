@@ -1,0 +1,272 @@
+[
+  {
+    "id": "dd21e3e9-e260-4629-8467-58a26d941830",
+    "utterance": "create calc to compute the average number of minutes per trip for each company",
+    "datasource": "chicago-taxi-trips-2024-calcs",
+    "expected": {
+      "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+      "calculatedFieldFormula": {
+        "formula": "{ FIXED [Company] : AVG([Trip Seconds] / 60) }",
+        "caption": null
+      }
+    },
+    "actual": {
+      "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+      "calculatedFieldFormula": {
+        "formula": "AVG([Trip Seconds] / 60)",
+        "caption": "Avg Minutes Per Trip",
+        "type": ""
+      }
+    },
+    "metrics": {
+      "intent": [
+        {
+          "metric_name": "equals",
+          "score": 1.0
+        }
+      ],
+      "calculatedFieldFormula": [
+        {
+          "metric_name": "calcValidity",
+          "score": 1.0
+        },
+        {
+          "metric_name": "calcFieldValidity",
+          "score": 1.0
+        },
+        {
+          "metric_name": "fieldPrecision",
+          "score": 1.0
+        },
+        {
+          "metric_name": "fieldRecall",
+          "score": 0.5
+        },
+        {
+          "metric_name": "valuePrecision",
+          "score": 1.0
+        },
+        {
+          "metric_name": "valueRecall",
+          "score": 1.0
+        }
+      ]
+    }
+  },
+  {
+    "id": "36b88c07-da80-4b6c-9fb7-1e9804c26375",
+    "utterance": "create a calc to flag weekdays only",
+    "datasource": "chicago-taxi-trips-2024-calcs",
+    "expected": {
+      "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+      "calculatedFieldFormula": {
+        "formula": "IF DATENAME('weekday', [Trip Start Timestamp]) <> 'Saturday' AND DATENAME('weekday', [Trip Start Timestamp]) <> 'Sunday' THEN 'Weekday' ELSE 'Weekend' END",
+        "caption": null
+      }
+    },
+    "actual": {
+      "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+      "calculatedFieldFormula": {
+        "formula": "IF DATEPART('weekday', [Trip Start Timestamp]) IN (2, 3, 4, 5, 6) THEN 1 ELSE 0 END",
+        "caption": "Flag: Weekday",
+        "type": ""
+      }
+    },
+    "metrics": {
+      "intent": [
+        {
+          "metric_name": "equals",
+          "score": 1.0
+        }
+      ],
+      "calculatedFieldFormula": [
+        {
+          "metric_name": "calcValidity",
+          "score": 1.0
+        },
+        {
+          "metric_name": "calcFieldValidity",
+          "score": 1.0
+        },
+        {
+          "metric_name": "fieldPrecision",
+          "score": 1.0
+        },
+        {
+          "metric_name": "fieldRecall",
+          "score": 1.0
+        },
+        {
+          "metric_name": "valuePrecision",
+          "score": 0.0
+        },
+        {
+          "metric_name": "valueRecall",
+          "score": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "id": "06a037ac-3124-49d9-be74-f654d0a2b2b2",
+    "utterance": "create calc to determine if trip is started in the current week",
+    "datasource": "chicago-taxi-trips-2024-calcs",
+    "expected": {
+      "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+      "calculatedFieldFormula": {
+        "formula": "IF DATETRUNC('week', [Trip Start Timestamp]) = DATETRUNC('week', TODAY()) THEN 'Current Week' ELSE 'Not Current Week' END",
+        "caption": null
+      }
+    },
+    "actual": {
+      "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+      "calculatedFieldFormula": {
+        "formula": "DATETRUNC('week', [Trip Start Timestamp]) = DATETRUNC('week', TODAY())",
+        "caption": "Is Trip Started in Current Week",
+        "type": ""
+      }
+    },
+    "metrics": {
+      "intent": [
+        {
+          "metric_name": "equals",
+          "score": 1.0
+        }
+      ],
+      "calculatedFieldFormula": [
+        {
+          "metric_name": "calcValidity",
+          "score": 1.0
+        },
+        {
+          "metric_name": "calcFieldValidity",
+          "score": 1.0
+        },
+        {
+          "metric_name": "fieldPrecision",
+          "score": 1.0
+        },
+        {
+          "metric_name": "fieldRecall",
+          "score": 1.0
+        },
+        {
+          "metric_name": "valuePrecision",
+          "score": 0.0
+        },
+        {
+          "metric_name": "valueRecall",
+          "score": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "id": "10c92037-5ddc-41ba-bf57-8c102390e156",
+    "utterance": "create a calc to bin company into taxi if it contains 'taxi' in its name",
+    "datasource": "chicago-taxi-trips-2024-calcs",
+    "expected": {
+      "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+      "calculatedFieldFormula": {
+        "formula": "IF CONTAINS([Company], 'taxi') THEN 'Taxi' ELSE [Company] END",
+        "caption": null
+      }
+    },
+    "actual": {
+      "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+      "calculatedFieldFormula": {
+        "formula": "IF CONTAINS(LOWER([Company]), 'taxi') THEN 'Taxi' ELSE 'Other' END",
+        "caption": "Company - Taxi Bin",
+        "type": ""
+      }
+    },
+    "metrics": {
+      "intent": [
+        {
+          "metric_name": "equals",
+          "score": 1.0
+        }
+      ],
+      "calculatedFieldFormula": [
+        {
+          "metric_name": "calcValidity",
+          "score": 1.0
+        },
+        {
+          "metric_name": "calcFieldValidity",
+          "score": 1.0
+        },
+        {
+          "metric_name": "fieldPrecision",
+          "score": 1.0
+        },
+        {
+          "metric_name": "fieldRecall",
+          "score": 1.0
+        },
+        {
+          "metric_name": "valuePrecision",
+          "score": 0.5
+        },
+        {
+          "metric_name": "valueRecall",
+          "score": 1.0
+        }
+      ]
+    }
+  },
+  {
+    "id": "84bf0519-74ee-4ffa-b719-98a2f36c7f86",
+    "utterance": "flag taxi companies that has disputed transactions",
+    "datasource": "chicago-taxi-trips-2024-calcs",
+    "expected": {
+      "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+      "calculatedFieldFormula": {
+        "formula": "IF { FIXED [Company] : MAX(IF [Payment Type] = 'Dispute' THEN 1 ELSE 0 END) } = 1 THEN 1 ELSE 0 END",
+        "caption": null
+      }
+    },
+    "actual": {
+      "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+      "calculatedFieldFormula": {
+        "formula": "{ FIXED [Company] : SUM(IF [Payment Type] = 'Dispute' THEN 1 ELSE 0 END) } > 0",
+        "caption": "Has Disputed Transactions",
+        "type": ""
+      }
+    },
+    "metrics": {
+      "intent": [
+        {
+          "metric_name": "equals",
+          "score": 1.0
+        }
+      ],
+      "calculatedFieldFormula": [
+        {
+          "metric_name": "calcValidity",
+          "score": 1.0
+        },
+        {
+          "metric_name": "calcFieldValidity",
+          "score": 1.0
+        },
+        {
+          "metric_name": "fieldPrecision",
+          "score": 1.0
+        },
+        {
+          "metric_name": "fieldRecall",
+          "score": 1.0
+        },
+        {
+          "metric_name": "valuePrecision",
+          "score": 1.0
+        },
+        {
+          "metric_name": "valueRecall",
+          "score": 1.0
+        }
+      ]
+    }
+  }
+]

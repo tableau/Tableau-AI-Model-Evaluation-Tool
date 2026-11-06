@@ -1,0 +1,76 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-activity-360",
+  "info": {
+    "requirement-id": "D-248-de49330ff1bbbc83",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "what are my top accounts?",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "chart": "bar",
+          "fields": [
+            {
+              "caption": "Account Name",
+              "data": "string",
+              "type": "discrete",
+              "role": "dimension",
+              "encoding": "x",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            },
+            {
+              "caption": "Duration (minutes)",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "aggregation": "sum",
+              "encoding": "y",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            }
+          ],
+          "sort": {
+            "field": "Account Name",
+            "by": "Duration (minutes)",
+            "aggregation": "sum",
+            "direction": "desc",
+            "_tb_wildcards": [
+              "field",
+              "by"
+            ]
+          }
+        }
+      },
+      "source": "user",
+      "tags": [
+        "infer-boundaries-or-limit",
+        "questionable",
+        "original-test-bench",
+        "infer-sort"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Ranking / Top-N"
+        ],
+        "op": [
+          "Op: Limit / Top-N",
+          "Op: Sort / Order",
+          "Op: Field Inference - Measure / Dimension",
+          "Op: Group By Dimension",
+          "Op: Aggregation (Default)"
+        ],
+        "out": [
+          "Out: Bar Chart"
+        ]
+      }
+    }
+  ],
+  "id": "231c9641bc5d6be29388de5acf67caae"
+}

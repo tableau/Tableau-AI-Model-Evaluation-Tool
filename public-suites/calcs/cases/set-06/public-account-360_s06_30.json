@@ -1,0 +1,44 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-account-360",
+  "info": {
+    "originalValid": true,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "create calc to determine compound growth rate of revenue",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "{ (ZN(SUM([Annual Revenue])) / LOOKUP(ZN(SUM([Annual Revenue])), -1)) ^ (1 / DATEDIFF('year', LOOKUP(MIN([Latest Case Created]), -1), MIN([Latest Case Created]))) - 1 }",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-arithmetic",
+        "add-explicit-calc-wordage"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement",
+          "Intent: Trend over Time"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Arithmetic / Ratio",
+          "Op: Date Arithmetic",
+          "Op: Table Calculation / Window",
+          "Op: Aggregation (Non-Default)",
+          "Op: Aggregation (Default)",
+          "Op: Null Handling"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "9af19496965fa04847d4a841fcc93389"
+}

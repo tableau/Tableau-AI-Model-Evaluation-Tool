@@ -1,0 +1,579 @@
+{
+  "_comment": "The metric catalog: every score the tool shows, exports or publishes derives from this file. backend/metric_catalog.py reads it here; the frontend reads the copy at frontend/src/metricCatalog.json, which npm start/build refresh and a test compares. Categories carry the weights of the overall score; natural-language categories weigh 0 because judge scoring is optional.",
+  "judge_stage": "llmJudge",
+  "verdict_thresholds": {
+    "pass": 0.66,
+    "partial": 0.33,
+    "provisional": true
+  },
+  "categories": [
+    {
+      "key": "match",
+      "label": "Intent and spec",
+      "weight": 6,
+      "metrics": [
+        {
+          "stage": "intent",
+          "names": [
+            "equals"
+          ],
+          "label": "Intent Match"
+        },
+        {
+          "stage": "notionalSpec",
+          "names": [
+            "precision"
+          ],
+          "label": "Spec Precision"
+        },
+        {
+          "stage": "notionalSpec",
+          "names": [
+            "recall"
+          ],
+          "label": "Spec Recall"
+        },
+        {
+          "stage": "notionalSpec",
+          "names": [
+            "fieldValidity"
+          ],
+          "label": "Spec Field Validity"
+        }
+      ]
+    },
+    {
+      "key": "data",
+      "label": "Data",
+      "weight": 13,
+      "metrics": [
+        {
+          "stage": "vizQuality",
+          "names": [
+            "fieldSimilarity"
+          ],
+          "label": "Field Similarity"
+        }
+      ]
+    },
+    {
+      "key": "semantics",
+      "label": "Semantics",
+      "weight": 7,
+      "metrics": [
+        {
+          "stage": "vizQuality",
+          "names": [
+            "chartSimilarity"
+          ],
+          "label": "Chart Similarity"
+        }
+      ]
+    },
+    {
+      "key": "design",
+      "label": "Design",
+      "weight": 4,
+      "metrics": [
+        {
+          "stage": "vizQuality",
+          "names": [
+            "aestheticAccuracy"
+          ],
+          "label": "Aesthetic"
+        },
+        {
+          "stage": "vizQuality",
+          "names": [
+            "tooltipAccuracy"
+          ],
+          "label": "Tooltip"
+        }
+      ]
+    },
+    {
+      "key": "functionality",
+      "label": "Functionality",
+      "weight": 7,
+      "metrics": [
+        {
+          "stage": "vizQuality",
+          "names": [
+            "filterAccuracy"
+          ],
+          "label": "Filter"
+        },
+        {
+          "stage": "vizQuality",
+          "names": [
+            "sortAccuracy"
+          ],
+          "label": "Sort"
+        },
+        {
+          "stage": "vizQuality",
+          "names": [
+            "axisAccuracy"
+          ],
+          "label": "Axis Accuracy"
+        }
+      ]
+    },
+    {
+      "key": "calc",
+      "label": "Calculated fields",
+      "weight": 13,
+      "metrics": [
+        {
+          "stage": "calculatedFieldFormula",
+          "names": [
+            "calcValidity"
+          ],
+          "label": "Calculation Validity"
+        },
+        {
+          "stage": "calculatedFieldFormula",
+          "names": [
+            "calcFieldValidity"
+          ],
+          "label": "Formula Field Validity"
+        },
+        {
+          "stage": "calculatedFieldFormula",
+          "names": [
+            "fieldPrecision"
+          ],
+          "label": "Field Precision"
+        },
+        {
+          "stage": "calculatedFieldFormula",
+          "names": [
+            "fieldRecall"
+          ],
+          "label": "Field Recall"
+        },
+        {
+          "stage": "calculatedFieldFormula",
+          "names": [
+            "valuePrecision"
+          ],
+          "label": "Value Precision"
+        },
+        {
+          "stage": "calculatedFieldFormula",
+          "names": [
+            "valueRecall"
+          ],
+          "label": "Value Recall"
+        },
+        {
+          "stage": "calculatedFieldFormula",
+          "names": [
+            "levenshteinSimilarity"
+          ],
+          "label": "Formula Similarity"
+        }
+      ]
+    },
+    {
+      "key": "nlFactual",
+      "label": "Factual grounding",
+      "weight": 0,
+      "metrics": [
+        {
+          "stage": "llmJudge",
+          "names": [
+            "factualGrounding"
+          ],
+          "label": "Factual Grounding"
+        },
+        {
+          "stage": "vizQuality",
+          "names": [
+            "informationSimilarity"
+          ],
+          "label": "Information Similarity"
+        }
+      ]
+    },
+    {
+      "key": "nlAnalytical",
+      "label": "Analytical thinking",
+      "weight": 0,
+      "metrics": [
+        {
+          "stage": "llmJudge",
+          "names": [
+            "insightfulness"
+          ],
+          "label": "Insightfulness"
+        }
+      ]
+    },
+    {
+      "key": "nlConversation",
+      "label": "Conversation quality",
+      "weight": 0,
+      "metrics": [
+        {
+          "stage": "llmJudge",
+          "names": [
+            "coherence"
+          ],
+          "label": "Coherence"
+        },
+        {
+          "stage": "llmJudge",
+          "names": [
+            "followUpRelevance"
+          ],
+          "label": "Follow-up Relevance"
+        }
+      ]
+    },
+    {
+      "key": "narrative",
+      "label": "Narrative quality",
+      "weight": 13,
+      "metrics": [
+        {
+          "stage": "llmJudge",
+          "names": [
+            "llmIsSimilar"
+          ],
+          "label": "Similarity to Expected"
+        },
+        {
+          "stage": "insightNarrative",
+          "names": [
+            "llmIsSimilar"
+          ],
+          "label": "Similarity to Expected"
+        },
+        {
+          "stage": "insightNarrative",
+          "names": [
+            "Readability (Flesch)"
+          ],
+          "label": "Readability"
+        },
+        {
+          "stage": "insightNarrative",
+          "names": [
+            "Conciseness"
+          ],
+          "label": "Conciseness"
+        },
+        {
+          "stage": "insightNarrative",
+          "names": [
+            "Numerical Factuality Precision Rate"
+          ],
+          "label": "Numerical Precision"
+        },
+        {
+          "stage": "insightNarrative",
+          "names": [
+            "OUTLIERS Numerical Factuality Recall Rate"
+          ],
+          "label": "Outliers Recall"
+        },
+        {
+          "stage": "insightNarrative",
+          "names": [
+            "PULSE_INSIGHTS Numerical Factuality Recall Rate"
+          ],
+          "label": "Insights Recall"
+        },
+        {
+          "stage": "insightNarrative",
+          "names": [
+            "Semantic Factuality Precision Rate"
+          ],
+          "label": "Semantic Precision"
+        },
+        {
+          "stage": "insightNarrative",
+          "names": [
+            "Semantic Factuality Recall Rate"
+          ],
+          "label": "Semantic Recall"
+        },
+        {
+          "stage": "llmJudge",
+          "names": [
+            "Semantic Factuality Precision Rate"
+          ],
+          "label": "Semantic Precision"
+        },
+        {
+          "stage": "llmJudge",
+          "names": [
+            "Semantic Factuality Recall Rate"
+          ],
+          "label": "Semantic Recall"
+        }
+      ]
+    },
+    {
+      "key": "palette",
+      "label": "Palette quality",
+      "weight": 13,
+      "metrics": [
+        {
+          "stage": "llmJudge",
+          "names": [
+            "valid"
+          ],
+          "label": "Valid Format"
+        },
+        {
+          "stage": "llmJudge",
+          "names": [
+            "relevance"
+          ],
+          "label": "Relevance"
+        },
+        {
+          "stage": "llmJudge",
+          "names": [
+            "design"
+          ],
+          "label": "Design"
+        },
+        {
+          "stage": "colorPalette",
+          "names": [
+            "valid"
+          ],
+          "label": "Valid Format"
+        },
+        {
+          "stage": "colorPalette",
+          "names": [
+            "relevance"
+          ],
+          "label": "Relevance"
+        },
+        {
+          "stage": "colorPalette",
+          "names": [
+            "design"
+          ],
+          "label": "Design"
+        },
+        {
+          "stage": "colorPalette",
+          "names": [
+            "distinguishability"
+          ],
+          "label": "Distinguishability"
+        },
+        {
+          "stage": "colorPalette",
+          "names": [
+            "gradientSmoothness"
+          ],
+          "label": "Gradient Smoothness"
+        },
+        {
+          "stage": "colorPalette",
+          "names": [
+            "divergingStructure"
+          ],
+          "label": "Diverging Structure"
+        },
+        {
+          "stage": "colorPalette",
+          "names": [
+            "groundTruthValidity"
+          ],
+          "label": "Ground Truth Match"
+        }
+      ]
+    },
+    {
+      "key": "flowPlan",
+      "label": "Flow plan quality",
+      "weight": 13,
+      "metrics": [
+        {
+          "stage": "flowPlan",
+          "names": [
+            "planSimilarity"
+          ],
+          "label": "Plan Similarity"
+        },
+        {
+          "stage": "flowPlan",
+          "names": [
+            "stepRecall"
+          ],
+          "label": "Step Recall"
+        },
+        {
+          "stage": "flowPlan",
+          "names": [
+            "stepPrecision"
+          ],
+          "label": "Step Precision"
+        }
+      ]
+    },
+    {
+      "key": "dashboardQA",
+      "label": "Answer quality",
+      "weight": 13,
+      "metrics": [
+        {
+          "stage": "llmJudge",
+          "names": [
+            "answerCorrectness"
+          ],
+          "label": "Answer Correctness"
+        },
+        {
+          "stage": "llmJudge",
+          "names": [
+            "factualConsistency"
+          ],
+          "label": "Factual Consistency"
+        },
+        {
+          "stage": "llmJudge",
+          "names": [
+            "coherence_dashboard_qa"
+          ],
+          "label": "Coherence (Dashboard Q&A)"
+        },
+        {
+          "stage": "llmJudge",
+          "names": [
+            "relevance_dashboard_qa"
+          ],
+          "label": "Relevance (Dashboard Q&A)"
+        }
+      ]
+    }
+  ],
+  "quality_cards": [
+    {
+      "key": "viz",
+      "label": "Visualization quality",
+      "buckets": [
+        "data",
+        "semantics",
+        "functionality",
+        "design"
+      ],
+      "context_buckets": [
+        "match"
+      ]
+    },
+    {
+      "key": "nl",
+      "label": "Natural language quality",
+      "buckets": [
+        "nlFactual",
+        "nlAnalytical",
+        "nlConversation"
+      ]
+    }
+  ],
+  "card_explanations": {
+    "viz": "How close the charts the model builds are to the expected ones: the right fields, the right chart type, and the right filters, sorting, axes, and styling. A high score means the model reliably turns a question into the chart an analyst would have built.",
+    "nl": "How good the model's written replies are. The evaluator model rates whether each reply sticks to the question and the reference answer, adds insight, and reads clearly; a calculated field's explanation is rated on grounding and clarity only. Evaluator ratings are opinions, not exact checks.",
+    "calc": "How well the model writes Tableau calculations. Each formula is checked for valid syntax, known functions and existing fields. In the Calculated fields suite it is also compared with the expected formula's fields and values; in the Tableau Prep suite, with the expected formula's text.",
+    "match": "Whether the model understood the request: the kind of request (intent) and, for charts, how the fields named in the chart definition compare with the expected ones. Shown for reference beside Visualization Quality; not part of its average.",
+    "palette": "How good the color palettes the model creates are: correctly formed colors, a fit with what was asked for, sound design, and colors that are easy to tell apart. A high score means the model's palettes can be used as they are.",
+    "narrative": "How good the model's written dashboard narratives are: whether they report the right numbers and the key insights of the dashboard, and whether they are readable and concise. A high score means a summary can be relied on to say what the dashboard shows. Similarity to the reference summary and semantic factuality (whether each described figure is described the right way round) are scored by the evaluator model you configured.",
+    "flowPlan": "How well the model plans the steps of a Tableau Prep flow, compared with the expected steps for the same request. A high score means it suggests the steps an expert would.",
+    "dashboardQA": "How well the model answers questions about a dashboard: the evaluator model compares each answer with the expected one and with the data the query returned, rates how coherent and how relevant the answer is, and the answer's kind is checked against what was asked. Evaluator ratings are opinions, not exact checks."
+  },
+  "metric_explanations": {
+    "Field Similarity": "Share of the fields the chart and the expected chart have in common, by exact name, on every channel (axes, color, size, tooltip). Swapped axes count as a match; a similar name does not.",
+    "Chart Similarity": "Whether the generated chart type matches the expected one.",
+    "Filter": "Share of the expected filters the chart applies, over every kind of filter: categorical values, date ranges, number ranges and relative dates. Extra filters lower it.",
+    "Sort": "Whether the chart's sort matches the expected one. A sort the model adds when none was expected is not penalized.",
+    "Axis Accuracy": "Whether the fields on the X and Y axes, with their aggregation, are the expected ones; swapped axes still count.",
+    "Aesthetic": "Color, size, and styling encodings compared with the expected chart.",
+    "Tooltip": "Tooltip field configuration compared with the expected chart.",
+    "Factual Grounding": "Whether the reply's claims match the question and the reference answer: the expected chart for a visualization, or the formulas for a calculated field (does the explanation describe what the formula does, and does the formula answer the request).",
+    "Information Similarity": "Word overlap between the model's written reply and the expected answer: the expected reply when the test case has one, otherwise a plain-English description of the expected chart.",
+    "Insightfulness": "Whether the reply points out trends rather than restating fields.",
+    "Coherence": "Logical flow and readability of the reply.",
+    "Follow-up Relevance": "Whether suggested follow-ups continue the analysis sensibly.",
+    "Similarity to Expected": "How much of what the reference narrative says the summary also says, rated 0 to 10 by the evaluator model and shown as 0 to 1: the key insights, the figures and their direction. 1 means every key insight of the reference is there.",
+    "Readability": "Flesch Reading Ease of the summary, scaled 0 to 1; higher is easier to read.",
+    "Conciseness": "How little the summary repeats itself; higher is less repetitive.",
+    "Numerical Precision": "Share of the narrative's numbers that trace back to the dashboard's data.",
+    "Outliers Recall": "Share of the dashboard's outlier values the narrative mentions.",
+    "Insights Recall": "Share of the dashboard's pulse-insight values the narrative mentions.",
+    "Semantic Precision": "Share of the narrative's claims consistent with the dashboard's ground truths.",
+    "Semantic Recall": "Share of the dashboard's ground-truth insights the narrative covers.",
+    "Valid Format": "Whether every color is a well-formed hex code in the structure the palette type calls for.",
+    "Relevance": "Whether the palette fits what the request asked for.",
+    "Design": "Color-theory and accessibility quality of the palette.",
+    "Distinguishability": "How far apart the two closest colors are, compared with the distance needed to tell them apart.",
+    "Gradient Smoothness": "How evenly spaced the steps of a sequential or diverging palette are.",
+    "Diverging Structure": "Distinct endpoints with a midpoint distinct from both.",
+    "Ground Truth Match": "How close the generated colors are to the expected ones (Delta-E color distance). Scored only for the test cases that define expected colors; the rest have no single right palette and are scored on format, relevance, and design instead.",
+    "Intent Match": "Whether the detected intent is the expected one. Letter case, quotes and punctuation around the word do not count.",
+    "Spec Precision": "Share of the fields the model's chart definition names that the expected one also names.",
+    "Spec Recall": "Share of the fields the expected chart definition names that the model's names.",
+    "Calculation Validity": "Whether the generated formula is valid Tableau: correct syntax, known functions, and fields that exist in the data the model was given. The Calculated fields suite also checks that types are consistent.",
+    "Field Precision": "Share of the fields in the generated formula that the expected formula also uses.",
+    "Field Recall": "Share of the expected formula's fields the generated formula uses.",
+    "Value Precision": "Share of the literal values in the generated formula (numbers and text, not date parts) that the expected formula also uses. Text matches ignoring case; the explanation says when only the case differs.",
+    "Value Recall": "Share of the expected formula's literal values (numbers and text, not date parts) the generated formula uses.",
+    "Spec Field Validity": "Share of the fields in the generated chart definition that exist in the data source.",
+    "Formula Field Validity": "Share of the fields in the generated formula that exist in the data source.",
+    "Formula Similarity": "How much of the generated formula matches the expected one, token by token and in order (1 = the same formula). Letter case of functions and keywords, spacing, comments and the quote style of text do not count.",
+    "Plan Similarity": "How much of the planned steps and the expected steps match, in order. 1 means the same steps in the same order.",
+    "Step Recall": "Share of the expected steps that the plan contains, in any order.",
+    "Step Precision": "Share of the planned steps that were expected. Extra steps lower it.",
+    "Answer Correctness": "Whether the answer says what the expected answer says.",
+    "Factual Consistency": "Whether the answer's facts agree with the data behind the dashboard.",
+    "Coherence (Dashboard Q&A)": "How well-structured and logically consistent the answer is, read against the question and the expected answer; when there is no expected answer, whether asking for clarification was the right move. The evaluator model's opinion, using the bundled Dashboard Q&A rubric.",
+    "Relevance (Dashboard Q&A)": "Whether the answer addresses what was asked in the way the case expects: a data answer for a data question, a clarifying question when the case is ambiguous, a clear refusal when the case is unsupported. The evaluator model's opinion, using the bundled Dashboard Q&A rubric."
+  },
+  "capabilities": {
+    "calc": "Calculated fields",
+    "viz-authoring": "Build a visualization",
+    "palettes": "Color palettes",
+    "dashboard-narratives": "Dashboard Narratives",
+    "dashboard-qa": "Questions about a dashboard",
+    "prep-calc": "Calculated fields in flows",
+    "prep-flow-plan": "Plan a flow",
+    "prep-intent": "Understand the request"
+  },
+  "category_labels_by_capability": {
+    "prep-calc": {
+      "calc": "Calculated fields in flows"
+    }
+  },
+  "_comment_context_buckets": "A quality card's context_buckets are categories shown inside the card for reference (Intent and Spec inside Visualization Quality) and left out of the card's average; they are not listed as a headline of their own while the card has a score.",
+  "_comment_capability_baselines": "Per capability, the baseline every score of a run of that capability is coloured against (the baseline table of 2026-10-29: the median of claude-sonnet-4-6, claude-sonnet-5 and gpt-5.5 on the reference build, to the point): green from the baseline up, yellow from 25 points below it up to the baseline, red further below. The home page reads a suite's scores against the same value, and the server's suite list carries it as the suite's baseline (MEASURED_BASELINES in packages/server/src/suites/catalog.ts; a test keeps the two equal).",
+  "capability_baselines": {
+    "viz-authoring": 0.83,
+    "calc": 0.85,
+    "palettes": 0.88,
+    "dashboard-narratives": 0.88,
+    "dashboard-qa": 0.88,
+    "prep-intent": 0.95,
+    "prep-calc": 0.85,
+    "prep-flow-plan": 0.8
+  },
+  "_comment_category_baselines": "Per capability, score categories with a baseline of their own, in place of the capability's (capability_baselines). Agreed with the Tableau Prep team on 2026-10-22; today each equals its capability's baseline, so the table is a place for a future exception. Each value must equal the capability's baseline in the server's suite catalog (a test checks).",
+  "category_baselines_by_capability": {
+    "prep-calc": {
+      "calc": 0.85
+    },
+    "prep-flow-plan": {
+      "flowPlan": 0.8
+    },
+    "prep-intent": {
+      "match": 0.95
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "https://tableau.example.com/content-exploration/analytics-assistant/conversations",
+    "normalizedBody": "{\"applicationContext\":{\"calculationContext\":{\"caption\":\"\",\"errorMessages\":[],\"formula\":null}},\"conversationContext\":{\"conversationHistory\":[]},\"currentNotionalSpec\":{\"fields\":[],\"version\":\"0.2.0\"},\"datasourceECTId\":\"460d197d-0f26-471b-9a3d-596aa6e5f99f\",\"intentApplicationAccepts\":null,\"utterance\":{\"content\":\"create a calc to bin company into taxi if it contains 'taxi' in its name\"}}"
+  },
+  "response": {
+    "status": 200,
+    "statusText": "",
+    "body": "{\"intentApplicationDetection\":{\"intent\":\"NLQ_TO_NEW_CALCULATED_FIELD\",\"confidence\":0.5,\"result\":{\"status\":\"OK\",\"notionalSpec\":null,\"calc\":null,\"calculatedFieldFormula\":{\"formula\":\"IF CONTAINS(LOWER([Company]), 'taxi') THEN 'Taxi' ELSE 'Other' END\",\"caption\":\"Company - Taxi Bin\",\"type\":\"\"},\"calculatedFieldDescription\":\"This calculated field checks whether the Company name contains the word 'taxi' (case-insensitive). If it does, the company is categorized as **'Taxi'**; otherwise, it is categorized as **'Other'**. You can drag this field onto Color, Rows, or Filters in your viz to segment companies by this grouping.\",\"warnings\":null,\"_context\":null,\"steps\":null,\"planId\":\"\",\"unsupportedFeatures\":\"\",\"hbiQuery\":null,\"hbiResponse\":null}},\"response\":{\"responseType\":\"GENERATION\",\"content\":\"This calculated field checks whether the Company name contains the word 'taxi' (case-insensitive). If it does, the company is categorized as **'Taxi'**; otherwise, it is categorized as **'Other'**. You can drag this field onto Color, Rows, or Filters in your viz to segment companies by this grouping.\",\"id\":\"chatcmpl-00656f25-cd7b-4d8d-a194-14ac528d0ab2\"}}"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-opportunity-360",
+  "info": {
+    "requirement-id": "D-248-f594f417771e1ca2",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "Pro Services vs Kitchen & Bath",
+      "expected": {
+        "intent": "NLQ_TO_NOTIONAL_SPEC",
+        "notionalSpec": {
+          "version": "0.1.0",
+          "fields": [
+            {
+              "caption": "Line Item Value",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "encoding": "x",
+              "aggregation": "sum"
+            },
+            {
+              "caption": "Expected Revenue",
+              "data": "number",
+              "type": "continuous",
+              "role": "measure",
+              "encoding": "y",
+              "aggregation": "sum",
+              "_tb_wildcards": [
+                "caption"
+              ]
+            }
+          ],
+          "chart": "scatterplot"
+        }
+      },
+      "source": "user",
+      "tags": [
+        "original-test-bench"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Correlation / Relationship"
+        ],
+        "op": [
+          "Op: Aggregation (Default)"
+        ],
+        "out": [
+          "Out: Scatter Plot"
+        ]
+      }
+    }
+  ],
+  "id": "744b8f176845fc3cf0b4df89a1f2baaf"
+}

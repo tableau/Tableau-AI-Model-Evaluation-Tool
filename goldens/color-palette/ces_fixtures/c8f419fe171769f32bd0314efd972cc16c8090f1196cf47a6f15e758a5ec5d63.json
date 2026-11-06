@@ -1,0 +1,12 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "https://tableau.example.com/content-exploration/analytics-assistant/color-palettes/generate",
+    "normalizedBody": "{\"paletteType\":\"diverging\",\"utterance\":{\"content\":\"A red-blue diverging palette for political visualization\"}}"
+  },
+  "response": {
+    "status": 200,
+    "statusText": "",
+    "body": "{\"colors\":[\"#B2182B\",\"#D6604D\",\"#F4A582\",\"#FDDBC7\",\"#F7F7F7\",\"#D1E5F0\",\"#92C5DE\",\"#4393C3\",\"#2166AC\"],\"generationId\":\"chatcmpl-829f8c1e-842f-4899-ad60-1667d67536d0\"}"
+  }
+}

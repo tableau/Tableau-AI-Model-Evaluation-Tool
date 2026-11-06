@@ -1,0 +1,69 @@
+{
+  "description": "Colour reference inputs for CIEDE2000: raw Lab pairs, hex colors converted through sRGB -> XYZ -> Lab, and minimum-distance palette aggregation with threshold 10.",
+  "min_distance_threshold": 10.0,
+  "lab_pairs": [
+    {
+      "name": "identical",
+      "note": "Same LAB -> Delta-E 0.",
+      "lab1": [50.0, 2.6772, -79.7751],
+      "lab2": [50.0, 2.6772, -79.7751]
+    },
+    {
+      "name": "near_threshold_pair",
+      "note": "Chosen so Delta-E is close to the 10.0 distinguishability threshold.",
+      "lab1": [50.0, 0.0, 0.0],
+      "lab2": [58.0, 5.0, -5.0]
+    },
+    {
+      "name": "sharma_case1",
+      "note": "Classic Sharma et al. CIEDE2000 test vector; expected ~2.0425.",
+      "lab1": [50.0, 2.6772, -79.7751],
+      "lab2": [50.0, 0.0, -82.7485]
+    },
+    {
+      "name": "sharma_case_large_hue",
+      "note": "Large hue difference between two low-chroma colors (a* vs b* swap).",
+      "lab1": [50.0, 2.5, 0.0],
+      "lab2": [50.0, 0.0, -2.5]
+    },
+    {
+      "name": "clearly_distinct",
+      "note": "Black vs white in LAB -> very large Delta-E.",
+      "lab1": [0.0, 0.0, 0.0],
+      "lab2": [100.0, 0.0, 0.0]
+    }
+  ],
+  "hex_pairs": [
+    {
+      "name": "hex_identical",
+      "hex1": "#1f77b4",
+      "hex2": "#1f77b4"
+    },
+    {
+      "name": "hex_similar_blues",
+      "note": "Two similar blues; likely below distinguishability threshold.",
+      "hex1": "#1f77b4",
+      "hex2": "#2a83c0"
+    },
+    {
+      "name": "hex_distinct",
+      "note": "Blue vs orange (tableau categorical); clearly distinguishable.",
+      "hex1": "#1f77b4",
+      "hex2": "#ff7f0e"
+    }
+  ],
+  "palettes": [
+    {
+      "name": "distinguishable_categorical",
+      "note": "Tableau-like categorical colors; all pairwise distances should exceed 10.0 -> distinguishability score 1.0.",
+      "type": "regular",
+      "colors": ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728"]
+    },
+    {
+      "name": "too_similar",
+      "note": "Near-duplicate blues; at least one pair below threshold -> score < 1.0.",
+      "type": "regular",
+      "colors": ["#1f77b4", "#2a83c0", "#ff7f0e"]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+    "runner": "ect-server",
+    "datasource": "streaming_key_metrics",
+    "info": {
+        "originalValid": true
+    },
+    "inputs": [
+        {
+            "utterance": "rank plans by subscription",
+            "source": "user",
+            "expected": {
+                "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+                "calculatedFieldFormula": {
+                    "formula": "RANK(SUM({ FIXED [Product Plan Name] : SUM([Subscribers]) }))",
+                    "caption": null
+                }
+            },
+            "tags": [
+                "add-explicit-calc-wordage",
+                "calc-category-table",
+                "calc-category-lod"
+            ]
+        }
+    ],
+    "id": "cbb756cfb595490ea2674f10b2663949"
+}

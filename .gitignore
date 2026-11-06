@@ -1,0 +1,32 @@
+# Secrets — never commit
+config
+.env
+.env.*
+!.env.example
+*.secret
+secrets/
+
+# Databases
+*.db
+*.db-wal
+*.db-shm
+*.hyper
+
+# Dependencies / build output
+node_modules/
+dist/
+build/
+data/
+.vite/
+
+# Misc
+.DS_Store
+*.log
+hyperd.log
+
+# Scratch: temporary/working docs (handoffs, plans, surveys). Not versioned —
+# durable docs live in docs/.
+.scratch/
+
+# Generated per-platform native-binding loader (see scripts/gen-native-binding.ts)
+packages/server/src/hyper/native_binding.generated.ts

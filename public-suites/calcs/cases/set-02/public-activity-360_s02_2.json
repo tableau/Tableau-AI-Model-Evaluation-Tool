@@ -1,0 +1,43 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-activity-360",
+  "info": {
+    "originalValid": true,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "create calc to compute the percent difference in attendance from year to year",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "IFNULL((COUNTD([Account Name]) - LOOKUP(COUNTD([Account Name]), -1)) / ABS(LOOKUP(COUNTD([Account Name]), -1)), 0)",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-table",
+        "add-explicit-calc-wordage"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Comparison"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Aggregation (Default)",
+          "Op: Group By Dimension",
+          "Op: Arithmetic / Ratio",
+          "Op: Table Calculation / Window",
+          "Op: Aggregation (Non-Default)",
+          "Op: Null Handling"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "6b03d5afbdcaf09cc218016842f3ce8a"
+}

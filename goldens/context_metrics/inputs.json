@@ -1,0 +1,302 @@
+{
+  "_note": "Synthetic fixtures for the ect-server context metrics (SemanticSearchAccuracy, SpecSemanticSearchAccuracy, FieldRankScorer). expected/actual/data mirror how MetricConfiguration.compute + _compute read them. For key='formula' metrics (SemanticSearchAccuracy, FieldRankScorer) the calc formula string is passed under {formula: ...}; the class parses it via ParseCalcsFormula into a set of fields. SpecSemanticSearchAccuracy has NO key: its expected is the notionalSpec object and it reads find_sub_entries(expected, ['field','caption']). data['semanticsearch_results'] is the _context.opensearch_query.matched list, a mix of flat {fieldName} entries and {chunk, matches:[{fieldName, score, filtered}]} entries. Only match.filtered === False counts.",
+
+  "semantic_search_accuracy_cases": [
+    {
+      "name": "clean_full_hit_flat",
+      "utterance": "sum of sales and profit",
+      "expected_formula": "[Sales] + [Profit]",
+      "semanticsearch_results": [
+        { "fieldName": "Sales" },
+        { "fieldName": "Profit" }
+      ]
+    },
+    {
+      "name": "clean_full_hit_chunk",
+      "utterance": "sum of sales and profit",
+      "expected_formula": "[Sales] + [Profit]",
+      "semanticsearch_results": [
+        {
+          "chunk": "chunk-1",
+          "matches": [
+            { "fieldName": "Sales", "score": 0.9, "filtered": false },
+            { "fieldName": "Profit", "score": 0.8, "filtered": false }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "partial_hit",
+      "utterance": "sales profit discount",
+      "expected_formula": "[Sales] + [Profit] + [Discount]",
+      "semanticsearch_results": [
+        { "fieldName": "Sales" },
+        {
+          "chunk": "chunk-1",
+          "matches": [
+            { "fieldName": "Profit", "score": 0.7, "filtered": false }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "complete_miss",
+      "utterance": "sales and profit",
+      "expected_formula": "[Sales] + [Profit]",
+      "semanticsearch_results": [
+        { "fieldName": "Region" },
+        { "fieldName": "Category" }
+      ]
+    },
+    {
+      "name": "empty_matched_list",
+      "utterance": "sales and profit",
+      "expected_formula": "[Sales] + [Profit]",
+      "semanticsearch_results": []
+    },
+    {
+      "name": "null_matched",
+      "utterance": "sales and profit",
+      "expected_formula": "[Sales] + [Profit]",
+      "semanticsearch_results": null
+    },
+    {
+      "name": "empty_expected_fields",
+      "utterance": "no fields",
+      "expected_formula": "",
+      "semanticsearch_results": [
+        { "fieldName": "Sales" }
+      ]
+    },
+    {
+      "name": "filtered_match_excluded",
+      "utterance": "sales and profit",
+      "expected_formula": "[Sales] + [Profit]",
+      "semanticsearch_results": [
+        {
+          "chunk": "chunk-1",
+          "matches": [
+            { "fieldName": "Sales", "score": 0.9, "filtered": false },
+            { "fieldName": "Profit", "score": 0.8, "filtered": true }
+          ]
+        }
+      ]
+    }
+  ],
+
+  "spec_semantic_search_accuracy_cases": [
+    {
+      "name": "spec_clean_full_hit",
+      "utterance": "sales by region",
+      "notional_spec": {
+        "encodings": [
+          { "field": "Sales" },
+          { "field": "Region" }
+        ]
+      },
+      "semanticsearch_results": [
+        { "fieldName": "Sales" },
+        { "fieldName": "Region" }
+      ]
+    },
+    {
+      "name": "spec_partial_hit",
+      "utterance": "sales by region and category",
+      "notional_spec": {
+        "encodings": [
+          { "field": "Sales" },
+          { "field": "Region" },
+          { "field": "Category" }
+        ]
+      },
+      "semanticsearch_results": [
+        { "fieldName": "Sales" }
+      ]
+    },
+    {
+      "name": "spec_complete_miss",
+      "utterance": "sales by region",
+      "notional_spec": {
+        "encodings": [
+          { "field": "Sales" },
+          { "field": "Region" }
+        ]
+      },
+      "semanticsearch_results": [
+        { "fieldName": "Profit" }
+      ]
+    },
+    {
+      "name": "spec_empty_matched_list",
+      "utterance": "sales by region",
+      "notional_spec": {
+        "encodings": [
+          { "field": "Sales" },
+          { "field": "Region" }
+        ]
+      },
+      "semanticsearch_results": []
+    },
+    {
+      "name": "spec_empty_expected_fields",
+      "utterance": "empty spec",
+      "notional_spec": { "encodings": [] },
+      "semanticsearch_results": [
+        { "fieldName": "Sales" }
+      ]
+    },
+    {
+      "name": "spec_caption_key",
+      "utterance": "sales by region",
+      "notional_spec": {
+        "marks": [
+          { "caption": "Sales" },
+          { "caption": "Region" }
+        ]
+      },
+      "semanticsearch_results": [
+        { "fieldName": "Sales" },
+        { "fieldName": "Region" }
+      ]
+    }
+  ],
+
+  "field_rank_scorer_cases": [
+    {
+      "name": "rank_full_hit_top1",
+      "utterance": "sales and profit",
+      "expected_formula": "[Sales] + [Profit]",
+      "semanticsearch_results": [
+        {
+          "chunk": "chunk-1",
+          "matches": [
+            { "fieldName": "Sales", "score": 0.95, "filtered": false },
+            { "fieldName": "Profit", "score": 0.90, "filtered": false }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "rank_relevant_at_rank2",
+      "utterance": "sales",
+      "expected_formula": "[Sales]",
+      "semanticsearch_results": [
+        {
+          "chunk": "chunk-1",
+          "matches": [
+            { "fieldName": "Region", "score": 0.99, "filtered": false },
+            { "fieldName": "Sales", "score": 0.80, "filtered": false }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "rank_relevant_at_rank6",
+      "utterance": "sales",
+      "expected_formula": "[Sales]",
+      "semanticsearch_results": [
+        {
+          "chunk": "chunk-1",
+          "matches": [
+            { "fieldName": "F1", "score": 0.99, "filtered": false },
+            { "fieldName": "F2", "score": 0.98, "filtered": false },
+            { "fieldName": "F3", "score": 0.97, "filtered": false },
+            { "fieldName": "F4", "score": 0.96, "filtered": false },
+            { "fieldName": "F5", "score": 0.95, "filtered": false },
+            { "fieldName": "Sales", "score": 0.50, "filtered": false }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "rank_complete_miss",
+      "utterance": "sales",
+      "expected_formula": "[Sales]",
+      "semanticsearch_results": [
+        {
+          "chunk": "chunk-1",
+          "matches": [
+            { "fieldName": "Region", "score": 0.99, "filtered": false },
+            { "fieldName": "Category", "score": 0.80, "filtered": false }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "rank_tie_relevant_and_nonrelevant_equal",
+      "utterance": "sales",
+      "expected_formula": "[Sales]",
+      "_tie_note": "PRE-FLAGGED DIVERGENCE. Sales (relevant) and Region (non-relevant) both score 0.5. ranx tie-break decides the rank of Sales; captures whether TS ir.ts (non-relevant before relevant) matches ranx.",
+      "semanticsearch_results": [
+        {
+          "chunk": "chunk-1",
+          "matches": [
+            { "fieldName": "Region", "score": 0.5, "filtered": false },
+            { "fieldName": "Sales", "score": 0.5, "filtered": false },
+            { "fieldName": "Category", "score": 0.2, "filtered": false }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "rank_tie_all_equal",
+      "utterance": "sales",
+      "expected_formula": "[Sales]",
+      "_tie_note": "PRE-FLAGGED DIVERGENCE. Three fields all at 0.5, one relevant (Sales).",
+      "semanticsearch_results": [
+        {
+          "chunk": "chunk-1",
+          "matches": [
+            { "fieldName": "A", "score": 0.5, "filtered": false },
+            { "fieldName": "B", "score": 0.5, "filtered": false },
+            { "fieldName": "Sales", "score": 0.5, "filtered": false }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "rank_multi_chunk",
+      "utterance": "sales and profit",
+      "expected_formula": "[Sales] + [Profit]",
+      "_note": "two chunks: chunk-1 has Sales at top; chunk-2 misses. map/mrr/hit_rate are averaged across the 2 chunk-queries.",
+      "semanticsearch_results": [
+        {
+          "chunk": "chunk-1",
+          "matches": [
+            { "fieldName": "Sales", "score": 0.9, "filtered": false },
+            { "fieldName": "Profit", "score": 0.85, "filtered": false }
+          ]
+        },
+        {
+          "chunk": "chunk-2",
+          "matches": [
+            { "fieldName": "Region", "score": 0.7, "filtered": false }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "rank_chunk_all_filtered_empty_run",
+      "utterance": "sales",
+      "expected_formula": "[Sales]",
+      "_note": "chunk with all matches filtered -> empty run for that chunk. make_comparable keeps it as a 0-scoring query.",
+      "semanticsearch_results": [
+        {
+          "chunk": "chunk-1",
+          "matches": [
+            { "fieldName": "Sales", "score": 0.9, "filtered": true }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "rank_no_chunks_flat_only",
+      "utterance": "sales",
+      "expected_formula": "[Sales]",
+      "_note": "only flat matched fields (no chunk) -> qrels empty -> Python returns [].",
+      "semanticsearch_results": [
+        { "fieldName": "Sales" }
+      ]
+    }
+  ]
+}

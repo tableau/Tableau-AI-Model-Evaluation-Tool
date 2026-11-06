@@ -1,0 +1,71 @@
+- description: Generate a basic LOD calc
+  id: lod-1
+  utterances:
+  - canonical: 'Can you write the calculation for Tableau Prep to compute the total sales by region?'
+    expected-calc: '{ FIXED [Region]: SUM([Sales]) }'
+  flow-name: 'SuperstoreOneOutput.tflx'
+  field-metadata: "'Region' (string), 'Sales' (number)"
+- description: Generate a rank calc
+  id: rank-1
+  utterances: 
+  - canonical: 'I want to add a field to rank each Sale within a Region from highest to lowest.'
+    expected-calc: '{ PARTITION [Region]: {ORDERBY [Sales] DESC: RANK()} }'
+    acceptable-calcs:
+    - '{ PARTITION [Region]: {ORDERBY [Sales] DESC: RANK_DENSE()} }'
+    - '{ PARTITION [Region]: {ORDERBY [Sales] DESC: ROW_NUMBER()} }'
+  flow-name: 'SuperstoreOneOutput.tflx'
+  field-metadata: "'Region' (string), 'Sales' (number)"
+- description: Simple string concatenation 
+  id: concat-1
+  utterances:
+  - canonical: 'Can you concatenate these together with a space separating them?'
+    expected-calc: '[First Name] + " " + [Last Name]'
+  flow-name: 'Concat.tflx'
+  field-metadata: "'First Name' (string), 'Last Name' (string)"
+- description: Generate a split calc with no row-level data 
+  id: split-1
+  utterances:
+  - canonical: 'I want to extract the first name. Can you write the calculation for Tableau Prep to do that?'
+    expected-calc: >-
+      SPLIT([Customer Name], ' ', 1)
+    acceptable-calcs:
+    - 'LEFT([Customer Name], FIND([Customer Name], '' '') - 1)'
+  flow-name: 'SuperstoreOneOutput.tflx'
+  field-metadata: "'Customer Name' (string)"
+- description: Example numerical calculation
+  id: multiplication-1
+  utterances:
+  - canonical: 'I have a field called "Quota" of the Number datatype that I need to increase by 10%.'
+    expected-calc: '[Quota] * 1.10'
+    acceptable-calcs:
+    - '[Quota] + [Quota] * 0.1'
+    - '[Quota] * 1.1'
+  flow-name: 'Quota.tflx'
+  field-metadata: "'Quota' (number)"
+- description: Generate a split calc with 2 splits and a different order
+  id: split-2
+  utterances:
+  - canonical: 'I have a field called "Customer Name" of the String data type that contains a first name and a last name. I want to swap the order of names to last name followed by first name and separated by a space.'
+    expected-calc: >-
+      SPLIT([Customer Name], ' ', 2) + " " + SPLIT([Customer Name], ' ', 1)
+  flow-name: 'SuperstoreOneOutput.tflx'
+  field-metadata: "'Customer Name' (string)"
+- description: Advanced split with formatting involved
+  id: split-3
+  utterances:
+  - canonical: >-
+      I have a field called "Position" of the string data type that contains a latitude and longitude value formatted like this: "(12.0234454, -45.03234)". I want to extract the longitude value.
+    expected-calc: >-
+      FLOAT(TRIM(REPLACE(SPLIT([Position], ',', 2), ')', '')))
+    acceptable-calcs:
+    - 'FLOAT(REGEXP_EXTRACT([Position], ",\s*(-?[0-9.]+)\)"))'
+    - 'FLOAT(MID([Position], FIND([Position], '','') + 1, LEN([Position]) - FIND([Position], '','') - 1))'
+  flow-name: 'Position.tflx'
+  field-metadata: "'Position' (string)"
+- description: Generate 2 advanced level of detail calcs to find a difference
+  id: lod-2
+  utterances:
+  - canonical: 'Can you group my sales by category, ordered by order date and for each sales record, find the difference between that sale and the previous sale?'
+    expected-calc: '{PARTITION [Category] : {ORDERBY [Order Date] ASC : LOOKUP([Sales], 0)}} - {PARTITION [Category] : {ORDERBY [Order Date] ASC : LOOKUP([Sales], -1)}}'
+  flow-name: 'SuperstoreOneOutput.tflx'
+  field-metadata: "'Category' (string), 'Order Date' (date), 'Sales' (number)"

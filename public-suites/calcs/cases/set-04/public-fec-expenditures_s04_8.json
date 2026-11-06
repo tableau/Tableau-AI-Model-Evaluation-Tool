@@ -1,0 +1,40 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-fec-expenditures",
+  "info": {
+    "originalValid": true,
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "create calculation for the total cost of '2016' campaigns",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "SUM(IF [Election Year] = 'Awareness' THEN [Disbursement Amount] ELSE 0 END)",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-string",
+        "add-explicit-calc-wordage"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Conditional Logic",
+          "Op: Aggregation (Default)",
+          "Op: String Manipulation"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "8926e3463ad7ad5430d9979d9410fe26"
+}

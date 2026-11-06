@@ -1,0 +1,39 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-activity-360",
+  "info": {
+    "originalValid": false,
+    "reasonInvalid": "Event Fees count type is missing",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "create calc to convert activity type to numeric values",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "CASE [Activity Type] WHEN 'Global Partner Summit' THEN 1 WHEN 'Sponsorships' THEN 2 WHEN 'Data Leaders Summit' THEN 3 WHEN 'Certifications' THEN 4 WHEN 'Training Workshops' THEN 5 WHEN 'Payment Authorization' THEN 6 WHEN 'Certifications Exams' THEN 7 WHEN 'Certifications or Trainings' THEN 8 WHEN 'Attendee Registrations' THEN 9 WHEN 'EVENT TYPE' THEN 10 ELSE 0 END",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-logical"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Data Preparation"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Type Conversion",
+          "Op: Conditional Logic"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "b0f39954fab7dedef601bc2663f6b14e"
+}

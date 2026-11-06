@@ -1,0 +1,43 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-account-360",
+  "info": {
+    "originalValid": false,
+    "reasonInvalid": "no server response",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "Create a calc to compute sum of number of deals created same month last year",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "SUM(IF DATEPART('year', TODAY()) - 1 = DATEPART('year', [Latest Opportunity Created]) AND DATEPART('month', TODAY()) = DATEPART('month', [Latest Opportunity Created]) THEN [Number of Opportunities] END)",
+          "caption": null
+        }
+      },
+      "tags": [
+        "calc-category-aggregate",
+        "add-explicit-calc-wordage"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Aggregate Measurement"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Date Part Extraction",
+          "Op: Date Arithmetic",
+          "Op: Conditional Logic",
+          "Op: Aggregation (Default)",
+          "Op: Arithmetic / Ratio"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "aaacc0f8d264ec063d6bd56ea099a67b"
+}

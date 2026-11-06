@@ -1,0 +1,40 @@
+{
+  "runner": "ect-server",
+  "datasource": "public-activity-360",
+  "info": {
+    "originalValid": false,
+    "reasonInvalid": "Comments to check with Josh",
+    "provenance": "public"
+  },
+  "inputs": [
+    {
+      "utterance": "Create a calc to determine trhe days of week we had the most activities?",
+      "source": "user",
+      "expected": {
+        "intent": "NLQ_TO_NEW_CALCULATED_FIELD",
+        "calculatedFieldFormula": {
+          "formula": "{ {INCLUDE DATENAME('weekday',[Activity Date]) : COUNT([Contact Name])} }",
+          "caption": null
+        }
+      },
+      "tags": [
+        "add-explicit-calc-wordage"
+      ],
+      "labels": {
+        "intent": [
+          "Intent: Ranking / Top-N"
+        ],
+        "op": [
+          "Op: Calculated Field Creation",
+          "Op: Date Part Extraction",
+          "Op: Level of Detail",
+          "Op: Aggregation (Default)"
+        ],
+        "out": [
+          "Out: Calculated Field Formula"
+        ]
+      }
+    }
+  ],
+  "id": "78fccab4db3a27aea3b17149e172b937"
+}

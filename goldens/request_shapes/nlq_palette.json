@@ -1,0 +1,23 @@
+{
+  "description": "nlq color-palette case: POST {utterance, paletteType} to /analytics-assistant/color-palettes/generate; the {colors} reply maps to {colorPalette} for scoring.",
+  "adapter": "nlq",
+  "covers": [
+    "color-palettes-server (color-palette)"
+  ],
+  "requests": [
+    {
+      "method": "POST",
+      "pathAndQuery": "/content-exploration/analytics-assistant/color-palettes/generate",
+      "headerNames": [
+        "accept",
+        "content-type"
+      ],
+      "body": {
+        "utterance": {
+          "content": "temperature"
+        },
+        "paletteType": "diverging"
+      }
+    }
+  ]
+}
